@@ -1,22 +1,33 @@
-# Proyecto---Digital-House
+# Proyecto - Digital-House
 
-1) https://github.com/aguspcaro/Proyecto---Digital-House.git
+## 1) 
+
+			https://github.com/aguspcaro/Proyecto---Digital-House.git
 
 
-2)
+## 2)
 
-	-Temática del sitio: 
+####	-Temática del sitio:
 
-	-Público Objetivo: 
 
-	-Listado de cinco páginas referentes:
 
-		1- Beko = https://www.beko.com/es-es
+####	-Público Objetivo:
+
+
+
+####	-Listado de cinco páginas referentes:
+
+
+			1- Beko = https://www.beko.com/es-es
 		
-		2- Falabella = https://www.falabella.com.ar/falabella-ar/
+			2- Falabella = https://www.falabella.com.ar/falabella-ar/
 
-		3- Adidas = https://www.adidas.com.ar/
+			3- Adidas = https://www.adidas.com.ar/
 
-		4- Asus = https://www.asus.com/us/
+			4- Asus = https://www.asus.com/us/
 
-		5- Woo commerce = https://woocommerce.com/
+			5- Woo commerce = https://woocommerce.com/
+
+####	-Breve Descripción de cada uno:
+
+			Agustín Caro: Tengo 25 años. Soy Licenciado en Administracion. Principiante en Programacion. Jugador de Rugby. Arriba el mate y el asado!
