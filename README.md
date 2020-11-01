@@ -24,10 +24,11 @@
 
 			3- Adidas = https://www.adidas.com.ar/
 
-			4- Asus = https://www.asus.com/us/
-
-			5- Woo commerce = https://woocommerce.com/
+			
 
 ####	-Breve Descripción de cada uno:
 
 			Agustín Caro: Tengo 25 años. Soy Licenciado en Administracion. Principiante en Programacion. Jugador de Rugby. Arriba el mate y el asado!
+
+
+			Alejandro Widomlanski: Tengo 36 años. Me egrese de Director de Arte publicitario en el año 2009. No tengo expreriencia en programación anteriormente. Me gusta mucho el fútbol, y pasar momentos con familia y amigos.
