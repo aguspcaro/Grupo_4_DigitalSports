@@ -32,3 +32,6 @@
 
 
 			Alejandro Widomlanski: Tengo 36 años. Me egrese de Director de Arte publicitario en el año 2009. No tengo expreriencia en programación anteriormente. Me gusta mucho el fútbol, y pasar momentos con familia y amigos.
+            
+			David Kopp: Apasionado de la tecnología, esposo y padre de 2 hijos, soy programador de Visual Foxpro buscando actualizarme, me gusta la birra y el asado, saludos desde Córdoba la cuna del fernet!!!
+            
