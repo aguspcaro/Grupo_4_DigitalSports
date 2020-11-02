@@ -49,4 +49,6 @@
 			Alejandro Widomlanski: Tengo 36 años. Me egrese de Director de Arte publicitario en el año 2009. No tengo expreriencia en programación anteriormente. Me gusta mucho el fútbol, y pasar momentos con familia y amigos.
             
 			David Kopp: Apasionado de la tecnología, esposo y padre de 2 hijos, soy programador de Visual Foxpro buscando actualizarme, me gusta la birra y el asado, saludos desde Córdoba la cuna del fernet!!!
+			
+			Jorge Jones: Soy licenciado en Comunicación y hace años me dedico a la producción de eventos. No tengo experiencia en programación y espero adquirirla junto a este equipazo! Soy feliz padre de tres hijos: una mujer y dos varones. Si me preguntan por mi club favorito les diré que nuestro rival murió en Madrid!
             
