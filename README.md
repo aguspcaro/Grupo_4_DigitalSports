@@ -38,7 +38,10 @@
 
 				-> Prodcutos bien detallados. Dinámica. Variedad de servicios y prodcutos. Fácil de usar.
 
-			6- 
+			6- Rip Curl Argentina = https://www.ripcurlargentina.com/
+			        
+				-> Visualmente llamativa - Prodcutos bien detallados. Dinámica. Variedad de servicios y prodcutos. Fácil de usar.
+			
 
 			
 
