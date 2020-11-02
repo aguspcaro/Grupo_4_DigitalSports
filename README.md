@@ -20,7 +20,7 @@
 
 			1- Beko = https://www.beko.com/es-es
 
-				-> Muy facil de interpretar, muy dinámica, colores agradables. Dificil para comprar.
+				-> Muy facil de interpretar, muy dinámica, colores agradables. Difícil para comprar.
 		
 			2- Falabella = https://www.falabella.com.ar/falabella-ar/
 
@@ -36,7 +36,7 @@
 
 			5- deautos = https://www.deautos.com/
 
-				-> Prodcutos bien detallados. Dinámica. Variedad de servicios y prodcutos. Fácil de usar.
+				-> Productos bien detallados. Dinámica. Variedad de servicios y productos. Fácil de usar.
 
 			6- Rip Curl Argentina = https://www.ripcurlargentina.com/
 			        
