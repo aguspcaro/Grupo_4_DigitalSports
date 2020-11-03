@@ -38,8 +38,6 @@
 
 				-> Prodcutos bien detallados. Dinámica. Variedad de servicios y prodcutos. Fácil de usar.
 
-			6- 
-
 			
 
 ####	-Breve Descripción de cada uno:
