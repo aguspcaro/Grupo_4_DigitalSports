@@ -20,7 +20,7 @@
 
 			1- Beko = https://www.beko.com/es-es
 
-				-> Muy facil de interpretar, muy dinámica, colores agradables. Dificil para comprar.
+				-> Muy facil de interpretar, muy dinámica, colores agradables. Difícil para comprar.
 		
 			2- Falabella = https://www.falabella.com.ar/falabella-ar/
 
@@ -36,8 +36,16 @@
 
 			5- deautos = https://www.deautos.com/
 
-				-> Prodcutos bien detallados. Dinámica. Variedad de servicios y prodcutos. Fácil de usar.
+				-> Productos bien detallados. Dinámica. Variedad de servicios y productos. Fácil de usar.
 
+<<<<<<< HEAD
+=======
+			6- Rip Curl Argentina = https://www.ripcurlargentina.com/
+			        
+				-> Visualmente llamativa - Prodcutos bien detallados. Dinámica. Variedad de servicios y prodcutos. Fácil de usar.
+			
+
+>>>>>>> 07b65f5743e7785c1eca0053af3abdb4ab772d86
 			
 
 ####	-Breve Descripción de cada uno:
@@ -47,4 +55,6 @@
 			Alejandro Widomlanski: Tengo 36 años. Me egrese de Director de Arte publicitario en el año 2009. No tengo expreriencia en programación anteriormente. Me gusta mucho el fútbol, y pasar momentos con familia y amigos.
             
 			David Kopp: Apasionado de la tecnología, esposo y padre de 2 hijos, soy programador de Visual Foxpro buscando actualizarme, me gusta la birra y el asado, saludos desde Córdoba la cuna del fernet!!!
+			
+			Jorge Jones: Soy licenciado en Comunicación y hace años me dedico a la producción de eventos. No tengo experiencia en programación y espero adquirirla junto a este equipazo! Soy feliz padre de tres hijos: una mujer y dos varones. Si me preguntan por mi club favorito les diré que nuestro rival murió en Madrid!
             
