@@ -9,9 +9,66 @@
 
 ####	-Temática del sitio:
 
+			1- Vestimenta
+
+				-Deportiva
+				-Formal
+				-Informal
+				-Mujer
+				-Hombre
+				-Niños
+				-Calzado
+				-Denim
+
+			2- Productos Varios
+
+				-Electrodomésticos
+				-Herramientas de cocina
+				-Tecnología
+
+			3- Insumos
+
+				-Agrícolas
+				-Tecnologicos
+				-Autos
+
+			4- Servicios
+
+				-Cadetería
+				-Cuidado de niños
+				-Limpieza
+				-Catering
+
 
 
 ####	-Público Objetivo:
+
+			1- Mujeres
+
+			2- Hombres
+
+			3- Niños
+
+			4- Industria automotriz
+
+			5- Industria hotelera
+
+			6- Hombres de 18 años a 25 años
+
+			7- Mujeres de 18 años a 25 años
+
+			8- Hombres de 26 años a 36 años
+
+			9- Mujeres de 26 años a 36 años
+
+			10- Hombres de 40 años a 60 años
+
+			11- Mujeres de 40 años de 60 años
+
+			12- Industria agricola
+			
+			13- Gimnasios / Lugares de entrenamiento
+
 
 
 
@@ -38,14 +95,11 @@
 
 				-> Productos bien detallados. Dinámica. Variedad de servicios y productos. Fácil de usar.
 
-<<<<<<< HEAD
-=======
 			6- Rip Curl Argentina = https://www.ripcurlargentina.com/
 			        
 				-> Visualmente llamativa - Prodcutos bien detallados. Dinámica. Variedad de servicios y prodcutos. Fácil de usar.
 			
 
->>>>>>> 07b65f5743e7785c1eca0053af3abdb4ab772d86
 			
 
 ####	-Breve Descripción de cada uno:
