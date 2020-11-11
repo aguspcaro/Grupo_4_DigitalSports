@@ -70,7 +70,7 @@
 
 
 
-####	-Estratégias de marketing
+####	-Estrategias de marketing
 
 
             Posicionar al sitio como un referente en el mercado deportivo en términos de indumentaria, productos, equipamientos y servicios. 
