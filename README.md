@@ -24,7 +24,7 @@
 
 			1- Mujeres de 18 a 60 años. Nivel socieconómico a,b,c 1
 
-			2- Hombres de 18 a 60 años. Nivel socieconómico a,b,c 1 
+			2- Hombres de 18 a 60 años. Nivel socieconómico a,b,c 1
 
 		
 
