@@ -7,17 +7,27 @@ app.listen(3030, function() {
     console.log("servidor funcionando")
 });
 
-<<<<<<< HEAD
-app.get ("/", function (req,res){
 
+app.get("/", function(req,res) {
     res.sendFile(__dirname + "/views/index.html")
-    
-    })
-    
-    app.get ("*", function (req,res){
-    
-    res.sendFile(__dirname+ "/public/" + req.url)
-    
-    })
-=======
->>>>>>> b287f6e8cdeb400eacf804282dbb7337fe5a7b66
+});
+
+
+app.get("/login", function(req,res) {
+    res.sendFile(__dirname + "/views/login.html")
+});
+
+app.get("/register", function(req,res) {
+    res.sendFile(__dirname + "/views/register.html")
+});
+
+
+
+app.get("/detail", function(req,res) {
+    res.sendFile(__dirname + "/views/detail.html")
+});
+
+
+app.get("*", function(req,res) {
+    res.sendFile(__dirname  + "/../public/" + req.url)
+});
