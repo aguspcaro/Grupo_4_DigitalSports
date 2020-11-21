@@ -1,0 +1,24 @@
+{
+  "name": "Grupo_4_DigitalSports",
+  "version": "1.0.0",
+  "description": "https://github.com/aguspcaro/Proyecto---Digital-House.git",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aguspcaro/Grupo_4_DigitalSports.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aguspcaro/Grupo_4_DigitalSports/issues"
+  },
+  "homepage": "https://github.com/aguspcaro/Grupo_4_DigitalSports#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
