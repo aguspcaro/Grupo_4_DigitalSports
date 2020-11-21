@@ -24,8 +24,6 @@ app.get ("/register", function (req,res){
     })
 
 
-    app.get ("*", function (req,res){
-    
-    res.sendFile(__dirname+ "/public/" + req.url)
-    
-    })
+    app.get('*', (req, res) => {
+        res.sendFile(__dirname.replace("\src", "") + '/public/' + req.url);
+      });
