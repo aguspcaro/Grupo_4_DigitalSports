@@ -10,16 +10,16 @@ app.listen(3030, function() {
 app.get ("/", function (req,res){
     res.sendFile(__dirname + "/views/index.html")
     })
-app.get ("/", function (req,res){
+app.get ("/carrito", function (req,res){
     res.sendFile(__dirname + "/views/carrito.html")
     })    
-app.get ("/", function (req,res){
+app.get ("/detail", function (req,res){
     res.sendFile(__dirname + "/views/detail.html")
     })    
-app.get ("/", function (req,res){
+app.get ("/login", function (req,res){
     res.sendFile(__dirname + "/views/login.html")
     })
-app.get ("/", function (req,res){
+app.get ("/register", function (req,res){
     res.sendFile(__dirname + "/views/register.html")
     })
 
