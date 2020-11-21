@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital-Sports</title>
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/styles.css">
 
 
 </head>
@@ -34,44 +34,37 @@
             </nav>
         </header>
 
+        <section class="section-loginContainer">
+            <div class="section-loginContainerTitle">
+                <h4 class="section-loginTitle">Clientes</h4>
+            </div>
 
-        <div>
-            <div class="home">
-                <div>
-                    <section class="exhibitor">
-
-                    </section>
-                    <section class="outstanding">
-                        <div class="article-outstanding">
-                            <img scr="" class="article-outstanding-image">
-                            <h1 class="article-outstanding-image"></h1>
-                            <h2 class="article-outstanding-image"></h2>
-                            <button class="article-outstanding-buttom"></button>
-
-
-                        </div>
-
-                    </section>
-                    <section class="ofertas">
-
-                    </section>
-                    <section class="lanzamientos">
-
-                    </section>
-                    <section class="recomendados">
-
-                    </section>
-                    <section class="busquedas">
-
-                    </section>
-
-
+            <form method="POST" action="index.html">
+                <div class="section-loginContainerEmail">  
+                    <label for="email" class="section-login__labelEmail">Correo Electrónico<span class="section-login__labelEmail*">*</span></label>
+                    <input type="email" name="email-login" id="email">
+                </div>
+    
+                <div class="section-loginContainerPassword">
+                    <label for="password" class="section-loginLabelPassword">Contraseña <span class="section-loginLabelPassword*">*</span></label>
+                    <input type="password" name="password-login" id="password">
+                    <a href="" class="section-loginResetPassword">Reestablecer Contraseña</a>
                 </div>
 
+                <div class="section-loginContainerButton">  
+                    <button type="submit" class="section-loginButtonEnterOk">Ingresar</button>
+                    <button type="submit" class="section-loginButtonCheckIn">Registrarse</button>
+                </div>
+                
+                <div class="section-loginContainerRequired">
+                    <small class="section-loginRequired">*Campos Requeridos</small>
+                </div>
+            </form>
+          
 
+        </section>
 
-            </div>
-        </div>
+       
 
 
 <!-- PARA SUSCRIBIRSE -->
