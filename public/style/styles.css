@@ -1,1 +1,107 @@
+body {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* HEADER */
+
+.main-nav {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-navContainerLogo {
+    width: 200px;
+}
+
+.main-navContainerListNavegation {
+    font-size: 18px;
+
+}
+
+.main-navListNavegation__woman {
+    color: #606060;
+    margin: 0px 10px;
+    text-decoration: none;
+}
+
+.main-navListNavegation__woman:hover {
+    color: #0985d9;
+}
+
+.main-navListNavegation__man {
+    color: #606060;
+    margin: 0px 10px;
+    text-decoration: none;
+}
+
+.main-navListNavegation__man:hover {
+    color: #0985d9;
+}
+
+.main-navListNavegation__childs {
+    color: #606060;
+    margin: 0px 10px;
+    text-decoration: none;
+}
+
+.main-navListNavegation__childs:hover {
+    color: #0985d9;
+}
+
+
+.main-navListNavegation__brands {
+    color: #606060;
+    margin: 0px 10px;
+    text-decoration: none;
+}
+
+
+.main-navListNavegation__brands:hover {
+    color: #0985d9;
+}
+
+.main-navIcons__search {
+    color: #606060;
+    margin: 0px 10px;
+}
+
+.main-navIcons__heart {
+    color: #606060;
+    margin: 0px 10px;
+}
+
+.main-navIcons__cart {
+    color: #606060;
+    margin: 0px 10px;
+}
+
+.main-navIcons__user {
+    color: #606060;
+    margin: 0px 10px;
+}
+
+.main-navIcons__search:hover {
+    color: #0985d9
+ }
+
+ .main-navIcons__heart:hover {
+    color: #0985d9
+ }
+
+ .main-navIcons__cart:hover {
+    color: #0985d9
+ }
+
+ .main-navIcons__user:hover {
+    color: #0985d9
+ }
+
+
 
