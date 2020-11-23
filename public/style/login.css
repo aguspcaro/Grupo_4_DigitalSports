@@ -1,0 +1,152 @@
+
+/*Contenedor*/
+
+.section-loginContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0px;
+}
+
+/*Título*/
+
+.section-loginTitle {
+    font-size: 24px;
+}
+
+
+/*Mail*/
+
+.section-loginContainerEmail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.section-login__labelEmail {
+    font-size: 18px;
+}
+
+.section-login__spanLabelEmail {
+    color: red;
+}
+
+.section-login__inputEmail {
+    font-weight: 400;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 350px;
+    border: solid 2px #0985d9;
+}
+
+.section-login__inputEmail:focus {
+    outline: 0px;
+    color:  #606060;
+}
+
+/*Password*/
+
+.section-loginContainerPassword {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.section-loginLabelPassword {
+    font-size: 18px;
+
+}
+
+.section-login__spanLabelPassword {
+    color: red;
+}
+
+.section-login__inputPassword {
+    font-weight: 400;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 350px;
+    border: solid 2px #0985d9;
+}
+
+.section-login__inputPassword:focus {
+    outline: 0px;
+    color:  #606060;
+}
+
+.section-loginResetPassword {
+    align-self: flex-end;
+    color:  #0985d9;
+}
+
+
+.section-loginResetPassword {
+    font-size: 12px;
+    text-decoration: none;
+}
+
+/*Buttons*/
+
+
+.section-loginContainerButton{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-loginButtonEnterOk {
+    font-weight: 400;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 100px;
+    background-color: #0985d9;
+    border: solid 1px  #0985d9;
+    color: #fff;
+}
+
+.section-loginButtonEnterOk:hover {
+    border: solid 1px #6ad872;
+    background-color:   #6ad872;
+    cursor: pointer;
+}
+
+.section-loginButtonCheckIn {
+    font-weight: 400;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 120px;
+    background-color:  #fff;;
+    border: solid 1px  #0985d9;
+    color:#0985d9;
+    margin-bottom: 10px;
+}
+
+.section-loginButtonCheckIn:hover {
+    border: solid 1px #6ad872;
+    background-color:   #6ad872;
+    color: #fff;
+    cursor: pointer;
+}
+
+.section-loginRequired {
+    color: red;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
