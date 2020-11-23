@@ -4,37 +4,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital-Sports</title>
-    <link rel="stylesheet" href= "../../public / style / styles.css ">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+    <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href= "style/detail-styles.css">
 </head>
 <body>
     <main>
-
         <header class="main-header">
-            <div class="main-title">
-                <h3>
-                    Hombres
-                </h3>
-            </div>
+            <nav class="main-nav">
+                <div class="main-navContainerLogo">
+                    <img src="" alt="" class="main-nav__logo">
+                </div>
+
+                <div class="main-navContainerListNavegation">
+                    <a href="" class="main-navListNavegation__woman">Mujer</a>
+                    <a href="" class="main-navListNavegation__man">Hombre</a>
+                    <a href="" class="main-navListNavegation__childs">Niños</a>
+                    <a href="" class="main-navListNavegation__brands">Marcas</a>
+                </div>
+
+                <div class="main-navContainerIcons">
+                    <a href="" class="main-navIcons__search"><i></i></a>
+                    <a href="" class="main-navIcons__heart"><i></i></a>
+                    <a href="" class="main-navIcons__cart"><i></i></a>
+                    <a href="" class="main-navIcons__user"><i></i></a>
+                </div>
+            </nav>
         </header>
 
-        <div class="main-article">
-            <div class="main-image">
-                <img height = "100px" src="../../public/images/zapatillas-de-futbol-predator-20.3-moqueta.jpg">
+        <div>
+            <section class="container-section-producto">
+
+
+                <div class="container-img">
+                    <img class="article-imagen-left" src="images/zapatillas-de-futbol-predator-20.3-moqueta.jpg" alt="" >
+                </div>
+
+                <div class="container-imagenes">
+                    <img class="article-imagen-right" src="images/zapatillas-de-futbol-predator-20.3-moqueta.jpg" alt="" >  
+                    <img class="article-imagen-right" src="images/zapatillas-de-futbol-predator-20.3-moqueta.jpg" alt="" >
+                    <img class="article-imagen-right" src="images/zapatillas-de-futbol-predator-20.3-moqueta.jpg" alt="" >                
+                </div>
+
+
+
+                <div class="container-detalle">
+
+                    <div class="container-detalle-titulo">
+                        <div class="container-texto-nombre">
+                            <h3>Botines Adidas Predator 20.3</h3>
+                        </div>
+                        <div class="container-texto-precio">
+                            <h2>$3599</h2>
+                            <h4>antes $4679</h4>
+                        </div>
+                    </div>
+                 
+                    <div class="container-detalle-talle">
+                        <div>
+                            <p><label for= "" >Talle</label></p>
+                        </div>
+                        <div class="container-detalle-talles">
+                            <p><input type="radio" name="talle">39</p>
+                            <p><input type="radio" name="talle">40</p>
+                            <p><input type="radio" name="talle">41</p>
+                            <p><input type="radio" name="talle">42</p>
+                        </div>
+                    </div>
+                    
+                    <div class="container-detalle-comprar"> 
+                        <button class="texto-boton">Comprar</button>
+                        <i class="texto-icono"></i>
+                    </div>
+                  
+
+                </div>
+
+            </section>
+
+            <div class="container-descripcion">
+                <hr>
+                <h3>Descripción</h3>
+                
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, culpa doloremque placeat perferendis quo voluptatibus labore maiores, nulla expedita vel iste quisquam neque dignissimos consectetur beatae recusandae, illo repellat repellendus!</p>
+                <hr>
             </div>
-            <div class="main-detail">
-                <ol>
-                    <li>
-                        $10.000
-                    </li>
-                    <li>
-                        40% OFF
-                    </li>
-                    <li>
-                        Predator
-                    </li>
-                </ol>
+
+        </div>
+        
+
+        <footer class="footer">
+            <div class="footer-containerLogo-Redes">
+                <div class="footer-containerLogo">
+                    <img src="logos/logo-digital-sports.svg" alt="" class="footer__logo">
+                </div>
+    
+                <div class="footer-containerRedes">
+                    <a href=""><i class="fab fa-instagram footer-Redes__iconInstagram"></i></a>
+                    <a href=""></i><i class="fab fa-facebook footer-Redes__iconFacebook"></i></a>
+                    <a href=""><i class="fab fa-twitter-square footer-Redes__iconTwitter"></i></a>
+                    <a href=""><i class="fab fa-tiktok footer-Redes__iconTiktok"></i></a>
+                </div>
+    
             </div>
-        </div>   
+
+            <div class="footer-containerLists">
+                <div class="footer-containerAboutUs">
+                    <h4 class="footer-aboutUs__title">Nosotros</h4>
+                    <ul class="footer-aboutUs__list">
+                        <li>Acerca de Nosotros</li>
+                        <li>Contacto</li>
+                        <li>Trabaja junto a nosotros</li>
+                        <li>Terminos y condiciones</li>
+                    </ul>
+                </div>
+
+                <div class="footer-containerInformation">
+                    <h4 class="footer-information__title">Información</h4>
+                    <ul class="footer-information__list">
+                        <li>Medios de Pago</li>
+                        <li>Preguntas frecuentes</li>
+                        <li>Como Comprar</li>
+                        <li>Envíos</li>
+                    </ul>
+                </div>
+
+                <div class="footer-containerAttention">
+                    <h4 class="footer-attention__title">Atención al cliente</h4>
+                    <ul class="footer-attention__list">
+                        <li>0800-77-SPORTS</li>
+                        <li>Lunes a Sabado de 9 a 20 hs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-containerCopyright">
+                <p>&copy digital-sports</p>
+            </div>
+        </footer>
     </main>
 </body>
 </html>
