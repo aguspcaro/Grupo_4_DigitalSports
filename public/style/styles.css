@@ -179,7 +179,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    flex: 1 1 30%;
+    flex: 1 1 20%;
 }
 
 .footer__logo {
@@ -231,7 +231,7 @@ body {
 .footer-containerLists {
     display: flex;
     justify-content: flex-end;
-    flex: 1 1 69%;
+    flex: 1 1 79%;
 
 }
 
