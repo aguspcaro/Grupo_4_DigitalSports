@@ -1,0 +1,243 @@
+
+/*Contenedor*/
+
+.section-registerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px 0px;
+}
+
+/*Título*/
+
+.section-registerContainerTitle {
+    font-size: 24px;
+}
+
+.section-form-register {
+    display: flex;
+    flex-direction: row;
+ }
+
+ .section-registerContainerLeft {
+    margin: 0px 10px;
+}
+
+.section-registerContainerRight {
+    margin: 0px 10px;
+}
+
+
+/*Nombre*/
+
+
+.section-registerContainerName {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.section-register__labelName {
+    font-size: 18px;
+}
+
+.section-register__spanLabelName {
+    color: red;
+}
+
+.section-register__inputName {
+    font-weight: 400;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 350px;
+    border: solid 2px #0985d9;
+}
+
+.section-register__inputName:focus {
+    outline: 0px;
+    color:  #606060;
+}
+
+/*Apellido*/
+
+.section-registerContainerLastName {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.section-register__labelLastName {
+    font-size: 18px;
+}
+
+.section-register__spanLabelLastName {
+    color: red;
+}
+
+.section-register__inputLastName {
+    font-weight: 400;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 350px;
+    border: solid 2px #0985d9;
+}
+
+.section-register__inputLastName:focus {
+    outline: 0px;
+    color:  #606060;
+}
+
+/*Mail*/
+
+.section-registerContainerEmail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.section-register__labelEmail {
+    font-size: 18px;
+}
+
+.section-register__spanLabelEmail {
+    color: red;
+}
+
+.section-register__inputEmail {
+    font-weight: 400;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 350px;
+    border: solid 2px #0985d9;
+}
+
+.section-register__inputEmail:focus {
+    outline: 0px;
+    color:  #606060;
+}
+
+
+/*Password*/
+
+.section-registerContainerPassword {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.section-registerLabelPassword {
+    font-size: 18px;
+
+}
+
+.section-register__spanLabelPassword {
+    color: red;
+}
+
+.section-register__inputPassword {
+    font-weight: 400;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 350px;
+    border: solid 2px #0985d9;
+}
+
+.section-register__inputPassword:focus {
+    outline: 0px;
+    color:  #606060;
+}
+
+/*Confirm Password*/
+
+.section-registerContainerConfirmPassword {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.section-registerLabelConfirmPassword {
+    font-size: 18px;
+
+}
+
+.section-register__spanLabelConfirmPassword {
+    color: red;
+}
+
+.section-register__inputConfirmPassword {
+    font-weight: 400;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 350px;
+    border: solid 2px #0985d9;
+}
+
+.section-register__inputConfirmPassword:focus {
+    outline: 0px;
+    color:  #606060;
+}
+
+/*Campos Requeridos*/
+
+.section-registerContainerRequired {
+    color: red;
+    font-size: 14px;
+    margin-top: -15px;
+}
+
+/*Checks*/
+
+.section-registerContainerChecks {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+
+/*Buttons*/
+
+.section-registerContainerButton {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-registerCreateAccount {
+    font-weight: 400;
+    height: 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 150px;
+    background-color: #0985d9;
+    border: solid 1px  #0985d9;
+    color: #fff;
+}
+
+.section-registerCreateAccount:hover {
+    border: solid 1px #6ad872;
+    background-color:   #6ad872;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
