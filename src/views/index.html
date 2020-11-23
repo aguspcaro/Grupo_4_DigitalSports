@@ -5,7 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital-Sports</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/style-home.css">
 
 
 </head>
@@ -15,75 +19,185 @@
         <header class="main-header">
             <nav class="main-nav">
                 <div class="main-navContainerLogo">
-                    <img src="" alt="" class="main-nav__logo">
+                    <img src="logos/logo-digital-sports.svg" alt="logo-digitasports" class="main-nav__logo">
                 </div>
 
-                <div class="main-navListNavegation">
-                    <a href="">Mujer</a>
-                    <a href="">Hombre</a>
-                    <a href="">Niños</a>
-                    <a href="">Marcas</a>
+                <div class="main-navContainerListNavegation">
+                    <a href="#" class="main-navListNavegation__woman">Mujer</a>
+                    <a href="#" class="main-navListNavegation__man">Hombre</a>
+                    <a href="#" class="main-navListNavegation__childs">Niños</a>
+                    <a href="#" class="main-navListNavegation__brands">Marcas</a>
                 </div>
 
-                <div class="main-navIcons">
-                    <a href=""><i></i></a>
-                    <a href=""><i></i></a>
-                    <a href=""><i></i></a>
-                    <a href=""><i></i></a>
+                <div class="main-navContainerIcons">
+                    <a href=""><i class="fas fa-search main-navIcons__search"></i></a>
+                    <a href=""><i class="fas fa-heart main-navIcons__heart"></i></a>
+                    <a href="carrito"><i class="fas fa-shopping-cart main-navIcons__cart"></i></a>
+                    <a href="login"><i><i class="fas fa-user main-navIcons__user"></i></i></a>
                 </div>
             </nav>
         </header>
 
 
-        <div>
-            <div class="home">
-                <div>
-                    <section class="exhibitor">
-
-                    </section>
-                    <section class="outstanding">
-                        <div class="article-outstanding">
-                            <img scr="" class="article-outstanding-image">
-                            <h1 class="article-outstanding-image"></h1>
-                            <h2 class="article-outstanding-image"></h2>
-                            <button class="article-outstanding-buttom"></button>
-
-
-                        </div>
-
-                    </section>
-                    <section class="ofertas">
-
-                    </section>
-                    <section class="lanzamientos">
-
-                    </section>
-                    <section class="recomendados">
-
-                    </section>
-                    <section class="busquedas">
-
-                    </section>
-
-
-                </div>
-
-
-
+        <div class="home">
+            <div class="carousel-container">
+                <img src="/images/digital-deportes.jpg">
             </div>
+            <div>
+                <section class="outstanding">
+                    <div class="outstanding-section-title">Productos destacados para vos</div>
+
+                    <section class="outstanding-article">
+
+                        <article class="outstanding-article1">
+                            <img src="/images/camiseta-argentina-promo.jpg" class="outstanding-article1-image">
+                            <h2 class="outstanding-article-title">Camiseta Argentina</h2>
+                            <p class="outstanding-article-description">la útlima camiseta</p>
+                            <button class="outstanding-article-buttom">comprar</button>
+                        </article>
+
+                        <article class="outstanding-articles2">
+                            <img src="/images/zapatillas-de-futbol-predator-20.3-moqueta.jpg"
+                                class="outstanding-article2-image">
+                            <h2 class="outstanding-article-title">Botines Predator</h2>
+                            <p class="outstanding-article-description">Hacen los goles x vos</p>
+                            <button class="outstanding-article-buttom">comprar</button>
+                            
+                        </article>
+
+                        <article class="outstanding-articles3">
+                            <img src="/images/bolso_under_armor.jpeg" class="outstanding-articles3-image">
+                            <h2 class="outstanding-article-title">Bolso Under Armor</h2>
+                            <p class="outstanding-article-description">Alto bolso</p>
+                            <button class="outstanding-article-buttom">comprar</button>
+                        </article>
+
+                    </section>
+            </div>
+            <div>
+                <section class="offer">
+                    <div class="offer-section-title">Ofertas</div>
+                    <section class="offer-article">
+                        <article class="offer-article1">
+                            <img src="/images/buzo-con-capucha-warm-up.jpg" class="offer-article1-image">
+                            <h1 class="offer-article1-title">Buzo con capucha</h1>
+                            <p class="offer-article1-description">Para no tener frío</p>
+                            <button class="offer-article1-buttom">comprar</button>
+                        </article>
+
+                        <article class="offer-article2">
+                            <img src="/images/conjunto_hombre.jpg" class="offer-article2-image">
+                            <h1 class="offer-article2-title">Conjunto deportivo dama</h1>
+                            <p class="offer-article2-description">Lorem, ipsum dolor.</p>
+                            <button class="offer-article2-buttom">comprar</button>
+                        </article>
+
+                        <article class="offer-article3">
+                            <img src="/images/camiseta-argentina-promo.jpg" class="offer-article3-image">
+                            <h1 class="offer-article3-title">Camiseta Argentina</h1>
+                            <p class="offer-article3-description">la mejor camiseta</p>
+                            <button class="offer-article3-buttom">comprar</button>
+                        </article>
+
+                        <article class="offer-article4">
+                            <img src="/images/pelota-basquet.jpg" class="offer-article4-image">
+                            <h1 class="offer-article4-title">Pelota Basquet</h1>
+                            <p class="offer-article4-description">la de la Nba</p>
+                            <button class="offer-article4-buttom">comprar</button>
+                        </article>
+
+                    </section>
+            </div>
+
+            <div>
+                <section class="release">
+
+                    <div class="release-section-title">Lanzamientos</div>
+                    <section class="release-article">
+                        <article class="release-articule1">
+                            <img src="/images/bolso_under_armor.jpeg" class="article-release1-image">
+                            <h1 class="release-articule-title">Camiseta River</h1>
+                            <p class="release-article-description">la útlima camiseta</p>
+                            <button class="release-article-buttom">comprar</button>
+                        </article>
+
+                        <article class="release-articule2">
+                            <img src="/images/bolso_under_armor.jpeg" class="release-articule2-image">
+                            <h1 class="release-articule-title">Camiseta River</h1>
+                            <p class="release-article-description">la útlima camiseta</p>
+                            <button class="release-article-buttom">comprar</button>
+                        </article>
+
+                        <article class="release-articule3">
+                            <img src="/images/bolso_under_armor.jpeg" class="release-articule3-image">
+                            <h1 class="release-articule-title">Camiseta River</h1>
+                            <p class="release-article-description">la útlima camiseta</p>
+                            <button class="release-article-buttom">comprar</button>
+                        </article>
+
+                        <article class="release-articule4">
+                            <img src="/images/bolso_under_armor.jpeg" class="release-articule3-image">
+                            <h1 class="release-articule-title">Camiseta River</h1>
+                            <p class="release-article-description">la útlima camiseta</p>
+                            <button class="release-article-buttom">comprar</button>
+                        </article>
+
+                    </section>
+            </div>
+            <div>
+            <section class="recommend">
+                <div class="recommend-section-title">Recomendados para vos</div>
+                    
+                <section class="recommend-article">
+
+                        <article class="recommend-articule1">
+                            <img src="/images/bolso_under_armor.jpeg" class="article-recommend1-image">
+                            <h1 class="recommend-articule-title">Camiseta River</h1>
+                            <p class="recommend-article-description">la útlima camiseta</p>
+                            <button class="recommend-article-buttom">comprar</button>
+                        </article>
+
+                            <article class="recommend-articule2">
+                                <img src="/images/bolso_under_armor.jpeg" class="article-recommend2-image">
+                                <h1 class="recommend-articule-title">Camiseta River</h1>
+                                <p class="recommend-article-description">la útlima camiseta</p>
+                                <button class="recommend-article-buttom">comprar</button>
+                            </article>
+                        
+                            <article class="recommend-articule3">
+                                <img src="/images/bolso_under_armor.jpeg" class="article-recommend3-image">
+                                <h1 class="recommend-articule-title">Camiseta River</h1>
+                                <p class="recommend-article-description">la útlima camiseta</p>
+                                <button class="recommend-article-buttom">comprar</button>
+                            </article>
+
+                        
+                            <article class="recommend-articule4">
+                                <img src="/images/bolso_under_armor.jpeg" class="article-recommend4-image">
+                                <h1 class="recommend-articule-title">Camiseta River</h1>
+                                <p class="recommend-article-description">la útlima camiseta</p>
+                                <button class="recommend-article-buttom">comprar</button>
+                            </article>
+
+                </section>
+            </div>
+            
+            <div>
+            <section class="search">
+
+            </section>
+            </div>
+
+
         </div>
 
 
-        <footer class="footer">
 
-        </footer>
-
-
-
+        </div>
     </main>
+    <footer>
 
-
-
+    </footer>
 </body>
 
 </html>
