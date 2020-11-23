@@ -1,0 +1,207 @@
+.main-container-all {
+    display: flex;
+    margin: 30px 0px;
+    justify-content: space-between;
+}
+
+
+.main-productImg {
+    border: solid 1px grey;
+    width: 150px;
+    height: 150px;
+    margin: 12px;
+    margin-left: -30px;
+}
+
+
+.main-containerDetalle {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-productName {
+    font-weight: 600;
+    color: #606060;
+    font-size: 24px;
+    margin-left: -80px;
+    margin-top: 5px;
+}
+
+.main-productTalle {
+    font-weight: 400;
+    color: #606060;
+    font-size: 18px;
+    margin-left: -80px;
+    margin-top: -25px;
+}
+
+.main-acceso {
+    font-weight: 500;
+    color: #0985d9;
+    font-size: 14px;
+    margin-left: -80px;
+    margin-top: 50px;
+}
+
+
+
+.main-cant {
+    width: 8%;
+    font-size: 14px;
+    flex-direction: column;
+    color: #606060;
+    direction: rtl;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.main-inputCant {
+    border: 1px solid #606060;
+    font-size: 24px;
+}
+
+
+
+.main-total {
+    width: 8%;
+    font-size: 14px;
+    flex-direction: column;
+
+    color: #606060;
+    direction: rtl;
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.main-inputTotal {
+    border: 1px solid #606060;
+    font-size: 24px;
+}
+
+
+.main-envio {
+    
+    flex: 1 1 40%;
+
+    color: #606060;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 14px;
+}
+
+.main-botton {
+    flex: 1 1 40%;
+        color: #606060;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        font-size: 14px;
+}
+
+
+
+.conteinerLeft {
+    
+    
+    border: solid 1px grey;
+    display: flex;
+    width: 60%;
+    justify-content: space-around;
+    
+}
+
+.conteinerRight {
+    
+    display: flex;
+    width: 40%;
+    flex-wrap: wrap;
+}
+
+
+.main-labelSend{
+    
+
+}
+
+.main-inputSend {
+    
+    font-weight: 400;
+    border-radius: 50px;
+    font-size: 14px;
+    width: 200px;
+    border: solid 2px #0985d9;
+    outline: 0px;   
+    height: 30px;
+}
+
+.main-inputDiscount {
+    font-weight: 400;
+    border-radius: 50px;
+    font-size: 14px;
+    width: 200px;
+    border: solid 2px #0985d9;
+    outline: 0px;
+    height: 30px;
+    }
+
+
+
+
+
+
+.main-inputCalc {
+    border-radius: 25px;
+    color: grey;
+    background: #D3D3D3;
+    border: 0px;
+    width: 150px;
+    height: 30px;
+    outline: none;
+    
+ }
+
+.main-inputVal {
+    
+    border-radius: 25px;
+    color: grey;
+    background: #D3D3D3;
+    border: 0px;
+    width: 150px;
+    height: 30px;
+    outline: none;
+    
+    
+}
+
+
+.main-containerBuy{
+    
+    display: flex;
+    justify-content: space-around;
+    flex: 1 1 100%
+
+}
+
+.main-inputBuy {
+
+    font-weight: 400;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 400px;
+    margin:5px;
+    background-color: #0985d9;
+    border: solid 1px #0985d9;
+    color: #ffffff;;
+    height: 30px;
+
+}
+.main-inputBuy:hover{
+border: solid 1px #6ad872;
+    background-color:   #6ad872;
+    cursor: pointer;
+}
