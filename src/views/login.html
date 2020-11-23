@@ -14,7 +14,7 @@
 </head>
 
 <body>
-    <main>
+    <main class="main">
         <header class="main-header">
             <nav class="main-nav">
                 <div class="main-navContainerLogo">
@@ -43,43 +43,46 @@
             </div>
 
             <form method="POST" action="index.html">
-                <div class="section-loginContainerEmail">  
-                    <label for="email" class="section-login__labelEmail">Correo Electrónico<span class="section-login__labelEmail*">*</span></label>
+                <div class="section-loginContainerEmail">
+                    <label for="email" class="section-login__labelEmail">Correo Electrónico<span
+                            class="section-login__labelEmail*">*</span></label>
                     <input type="email" name="email-login" id="email">
                 </div>
-    
+
                 <div class="section-loginContainerPassword">
-                    <label for="password" class="section-loginLabelPassword">Contraseña <span class="section-loginLabelPassword*">*</span></label>
+                    <label for="password" class="section-loginLabelPassword">Contraseña <span
+                            class="section-loginLabelPassword*">*</span></label>
                     <input type="password" name="password-login" id="password">
                     <a href="" class="section-loginResetPassword">Reestablecer Contraseña</a>
                 </div>
 
-                <div class="section-loginContainerButton">  
+                <div class="section-loginContainerButton">
                     <button type="submit" class="section-loginButtonEnterOk">Ingresar</button>
                     <button type="submit" class="section-loginButtonCheckIn">Registrarse</button>
                 </div>
-                
+
                 <div class="section-loginContainerRequired">
                     <small class="section-loginRequired">*Campos Requeridos</small>
                 </div>
             </form>
-          
+
 
         </section>
 
-       
 
 
 
 
-        <div class="section-suscribeContainer">
+
+        <div class="div-suscribeContainer">
             <h4 class="section-suscribeTitle">Recibi Ofertas y Descuentos</h4>
             <form action="index.html" class="section-suscribeForm" method="POST">
-                <label for="mail"></label>
-                <input type="email" id="mail" name="mail-suscribe" placeholder="E-mail">
-                <button type="submit">Suscribirse</button>
+                <input type="email" id="mail" name="mail-suscribe" placeholder=" Ingresá tu mail"
+                    class="section-suscribeFormInput">
+                <button type="submit" class="section-suscribeFormButton">Suscribirse</button>
             </form>
         </div>
+
 
 
 
