@@ -135,14 +135,11 @@ body {
     border-radius: 50px;
     font-size: 18px;
     width: 400px;
+    height: 30px;
     border: solid 2px #0985d9;
 }
 
 .section-suscribeFormInput:focus {
-    font-weight: 400;
-    border-radius: 50px;
-    font-size: 18px;
-    width: 400px;
     outline: 0px;
     color:  #606060;
 }
@@ -152,6 +149,7 @@ body {
     border-radius: 50px;
     font-size: 18px;
     width: 150px;
+    height: 30px;
     background-color: #0985d9;
     border: solid 1px #0985d9;
     color: #ffffff;
