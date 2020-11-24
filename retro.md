@@ -1,0 +1,14 @@
+Start Doing: Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
+    -Tener 2 reuniones semanales. Una al principio de la semana, para ver que vamos a estar haciendo y la Segunda al final, para ver que falto revisar/solucionar y ayudarnos.
+
+More of: Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero). Es decir que los [Start Doing] se convertirán en [More of]. 
+    -Tratar de hacer el poryecto en linea, por si surgen dudas, las cuales nos podamos ayudar mutuamente.
+
+Keep Doing : Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
+    -Trabajar en trello.
+
+Less of: En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. 
+    -Dejar pasar los dias para empezar a organizarnos.
+
+Stop Doing: En este punto exponemos aquellas practicas que a pesar de ser [Less of] pues podemos eliminarlas.
+    
