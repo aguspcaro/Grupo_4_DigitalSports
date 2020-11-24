@@ -133,11 +133,16 @@
     cursor: pointer;
 }
 
+
+/*Campos Requeridos*/
+
 .section-loginRequired {
     color: red;
     font-size: 12px;
     margin-top: 10px;
 }
+
+/*checkpoints*/
 
 
 
