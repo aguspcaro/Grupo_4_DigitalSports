@@ -82,8 +82,9 @@
             publicidad en medios gráficos y onlines deportivos, y programas de magazine.  
 
             
+####	-Trello 
 
-
+			https://trello.com/b/ltePxjNR/tareas
 
 
 
