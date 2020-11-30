@@ -8,19 +8,19 @@ app.listen(3030, function() {
 });
 
 app.get ("/", function (req,res){
-    res.sendFile(__dirname + "/views/index.html")
+    res.sendFile(__dirname + "/views/products/index.html")
     })
 app.get ("/carrito", function (req,res){
-    res.sendFile(__dirname + "/views/carrito.html")
+    res.sendFile(__dirname + "/views/products/carrito.html")
     })    
 app.get ("/detail", function (req,res){
-    res.sendFile(__dirname + "/views/detail.html")
+    res.sendFile(__dirname + "/views/products/detail.html")
     })    
 app.get ("/login", function (req,res){
-    res.sendFile(__dirname + "/views/login.html")
+    res.sendFile(__dirname + "/views/users/login.html")
     })
 app.get ("/register", function (req,res){
-    res.sendFile(__dirname + "/views/register.html")
+    res.sendFile(__dirname + "/views/users/register.html")
     })
 
 
