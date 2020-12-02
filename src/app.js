@@ -23,6 +23,10 @@ app.get ("/register", function (req,res){
     res.sendFile(__dirname + "/views/users/register.html")
     })
 
+app.get ("/adm-producto", function (req,res){
+    res.sendFile(__dirname + "/views/products/adm-producto.html")
+    })
+
 
 app.get('*', (req, res) => {
     res.sendFile(__dirname.replace("\src", "") + '/public/' + req.url);
