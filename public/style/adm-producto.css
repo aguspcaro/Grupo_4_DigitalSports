@@ -39,19 +39,53 @@
             background: pink;
             display: flex;
             flex-direction: column;
+            margin: 0px;
+            padding: 0px;
             width: 50%;
         }
             .aside .foto {
                 background-color: orange;
+
             }
-            .herramientas {
+            .aside .herramientas {
                 background: orange;
-                    
+                border: 1px solid black;
+                margin: 0px;
+                padding: 0px;
+                display: flex;
             }
-            .configuracion {
+                .aside .herramientas .boton-perfil {
+                    align-items: center;
+                    width: 100%;
+                    background: #e2dfdf;
+                }
+            .aside .productos {
                 background: orange;
-                flex-grow: 2;
+                border: 1px solid black;
+                margin: 0px;
+                padding: 0px;
+                display: flex;
             }
+                .aside .productos .boton-productos {
+                    align-items: center;
+                    width: 100%;
+                    background: #e2dfdf;
+                }
+            .aside .configuracion {
+                background: orange;
+
+                margin: 0px;
+                padding: 0px;
+                display: flex;
+                
+            }
+                .aside .configuracion .boton-cofiguracion {
+                   align-items: center;
+                   width: 100%;
+                   background: #e2dfdf;
+                }
+            
+        
         
         
         
@@ -64,7 +98,7 @@
         }
 
             .productoEditar .producto {
-                background: #f0f0f0;
+                background: orange;
                 display: flex;
                 flex-direction: column;
                 
