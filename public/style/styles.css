@@ -9,6 +9,7 @@
 
  .main {
      width: 85%;
+     border: solid 1px red;
  }
 
  /* HEADER */
@@ -24,21 +25,16 @@
 
 
  .main-navContainerLogoIcon {
-     width: 42%;
      display: flex;
      justify-content: flex-start;
      align-items: center;
 
  }
 
- .main-navContainerlogo {
-     align-items: center;
-     margin-left: 10px;
-     width: 100%;
- }
 
  .main-nav__logo {
-     width: 100%;
+     margin-left: 10px;
+     width: 200px;
  }
 
  .main-navListNavegation__icon {
@@ -51,12 +47,6 @@
      display: none;
 
  }
-
- .main-navContainerIcons a i {
-     margin: 0 3px;
-     font-size: 18px;
- }
-
 
  .main-navIcons__heart {
      display: none;
@@ -74,7 +64,7 @@
 
  .main-navIcons__user {
      color: #606060;
-     margin: 0px 10px;
+     margin: 0px 0px 0px 10px;
  }
 
  .main-navIcons__search:hover {
@@ -101,7 +91,7 @@
      flex-direction: column;
      align-items: center;
      justify-content: flex-start;
-     margin: 30px 0px;
+     margin: 50px 0px;
  }
 
 
@@ -180,7 +170,7 @@
  }
 
  .footer__logo {
-     width: 175px;
+     width: 120px;
  }
 
  .footer-Redes__iconInstagram {
@@ -294,29 +284,6 @@
      margin-top: 30px;
  }
 
- @media (min-width: 768px) {
-
-     /* HEADER */
-
-     .main-nav {
-         margin-top: 30px;
-         display: flex;
-         flex-direction: row;
-         flex-wrap: nowrap;
-         justify-content: space-between;
-         align-items: center;
-         padding: 15px;
-     }
-
-     .main-nav__logo {
-         width: 80%;
-     }
- }
-
-
-
-
-
 
  @media (min-width: 1024px) {
 
@@ -329,27 +296,18 @@
          flex-wrap: nowrap;
          justify-content: space-between;
          align-items: center;
-     }
-
-     .main-navContainerLogoIcon {
-         width: 20%;
-         display: flex;
-         justify-content: flex-start;
-         align-items: center;
-     }
-
-     .main-navContainerlogo {
-         align-items: center;
-         width: 100%;
-         margin-left: 0px;
+         border: solid 1px red;
      }
 
      .main-nav__logo {
-         width: 90%;
+         margin-left: 0px;
+         width: 200px;
      }
 
      .main-navContainerListNavegation {
          font-size: 18px;
+         display: flex;
+         border: solid 1px red;
 
      }
 
@@ -357,9 +315,6 @@
          display: none;
      }
 
-     .main-navContainerListNavegation {
-         display: inline-block;
-     }
 
      .main-navListNavegation__woman {
          color: #606060;
@@ -406,43 +361,13 @@
          display: flex;
      }
 
-     .main-navIcons__search {
-         color: #606060;
-         margin: 0px 10px;
-     }
+
 
      .main-navIcons__heart {
          display: inline-block;
          color: #606060;
-         margin: 0px 10px;
+         margin: 0px 20px;
      }
-
-     .main-navIcons__cart {
-         color: #606060;
-         margin: 0px 10px;
-     }
-
-     .main-navIcons__user {
-         color: #606060;
-         margin: 0px 10px;
-     }
-
-     .main-navIcons__search:hover {
-         color: #0985d9
-     }
-
-     .main-navIcons__heart:hover {
-         color: #0985d9
-     }
-
-     .main-navIcons__cart:hover {
-         color: #0985d9
-     }
-
-     .main-navIcons__user:hover {
-         color: #0985d9
-     }
-
 
 
      /*PARA SUSCRIBIRSE*/
@@ -519,7 +444,7 @@
      }
 
      .footer-containerLogo-Redes {
-         margin-top: 32px;
+         margin-top: 40px;
          display: flex;
          flex-direction: column;
          align-items: flex-start;
@@ -527,7 +452,7 @@
      }
 
      .footer__logo {
-         width: 175px;
+         width: 120px;
          margin-bottom: 10px;
      }
 
