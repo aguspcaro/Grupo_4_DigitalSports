@@ -23,9 +23,18 @@
     padding: 15px;
 }
 
+                        
+.main-navContainerLogoListNavegation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 45%;
+}
+
 .main-navContainerLogo {
-    width: 180px;
-    margin-left: -50px;
+    width: 90%;
+    margin-left: 10px;
 }
 
  .main-navContainerListNavegation {
@@ -36,7 +45,6 @@
 .main-navContainerListNavegationIcon {
     color:  #606060;
     font-size: 30px;
-    order: -1;
 }
 
 .main-navContainerIcons a i {
@@ -225,6 +233,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-top: 1px solid  #606060;
 }
 
 .footer-about__icon {
@@ -241,6 +250,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-top: 1px solid  #606060;
 }
 
 .footer-information__icon {
@@ -256,6 +266,8 @@
     flex-direction: row;   
     justify-content: space-between;
     align-items: center;
+    border-top: 1px solid  #606060;
+    border-bottom: 1px solid  #606060;
 }
 
 .footer-attention__icon {
@@ -277,8 +289,41 @@
     margin-top: 30px;
 } 
 
-
 @media (min-width: 768px) {
+    
+/* HEADER */
+
+.main-nav {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+}
+
+                        
+.main-navContainerLogoListNavegation {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+}
+
+.main-navContainerLogo {
+    width: 90%;
+    margin-left: 10px;
+}
+
+
+}
+
+
+
+
+@media (min-width: 1024px) {
     
 /* HEADER */
 
@@ -375,6 +420,7 @@
 .main-navIcons__user:hover {
     color: #0985d9
 }
+
 
 
 /*PARA SUSCRIBIRSE*/
