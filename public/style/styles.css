@@ -1,4 +1,4 @@
-body {
+ body {
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
@@ -9,8 +9,244 @@ body {
 
 .main {
     width: 85%;
+} 
+
+/* HEADER */
+
+.main-nav {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
 }
 
+.main-navContainerLogo {
+    width: 180px;
+    margin-left: -50px;
+}
+
+ .main-navContainerListNavegation {
+    display: none;
+
+} 
+
+.main-navContainerListNavegationIcon {
+    color:  #606060;
+    font-size: 30px;
+    order: -1;
+}
+
+.main-navContainerIcons a i {
+    margin: 0 3px; 
+    font-size: 18px;
+}
+
+
+.main-navIcons__heart {
+    display: none;
+}
+
+.main-navIcons__search {
+    color: #606060;
+    margin: 0px 10px;
+}
+
+.main-navIcons__cart {
+    color: #606060;
+    margin: 0px 10px;
+}
+
+.main-navIcons__user {
+    color: #606060;
+    margin: 0px 10px;
+}
+
+.main-navIcons__search:hover {
+    color: #0985d9
+}
+
+.main-navIcons__cart:hover {
+    color: #0985d9
+}
+
+.main-navIcons__user:hover {
+    color: #0985d9
+} 
+
+
+/*PARA SUSCRIBIRSE*/
+/* 
+
+.div-suscribeContainer {
+    background-color: #ee7209;
+    width: 100%;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 30px 0px;
+}*/
+
+/*
+.section-suscribeTitle {
+    color: #ffffff;
+    font-family:'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+}
+
+.section-suscribeFormInput {
+    font-weight: 400;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 400px;
+    height: 30px;
+    border: solid 2px #0985d9;
+}
+
+.section-suscribeFormInput:focus {
+    outline: 0px;
+    color:  #606060;
+}
+
+.section-suscribeFormButton{
+    font-weight: 400;
+    border-radius: 50px;
+    font-size: 18px;
+    width: 150px;
+    height: 30px;
+    background-color: #0985d9;
+    border: solid 1px #0985d9;
+    color: #ffffff;
+}
+
+.section-suscribeFormButton:hover{
+    border: solid 1px #6ad872;
+    background-color:   #6ad872;
+    cursor: pointer;
+}
+ */
+
+
+/*FOOTER*/
+/* 
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.footer-containerLogo-Redes {
+    margin-top: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex: 1 1 20%;
+}
+
+.footer__logo {
+    width: 175px;
+    margin-bottom: 10px;
+}
+
+.footer-Redes__iconInstagram {
+    color: #606060;
+   margin-right: 5px;
+    font-size: 24px;
+}
+
+.footer-Redes__iconFacebook {
+    color: #606060;
+    margin: 0px 10px;
+    font-size: 24px;
+}
+
+.footer-Redes__iconTwitter {
+    color: #606060;
+    margin: 0px 10px;
+    font-size: 24px;
+    
+}
+
+.footer-Redes__iconTiktok {
+    color: #606060; 
+    margin: 0px 10px;
+    font-size: 24px;
+}
+
+.footer-Redes__iconInstagram:hover {
+    color: #0985d9;
+}
+
+.footer-Redes__iconFacebook:hover {
+    color: #0985d9;
+}
+
+.footer-Redes__iconTwitter:hover {
+    color: #0985d9;
+}
+
+.footer-Redes__iconTiktok:hover {
+    color: #0985d9;
+}
+
+.footer-containerLists {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 1 79%;
+
+}
+
+.footer-containerAboutUs {
+     margin-left: 75px;
+}
+
+
+.footer-aboutUs__list {
+    list-style: none;
+    margin-left: -40px;
+}
+
+.footer-containerInformation {
+    margin-left: 75px;
+}
+
+
+
+.footer-information__list {
+    list-style: none;
+    margin-left: -40px;
+}
+
+.footer-containerAttention {
+    margin-left: 75px;
+}
+
+.footer-attention__list {
+    list-style: none;
+    margin-left: -40px;
+}
+
+
+.footer-containerCopyright {
+    flex: 1 1 100%;
+    background-color:  #606060;
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 18px;
+    margin-top: 30px;
+} */
+
+
+@media (min-width: 768px) {
+    
 /* HEADER */
 
 .main-nav {
@@ -275,3 +511,5 @@ body {
 }
 
 
+
+}
