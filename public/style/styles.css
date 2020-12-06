@@ -143,49 +143,55 @@
 
 
 /*FOOTER*/
-/* 
+
 .footer {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .footer-containerLogo-Redes {
     margin-top: 12px;
     display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.footer-containerLogo {
+    display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    flex: 1 1 20%;
+    justify-content: center;
 }
 
 .footer__logo {
     width: 175px;
-    margin-bottom: 10px;
 }
 
 .footer-Redes__iconInstagram {
     color: #606060;
-   margin-right: 5px;
+    margin: 0px 5px;
     font-size: 24px;
-}
+} 
 
 .footer-Redes__iconFacebook {
     color: #606060;
-    margin: 0px 10px;
+    margin: 0px 5px;
     font-size: 24px;
 }
 
 .footer-Redes__iconTwitter {
     color: #606060;
-    margin: 0px 10px;
+    margin: 0px 5px;
     font-size: 24px;
     
 }
 
 .footer-Redes__iconTiktok {
     color: #606060; 
-    margin: 0px 10px;
+    margin: 0px 5px;
     font-size: 24px;
 }
 
@@ -205,53 +211,71 @@
     color: #0985d9;
 }
 
+
+
 .footer-containerLists {
     display: flex;
-    justify-content: flex-end;
-    flex: 1 1 79%;
-
-}
+    flex-direction: column;
+    width: 50%;
+    margin-top: 20px;
+ }
 
 .footer-containerAboutUs {
-     margin-left: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
+
+.footer-about__icon {
+    color: #000000;
+} 
 
 
 .footer-aboutUs__list {
-    list-style: none;
-    margin-left: -40px;
+    display: none;
 }
 
 .footer-containerInformation {
-    margin-left: 75px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
-
+.footer-information__icon {
+    color: #000000;  
+} 
 
 .footer-information__list {
-    list-style: none;
-    margin-left: -40px;
+    display: none;
 }
 
 .footer-containerAttention {
-    margin-left: 75px;
+    display: flex;
+    flex-direction: row;   
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-attention__icon {
+    color: #000000
 }
 
 .footer-attention__list {
-    list-style: none;
-    margin-left: -40px;
+    display: none;
 }
 
 
 .footer-containerCopyright {
-    flex: 1 1 100%;
+    width: 100%;
     background-color:  #606060;
     display: flex;
     justify-content: center;
     color: #ffffff;
     font-size: 18px;
     margin-top: 30px;
-} */
+} 
 
 
 @media (min-width: 768px) {
