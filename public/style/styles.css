@@ -78,7 +78,7 @@
 
 
 /*PARA SUSCRIBIRSE*/
-/* 
+
 
 .div-suscribeContainer {
     background-color: #ee7209;
@@ -86,13 +86,12 @@
     padding-bottom: 40px;
     display: flex;
     flex-direction: column;
-    flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-start;
     margin: 30px 0px;
-}*/
+}
 
-/*
+
 .section-suscribeTitle {
     color: #ffffff;
     font-family:'Poppins', sans-serif;
@@ -100,14 +99,23 @@
     font-weight: 400;
 }
 
+.section-suscribeForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
 .section-suscribeFormInput {
     font-weight: 400;
     border-radius: 50px;
     font-size: 18px;
-    width: 400px;
+    width: 350px;
     height: 30px;
     border: solid 2px #0985d9;
-}
+} 
+
+
 
 .section-suscribeFormInput:focus {
     outline: 0px;
@@ -123,6 +131,7 @@
     background-color: #0985d9;
     border: solid 1px #0985d9;
     color: #ffffff;
+    margin-top: 10px;
 }
 
 .section-suscribeFormButton:hover{
@@ -130,7 +139,7 @@
     background-color:   #6ad872;
     cursor: pointer;
 }
- */
+ 
 
 
 /*FOOTER*/
