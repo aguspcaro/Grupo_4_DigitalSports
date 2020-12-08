@@ -9,7 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <link rel="stylesheet" href="style/styles.css">
+    <link rel="stylesheet" href="style/login.css">
     <link rel="stylesheet" href="style/carrito.css">
+
 
 </head>
 
@@ -17,11 +19,14 @@
     <main class="main">
         <header class="main-header">
             <nav class="main-nav">
-                <div class="main-navContainerLogo">
-                    <a href="/"</a> 
-                    <img src="logos/logo-digital-sports.svg"  alt="logo-digitasports" class="main-nav__logo">
+                <div class="main-navContainerLogoIcon">
+                    <i class="fas fa-bars main-navListNavegation__icon"></i>
+                    <div class="main-navContainerlogo">
+                        <a href="/"><img src="logos/logo-digital-sports.svg" alt="logo-digitasports"
+                                class="main-nav__logo"></a>
+                    </div>
                 </div>
-                
+
                 <div class="main-navContainerListNavegation">
                     <a href="#" class="main-navListNavegation__woman">Mujer</a>
                     <a href="#" class="main-navListNavegation__man">Hombre</a>
@@ -38,58 +43,59 @@
             </nav>
         </header>
 
-        <div class="main-container-all">
-
-            <div class="conteinerLeft">
-                <div class="main-containerProduct">
-                    <img src="images/predator.jpg" alt="" class="main-productImg">
-                </div>
-                <div class="main-containerDetalle">
-                    <p class="main-productName">Botines Predator</p>
-                    <p class="main-productTalle">Talle 45</p>
-                    <a class="main-acceso" href="/product">Editar Producto</a>
-                </div>
-
-                <div class="main-cant">
-                    <label class="main-labelCant" for="">Cantidad</label>
-                    <input class="main-inputCant" min="1" type="number" name="cantidad" value="1">
-                </div>
-                <div class="main-total">
-                    <label class="main-labelTotal" for="">Total</label>
-                    <input class="main-inputTotal" type="text" readonly name="Total" value="">
-                </div>
-            </div>
-
-            <div class="conteinerRight">
-                <div class="main-envio">
-                  <div class="main-envioContainer">
-                    <label class="main-labelSend" for="">Envío</label>
-                    <input class="main-inputSend" type="text" name="envio" placeholder="Codigo postal" value="">
-                  </div>
-                    <div class="main-inputCalcContainer">
-                        <button class="main-inputCalc" type="button">Calcular</button>
+        <main>
+            
+           <div class="container">
+            <div class="caja">
+               
+                <div class="caja-imagen">
+                    <img src="/images/botin-predator.jpg" alt="">
+                    <p class="productName">ZAPATILLAS Topper Roma</p>
+                    <div class="producto">
+                        <p class="productTalle">Talle 45</p>
+                        <a class="productEdit" href="/product">Editar Producto</a>
                     </div>
-                    
-                </div>
-
-                <div class="main-botton">
-                    <div class="main-bottonContainer">
-                    <label class="main-labelDiscount" for="">Cupón de descuento</label>
-                    <input class="main-inputDiscount" type="text" name="cupon" value="">
                     </div>
-                    <div class="main-inputValContainer">
-                    <button class="main-inputVal" type="button">Validar</button>
-                </div>
-                </div>
-                
-                <div class="main-containerBuy">
-                <button class="main-inputBuy" type="button">Comprar</button>
-                </div>
+
+                    <div class="containerTotal">
+                        <div class="input">
+                            <label class="labelCant" for="">Cantidad</label>
+                            <input class="inputCant " type="number" name="cantidad" value="1">
+                        </div>
+                       
+                        <div class="total">
+                            <label class="labelTotal" for="">Total</label>
+                            <input class="inputTotal" type="text" readonly name="Total" value="">
+                        </div>
+    
+                        </div>
+
             </div>
 
 
-        </div>
+
+            <div class="container-envio">
+                    <div>
+                    <label class="labelSend" for="">Calculá el costo de envío</label>
+                    <input class="inputSend" type="number" name="envio" placeholder="Codigo postal" value="">
+                </div>
+                <div>
+                    <label class="labelDiscount" for="">Tenés un código de promoción?</label>
+                    <input class="inputDiscount" type="text" name="cupon" placeholder="Cupón de descuento"value="">
+                </div>
+            </div>
         
+        
+            <div class="bottons">
+                <button class="inputCalc" type="button">Calcular</button>
+                <button class="inputVal" type="button">Validar</button>
+                <button class="inputBuy" type="button">Comprar</button>
+            </div>
+        </div>
+        </main>
+
+
+
         <div class="div-suscribeContainer">
             <h4 class="section-suscribeTitle">Recibi Ofertas y Descuentos</h4>
             <form action="index.html" class="section-suscribeForm" method="POST">
@@ -107,52 +113,56 @@
                 <div class="footer-containerLogo">
                     <img src="logos/logo-digital-sports.svg" alt="" class="footer__logo">
                 </div>
-    
+
                 <div class="footer-containerRedes">
-                    <a href="https://www.instagram.com/"><i class="fab fa-instagram footer-Redes__iconInstagram"></i></a>
-                    <a href="https://www.facebook.com/"></i><i class="fab fa-facebook footer-Redes__iconFacebook"></i></a>
-                    <a href="https://twitter.com/?lang=en"><i class="fab fa-twitter-square footer-Redes__iconTwitter"></i></a>
+                    <a href="https://www.instagram.com/"><i
+                            class="fab fa-instagram footer-Redes__iconInstagram"></i></a>
+                    <a href="https://www.facebook.com/"></i><i
+                            class="fab fa-facebook footer-Redes__iconFacebook"></i></a>
+                    <a href="https://twitter.com/?lang=en"><i
+                            class="fab fa-twitter-square footer-Redes__iconTwitter"></i></a>
                     <a href="https://www.tiktok.com/en/"><i class="fab fa-tiktok footer-Redes__iconTiktok"></i></a>
                 </div>
-    
+
             </div>
 
             <div class="footer-containerLists">
-            <div class="footer-containerAboutUs">
-                <h4 class="footer-aboutUs__title">Nosotros</h4>
-                <ul class="footer-aboutUs__list">
-                    <li>Acerca de Nosotros</li>
-                    <li>Contacto</li>
-                    <li>Trabaja junto a nosotros</li>
-                    <li>Terminos y condiciones</li>
-                </ul>
-            </div>
+                <div class="footer-containerAboutUs">
+                    <h4 class="footer-aboutUs__title">Nosotros</h4>
+                    <i class="fas fa-arrow-circle-down footer-about__icon"></i>
+                    <ul class="footer-aboutUs__list">
+                        <li>Acerca de Nosotros</li>
+                        <li>Contacto</li>
+                        <li>Trabaja junto a nosotros</li>
+                        <li>Terminos y condiciones</li>
+                    </ul>
+                </div>
 
-            <div class="footer-containerInformation">
-                <h4 class="footer-information__title">Información</h4>
-                <ul class="footer-information__list">
-                    <li>Medios de Pago</li>
-                    <li>Preguntas frecuentes</li>
-                    <li>Como Comprar</li>
-                    <li>Envíos</li>
-                </ul>
-            </div>
+                <div class="footer-containerInformation">
+                    <h4 class="footer-information__title">Información</h4>
+                    <i class="fas fa-arrow-circle-down footer-information__icon"></i>
+                    <ul class="footer-information__list">
+                        <li>Medios de Pago</li>
+                        <li>Preguntas frecuentes</li>
+                        <li>Como Comprar</li>
+                        <li>Envíos</li>
+                    </ul>
+                </div>
 
-            <div class="footer-containerAttention">
-                <h4 class="footer-attention__title">Atención al cliente</h4>
-                <ul class="footer-attention__list">
-                    <li>0800-77-SPORTS</li>
-                    <li>Lunes a Sabado de 9 a 20 hs</li>
-                </ul>
+                <div class="footer-containerAttention">
+                    <h4 class="footer-attention__title">Atención al cliente</h4>
+                    <i class="fas fa-arrow-circle-down footer-attention__icon"></i>
+                    <ul class="footer-attention__list">
+                        <li>0800-77-SPORTS</li>
+                        <li>Lunes a Sabado de 9 a 20 hs</li>
+                    </ul>
+                </div>
             </div>
-        </div>
 
             <div class="footer-containerCopyright">
                 <p>&copy digital-sports</p>
             </div>
         </footer>
-
-
 
 
     </main>
