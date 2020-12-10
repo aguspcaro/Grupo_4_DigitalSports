@@ -43,14 +43,14 @@
             </nav>
         </header>
 
-        <main>
+        <div>
             
            <div class="container">
             <div class="caja">
-               
+                <p class="productName">Botines Predator adidas Sport</p>
                 <div class="caja-imagen">
-                    <img src="/images/botin-predator.jpg" alt="">
-                    <p class="productName">ZAPATILLAS Topper Roma</p>
+                    <img src="/images/adidas_predator.jpg" alt="">
+                   
                     <div class="producto">
                         <p class="productTalle">Talle 45</p>
                         <a class="productEdit" href="/product">Editar Producto</a>
@@ -75,24 +75,28 @@
 
 
             <div class="container-envio">
+                    
+                    <label class="labelSend" for="">Envío</label>
                     <div>
-                    <label class="labelSend" for="">Calculá el costo de envío</label>
                     <input class="inputSend" type="number" name="envio" placeholder="Codigo postal" value="">
-                </div>
-                <div>
-                    <label class="labelDiscount" for="">Tenés un código de promoción?</label>
-                    <input class="inputDiscount" type="text" name="cupon" placeholder="Cupón de descuento"value="">
-                </div>
+                    <button class="inputCalc" type="button">Calcular</button>    
+                    </div>
+                
+                    <label class="labelDiscount" for="">Cupón de descuento</label>
+                    <div>
+                    <input class="inputDiscount" type="text" name="cupon" placeholder=""value="">
+                    <button class="inputVal" type="button">Validar</button>
+                    </div>
             </div>
         
         
-            <div class="bottons">
-                <button class="inputCalc" type="button">Calcular</button>
-                <button class="inputVal" type="button">Validar</button>
-                <button class="inputBuy" type="button">Comprar</button>
-            </div>
+           
         </div>
-        </main>
+        
+        <div class="bottons">
+        <button class="inputBuy" type="submit">Comprar</button>
+        </div>
+    </div>
 
 
 
