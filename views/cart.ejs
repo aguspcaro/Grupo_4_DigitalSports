@@ -8,9 +8,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <link rel="stylesheet" href="style/styles.css">
-    <link rel="stylesheet" href="style/login.css">
-    <link rel="stylesheet" href="style/carrito.css">
+    <link rel="stylesheet" href="stylesheet/styles.css">
+    <link rel="stylesheet" href="stylesheet/login.css">
+    <link rel="stylesheet" href="stylesheet/carrito.css">
 
 
 </head>
@@ -43,63 +43,56 @@
             </nav>
         </header>
 
-        <div>
+        <main>
             
            <div class="container">
             <div class="caja">
-                <p class="productName">Botines Predator adidas Sport</p>
+               
                 <div class="caja-imagen">
-                    <img src="/images/adidas_predator.jpg" alt="">
-                   
+                    <img src="/images/botin-predator.jpg" alt="">
+                    <p class="productName">ZAPATILLAS Topper Roma</p>
                     <div class="producto">
                         <p class="productTalle">Talle 45</p>
                         <a class="productEdit" href="/product">Editar Producto</a>
-                        <div class="containerTotal">
-                            <div class="input">
-                                <label class="labelCant" for="">Cantidad</label>
-                                <input class="inputCant " type="number" name="cantidad" value="1">
-                            </div>
-                           
-                            <div class="total">
-                                <label class="labelTotal" for="">Total</label>
-                                <input class="inputTotal" type="text" readonly name="Total" value="">
-                            </div>
                     </div>
-                    
-                </div>
-                
+                    </div>
 
-            </div>
-                    
+                    <div class="containerTotal">
+                        <div class="input">
+                            <label class="labelCant" for="">Cantidad</label>
+                            <input class="inputCant " type="number" name="cantidad" value="1">
+                        </div>
+                       
+                        <div class="total">
+                            <label class="labelTotal" for="">Total</label>
+                            <input class="inputTotal" type="text" readonly name="Total" value="">
+                        </div>
+    
+                        </div>
 
             </div>
 
 
 
             <div class="container-envio">
-                    
-                    <label class="labelSend" for="">Envío</label>
                     <div>
+                    <label class="labelSend" for="">Calculá el costo de envío</label>
                     <input class="inputSend" type="number" name="envio" placeholder="Codigo postal" value="">
-                    <button class="inputCalc" type="button">Calcular</button>    
-                    </div>
-                
-                    <label class="labelDiscount" for="">Cupón de descuento</label>
-                    <div>
-                    <input class="inputDiscount" type="text" name="cupon" placeholder=""value="">
-                    <button class="inputVal" type="button">Validar</button>
-                    </div>
-                    <div class="bottons">
-                        <button class="inputBuy" type="submit">Comprar</button>
-                        </div>
+                </div>
+                <div>
+                    <label class="labelDiscount" for="">Tenés un código de promoción?</label>
+                    <input class="inputDiscount" type="text" name="cupon" placeholder="Cupón de descuento"value="">
+                </div>
             </div>
         
         
-           
+            <div class="bottons">
+                <button class="inputCalc" type="button">Calcular</button>
+                <button class="inputVal" type="button">Validar</button>
+                <button class="inputBuy" type="button">Comprar</button>
+            </div>
         </div>
-        
-        
-    </div>
+        </main>
 
 
 
