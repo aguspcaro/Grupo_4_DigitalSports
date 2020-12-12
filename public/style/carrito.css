@@ -8,6 +8,7 @@
 
 
 .productName {
+    margin:0px;
     padding:6px;
     text-align: left;
     font-weight: 600;
@@ -158,7 +159,7 @@ margin-top:12px;
 
 
     .caja img {
-        width: 25%;
+        width: 15%;
     }
 
     .caja-imagen {
@@ -167,7 +168,7 @@ margin-top:12px;
     }
 
     .caja {
-        width: 57%;
+        width: 55%;
         display: flex;
         flex-direction: column;
     }
