@@ -1,0 +1,88 @@
+
+
+
+h1{
+    font-weight: 600;
+    color: #606060;
+    font-size: 24px;
+    text-align: center; 
+}
+
+
+.containerAdd{
+
+      
+display:flex;
+flex-direction: column;
+
+}
+
+.labelName, .labelDescri  {
+    font-weight: 400;
+    color: #606060;
+    font-size: 12px;
+  
+}
+.labelDescri{
+margin-top:12px;    
+}
+.inputName{
+    font-weight: 400;
+    border-radius: 50px;
+    font-size: 14px;
+    border: solid 2px #0985d9;
+    outline: 0px;   
+padding:4px;    
+}
+.coments{
+    font-weight: 400;
+    border-radius: 15px;
+    font-size: 14px;
+    border: solid 2px #0985d9;
+    outline: 0px;   
+padding:4px;      
+}
+
+
+/*containerDetalle*/
+
+
+
+.containerDetalle div{
+    width: 40%;
+    display:flex;
+    flex-direction: column;
+    
+    
+} 
+.containerDetalle{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.containerDetalle label , .fotoproducto{
+   
+    font-weight: 400;
+    color: #606060;
+    font-size: 12px;
+}
+
+.containerDetalle input, select{
+    
+    font-weight: 400;
+    border-radius: 50px;
+    font-size: 14px;
+    border: solid 2px #0985d9;
+    outline: 0px;   
+padding:4px;    
+}
+
+.fotoproducto{
+padding: 12px;    
+}
+
+.containerDetalle div{
+    width: 48%;
+}
+
