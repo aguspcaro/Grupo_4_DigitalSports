@@ -7,6 +7,7 @@
      justify-content: center;
  }
 
+ 
  .main {
      width: 85%;
  }
@@ -22,29 +23,44 @@
      align-items: center;
  }
 
+ .main-navListNavegation__icon {
+     color: #606060;
+     font-size: 20px;
+ }
+
 
  .main-navContainerLogoIcon {
      display: flex;
      justify-content: flex-start;
      align-items: center;
+}
 
- }
 
+.main-navListNavegation__icon {
+    color: #606060;
+    font-size: 20px;
+}
+
+
+.main-navContainerlogo {
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+ 
+}
+
+.link-digitasports {
+    display: flex;
+}
 
  .main-nav__logo {
-     margin-left: 10px;
-     width: 200px;
+     width: 120px;
  }
 
- .main-navListNavegation__icon {
-     color: #606060;
-     font-size: 25px;
- }
 
 
  .main-navContainerListNavegation {
      display: none;
-
  }
 
  .main-navIcons__heart {
@@ -97,8 +113,8 @@
  .section-suscribeTitle {
      color: #ffffff;
      font-family: 'Poppins', sans-serif;
-     font-size: 24px;
-     font-weight: 400;
+     font-size: 16px;
+     font-weight: bold;
  }
 
  .section-suscribeForm {
@@ -112,7 +128,7 @@
      font-weight: 400;
      border-radius: 50px;
      font-size: 18px;
-     width: 350px;
+     width: 225px;
      height: 30px;
      border: solid 2px #0985d9;
  }
@@ -169,7 +185,7 @@
  }
 
  .footer__logo {
-     width: 120px;
+     width: 100px;
  }
 
  .footer-Redes__iconInstagram {
@@ -218,7 +234,7 @@
  .footer-containerLists {
      display: flex;
      flex-direction: column;
-     width: 50%;
+     width: 70%;
      margin-top: 20px;
  }
 
@@ -284,9 +300,39 @@
  }
 
 
+@media (min-width: 500px) {
+    .section-suscribeFormInput {
+        font-weight: 400;
+        border-radius: 50px;
+        font-size: 18px;
+        width: 350px;
+        height: 30px;
+        border: solid 2px #0985d9;
+        
+    }
+
+    .footer__logo {
+        width: 150px;
+    }
+}
+
+@media (min-width: 768px) {
+    .section-suscribeFormInput {
+        font-weight: 400;
+        border-radius: 50px;
+        font-size: 18px;
+        width: 450px;
+        height: 30px;
+        border: solid 2px #0985d9;
+    }
+}
+
  @media (min-width: 1024px) {
 
+
      /* HEADER */
+
+  
 
      .main-nav {
          margin-top: 30px;
