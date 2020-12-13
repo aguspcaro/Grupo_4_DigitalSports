@@ -39,13 +39,26 @@ body {
 
     .container-img {
         display: flex;
-        
     }
         .article-imagen-left {
             width: 40vw;
             border: solid 0.5px grey;
             border-radius: 10px;
             box-shadow:0px 4px 3px rgba(0,0,0,.5);
+        }
+        .arrowIzq {
+            font-size: 4em;
+            color: grey;
+            position: absolute;
+            top: 55vh;
+            left: 10vw;
+        }
+        .arrowDer {
+            font-size: 4em;
+            color: grey;
+            position: absolute;
+            top: 55vh;
+            left: 43.5vw;
         }
 
 /* Container imagen derecha */
@@ -294,15 +307,44 @@ body {
                     left: 0.4em;
                     top: 0.7em;
                 }
+                .arrowIzq {
+                    font-size: 3em;
+                    color: grey;
+                    position: absolute;
+                    top: 40vh;
+                    left: 10vw;
+                }
+                .arrowDer {
+                    font-size: 3em;
+                    color: grey;
+                    position: absolute;
+                    top: 40vh;
+                    left: 85vw;
+                }
 }
-@media (max-width: 1230px) {
+@media (min-width: 769px){
     .container-imagenes .article-imagen-right {
         display: none;
     }
-    .container-detalle-talle {
-        width: 100%;
+    .container-detalle {
+        width: 60%;
+        margin-left: 2em;
     }
-    .container-imagenes .article-imagen-left {
-        width: 100%;
+    .container-imag .article-imagen-left {
+        width: 40%;
+    }
+    .arrowIzq {
+        font-size: 3em;
+        color: grey;
+        position: absolute;
+        top: 40vh;
+        left: 10vw;
+    }
+    .arrowDer {
+        font-size: 3em;
+        color: grey;
+        position: absolute;
+        top: 40vh;
+        left: 85vw;
     }
 }
