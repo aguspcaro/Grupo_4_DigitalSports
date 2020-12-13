@@ -23,9 +23,7 @@ flex-direction: column;
     font-size: 12px;
   
 }
-.labelDescri{
-margin-top:12px;    
-}
+
 .inputName{
     font-weight: 400;
     border-radius: 50px;
@@ -61,8 +59,8 @@ padding:4px;
     justify-content: space-between;
     
 }
-.containerDetalle label , .fotoproducto{
-   
+.containerDetalle label  {
+ 
     font-weight: 400;
     color: #606060;
     font-size: 12px;
@@ -78,11 +76,65 @@ padding:4px;
 padding:4px;    
 }
 
-.fotoproducto{
-padding: 12px;    
+.fotoProducto{
+    font-weight: 400;
+    color: #606060;
+    font-size: 12px;
 }
+
+
 
 .containerDetalle div{
     width: 48%;
 }
+
+.labelSku{
+    font-weight: 400;
+    color: #606060;
+    font-size: 12px; 
+}
+
+.inputSku{
+    border: solid 1px black;
+  width: 100%;
+     display:flex;
+ flex-direction: column;   
+}
+.inputSku input{
+    font-weight: 400;
+    border-radius: 50px;
+    font-size: 14px;
+    border: solid 2px #0985d9;
+    outline: 0px;   
+padding:4px;    
+}
+
+
+@media (min-width: 1024px) {
+
+.containerAdd, .containerDetalle{
+    width: 48%;
+    
+ 
+}
+.containerPrincipal{
+ 
+display:flex;
+justify-content: space-between;
+}    
+.containerDetalle div{
+    width: 49%;
+}
+.inputSku{
+    margin-top:0;
+ height: 16px;
+ margin-top: -12px;
+
+}
+.labelSku{
+    margin-top: -12px;
+
+}
+}
+
 

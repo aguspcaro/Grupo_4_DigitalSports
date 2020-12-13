@@ -8,8 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <link rel="stylesheet" href="stylesheet/styles.css">
-    <link rel="stylesheet" href="stylesheet/admproduct.css">
+    <link rel="stylesheet" href="/stylesheet/styles.css">
+    <link rel="stylesheet" href="/stylesheet/admproduct.css">
 
 
 </head>
@@ -42,10 +42,11 @@
             </nav>
         </header>
 
-        <main>
+        
+       
             <h1>Agregar Producto</h1>
-
-            <form action="summit">
+           
+            <form class="containerPrincipal"action="summit">
 
                 <div class="containerAdd">
 
@@ -54,17 +55,16 @@
                     
                     
                         <label class=" labelDescri" for="">Descripción del producto</label>
-                    <textarea class="coments" name="coments" rows="10" placeholder="Escrbí el detalle del producto"
+                    <textarea class="coments" name="coments" rows="10" placeholder=""
                         cols="40"></textarea>
-                </div>
+                        <label class="fotoProducto">Subir fotos del producto</label>
+                        <input class="inputarchivo" ide="file-input" multiple="multiple" type="file" name"adjunto"  accept=".pdf,.jpg,.png">
+                
+                    </div>
 
 
 
-                <div class="fotoproducto">
-                    <label for="">Fotos del producto</label>
-                    <input class="inputarchivo" multiple="multiple" type="file" name"adjunto" value="Send data" accept=".pdf,.jpg,.png">
-                </div>
-
+                
                 
                 
                 <div class="containerDetalle">
@@ -138,31 +138,21 @@
                     <input class="inputstock" type="number" name="stock" placeholder=""">
                     </div>
                     
-
-                </div>
-
-                <div class="inputSku">
+                        <label class="labelSku" for="">Sku</label>
+                    <input class="inputSku" type="number" name="sku" placeholder=""">
                     
-                    <label class=" labelSku" for="">Sku</label>
-                <input  type="number" name="sku" placeholder=""">
                 </div>
+
+                
 
                 </form>
                
-           
-
-        </main>
-
+            
+   
 
 
-        <div class=" div-suscribeContainer">
-                    <h4 class="section-suscribeTitle">Recibi Ofertas y Descuentos</h4>
-                    <form action="index.html" class="section-suscribeForm" method="POST">
-                        <input type="email" id="mail" name="mail-suscribe" placeholder=" Ingresá tu mail"
-                            class="section-suscribeFormInput">
-                        <button type="submit" class="section-suscribeFormButton">Suscribirse</button>
-                    </form>
-                </div>
+
+        
 
 
 
@@ -185,6 +175,16 @@
                         </div>
 
                     </div>
+
+                    <div class="div-suscribeContainer">
+                        <h4 class="section-suscribeTitle">Recibi Ofertas y Descuentos</h4>
+                        <form action="index.html" class="section-suscribeForm" method="POST">
+                            <input type="email" id="mail" name="mail-suscribe" placeholder=" Ingresá tu mail"
+                                class="section-suscribeFormInput">
+                            <button type="submit" class="section-suscribeFormButton">Suscribirse</button>
+                        </form>
+                    </div>
+            
 
                     <div class="footer-containerLists">
                         <div class="footer-containerAboutUs">
