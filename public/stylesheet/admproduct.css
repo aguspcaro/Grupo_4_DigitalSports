@@ -94,19 +94,15 @@ padding:4px;
     font-size: 12px; 
 }
 
-.inputSku{
-    border: solid 1px black;
-  width: 100%;
-     display:flex;
- flex-direction: column;   
-}
-.inputSku input{
+
+.inputSku {
     font-weight: 400;
     border-radius: 50px;
     font-size: 14px;
     border: solid 2px #0985d9;
     outline: 0px;   
 padding:4px;    
+text-align: center;
 }
 
 
@@ -125,16 +121,3 @@ justify-content: space-between;
 .containerDetalle div{
     width: 49%;
 }
-.inputSku{
-    margin-top:0;
- height: 16px;
- margin-top: -12px;
-
-}
-.labelSku{
-    margin-top: -12px;
-
-}
-}
-
-
