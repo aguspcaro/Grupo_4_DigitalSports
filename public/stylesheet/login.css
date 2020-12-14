@@ -1,4 +1,3 @@
-
 /*Contenedor*/
 
 .section-loginContainer {
@@ -54,7 +53,7 @@
 
 .section-login__inputEmail:focus {
     outline: 0px;
-    color:  #606060;
+    color: #606060;
 }
 
 /*Password*/
@@ -86,12 +85,12 @@
 
 .section-login__inputPassword:focus {
     outline: 0px;
-    color:  #606060;
+    color: #606060;
 }
 
 .section-loginResetPassword {
     align-self: flex-end;
-    color:  #0985d9;
+    color: #0985d9;
 }
 
 
@@ -103,7 +102,7 @@
 /*Buttons*/
 
 
-.section-loginContainerButton{
+.section-loginContainerButton {
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
@@ -117,13 +116,13 @@
     font-size: 18px;
     width: 100px;
     background-color: #0985d9;
-    border: solid 1px  #0985d9;
+    border: solid 1px #0985d9;
     color: #fff;
 }
 
 .section-loginButtonEnterOk:hover {
     border: solid 1px #6ad872;
-    background-color:   #6ad872;
+    background-color: #6ad872;
     cursor: pointer;
 }
 
@@ -133,15 +132,16 @@
     border-radius: 50px;
     font-size: 18px;
     width: 120px;
-    background-color:  #fff;;
-    border: solid 1px  #0985d9;
-    color:#0985d9;
+    background-color: #fff;
+    ;
+    border: solid 1px #0985d9;
+    color: #0985d9;
     margin-bottom: 10px;
 }
 
 .section-loginButtonCheckIn:hover {
     border: solid 1px #6ad872;
-    background-color:   #6ad872;
+    background-color: #6ad872;
     color: #fff;
     cursor: pointer;
 }
@@ -160,42 +160,40 @@
     margin-top: 10px;
 }
 
-/*checkpoints*/
+/*breackpoints*/
 
 
 @media (min-width:400px) {
     .section-form-login {
-        width: 80%;
-}
-    
+        width: 95%;
+    }
+
 }
 
 @media (min-width:576px) {
     .section-form-login {
         width: 60%
     }
+}
 
 @media (min-width:768px) {
     .section-form-login {
-        width: 40%;
+        width: 60%;
     }
-    
+
 }
 
 @media (min-width:920px) {
     .section-form-login {
-        width: 30%;
+        width: 50%;
     }
-    
+
 }
 
 
+@media (min-width:1024px) {
+    .section-form-login {
+        width: 40%;
+    }
 
-
-
-
-
-
-
-
-
+}
