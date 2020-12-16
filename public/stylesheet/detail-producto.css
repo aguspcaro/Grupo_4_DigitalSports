@@ -44,7 +44,6 @@ body {
             width: 40vw;
             border: solid 0.5px grey;
             border-radius: 10px;
-            box-shadow:0px 4px 3px rgba(0,0,0,.5);
         }
         .arrowIzq {
             font-size: 4em;
@@ -73,7 +72,6 @@ body {
             width: 12.5vw;
             border: solid 1px grey;
             border-radius: 10px;
-            box-shadow:0px 4px 3px rgba(0,0,0,.5);
         }
 
 /* Container detalle del producto*/
@@ -140,7 +138,8 @@ body {
                 flex-wrap: wrap;
                 border-bottom: 1px solid grey;
                 border-top: 1px solid grey;
-                width: 100%;           
+                width: 100%;   
+                max-width: 90%;        
             }
                 .container-detalle-talles-numero input[type="radio"] {
                     display: none;
@@ -244,7 +243,7 @@ body {
         flex-direction: column;
         font-size: 1em;
     }
-        div .menu {
+        .menu {
             display: none;
         }
 
@@ -259,6 +258,7 @@ body {
             .article-imagen-left {
                 width: 100%;
                 margin-bottom: 5%;
+                margin-top: 5%;
             }
 
         .container-detalle {
@@ -267,6 +267,7 @@ body {
             width: 100%;
             font-size: 1em;
             margin-bottom: 1%;
+            margin-left: 0%
         }
             .container-detalle-titulo {
                 width: 100%;
@@ -286,6 +287,7 @@ body {
             }
                 .container-detalle-talles-numero {
                     width: 100%;
+                    max-width: 80%;
                 }
             .container-detalle-comprar {
                 width: 100%;
@@ -308,43 +310,44 @@ body {
                     top: 0.7em;
                 }
                 .arrowIzq {
-                    font-size: 3em;
-                    color: grey;
-                    position: absolute;
-                    top: 40vh;
-                    left: 10vw;
+                    display: none;
                 }
                 .arrowDer {
-                    font-size: 3em;
-                    color: grey;
-                    position: absolute;
-                    top: 40vh;
-                    left: 85vw;
+                    display: none;
                 }
+                
 }
-@media (min-width: 769px){
+@media (min-width: 792px) {
+    
+    .container-detalle {
+        margin-left: 1%;
+    }
+}
+
+@media (max-width: 1300px){
     .container-imagenes .article-imagen-right {
+        display: none;
+    }
+    .container-imagenes {
         display: none;
     }
     .container-detalle {
         width: 60%;
-        margin-left: 2em;
     }
     .container-imag .article-imagen-left {
         width: 40%;
+        margin-top: 5%;
     }
+    
     .arrowIzq {
-        font-size: 3em;
-        color: grey;
-        position: absolute;
-        top: 40vh;
-        left: 10vw;
+        display: none;
     }
     .arrowDer {
-        font-size: 3em;
-        color: grey;
-        position: absolute;
-        top: 40vh;
-        left: 85vw;
+        display: none;
     }
+    .menu {
+        display: none;
+    }
+    
+    
 }
