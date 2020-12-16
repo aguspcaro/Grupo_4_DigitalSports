@@ -230,7 +230,7 @@ body {
     width: 100%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 760px) {
     body {
         width: 100vw;
         font-size: 10px;
@@ -317,25 +317,24 @@ body {
                 }
                 
 }
-@media (min-width: 792px) {
-    
-    .container-detalle {
-        margin-left: 1%;
-    }
-}
+
 
 @media (max-width: 1300px){
-    .container-imagenes .article-imagen-right {
-        display: none;
+    .container-section-producto {
+        font-size: 0.8em;
+        margin-top: 2%;
     }
     .container-imagenes {
         display: none;
     }
     .container-detalle {
+        margin-left: 1%;
+    }
+    .container-detalle {
         width: 60%;
     }
     .container-imag .article-imagen-left {
-        width: 40%;
+        height: 50vh;
         margin-top: 5%;
     }
     
