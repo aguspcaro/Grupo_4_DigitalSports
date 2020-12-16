@@ -86,6 +86,12 @@
      color: #0985d9
  }
 
+
+ .main-navIcons__heart:hover {
+    color: #0985d9
+}
+
+
  .main-navIcons__cart:hover {
      color: #0985d9
  }
@@ -312,7 +318,7 @@
     }
 
     .footer__logo {
-        width: 150px;
+        width: 180px;
     }
 }
 
@@ -324,6 +330,10 @@
         width: 450px;
         height: 30px;
         border: solid 2px #0985d9;
+    }
+
+    .main-nav__logo {
+        width: 200px;
     }
 }
 

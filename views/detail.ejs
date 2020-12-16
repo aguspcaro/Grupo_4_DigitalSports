@@ -1,56 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital-Sports</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <link rel="stylesheet" href="stylesheet/styles.css">
-    <link rel="stylesheet" href= "stylesheet/detail-styles.css">
+<%- include("partials/head")  %>
+    <link rel="stylesheet" href= "stylesheet/detail-producto.css">
 </head>
 
 <body>
     <main class="main">
-        <header class="main-header">
-            <nav class="main-nav">
-                <div class="main-navContainerLogo">
-                    <a href="/"></a> 
-                    <img src="logos/logo-digital-sports.svg"  alt="logo-digitasports" class="main-nav__logo">
-                </div>
-                
-                <div class="main-navContainerListNavegation">
-                    <a href="#" class="main-navListNavegation__woman">Mujer</a>
-                    <a href="#" class="main-navListNavegation__man">Hombre</a>
-                    <a href="#" class="main-navListNavegation__childs">Niños</a>
-                    <a href="#" class="main-navListNavegation__brands">Marcas</a>
-                </div>
-
-                <div class="main-navContainerIcons">
-                    <a href=""><i class="fas fa-search main-navIcons__search"></i></a>
-                    <a href=""><i class="fas fa-heart main-navIcons__heart"></i></a>
-                    <a href="carrito"><i class="fas fa-shopping-cart main-navIcons__cart"></i></a>
-                    <a href="login"><i><i class="fas fa-user main-navIcons__user"></i></i></a>
-                </div>
-            </nav>
-        </header>
-
-        <div>
-            <div class="main-icon">
-                <a href="Home"></a>
+        <%- include("partials/header")  %>
+        <div class="menu">
+            <div>
+                <p><a href="#"><i class="fas fa-home home"></i></a></p>
+            </div>            
+            <div class="detalle titulo">
+                <p class="menu-producto">/ Seccion de la home / Nombre del producto</p>
             </div>
+        </div>
+        <div class="contenedorPadre">
             <section class="container-section-producto">
 
 
                 <div class="container-img">
-                    <img class="article-imagen-left" src="images/zapatillas-de-futbol-predator-20.3-moqueta.jpg" alt="" >
+                    <a href=""><i class="fas fa-angle-left arrowIzq"></i></a>
+                    <a href=""><i class="fas fa-angle-right arrowDer"></i></a>
+                    <img class="article-imagen-left" src="/images/zapatillas-de-futbol-predator-20.3-moqueta.jpg" alt="" >
                 </div>
 
                 <div class="container-imagenes">
-                    <img class="article-imagen-right" src="images/zapatillas-de-futbol-predator-20.3-moqueta.jpg" alt="" >  
-                    <img class="article-imagen-right" src="images/zapatillas-de-futbol-predator-20.3-moqueta.jpg" alt="" >
-                    <img class="article-imagen-right" src="images/zapatillas-de-futbol-predator-20.3-moqueta.jpg" alt="" >                
+                    <img class="article-imagen-right" src="/images/predator.jpg" alt="" >  
+                    <img class="article-imagen-right" src="/images/zapatilla_nike_.JPG" alt="" >
+                    <img class="article-imagen-right" src="/images/zapatilla_nike_air_Bella.JPG" alt="" >                
                 </div>
 
 
@@ -62,30 +38,48 @@
                             <h3>Botines Adidas Predator 20.3</h3>
                         </div>
                         <div class="container-texto-precio">
-                            <h2>$3599</h2>
+                            <h2><strong>$3599</strong></h2>
                             <h4>antes $4679</h4>
                         </div>
                     </div>
-                 
+
                     <div class="container-detalle-talle">
                         <div>
                             <p><label for= "" >Talle</label></p>
                         </div>
-                        <div class="container-detalle-talles">
-                            <p><input type="radio" name="talle">39</p>
-                            <p><input type="radio" name="talle">40</p>
-                            <p><input type="radio" name="talle">41</p>
-                            <p><input type="radio" name="talle">42</p>
+                        <div class="container-detalle-talles-numero">
+                            <input type="radio" name="talle" id="36">
+                            <label for="36">36</label>
+                            <input type="radio" name="talle" id="37">
+                            <label for="37">37</label>
+                            <input type="radio" name="talle" id="38">
+                            <label for="38">38</label>
+                            <input type="radio" name="talle" id="39">
+                            <label for="39">39</label>
+                            <input type="radio" name="talle" id="40">
+                            <label for="40">40</label>
+                            <input type="radio" name="talle" id="41">
+                            <label for="41">41</label>
+                            <input type="radio" name="talle" id="42">
+                            <label for="42">42</label>
+                            <input type="radio" name="talle" id="43">
+                            <label for="43">43</label>
+                            <input type="radio" name="talle" id="44">
+                            <label for="44">44</label>
                         </div>
+                        
                     </div>
                     
                     <div class="container-detalle-comprar">
-                        <div>
-                            <a href="images/carrito-de-compras.png"></a>
+                        <button type="submit" class="section-loginButtonEnterOk"><a href=""><i class="fas fa-shopping-cart carrito"></i></a></button>
+                        <div class="logo-like">
+                            <p>
+                                <a href=""><i class="fas fa-heart like"></i></a>
+                            </p>
+                            
                         </div>
-                        <button type="submit" class="section-loginButtonEnterOk"><a href="images/carrito-de-compras.png"></a>Comprar</button>
                     </div>
-                  
+
 
                 </div>
 
@@ -100,65 +94,11 @@
             </div>
 
         </div>
-        <div class="div-suscribeContainer">
-            <h4 class="section-suscribeTitle">Recibi Ofertas y Descuentos</h4>
-            <form action="index.html" class="section-suscribeForm" method="POST">
-                <input type="email" id="mail" name="mail-suscribe" placeholder=" Ingresá tu mail"
-                    class="section-suscribeFormInput">
-                <button type="submit" class="section-suscribeFormButton">Suscribirse</button>
-            </form>
-        </div>
-        
+   
+        <%- include("partials/form-suscribe")  %>
 
-        <footer class="footer">
-            <div class="footer-containerLogo-Redes">
-                <div class="footer-containerLogo">
-                    <img src="logos/logo-digital-sports.svg" alt="" class="footer__logo">
-                </div>
-    
-                <div class="footer-containerRedes">
-                    <a href="https://www.instagram.com/"><i class="fab fa-instagram footer-Redes__iconInstagram"></i></a>
-                    <a href="https://www.facebook.com/"></i><i class="fab fa-facebook footer-Redes__iconFacebook"></i></a>
-                    <a href="https://twitter.com/?lang=en"><i class="fab fa-twitter-square footer-Redes__iconTwitter"></i></a>
-                    <a href="https://www.tiktok.com/en/"><i class="fab fa-tiktok footer-Redes__iconTiktok"></i></a>
-                </div>
-    
-            </div>
 
-            <div class="footer-containerLists">
-            <div class="footer-containerAboutUs">
-                <h4 class="footer-aboutUs__title">Nosotros</h4>
-                <ul class="footer-aboutUs__list">
-                    <li>Acerca de Nosotros</li>
-                    <li>Contacto</li>
-                    <li>Trabaja junto a nosotros</li>
-                    <li>Terminos y condiciones</li>
-                </ul>
-            </div>
-
-            <div class="footer-containerInformation">
-                <h4 class="footer-information__title">Información</h4>
-                <ul class="footer-information__list">
-                    <li>Medios de Pago</li>
-                    <li>Preguntas frecuentes</li>
-                    <li>Como Comprar</li>
-                    <li>Envíos</li>
-                </ul>
-            </div>
-
-            <div class="footer-containerAttention">
-                <h4 class="footer-attention__title">Atención al cliente</h4>
-                <ul class="footer-attention__list">
-                    <li>0800-77-SPORTS</li>
-                    <li>Lunes a Sabado de 9 a 20 hs</li>
-                </ul>
-            </div>
-        </div>
-
-            <div class="footer-containerCopyright">
-                <p>&copy digital-sports</p>
-            </div>
-        </footer>
+        <%- include("partials/footer")  %>
     </main>
 </body>
 </html>

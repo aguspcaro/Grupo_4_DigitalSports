@@ -9,7 +9,7 @@ var registerRouter = require('./routes/register');
 var loginRouter= require('./routes/login');
 var cartRouter = require('./routes/cart');
 var detailRouter = require('./routes/detail'); 
-
+var admproductRouter = require('./routes/admproduct'); 
 
 
 
@@ -31,7 +31,7 @@ app.use('/register', registerRouter);
 app.use('/login', loginRouter);
 app.use('/cart', cartRouter);
 app.use('/detail', detailRouter); 
-
+app.use('/admproduct', admproductRouter); 
 
 
 // catch 404 and forward to error handler
@@ -51,3 +51,4 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+

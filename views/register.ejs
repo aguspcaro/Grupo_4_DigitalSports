@@ -1,45 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital-Sports</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-    <link rel="stylesheet" href="stylesheet/styles.css">
-    <link rel="stylesheet" href="stylesheet/register.css">
+<%- include("partials/head")  %>
+<link rel="stylesheet" href="stylesheet/register.css">
 
 
 </head>
 
 <body>
     <main class="main">
-        <header class="main-header">
-            <nav class="main-nav">
-                <div class="main-navContainerLogoIcon">
-                    <i class="fas fa-bars main-navListNavegation__icon"></i>
-                    <div class="main-navContainerlogo">
-                       <a href="/"><img src="logos/logo-digital-sports.svg" alt="logo-digitasports" class="main-nav__logo"></a>
-                    </div>
-                </div>
 
-                <div class="main-navContainerListNavegation">
-                    <a href="#" class="main-navListNavegation__woman">Mujer</a>
-                    <a href="#" class="main-navListNavegation__man">Hombre</a>
-                    <a href="#" class="main-navListNavegation__childs">Niños</a>
-                    <a href="#" class="main-navListNavegation__brands">Marcas</a>
-                </div>
+        <%- include("partials/header")  %>
 
-                <div class="main-navContainerIcons">
-                    <a href=""><i class="fas fa-search main-navIcons__search"></i></a>
-                    <a href=""><i class="fas fa-heart main-navIcons__heart"></i></a>
-                    <a href="carrito"><i class="fas fa-shopping-cart main-navIcons__cart"></i></a>
-                    <a href="login"><i><i class="fas fa-user main-navIcons__user"></i></i></a>
-                </div>
-            </nav>
-        </header>
 
         <section class="section-registerContainer">
             <div class="section-registerContainerTitle">
@@ -47,64 +16,69 @@
             </div>
 
             <form method="POST" action="index.html" class="section-form-register">
-              <div class="section-registerContainerLeft">
-                <div class="section-registerContainerName">
-                    <label for="name" class="section-register__labelName">Nombre<span
-                            class="section-register__spanLabelName">*</span></label>
-                    <input type="text" name="name-register" id="name" class="section-register__inputName">
+                <div class="section-registerContainerLeft">
+                    <div class="section-registerContainerName">
+                        <label for="name" class="section-register__labelName">Nombre<span
+                                class="section-register__spanLabelName">*</span></label>
+                        <input type="text" name="name-register" id="name" class="section-register__inputName">
+                    </div>
+
+                    <div class="section-registerContainerLastName">
+                        <label for="lastName" class="section-register__labelLastName">Apellido<span
+                                class="section-register__spanLabelLastName">*</span></label>
+                        <input type="text" name="lastName-register" id="lastName"
+                            class="section-register__inputLastName">
+                    </div>
+
+                    <div class="section-registerContainerEmail">
+                        <label for="email" class="section-register__labelEmail">Correo Electrónico<span
+                                class="section-register__spanLabelEmail">*</span></label>
+                        <input type="email" name="email-register" id="email" class="section-register__inputEmail">
+                    </div>
+
                 </div>
 
-                <div class="section-registerContainerLastName">
-                    <label for="lastName" class="section-register__labelLastName">Apellido<span
-                            class="section-register__spanLabelLastName">*</span></label>
-                    <input type="text" name="lastName-register" id="lastName" class="section-register__inputLastName">
-                </div>
+                <div class="section-registerContainerRight">
+                    <div class="section-registerContainerPassword">
+                        <label for="password" class="section-registerLabelPassword">Contraseña<span
+                                class="section-register__spanLabelPassword">*</span></label>
+                        <input type="password" name="password-register" id="password"
+                            class="section-register__inputPassword ">
+                    </div>
 
-                <div class="section-registerContainerEmail">
-                    <label for="email" class="section-register__labelEmail">Correo Electrónico<span
-                            class="section-register__spanLabelEmail">*</span></label>
-                    <input type="email" name="email-register" id="email" class="section-register__inputEmail">
-                </div>
+                    <div class="section-registerContainerConfirmPassword">
+                        <label for="confirmPassword" class="section-registerLabelConfirmPassword">Confirmar Contraseña
+                            <span class="section-register__spanLabelConfirmPassword">*</span></label>
+                        <input type="password" name="confirmPassword-register" id="confirmPassword"
+                            class="section-register__inputConfirmPassword">
+                    </div>
 
-              </div>
+                    <div class="section-registerContainerRequired">
+                        <small class="section-registerRequired">*Campos Requeridos</small>
+                    </div>
 
-              <div class="section-registerContainerRight">
-                <div class="section-registerContainerPassword">
-                    <label for="password" class="section-registerLabelPassword">Contraseña (mínimo 8 carácteres) <span
-                            class="section-register__spanLabelPassword">*</span></label>
-                    <input type="password" name="password-register" id="password" class="section-register__inputPassword ">
-                </div>
+                    <div class="section-registerContainerChecks">
+                        <div class="section-registerContainerChecksMails">
+                            <input type="checkbox" name="Quiere recibir mails" value="RE"
+                                class="section-registerChecksReceiveEmails">
+                            <span>Quiero recibir Mails con noticias y promociones</span>
+                        </div>
+                        <div class="section-registerContainerChecksConditions">
+                            <input type="checkbox" name="Acepta Términos" value="AC"
+                                class="section-registerChecksAceptConditions">
+                            <span>Acepto Términos y Condiciones</span>
+                        </div>
+                    </div>
 
-                <div class="section-registerContainerConfirmPassword">
-                    <label for="confirmPassword" class="section-registerLabelConfirmPassword">Confirmar Contraseña <span
-                            class="section-register__spanLabelConfirmPassword">*</span></label>
-                    <input type="password" name="confirmPassword-register" id="confirmPassword" class="section-register__inputConfirmPassword">
-                </div>
 
-                <div class="section-registerContainerRequired">
-                    <small class="section-registerRequired">*Campos Requeridos</small>
-                </div>
 
-                <div class="section-registerContainerChecks">
-                  <div class="section-registerContainerChecksMails">
-                    <input type="checkbox" name="Quiere recibir mails" value="RE" class="section-registerChecksReceiveEmails">
-                    <span>Quiero recibir Mails con noticias y promociones</span> 
-                  </div>  
-                  <div class="section-registerContainerChecksConditions">
-                    <input type="checkbox" name="Acepta Términos" value="AC" class="section-registerChecksAceptConditions">
-                    <span>Acepto Términos y Condiciones</span>
-                  </div>
+                    <div class="section-registerContainerButton">
+                        <button type="submit" class="section-registerCreateAccount">Crear Cuenta</button>
+                    </div>
                 </div>
 
 
 
-                <div class="section-registerContainerButton">
-                    <button type="submit" class="section-registerCreateAccount">Crear Cuenta</button>
-                </div>
-              </div>
-             
-
-              
             </form>
 
 
@@ -114,74 +88,11 @@
 
 
 
-        <div class="div-suscribeContainer">
-            <h4 class="section-suscribeTitle">Recibi Ofertas y Descuentos</h4>
-            <form action="index.html" class="section-suscribeForm" method="POST">
-                <input type="email" id="mail" name="mail-suscribe" placeholder=" Ingresá tu mail"
-                    class="section-suscribeFormInput">
-                <button type="submit" class="section-suscribeFormButton">Suscribirse</button>
-            </form>
-        </div>
+        <%- include("partials/form-suscribe")  %>
 
 
+        <%- include("partials/footer")  %>
 
-
-       
-        <footer class="footer">
-            <div class="footer-containerLogo-Redes">
-                <div class="footer-containerLogo">
-                    <img src="logos/logo-digital-sports.svg" alt="" class="footer__logo">
-                </div>
-
-                <div class="footer-containerRedes">
-                    <a href="https://www.instagram.com/"><i
-                            class="fab fa-instagram footer-Redes__iconInstagram"></i></a>
-                    <a href="https://www.facebook.com/"></i><i
-                            class="fab fa-facebook footer-Redes__iconFacebook"></i></a>
-                    <a href="https://twitter.com/?lang=en"><i
-                            class="fab fa-twitter-square footer-Redes__iconTwitter"></i></a>
-                    <a href="https://www.tiktok.com/en/"><i class="fab fa-tiktok footer-Redes__iconTiktok"></i></a>
-                </div>
-
-            </div>
-
-            <div class="footer-containerLists">
-                <div class="footer-containerAboutUs">
-                    <h4 class="footer-aboutUs__title">Nosotros</h4>
-                    <i class="fas fa-arrow-circle-down footer-about__icon"></i>
-                    <ul class="footer-aboutUs__list">
-                        <li>Acerca de Nosotros</li>
-                        <li>Contacto</li>
-                        <li>Trabaja junto a nosotros</li>
-                        <li>Terminos y condiciones</li>
-                    </ul>
-                </div>
-
-                <div class="footer-containerInformation">
-                    <h4 class="footer-information__title">Información</h4>
-                    <i class="fas fa-arrow-circle-down footer-information__icon"></i>
-                    <ul class="footer-information__list">
-                        <li>Medios de Pago</li>
-                        <li>Preguntas frecuentes</li>
-                        <li>Como Comprar</li>
-                        <li>Envíos</li>
-                    </ul>
-                </div>
-
-                <div class="footer-containerAttention">
-                    <h4 class="footer-attention__title">Atención al cliente</h4>
-                    <i class="fas fa-arrow-circle-down footer-attention__icon"></i>
-                    <ul class="footer-attention__list">
-                        <li>0800-77-SPORTS</li>
-                        <li>Lunes a Sabado de 9 a 20 hs</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="footer-containerCopyright">
-                <p>&copy digital-sports</p>
-            </div>
-        </footer>
 
 
     </main>
