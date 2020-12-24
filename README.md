@@ -31,27 +31,27 @@
 #### -Listado de cinco páginas referentes:
 
 
-1- Beko = https://www.beko.com/es-es
+1- (Beko)[https://www.beko.com/es-es]
 
 -> Muy facil de interpretar, muy dinámica, colores y diseño agradable. 
 
 
-2- Mercado Libre: https://www.mercadolibre.com.ar
+2- (Mercado Libre)[https://www.mercadolibre.com.ar]
 
 -> Variedad de productos. Mezcla óptima entre diseño, funcionalidad. Nos gusta la forma de distribuir los productos y como va directamente al grano según las necesidades de cada comprador, según el historial de busqueda. 
 
 
-3- Adidas = https://www.adidas.com.ar/
+3- (Adidas)[https://www.adidas.com.ar/]
 
 -> Interfaz muy cómoda para navegar. Variedad de contenido (videos, fotos, etc). Fácil de utilizar y de realizar la compra. Diseño agradable.
 
 
-4- deautos = https://www.deautos.com/
+4- (deautos)[https://www.deautos.com/]
 
 -> Productos bien detallados. Dinámica. Variedad de servicios y productos. Fácil de usar.
 
 
-5- Rip Curl Argentina = https://www.ripcurlargentina.com/
+5- (Rip Curl Argentina)[https://www.ripcurlargentina.com/]
 
 -> Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodcutos. Te va llevando por los diferentes productos que tiene y está bien categorizado para facilitar la busqueda.
 
