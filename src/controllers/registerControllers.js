@@ -3,5 +3,4 @@ let registerControllers = {
         res.render('register');
       }
 }
-
 module.exports = registerControllers;
