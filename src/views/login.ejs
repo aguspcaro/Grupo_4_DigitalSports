@@ -13,23 +13,26 @@
                 <h4 class="section-loginTitle">Clientes</h4>
             </div>
 
-            <form method="POST" action="index.html" class="section-form-login">
+            <form method="POST" action="/loginUsuario" class="section-form-login">
                 <div class="section-loginContainerEmail">
                     <label for="email" class="section-login__labelEmail">Correo Electrónico<span
                             class="section-login__spanLabelEmail">*</span></label>
-                    <input type="email" name="email-login" id="email" class="section-login__inputEmail">
+                    <input type="email" name="emailLogin" id="email" class="section-login__inputEmail">
                 </div>
 
                 <div class="section-loginContainerPassword">
                     <label for="password" class="section-loginLabelPassword">Contraseña <span
                             class="section-login__spanLabelPassword">*</span></label>
-                    <input type="password" name="password-login" id="password" class="section-login__inputPassword">
+                    <input type="password" name="passwoLogin" id="password" class="section-login__inputPassword">
                     <a href="" class="section-loginResetPassword">Reestablecer Contraseña</a>
                 </div>
 
                 <div class="section-loginContainerButton">
                     <button type="submit" class="section-loginButtonEnterOk">Ingresar</button>
-                    <button type="submit" class="section-loginButtonCheckIn">Registrarse</button>
+
+                    <form action="/newUser" class="registro" method="GET">
+                        <button type="submit" class="section-loginButtonCheckIn">Registrarse</button>
+                    </form>
                 </div>
 
                 <div class="section-loginContainerRequired">

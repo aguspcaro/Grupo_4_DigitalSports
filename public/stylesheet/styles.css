@@ -63,6 +63,11 @@
      display: none;
  }
 
+ .main-navContainerIcons {
+     display: flex;
+     flex-direction: row;
+ }
+
  .main-navIcons__heart {
      display: none;
  }
@@ -71,6 +76,14 @@
      color: #606060;
      margin: 0px 10px;
  }
+    .search {
+        border-radius: 20px;
+        border: solid 1px #0985d9;
+        padding: 4px;
+        width: 50%;
+        margin-left: 20%;
+    }
+    
 
  .main-navIcons__cart {
      color: #606060;
