@@ -13,7 +13,7 @@
                 <h4 class="section-loginTitle">Clientes</h4>
             </div>
 
-            <form method="POST" action="/loginUsuario" class="section-form-login">
+            <form method="POST" action="/users/login" class="section-form-login">
                 <div class="section-loginContainerEmail">
                     <label for="email" class="section-login__labelEmail">Correo Electrónico<span
                             class="section-login__spanLabelEmail">*</span></label>
@@ -25,16 +25,19 @@
                             class="section-login__spanLabelPassword">*</span></label>
                     <input type="password" name="passwordLogin" id="password" class="section-login__inputPassword">
                     <a href="" class="section-loginResetPassword">Reestablecer Contraseña</a>
+                    <div class="section-loginContainerRequired">
+                        <small class="section-loginRequired">*Campos Requeridos</small>
+                    </div>
                 </div>
+
+               
 
                 <div class="section-loginContainerButton">
                     <a class="section-loginButtonCheckIn" href="/users/register">Registrarse</a>
-                    <a class="section-loginButtonEnterOk" href="/users/#">Ingresar</a>
+                    <a class="section-loginButtonEnterOk" href="/">Ingresar</a>
                 </div>
 
-                <div class="section-loginContainerRequired">
-                    <small class="section-loginRequired">*Campos Requeridos</small>
-                </div>
+               
             </form>
 
 

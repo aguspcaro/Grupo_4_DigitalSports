@@ -1,15 +1,18 @@
 let usersControllers = {
   register: function (req, res, next) {
-    res.render('register');
+    res.render("register");
   },
   registration: function (req, res, next) {
-    res.send('felicitaciones te has registrado');
+    res.send("felicitaciones te has registrado");
   },
   login: function (req, res, next) {
-    res.render('login');
+    res.render("login");
   },
-  suscribre: function (req, res, next) {
-    res.send('Te suscribiste');
+  checkLogin: function (req, res, next) {
+    res.send("Has ingresado correctamente");
+  },
+  suscribe: function (req, res, next) {
+    res.render("thankYou");
 
     //     /*res.redirect("bienvenido");*/
   },
