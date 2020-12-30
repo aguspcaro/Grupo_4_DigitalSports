@@ -395,6 +395,9 @@ body {
     display: flex;
     margin: 15px 0px;
     font-weight: 600;
+   border-top: solid 1px #bdbdbd;
+   border-bottom: solid 1px  #bdbdbd;
+    padding: 10px 0px;
   }
 
   .main-navListNavegation__icon {
@@ -449,7 +452,7 @@ body {
   .main-navIcons__heart {
     display: inline-block;
     color: #606060;
-    margin: 0px 5px;
+    margin: 0px 10px;
   }
 
   /*PARA SUSCRIBIRSE*/
