@@ -76,6 +76,26 @@ padding:4px;
 padding:4px;    
 }
 
+.containerDetalle button{
+    
+    font-weight: 400;
+    border-radius: 50px;
+    font-size: 14px;
+ background-color: #0985d9;
+    outline: 0px;   
+padding:4px;    
+border: 1px #0985d9 solid;
+color: #ffffff;
+margin-top: 2px;
+}
+
+.containerDetalle button:hover{
+    background-color: #606060;
+    border: 1px #606060 solid;
+color: #ffffff;
+cursor: pointer;
+
+}
 .fotoProducto{
     font-weight: 400;
     color: #606060;

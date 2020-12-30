@@ -13,6 +13,7 @@ let usersControllers = {
   },
   suscribe: function (req, res, next) {
     res.render("thankYou");
+  
 
     //     /*res.redirect("bienvenido");*/
   },

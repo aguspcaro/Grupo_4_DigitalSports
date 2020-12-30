@@ -19,6 +19,7 @@ a {
     font-size: 24px;
 }
 
+
 .section-form-login {
     width: 100%;
     display: flex;
@@ -171,23 +172,30 @@ a {
         width: 95%;
     }
 
+    .section-loginContainerButton {
+        width: 95%;
+    }
+
 }
 
 @media (min-width:576px) {
     .section-form-login {
         width: 60%
     }
-}
 
-@media (min-width:768px) {
-    .section-form-login {
+    .section-loginContainerButton {
         width: 60%;
     }
-
 }
+
+
 
 @media (min-width:920px) {
     .section-form-login {
+        width: 50%;
+    }
+
+    .section-loginContainerButton {
         width: 50%;
     }
 
@@ -196,6 +204,10 @@ a {
 
 @media (min-width:1024px) {
     .section-form-login {
+        width: 40%;
+    }
+
+    .section-loginContainerButton {
         width: 40%;
     }
 
