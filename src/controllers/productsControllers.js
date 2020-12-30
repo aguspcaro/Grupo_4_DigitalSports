@@ -15,7 +15,14 @@ let productsControllers = {
         res.send("editaste el producto");
   },
   delete: function (req, res, next) {
-    res.send("eliminaste el producto");
+    const  filtrado= products.filter((producto)=>
+    producto.id != req.params.id)
+
+  let producto=JSON.stringify(filtrado);
+  fs.writeFileSync(productsFilePath, producto);
+  res.redirect('/')
+
+
 },
   cart: function (req, res, next) {
     res.render('cart');

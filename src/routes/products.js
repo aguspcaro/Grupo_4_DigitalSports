@@ -18,7 +18,7 @@ let storage = multer.diskStorage({
 
 router.get('/', productsControllers.root);
 router.put('/:id', productsControllers.edit);
-router.delete('/:id', productsControllers.delete);
+router.delete('/delete/:id', productsControllers.delete);
 router.get('/cart', productsControllers.cart);
 router.get('/detail/:id', productsControllers.detail);
 router.get('/create', productsControllers.adm);
