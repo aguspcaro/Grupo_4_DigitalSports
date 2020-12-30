@@ -366,6 +366,7 @@ body {
     border-radius: 3px;
     margin: 10px 0px;
     order: 1;
+    margin-left: 100px;
   }
 
   .main-nav__logo {
@@ -375,6 +376,18 @@ body {
 
 @media (min-width: 1024px) {
   /* HEADER */
+
+  .form-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    border: solid 2px #0985d9;
+    border-radius: 3px;
+    margin: 10px 0px;
+    order: 1;
+    margin-left: 200px;
+  }
 
   .main-nav {
     margin-top: 30px;
@@ -649,4 +662,20 @@ body {
     font-size: 18px;
     margin-top: 30px;
   }
+}
+
+
+@media (min-width: 1200px) {
+  .form-search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    border: solid 2px #0985d9;
+    border-radius: 3px;
+    margin: 10px 0px;
+    order: 1;
+    margin-left: 400px;
+  }
+
 }
