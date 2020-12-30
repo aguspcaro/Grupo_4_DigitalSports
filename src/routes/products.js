@@ -3,11 +3,9 @@ var router = express.Router();
 
 let productsControllers = require('../controllers/productsControllers');
 
-/* GET home page. */
-
 router.get('/', productsControllers.root);
-
-/* router.get('/', admproductControllers.admproduct);
-router.get('/', detailControllers.detail); */
+router.get('/cart', productsControllers.cart);
+router.get('/detail', productsControllers.detail);
+router.get('/adm', productsControllers.adm);
 
 module.exports = router;
