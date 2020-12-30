@@ -1,12 +1,14 @@
-// var express = require('express');
-// var router = express.Router();
+var express = require('express');
+var router = express.Router();
 
-// /* GET users listing. */
-// router.get('/', function (req, res, next) {
-//   res.send('respond with a resource');
-// });
+let usersControllers = require('../controllers/usersControllers');
 
-// router.get('/login', loginControllers.login);
-// router.get('/register', registerControllers.register);
-// router.post('/suscribe', indexControllers.suscribe);
-// module.exports = router;
+router.get('/register', usersControllers.register);
+
+router.post('/register', usersControllers.registration);
+
+router.get('/login', usersControllers.login);
+
+/* router.post('/suscribe', usersControllers.suscribe); */
+
+module.exports = router;
