@@ -10,14 +10,14 @@
         <%- include("partials/header")  %>
 
 
-        <h1>Agregar Producto</h1>
+        <h1>Detalle del producto a Modificar</h1>
 
         <form class="containerPrincipal" action="/products/create" method="POST" enctype="multipart/form-data">
 
             <div class="containerAdd">
-
+                
                 <label class="labelName" for="">Nombre del producto</label>
-                <input class="inputName" type="text" name="name" placeholder=""">
+                <input class="inputName" type="text" name="name" placeholder="">
                     
                     
                         <label class=" labelDescri" for="">Descripción del producto</label>
@@ -25,11 +25,7 @@
                 <label class="fotoProducto">Subir fotos del producto</label>
                 <input class="inputarchivo" ide="file-input" multiple="multiple" type="file" name="adjunto"
                     accept=".pdf,.jpg,.png">
-
             </div>
-
-
-
 
 
 
@@ -117,12 +113,12 @@
                         <label class=" labelstock" for="">Stock</label>
 
                     <input class="inputstock" type="number" name="stock" placeholder=""">
-                        
-                    <label for="">Agregar Producto</label>
-                    <button >Agregar</button>
+                  
+                    <label for="">Guardar Cambios</label>
+                    <button >Guardar</button>
                     
                 </div>
-             
+                
             </div>
 
        
