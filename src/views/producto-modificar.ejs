@@ -12,12 +12,12 @@
 
         <h1>Detalle del producto a Modificar</h1>
 
-        <form class="containerPrincipal" action="/products/create" method="POST" enctype="multipart/form-data">
+        <form class="containerPrincipal" action="/products/2?_method=PUT" method="POST" enctype="multipart/form-data">
 
             <div class="containerAdd">
                 
                 <label class="labelName" for="">Nombre del producto</label>
-                <input class="inputName" type="text" name="name" placeholder="">
+                <input class="inputName" type="text" name="name" placeholder="" value="<%= product.name%>">
                     
                     
                         <label class=" labelDescri" for="">Descripción del producto</label>
@@ -99,20 +99,20 @@
                     </select>
 
                     <label class="labelPrecio" for="">Precio</label>
-                    <input class="inputPrecio" type="number" name="precio" placeholder=""">
+                    <input class="inputPrecio" type="number" name="precio" placeholder="" value="<%= product.precio%>">
                     <label class=" labelSku" for="">Sku</label>
-                    <input class="inputSku" type="number" name="sku" placeholder="">    
+                    <input class="inputSku" type="number" name="sku" placeholder="" value="<%= product.sku%>">    
                 </div>
                    
                    
                     <div>
                         <label class=" labelPromocional" for="">Precio Promocional</label>
 
-                    <input class="inputPromocional" type="number" name="promocional" placeholder=""">
+                    <input class="inputPromocional" type="number" name="promocional" placeholder="" value="<%= product.promocional%>">
                     
                         <label class=" labelstock" for="">Stock</label>
 
-                    <input class="inputstock" type="number" name="stock" placeholder=""">
+                    <input class="inputstock" type="number" name="stock" placeholder="" value="<%= product.stock%>">
                   
                     <label for="">Guardar Cambios</label>
                     <button >Guardar</button>

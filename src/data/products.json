@@ -1,1 +1,47 @@
-[{"id":1609366331898,"name":"aasdfasf","description":"adfasdfa","image":"1609366331894.jpg","category":"3","talle":"1","color":"1","secundario":"1","envio":"1","precio":"12312","promocional":"123123","stock":"123123","sku":"123123"},{"id":1609366370098,"name":"asfasdfa","description":"asdfasdfasd","image":"1609366370093.jpg","category":"1","talle":"1","color":"1","secundario":"1","envio":"1","precio":"","promocional":"","stock":"","sku":""},{"id":1609366386559,"name":"adsfasf","description":"asdfasdfa","image":"1609366386555.jpg","category":"3","talle":"1","color":"1","secundario":"1","envio":"1","precio":"21342","promocional":"234","stock":"","sku":"2342"}]
+[
+  {
+    "id": 1609366331898,
+    "name": "aasdfasf",
+    "description": "adfasdfa",
+    "image": "1609366331894.jpg",
+    "category": "3",
+    "talle": "1",
+    "color": "1",
+    "secundario": "1",
+    "envio": "1",
+    "precio": "12312",
+    "promocional": "123123",
+    "stock": "123123",
+    "sku": "123123"
+  },
+  {
+    "id": 1609366370098,
+    "name": "asfasdfa",
+    "description": "asdfasdfasd",
+    "image": "1609366370093.jpg",
+    "category": "1",
+    "talle": "1",
+    "color": "1",
+    "secundario": "1",
+    "envio": "1",
+    "precio": "",
+    "promocional": "",
+    "stock": "",
+    "sku": ""
+  },
+  {
+    "id": 1609366386559,
+    "name": "adsfasf",
+    "description": "asdfasdfa",
+    "image": "1609366386555.jpg",
+    "category": "3",
+    "talle": "1",
+    "color": "1",
+    "secundario": "1",
+    "envio": "1",
+    "precio": "21342",
+    "promocional": "234",
+    "stock": "",
+    "sku": "2342"
+  }
+]
