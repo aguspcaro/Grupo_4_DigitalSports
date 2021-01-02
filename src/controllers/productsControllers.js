@@ -62,7 +62,9 @@ let productsControllers = {
 modificar: function (req, res, next) {
 
   let codigo=req.params.id;
-  let product=products.find(busca=>busca.id==codigo);
+  let product=products.find(function(busca){
+    busca.id==codigo
+  });
 
   res.render("producto-modificar",{product});
 
