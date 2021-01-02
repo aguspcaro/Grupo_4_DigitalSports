@@ -28,7 +28,13 @@ let productsControllers = {
     res.render('cart');
   },
   detail: function (req, res, next) {
-    res.render('detail');
+    
+    let detalleProducto=req.params.id;
+    let product=products.find(function(buscar){
+      return buscar.id==detalleProducto
+    });
+
+    res.render('detail', {product});
   },
   adm: function (req, res, next) {
     res.render('admproduct');
@@ -63,11 +69,12 @@ modificar: function (req, res, next) {
 
   let codigo=req.params.id;
   let product=products.find(function(busca){
-    busca.id==codigo
+    return busca.id==codigo
   });
 
   res.render("producto-modificar",{product});
 
+  console.log(product)
 }
 }
 module.exports = productsControllers;

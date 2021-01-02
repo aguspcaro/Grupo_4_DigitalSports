@@ -94,7 +94,7 @@ body {
 .container-detalle-titulo {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     width: 100%;
 }
 
@@ -121,21 +121,21 @@ body {
 }
 
 .container-texto-precio h4 {
-    text-decoration: line-through rgb(100, 100, 100);
+    
     font-weight: 600;
     font-size: 1.2em;
 }
 
 /* Container talle */
 
-.container-detalle-talle {
+.container-detalle-caracteristicas {
     display: flex;
     flex-direction: column;
-    margin-bottom: 10vh;
+    margin-bottom: 5%;
     width: 100%;
 }
 
-.container-detalle-talle p {
+.container-detalle-caracteristicas p {
     font-size: 1.8em;
     margin-bottom: 2%;
 }
@@ -149,6 +149,7 @@ body {
     width: 100%;
     max-width: 90%;
 }
+
 
 .container-detalle-talles-numero input[type="radio"] {
     display: none;
@@ -195,6 +196,19 @@ body {
 
 }
 
+.container-detalle-color {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+.container-detalle-color label {
+    font-size: 1.5em;
+    font-style: italic;
+    border-bottom: 1px solid grey;
+    border-top: 1px solid grey;
+    width: 100%;
+}
 
 /* Container boton */
 
@@ -237,6 +251,24 @@ body {
     cursor: pointer;
     color: pink;
 }
+
+/* Envío */
+
+.container-detalle-envio {
+    display: flex;
+    margin-left: 25%;
+}
+    .container-detalle-envio p {
+        font-size: 1.5em;
+        font-weight: 600;
+        align-self: center;
+    }
+    .container-detalle-envio label  {
+        align-self: center;
+        margin-left: 10%;
+        font-size: 1.2em;
+        font-style: italic;
+    }
 
 /* Container descripcion producto */
 
