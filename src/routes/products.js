@@ -21,7 +21,7 @@ router.get('/detail/:id', productsControllers.detail);
 router.get('/create', productsControllers.adm);
 router.post('/create', uploads.any(), productsControllers.createproduct);
 router.get('/vista/:id', productsControllers.modificar);
-router.put('/:id', productsControllers.edit);
+router.put('/:id',  uploads.any(), productsControllers.edit);
 router.delete('/delete/:id', productsControllers.delete);
 
 module.exports = router;

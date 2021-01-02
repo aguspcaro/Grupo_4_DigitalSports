@@ -9,24 +9,6 @@ let productsControllers = {
   root: function (req, res, next) {
     res.render('products', { products });
   },
-
-  edit: function (req, res, next) {
-    const filtrado = products.find((producto) => producto.id != req.params.id);
-
-    let producto = JSON.stringify(filtrado);
-
-    fs.writeFileSync(productsFilePath, producto);
-
-    res.redirect('/');
-  },
-
-  delete: function (req, res, next) {
-    const filtrado = products.filter((producto) => producto.id != req.params.id);
-
-    let producto = JSON.stringify(filtrado);
-    fs.writeFileSync(productsFilePath, producto);
-    res.redirect('/');
-  },
   cart: function (req, res, next) {
     res.render('cart');
   },
@@ -60,9 +42,47 @@ let productsControllers = {
 
   modificar: function (req, res, next) {
     let codigo = req.params.id;
-    let product = products.find((busca) => busca.id == codigo);
+    let product = products.find(function (busca) {
+      return busca.id == codigo;
+    });
 
     res.render('producto-modificar', { product });
+
+    console.log(product);
+  },
+
+  edit: function (req, res) {
+    products.forEach(function (product) {
+      if (product.id == req.params.id) {
+        product.name = req.body.name;
+        product.description = req.body.coments;
+        product.image = req.files[0].filename;
+        product.category = req.body.categoria;
+        product.talle = req.body.talle;
+        product.color = req.body.color;
+        product.secundario = req.body.secundario;
+        product.envio = req.body.envio;
+        product.precio = req.body.precio;
+        product.promocional = req.body.promocional;
+        product.stock = req.body.stock;
+        product.sku = req.body.sku;
+      }
+});
+
+    let productos = JSON.stringify(products);
+
+    fs.writeFileSync(productsFilePath, productos);
+
+    res.redirect('/products');
+  },
+
+  delete: function (req, res, next) {
+    const filtrado = products.filter((producto) => producto.id != req.params.id);
+
+    let producto = JSON.stringify(filtrado);
+    fs.writeFileSync(productsFilePath, producto);
+    res.redirect('/');
   },
 };
+
 module.exports = productsControllers;
