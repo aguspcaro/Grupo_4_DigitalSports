@@ -20,13 +20,13 @@
                 <div class="container-img">
                     <a href=""><i class="fas fa-angle-left arrowIzq"></i></a>
                     <a href=""><i class="fas fa-angle-right arrowDer"></i></a>
-                    <img class="article-imagen-left" src="/images/Zapatilla-Nike-Todos.jpeg" alt="" >
+                    <img class="article-imagen-left" src="/images/products/<%=product.image%>" alt="" >
                 </div>
 
                 <div class="container-imagenes">
-                    <img class="article-imagen-right" src="/images/Zapatilla-Nike-Todos.jpeg" alt="" >  
-                    <img class="article-imagen-right" src="/images/Zapatilla-Nike-Todos2.jpg" alt="" >
-                    <img class="article-imagen-right" src="/images/Zapatilla-Nike-Todos3.jpg" alt="" >                
+                    <img class="article-imagen-right" src="/images/products/<%=product.image%>" alt="" >  
+                    <img class="article-imagen-right" src="/images/products/<%=product.image%>" alt="" >
+                    <img class="article-imagen-right" src="/images/products/<%=product.image%>" alt="" >                
                 </div>
 
 
@@ -35,37 +35,30 @@
 
                     <div class="container-detalle-titulo">
                         <div class="container-texto-nombre">
-                            <h3>Zapatillas Nike Todos</h3>
+                            <h3><%= product.name %></h3>
                         </div>
                         <div class="container-texto-precio">
-                            <h2><strong>$5999</strong></h2>
-                            <h4>antes $7600</h4>
+                            <h2><strong>$<%= product.precio %></strong></h2>
+                            <h4>pagando en efectivo $<%= product.promocional %></h4>
                         </div>
                     </div>
 
-                    <div class="container-detalle-talle">
+                    <div class="container-detalle-caracteristicas">
+
+
                         <div>
-                            <p><label for= "" >Talle</label></p>
+                            <p><label>Talle</label></p>
                         </div>
+                        
                         <div class="container-detalle-talles-numero">
                             <input type="radio" name="talle" id="36">
-                            <label for="36">36</label>
-                            <input type="radio" name="talle" id="37">
-                            <label for="37">37</label>
-                            <input type="radio" name="talle" id="38">
-                            <label for="38">38</label>
-                            <input type="radio" name="talle" id="39">
-                            <label for="39">39</label>
-                            <input type="radio" name="talle" id="40">
-                            <label for="40">40</label>
-                            <input type="radio" name="talle" id="41">
-                            <label for="41">41</label>
-                            <input type="radio" name="talle" id="42">
-                            <label for="42">42</label>
-                            <input type="radio" name="talle" id="43">
-                            <label for="43">43</label>
-                            <input type="radio" name="talle" id="44">
-                            <label for="44">44</label>
+                            <label ><%= product.talle %></label>
+                        
+                        </div>
+
+                        <div class="container-detalle-color">
+                            <p>Color</p>
+                            <label class="colores" for=""><%= product.color %></label>
                         </div>
                         
                     </div>
@@ -78,6 +71,11 @@
                             </p>
                             
                         </div>
+                        
+                        <div class="container-detalle-envio">
+                            <p>Envío:</p>
+                            <label ><%= product.envio %></label>
+                        </div>
                     </div>
 
 
@@ -89,7 +87,7 @@
                 <hr>
                 <h3>Descripción</h3>
                 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit, culpa doloremque placeat perferendis quo voluptatibus labore maiores, nulla expedita vel iste quisquam neque dignissimos consectetur beatae recusandae, illo repellat repellendus!</p>
+                <p><%= product.description%></p>
                 <hr>
             </div>
 

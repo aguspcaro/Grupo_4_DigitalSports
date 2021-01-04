@@ -13,7 +13,13 @@ let productsControllers = {
     res.render('cart');
   },
   detail: function (req, res, next) {
-    res.render('detail');
+    
+    let detalleProducto=req.params.id;
+    let product=products.find(function(buscar){
+      return buscar.id==detalleProducto
+    });
+
+    res.render('detail', {product});
   },
   adm: function (req, res, next) {
     res.render('admproduct');
@@ -75,6 +81,7 @@ let productsControllers = {
 
     res.redirect('/products');
   },
+
 
   delete: function (req, res, next) {
     const filtrado = products.filter((producto) => producto.id != req.params.id);
