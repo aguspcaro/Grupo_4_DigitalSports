@@ -23,7 +23,7 @@
                         <label class=" labelDescri" for="">Descripción del producto</label>
                 <textarea class="coments" style="resize: none;" name="coments" rows="10" value="<%=product.description%>" placeholder="<%=product.description%>" cols="40" ></textarea>
                 <label class="fotoProducto">Subir fotos del producto</label>
-                <input class="inputarchivo" ide="file-input" multiple="multiple" type="file" name="adjunto"
+                <input required class="inputarchivo" ide="file-input" multiple="multiple" type="file" name="adjunto"
                     accept=".pdf,.jpg,.png">
             </div>
 
@@ -34,8 +34,8 @@
 
                 <div>
                     <label for="">Categoría</label>
-                    <select name="categoria" value="<%=product.category%>">
-                        <option value=""><%=product.category%></option>
+                    <select name="categoria">
+                        <option value="<%=product.category%>"><%=product.category%></option>
                         <option value="futbol">Fútbol</option>
                         <option value="basquet">Basquet</option>
                         <option value="natacion">Natación</option>
@@ -46,7 +46,7 @@
                     <label for="">Color Principal</label>
 
                     <select name="color">
-                        <option value=""><%=product.color%></option>
+                        <option value="<%=product.color%>"><%=product.color%></option>
                         <option value="blanco">blanco</option>
                         <option value="negro">negro</option>
                         <option value="rojo">rojo</option>
@@ -61,7 +61,7 @@
                 <div>
                     <label for="">Talle</label>
                     <select name="talle">
-                        <option value=""><%=product.talle%></option>
+                        <option value="<%=product.talle%>"><%=product.talle%></option>
                         <option value="s">S</option>
                         <option value="m">M</option>
                         <option value="l">L</option>
@@ -76,7 +76,7 @@
                     <label for="">Color Secundario</label>
 
                     <select name="secundario">
-                        <option value=""><%=product.secundario%></option>
+                        <option value="<%=product.secundario%>"><%=product.secundario%></option>
                         <option value="blanco">blanco</option>
                         <option value="negro">negro</option>
                         <option value="rojo">rojo</option>
@@ -90,7 +90,7 @@
                     <label for="">Envío gratis</label>
 
                     <select name="envio">
-                        <option value=""><%=product.envio%></option>
+                        <option value="<%=product.envio%>"><%=product.envio%></option>
                         <option value="gratis">Gratis</option>
                         <option value="correo">Correo</option>
                        
