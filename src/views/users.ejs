@@ -1,0 +1,50 @@
+<%- include("partials/head")  %>
+
+<link rel="stylesheet" href="/stylesheet/style-home.css">
+<link rel="stylesheet" href="/stylesheet/admproduct.css">
+
+</head>
+
+<body>
+    <main class="main">
+
+        <%- include("partials/header")  %>
+
+
+        <h1>Usuario</h1>
+
+
+
+        <section class="offer-article">
+
+
+            <article class="offer-article1">
+               
+                <div class="offer-article-info">
+                    <p class="offer-article-title"><%= usersname%></p>
+                    
+                
+                    <div class="containerDetalle">
+                      
+                        <a  href=""><button type="submit" class="">Editar</button></a>
+
+                        <a href=""><button type="submit">Detalle</button></a>
+
+                        <form action="" method="POST">
+							<button type="submit" class="">ELIMINAR</button>
+						</form>
+
+                    </div>
+                </div>
+            </article>
+
+        </section>
+
+        <%- include("partials/footer")  %>
+
+    </main>
+
+
+</body>
+
+</html>
