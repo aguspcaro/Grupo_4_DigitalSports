@@ -18,12 +18,11 @@
 
 ---
 
-
 #### Reunión 7/12/2020
 
 *Alejandro*
 - En proceso: En la semana voy a estar trabajando con el Footer. Necesitamos hacerlo responsive.
-- Problemas: No tuve problemas salvo un pequeño bug en la ul del footer
+- Problemas: No tuve problemas salvo un pequeño bug en la ul del footer.
 
 *David*
 - En proceso: En la semana voy a estar trabajando con las rutas. Necesitamos hacerlo responsive.
@@ -36,3 +35,43 @@
 *Agustín*
 - En proceso: En la semana voy a estar trabajando con las imagenes y sus tamaños. Necesitamos tenerlas bien livianas
 - Problemas: Comlicado con algunas imagenes y sus rutas.
+
+---
+
+#### Reunión 26/12/2020
+
+*Alejandro*
+- En proceso: Organizando el user.js
+- Problemas: No tengo problemas.
+
+*David*
+- En proceso: Organizando el products.js
+- Problemas: No tengo problemas.
+
+*Jorge*
+- En proceso: Descargando las librerias.
+- Problemas: No tengo problemas.
+
+*Agustín*
+- En proceso: Organizando el readme.
+- Problemas: No tengo problemas.
+
+---
+
+#### Reunión 1/01/2021
+
+*Alejandro*
+- En proceso: Organizando las carpetas del proyecto.
+- Problemas: No me anda el npm start.
+
+*David*
+- En proceso: Trabajando con el alta de productos.
+- Problemas: No me llama el objeto al .ejs.
+
+*Jorge*
+- En proceso: Dinamizando el index.
+- Problemas: No me cargan las imagenes.
+
+*Agustín*
+- En proceso: Organizando las rutas.
+- Problemas: Errores con el js dentro del html.
