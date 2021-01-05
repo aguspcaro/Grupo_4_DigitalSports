@@ -35,9 +35,8 @@
 
                         <a href="/products/detail/<%= product.id%>"><button type="submit">Detalle</button></a>
 
-                        <form action="/products/delete/<%=product.id%>/?_method=DELETE" method="POST">
-							<button type="submit" class="">ELIMINAR</button>
-						</form>
+                        <a href="/products/delete/<%=product.id%>/?_method=DELETE" method="POST">
+							<button type="submit" class="">ELIMINAR</button></a>
 
                     </div>
                 </div>

@@ -54,6 +54,8 @@ body {
 
 .main-navContainerListNavegation {
   display: none;
+  justify-content:space-evenly;
+  background-color: #cecece;
 }
 
 .main-navContainerIcons {
@@ -191,6 +193,7 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 .footer-containerLogo-Redes {
@@ -445,6 +448,16 @@ body {
   }
 
   .main-navListNavegation__childs:hover {
+    color: #0985d9;
+  }
+
+  .main-navListNavegation__sports {
+    color: #606060;
+    margin: 0px 10px;
+    text-decoration: none;
+  }
+
+  .main-navListNavegation__sports:hover {
     color: #0985d9;
   }
 

@@ -1,6 +1,6 @@
-.main {
-    
-}
+* {
+    box-sizing: border-box;
+  }
 
 .home {
     display: flex;
@@ -35,54 +35,63 @@
 }
 
 .outstanding-article {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
-   
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
 }
 
-.outstanding-article1 {
+.outstanding-article {
     display: flex;
     flex-direction: column;
-    flex: 0 1 48%;
+    flex: 0 1 23%;
     background-color: #ffffff;
     align-items: flex-start;
-    
 }
 
-.outstanding-article1 img {
+.outstanding-article img {
     width: 100%;
 }
 
+/*
 .outstanding-article2 {
     display: flex;
     flex-direction: column;
-    flex: 0 1 48%;
+    flex: 0 1 23%;
     background-color: #ffffff;
     align-items: flex-start;
-    
 }
 
 .outstanding-article2 img {
     width: 100%;
 }
 
-
 .outstanding-article3 {
     display: flex;
     flex-direction: column;
-    flex: 0 1 48%;
+    flex: 0 1 23%;
     background-color: #ffffff;
     align-items: flex-start;
-    
 }
 
 .outstanding-article3 img {
     width: 100%;
 }
+
+.outstanding-article4 {
+    display: flex;
+    flex-direction: column;
+    flex: 0 1 23%;
+    background-color: #ffffff;
+    align-items: flex-start;
+}
+
+.outstanding-article4 img {
+    width: 100%;
+}
+
+*/
 .outstanding-article-info {
     display: flex;
     flex-direction: column;
@@ -91,7 +100,7 @@
 
 .outstanding-article-title {
     margin: 0;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .outstanding-article-container-description {
@@ -112,10 +121,10 @@
     margin-left: 5px;
 }
 
-.outstanding-article3 {
+
+.outstanding-article3, .outstanding-article4 {
     display: none;
 }
-
 /*Ofertas*/
 
 .offer {
@@ -128,18 +137,19 @@
     margin: 10px 0px 10px;
 }
 
+
 .offer-article {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
 }
 
 .offer-article1 {
     display: flex;
     flex-direction: column;
-    flex:0 1 48%;
+    flex: 0 1 48%;
     background-color: #ffffff;
     align-items: flex-start;
 }
@@ -163,7 +173,7 @@
 .offer-article3 {
     display: flex;
     flex-direction: column;
-    flex: 0 1 48%;
+    flex: 0 1 30%;
     background-color: #ffffff;
     align-items: flex-start;
 }
@@ -175,7 +185,7 @@
 .offer-article4 {
     display: flex;
     flex-direction: column;
-    flex: 0 1 48%;
+    flex: 0 1 30%;
     background-color: #ffffff;
     align-items: flex-start;
 }
@@ -192,7 +202,7 @@
 
 .offer-article-title {
     margin: 0;
-    font-size: 12px;
+    font-size: 40px;
 }
 
 .offer-article-container-description {
@@ -222,7 +232,7 @@
 .releases {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    margin: 10px 0px 10px;
 }
 
 .releases-section-title {
@@ -230,21 +240,14 @@
 }
 
 .releases-article {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+    
 }
 
-.releases-article1 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 48%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
 
 .releases-article1 img {
     width: 100%;
@@ -309,12 +312,13 @@
 }
 
 .recommended-article {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 80px 200px;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+    margin: 10px 0px 10px;
 }
 
 .recommended-article1 {
@@ -407,6 +411,19 @@ img {
 
 @media(min-width: 768px){
 
+.outstanding {
+        display: flex;
+        flex-direction: column;
+       margin: 10px;
+}
+
+.outstanding-article {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-gap: 10px;
+        background-color: #2196F3;
+        padding: 10px;
+}
 
 .outstanding-section-title {
     font-size: 26px;
@@ -418,6 +435,14 @@ img {
     font-weight: bold;
 }
 
+.releases-article {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+    
+}
 .releases-section-title {
     font-size: 26px;
     font-weight: bold;
@@ -496,7 +521,7 @@ img {
 }
 
 .outstanding-article1 {
-    flex:0 1 30%;
+    flex:0 1 23%;
     display: flex;
     align-items: center;
     background-color: #ffffff;
@@ -504,14 +529,14 @@ img {
 
 
 .outstanding-article2 {
-    flex:0 1 30%;
+    flex:0 1 23%;
     display: flex;
     align-items: center;
     background-color: #ffffff;
 }
 
 .outstanding-article3 {
-    flex:0 1 30%;
+    flex:0 1 23%;
     display: flex;
     align-items: center;
     background-color: #ffffff;
@@ -520,38 +545,34 @@ img {
 .offer-article{
     display: flex;
     justify-content: space-between;
+
 }
 
 .offer-article1 {
+    flex:0 1 25%;
     display: flex;
-    flex-direction: column;
-    flex:0 1 23%;
+    align-items: center;
     background-color: #ffffff;
-    align-items: flex-start;
 }
 
 .offer-article2 {
+    flex:0 1 25%;
     display: flex;
-    flex-direction: column;
-    flex:0 1 23%;
+    align-items: center;
     background-color: #ffffff;
-    align-items: flex-start;
 }
 
 .offer-article3 {
+    flex:0 1 25%;
     display: flex;
-    flex-direction: column;
-    flex:0 1 23%;
+    align-items: center;
     background-color: #ffffff;
-    align-items: flex-start;
 }
 .offer-article4 {
+    flex:0 1 25%;
     display: flex;
-    flex-direction: column;
-    flex:0 1 23%;
+    align-items: center;
     background-color: #ffffff;
-    align-items: flex-start;
-
 }
 .recommended-article3, .recommended-article4 {
     display: block;
