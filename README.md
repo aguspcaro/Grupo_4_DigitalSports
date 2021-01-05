@@ -1,6 +1,7 @@
+---
 # *Digital Sports*  
 ---
-#### Temática del sitio
+### Temática del sitio
 
   - Servicio de venta online de indumentaria y productos deportivos para:
 
@@ -10,13 +11,13 @@
 
   - Productos que se van a comercializar: Medias, pantalones, shorts, remeras, zapatillas, y artúculos deportivos y equipamientos en general.
 
-#### Público Objetivo
+### Público Objetivo
 
-- Mujeres de 18 a 60 años. Nivel socieconómico a,b,c 1
+- Mujeres de 18 a 60 años. Nivel socieconómico a,b,c 1.
 
-- Hombres de 18 a 60 años. Nivel socieconómico a,b,c 1
+- Hombres de 18 a 60 años. Nivel socieconómico a,b,c 1.
 
-#### Páginas Referentes
+### Páginas Referentes
 
 > [Beko](https://www.beko.com/es-es)
 Muy facil de interpretar, muy dinámica, colores y diseño agradable.
@@ -33,7 +34,7 @@ Productos bien detallados. Dinámica. Variedad de servicios y productos. Fácil 
 > [Rip Curl Argentina](https://www.ripcurlargentina.com/)
 Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodcutos. Te va llevando por los diferentes productos que tiene y está bien categorizado para facilitar la busqueda.
 
-#### Equipo
+### Equipo
 
 **Agustín Caro**: Tengo 25 años. Soy Licenciado en Administración. Principiante en Programacion. Jugador de Rugby. Arriba el mate y el asado!
 
@@ -43,16 +44,17 @@ Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodc
 
 **Jorge Jones**: Soy licenciado en Comunicación y hace años me dedico a la producción de eventos. No tengo experiencia en programación y espero adquirirla junto a este equipazo! Soy feliz padre de tres hijos: una mujer y dos varones. Si me preguntan por mi club favorito les diré que nuestro rival murió en Madrid!
 
-#### Estrategias de Marketing
+### Estrategias de Marketing
 
 - Posicionar al sitio como un referente en el mercado deportivo en términos de indumentaria, productos, equipamientos y servicios.
 
-- Nuestro objetivo es que se piense en nuestro sitio como referencia en este mercado.*
+- Nuestro objetivo es que se piense en nuestro sitio como referencia en este mercado.
 
-- Buscaremos vender una filosofía de vida, asociando la actividad deportiva a una vida plena y saludable.*
+- Buscaremos vender una filosofía de vida, asociando la actividad deportiva a una vida plena y saludable.
 
-- Esto lo llevaremos adelante a través de las redes sociales tradicionales, patrocinando y organizando eventos. A través de influencers, publicidad en medios gráficos y onlines deportivos, y programas de magazine.*
+- Esto lo llevaremos adelante a través de las redes sociales tradicionales, patrocinando y organizando eventos. A través de influencers, publicidad en medios gráficos y onlines deportivos, y programas de magazine.
 
+--- 
 
 | Repositorio | Link |
 | ----------- | ---- |
