@@ -8,7 +8,6 @@ let storage = multer.diskStorage({
   destination: function (req, file, cb) {
     return cb(null, path.join('.', 'public', 'images', 'products'));
   },
-
   filename: function (req, file, cb) {
     return cb(null, Date.now() + path.extname(file.originalname));
   },
