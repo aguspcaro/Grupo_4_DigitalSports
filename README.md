@@ -41,26 +41,23 @@ Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodc
 
 #### Estrategias de marketing
 
-```sh
-Posicionar al sitio como un referente en el mercado deportivo en términos de indumentaria, productos, equipamientos y servicios. 
-```
 
-```sh
-Nuestro objetivo es que se piense en nuestro sitio como referencia en este mercado. 
-```
+*Posicionar al sitio como un referente en el mercado deportivo en términos de indumentaria, productos, equipamientos y servicios.* 
 
-```sh
-Buscaremos vender una filosofía de vida, asociando la actividad deportiva a una vida plena y saludable.
-```
 
-```sh
-Esto lo llevaremos adelante a través de las redes sociales tradicionales, patrocinando y organizando eventos. A través de influencers,
-publicidad en medios gráficos y onlines deportivos, y programas de magazine. 
-```
+*Nuestro objetivo es que se piense en nuestro sitio como referencia en este mercado.*
+
+
+*Buscaremos vender una filosofía de vida, asociando la actividad deportiva a una vida plena y saludable.*
+
+
+*Esto lo llevaremos adelante a través de las redes sociales tradicionales, patrocinando y organizando eventos. A través de influencers, publicidad en medios gráficos y onlines deportivos, y programas de magazine.*
+
 
 | Repositorio | Link |
 | ----------- | ---- |
 | *Git hub* | [Digital Sports](https://github.com/aguspcaro/Proyecto---Digital-House.git) |
+
 
 | Tablero de Trabajo | Link |
 | ------------------ | ---- |
