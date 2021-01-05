@@ -54,6 +54,7 @@ Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodc
 
 - Esto lo llevaremos adelante a través de las redes sociales tradicionales, patrocinando y organizando eventos. A través de influencers, publicidad en medios gráficos y onlines deportivos, y programas de magazine.
 
+--- 
 
 | Repositorio | Link |
 | ----------- | ---- |
