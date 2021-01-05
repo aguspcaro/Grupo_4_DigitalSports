@@ -33,9 +33,9 @@
 
 
                 <div>
-                    <label for="">Categoría</label>
-                    <select name="categoria">
-                        <option value="<%=product.category%>"><%=product.category%></option>
+                    <label for="">Deporte</label>
+                    <select name="deporte">
+                        <option value="<%=product.deporte%>"><%=product.deporte%></option>
                         <option value="futbol">Fútbol</option>
                         <option value="basquet">Basquet</option>
                         <option value="natacion">Natación</option>
@@ -43,16 +43,16 @@
                         <option value="running">Running</option>
                     </select>
 
-                    <label for="">Color Principal</label>
+                    <label for="">Marca</label>
 
-                    <select name="color">
-                        <option value="<%=product.color%>"><%=product.color%></option>
-                        <option value="blanco">blanco</option>
-                        <option value="negro">negro</option>
-                        <option value="rojo">rojo</option>
-                        <option value="azul">azul</option>
-                        <option value="amarillo">amarillo</option>
-                       
+                    <select name="marca">
+                        <option value="<%=product.marca%>"><%=product.marca%></option>
+                        <option value="adidas">adidas</option>
+                        <option value="nike">nike</option>
+                        <option value="topper">topper</option>
+                        <option value="fila">fila</option>
+                        <option value="ribbok">ribbok</option>
+
                     </select>
                 </div>
 
@@ -68,21 +68,19 @@
                         <option value="xl">XL</option>
                         <option value="xxl">XXL</option>
 
-                        
+
                     </select>
 
 
 
-                    <label for="">Color Secundario</label>
+                    <label for="">Publico</label>
 
-                    <select name="secundario">
-                        <option value="<%=product.secundario%>"><%=product.secundario%></option>
-                        <option value="blanco">blanco</option>
-                        <option value="negro">negro</option>
-                        <option value="rojo">rojo</option>
-                        <option value="azul">azul</option>
-                        <option value="amarillo">amarillo</option>
-                        </select>
+                    <select name="publico">
+                        <option value="<%=product.publico%>"><%=product.publico%></option>
+                        <option value="mujeres">mujeres</option>
+                        <option value="hombres">hombres</option>
+                        <option value="niños">niños</option>
+                    </select>
                 </div>
 
                 <div>
@@ -93,30 +91,37 @@
                         <option value="<%=product.envio%>"><%=product.envio%></option>
                         <option value="gratis">Gratis</option>
                         <option value="correo">Correo</option>
-                       
+
                     </select>
 
-                    <label class="labelPrecio" for="">Precio</label>
-                    <input class="inputPrecio" type="number" name="precio" placeholder="" value="<%= product.precio%>">
-                    <label class=" labelSku" for="">Sku</label>
-                    <input class="inputSku" type="text" name="sku" placeholder="" value="<%= product.sku%>">    
-                </div>
-                   
-                   
-                    <div>
-                        <label class=" labelPromocional" for="">Precio Promocional</label>
+                    <input class="inputPrecio" value="<%=product.precio%>"type="number" name="precio" placeholder=""">
+                 
+                    <label class=" labelSku" for="">Categoría</label>
+                    <select name="categoria">
+                        <option value="<%=product.categoria%>"><%=product.categoria%></option>
+                        <option value="ofertas">Ofertas</option>
+                        <option value="recomendados">Recomendados</option>
+                        <option value="destacados">Destacados</option>
+                        <option value="lanzamientos">Lanzamientos</option>
+                    </select>
 
-                    <input class="inputPromocional" type="number" name="promocional" placeholder="" value="<%= product.promocional%>">
+                </div>
+
+
+                <div>
+                    <label class=" labelPromocional" for="">Precio Promocional</label>
+
+                    <input class="inputPromocional" value="<%=product.promocional%>" type="number" name="promocional" placeholder=""">
                     
                         <label class=" labelstock" for="">Stock</label>
 
-                    <input class="inputstock" type="number" name="stock" placeholder="" value="<%= product.stock%>">
-                  
-                    <label for="">Guardar Cambios</label>
-                    <button >Guardar</button>
+                    <input class="inputstock" value="<%=product.stock%>"type="number" name="stock" placeholder=""">
+                        
+                    <label for="">Agregar Producto</label>
+                    <button >Agregar</button>
                     
                 </div>
-                
+             
             </div>
 
        

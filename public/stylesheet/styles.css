@@ -156,7 +156,7 @@ body {
 
 .section-suscribeFormInput {
   font-weight: 400;
-  border-radius: 50px;
+  border-radius: 3px;
   font-size: 18px;
   width: 225px;
   height: 30px;
@@ -170,7 +170,7 @@ body {
 
 .section-suscribeFormButton {
   font-weight: 400;
-  border-radius: 50px;
+  border-radius: 3px;
   font-size: 18px;
   width: 150px;
   height: 30px;
@@ -324,7 +324,7 @@ body {
 @media (min-width: 500px) {
   .section-suscribeFormInput {
     font-weight: 400;
-    border-radius: 50px;
+    border-radius: 3px;
     font-size: 18px;
     width: 350px;
     height: 30px;
@@ -354,7 +354,7 @@ body {
 @media (min-width: 768px) {
   .section-suscribeFormInput {
     font-weight: 400;
-    border-radius: 50px;
+    border-radius: 3px;
     font-size: 18px;
     width: 450px;
     height: 30px;
@@ -511,7 +511,7 @@ body {
 
   .section-suscribeFormInput {
     font-weight: 400;
-    border-radius: 50px;
+    border-radius: 3px;
     font-size: 18px;
     width: 400px;
     height: 30px;
@@ -525,7 +525,7 @@ body {
 
   .section-suscribeFormButton {
     font-weight: 400;
-    border-radius: 50px;
+    border-radius: 3px;
     font-size: 18px;
     width: 150px;
     height: 30px;

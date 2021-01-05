@@ -61,7 +61,7 @@
 .section-register__inputName {
     font-weight: 400;
     height: 30px;
-    border-radius: 50px;
+    border-radius: 3px;
     font-size: 18px;
     width: 95%;
     border: solid 2px #0985d9;
@@ -93,7 +93,7 @@
 .section-register__inputLastName {
     font-weight: 400;
     height: 30px;
-    border-radius: 50px;
+    border-radius: 3px;
     font-size: 18px;
     width: 95%;
     border: solid 2px #0985d9;
@@ -125,7 +125,7 @@
 .section-register__inputEmail {
     font-weight: 400;
     height: 30px;
-    border-radius: 50px;
+    border-radius: 3px;
     font-size: 16px;
     width: 95%;
     border: solid 2px #0985d9;
@@ -159,7 +159,7 @@
 .section-register__inputPassword {
     font-weight: 400;
     height: 30px;
-    border-radius: 50px;
+    border-radius: 3px;
     font-size: 18px;
     width: 95%;
     border: solid 2px #0985d9;
@@ -192,7 +192,7 @@
 .section-register__inputConfirmPassword {
     font-weight: 400;
     height: 30px;
-    border-radius: 50px;
+    border-radius: 3px;
     font-size: 18px;
     width: 95%;
     border: solid 2px #0985d9;
@@ -244,7 +244,7 @@
 .section-registerCreateAccount {
     font-weight: 400;
     height: 30px;
-    border-radius: 50px;
+    border-radius: 3px;
     font-size: 18px;
     width: 95%;
     background-color: #0985d9;

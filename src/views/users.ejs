@@ -11,12 +11,13 @@
         <%- include("partials/header")  %>
 
 
-        <h1><%= users.name%></h1>
+        <h1>Usuarios</h1>
 
 
 
         <section class="offer-article">
 
+            <% products.forEach(function (users){ %>
 
             <article class="offer-article1">
                
@@ -37,6 +38,7 @@
                     </div>
                 </div>
             </article>
+            <% }) %>
 
         </section>
 

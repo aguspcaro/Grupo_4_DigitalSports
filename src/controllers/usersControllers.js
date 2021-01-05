@@ -2,19 +2,12 @@ const fs = require('fs');
 const path = require('path');
 
 const usersFilePath = path.join(__dirname, '../data/users.json');
-const usersJSON = fs.readFileSync(usersFilePath, 'utf-8');
+const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-
-let users;
-if(usersJSON == "") {
-  users = [];
-} else {
-  users = JSON.parse(usersJSON)
-}
 
 let usersControllers = {
   root : function(req, res, next) {
-    res.render("users", {users} );
+    res.render("users", { users } );
   },
   register: function (req, res, next) {
     res.render("register");
