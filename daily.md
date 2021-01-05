@@ -1,20 +1,20 @@
-*Reunión 14/12/2020*
+#### Reunión 14/12/2020
 
-Alejandro:
--en proceso: En la semana voy a estar trabajando con el NAV. Necesitamos hacerlo responsive.
--problemas: En la semana me vi complicado con un display flex. No podia posicionarlo como yo queria. Voy a estar necesitando de su ayuda entre hoy y mañana.
+*Alejandro*
+- En proceso: En la semana voy a estar trabajando con el NAV. Necesitamos hacerlo responsive.
+- Problemas: En la semana me vi complicado con un display flex. No podia posicionarlo como yo queria. Voy a estar necesitando de su ayuda entre hoy y mañana.
 
-David:
--en proceso: En la semana voy a estar trabajando con el Adm. de productos. Necesitamos hacerlo responsive.
--problemas: En la semana me vi complicado con unos formularios. Con CSS no pude hacer nada. Tambien queria pedirles una ayuda cuando puedan.
+*David*
+- En proceso: En la semana voy a estar trabajando con el Adm. de productos. Necesitamos hacerlo responsive.
+- Problemas: En la semana me vi complicado con unos formularios. Con CSS no pude hacer nada. Tambien queria pedirles una ayuda cuando puedan.
 
-Jorge:
--en proceso: En la semana voy a estar trabajando con la home. Necesitamos hacerlo en mobile con el nuevo diseño.
--problemas: En la semana me vi complicado con la home de nuestro proyecto. No estoy pudiendo dejarlo como en el boceto que ale hizo.
+*Jorge*
+- En proceso: En la semana voy a estar trabajando con la home. Necesitamos hacerlo en mobile con el nuevo diseño.
+- Problemas: En la semana me vi complicado con la home de nuestro proyecto. No estoy pudiendo dejarlo como en el boceto que ale hizo.
 
-Agustín:
--en proceso: En la semana voy a estar trabajando con el Detalle del producto. Necesitamos hacerlo responsive en todos los tamaños.
--problemas: En la semana me vi complicado con la media en tablet. No podia poner los parametros correctos para que no me superponga a desktop.
+*Agustín*
+- En proceso: En la semana voy a estar trabajando con el Detalle del producto. Necesitamos hacerlo responsive en todos los tamaños.
+- Problemas: En la semana me vi complicado con la media en tablet. No podia poner los parametros correctos para que no me superponga a desktop.
 
 
 
