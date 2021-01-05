@@ -21,7 +21,8 @@
                     
                     
                         <label class=" labelDescri" for="">Descripción del producto</label>
-                <textarea class="coments" style="resize: none;" name="coments" rows="10" placeholder="" cols="40"></textarea>
+                <textarea class="coments" style="resize: none;" name="coments" rows="10" placeholder=""
+                    cols="40"></textarea>
                 <label class="fotoProducto">Subir fotos del producto</label>
                 <input required class="inputarchivo" ide="file-input" multiple="multiple" type="file" name="adjunto"
                     accept=".pdf,.jpg,.png">
@@ -37,9 +38,9 @@
 
 
                 <div>
-                    <label for="">Categoría</label>
-                    <select name="Categoria">
-                        
+                    <label for="">Deporte</label>
+                    <select name="deporte">
+
                         <option value="futbol">Fútbol</option>
                         <option value="basquet">Basquet</option>
                         <option value="natacion">Natación</option>
@@ -47,16 +48,16 @@
                         <option value="running">Running</option>
                     </select>
 
-                    <label for="">Color Principal</label>
+                    <label for="">Marca</label>
 
-                    <select name="color">
-                        
-                        <option value="blanco">blanco</option>
-                        <option value="negro">negro</option>
-                        <option value="rojo">rojo</option>
-                        <option value="azul">azul</option>
-                        <option value="amarillo">amarillo</option>
-                       
+                    <select name="marca">
+
+                        <option value="adidas">adidas</option>
+                        <option value="nike">nike</option>
+                        <option value="topper">topper</option>
+                        <option value="fila">fila</option>
+                        <option value="ribbok">ribbok</option>
+
                     </select>
                 </div>
 
@@ -70,21 +71,19 @@
                         <option value="l">L</option>
                         <option value="xl">XL</option>
                         <option value="xxl">XXL</option>
-                        
-                        
+
+
                     </select>
 
 
 
-                    <label for="">Color Secundario</label>
+                    <label for="">Publico</label>
 
-                    <select name="secundario">
-                        <option value="blanco">blanco</option>
-                        <option value="negro">negro</option>
-                        <option value="rojo">rojo</option>
-                        <option value="azul">azul</option>
-                        <option value="amarillo">amarillo</option>
-                        </select>
+                    <select name="publico">
+                        <option value="mujeres">mujeres</option>
+                        <option value="hombres">hombres</option>
+                        <option value="niños">niños</option>
+                    </select>
                 </div>
 
                 <div>
@@ -92,21 +91,28 @@
                     <label for="">Envío gratis</label>
 
                     <select name="envio">
-                        
+
                         <option value="gratis">Gratis</option>
                         <option value="correo">Correo</option>
-                       
+
                     </select>
 
                     <label class="labelPrecio" for="">Precio</label>
                     <input class="inputPrecio" type="number" name="precio" placeholder=""">
-                    <label class=" labelSku" for="">Sku</label>
-                    <input class="inputSku" type="text" name="sku" placeholder="">    
+                    
+                    <label class=" labelSku" for="">Categoría</label>
+                    <select name="categoria">
+                        <option value="ofertas">Ofertas</option>
+                        <option value="recomendados">Recomendados</option>
+                        <option value="destacados">Destacados</option>
+                        <option value="lanzamientos">Lanzamientos</option>
+                    </select>
+
                 </div>
-                   
-                   
-                    <div>
-                        <label class=" labelPromocional" for="">Precio Promocional</label>
+
+
+                <div>
+                    <label class=" labelPromocional" for="">Precio Promocional</label>
 
                     <input class="inputPromocional" type="number" name="promocional" placeholder=""">
                     

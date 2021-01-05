@@ -30,15 +30,15 @@ let productsControllers = {
       name: req.body.name,
       description: req.body.coments,
       image: req.files[0].filename,
-      category: req.body.Categoria,
+      deporte: req.body.deporte,
       talle: req.body.talle,
-      color: req.body.color,
-      secundario: req.body.secundario,
+      marca: req.body.marca,
+      publico: req.body.publico,
       envio: req.body.envio,
       precio: req.body.precio,
       promocional: req.body.promocional,
       stock: req.body.stock,
-      sku: req.body.sku,
+      categoria: req.body.categoria,
     });
     let producto = JSON.stringify(products);
     fs.writeFileSync(productsFilePath, producto);
@@ -54,7 +54,7 @@ let productsControllers = {
 
     res.render('producto-modificar', { product });
 
-    console.log(product);
+    
   },
 
   edit: function (req, res) {
@@ -63,15 +63,15 @@ let productsControllers = {
         product.name = req.body.name;
         product.description = req.body.coments;
         product.image = req.files[0].filename;
-        product.category = req.body.categoria;
+        product.deporte = req.body.deporte;
         product.talle = req.body.talle;
-        product.color = req.body.color;
-        product.secundario = req.body.secundario;
+        product.marca = req.body.marca;
+        product.publico = req.body.publico;
         product.envio = req.body.envio;
         product.precio = req.body.precio;
         product.promocional = req.body.promocional;
         product.stock = req.body.stock;
-        product.sku = req.body.sku;
+        product.categoria = req.body.categoria;
       }
 });
 
