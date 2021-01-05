@@ -1,4 +1,4 @@
-# *Digital Sports*  
+# *Proyecto Digital House*  
 ---
 #### Temática del sitio
 
@@ -16,7 +16,7 @@
 
 - Hombres de 18 a 60 años. Nivel socieconómico a,b,c 1
 
-#### Listado de cinco páginas referentes
+#### Páginas Referentes
 
 > [Beko](https://www.beko.com/es-es)
 Muy facil de interpretar, muy dinámica, colores y diseño agradable.
@@ -33,7 +33,7 @@ Productos bien detallados. Dinámica. Variedad de servicios y productos. Fácil 
 > [Rip Curl Argentina](https://www.ripcurlargentina.com/)
 Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodcutos. Te va llevando por los diferentes productos que tiene y está bien categorizado para facilitar la busqueda.
 
-#### Breve Descripción de cada uno
+#### Equipo
 
 **Agustín Caro**: Tengo 25 años. Soy Licenciado en Administración. Principiante en Programacion. Jugador de Rugby. Arriba el mate y el asado!
 
@@ -43,7 +43,7 @@ Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodc
 
 **Jorge Jones**: Soy licenciado en Comunicación y hace años me dedico a la producción de eventos. No tengo experiencia en programación y espero adquirirla junto a este equipazo! Soy feliz padre de tres hijos: una mujer y dos varones. Si me preguntan por mi club favorito les diré que nuestro rival murió en Madrid!
 
-#### Estrategias de marketing
+#### Estrategias de Marketing
 
 - Posicionar al sitio como un referente en el mercado deportivo en términos de indumentaria, productos, equipamientos y servicios.
 
