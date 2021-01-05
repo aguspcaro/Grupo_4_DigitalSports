@@ -1,4 +1,4 @@
-#### Reunión 14/12/2020
+#### Reunión 27/11/2020
 
 *Alejandro*
 - En proceso: En la semana voy a estar trabajando con el NAV. Necesitamos hacerlo responsive.
@@ -18,7 +18,7 @@
 
 ---
 
-#### Reunión 7/12/2020
+#### Reunión 10/12/2020
 
 *Alejandro*
 - En proceso: En la semana voy a estar trabajando con el Footer. Necesitamos hacerlo responsive.
@@ -58,7 +58,7 @@
 
 ---
 
-#### Reunión 1/01/2021
+#### Reunión 01/01/2021
 
 *Alejandro*
 - En proceso: Organizando las carpetas del proyecto.

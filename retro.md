@@ -2,105 +2,105 @@
 
 ---
 
-#### Sprint-1
+### Sprint-1
 
-*Start Doing:* Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
+**Start Doing:** Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
 
 - Tener 2 reuniones semanales. Una al principio de la semana, para ver que vamos a estar haciendo y la Segunda al final, para ver que falto revisar/solucionar y ayudarnos.
 
-*More of:* Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero). Es decir que los [Start Doing] se convertirán en [More of]. 
+**More of:** Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero). Es decir que los [Start Doing] se convertirán en [More of]. 
 
 - Tratar de hacer el poryecto en linea, por si surgen dudas, las cuales nos podamos ayudar mutuamente.
 
-*Keep Doing:* Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
+**Keep Doing:** Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
 
 - Trabajar en trello.
 
-*Less of:* En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos.
+**Less of:** En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos.
 
 - Dejar pasar los dias para empezar a organizarnos.
 
-*Stop Doing:* En este punto exponemos aquellas practicas que a pesar de ser [Less of] pues podemos eliminarlas.
+**Stop Doing:** En este punto exponemos aquellas practicas que a pesar de ser [Less of] pues podemos eliminarlas.
 
 ---
 
-#### Sprint-2
+### Sprint-2
 
-*Start Doing:* Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
+**Start Doing:** Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
 
 - Trabajar con Asana en vez de con Trello.
 - Tener un control de calidad.
 - Organizarnos mejor con las tareas de cada uno.
 
-*More of:* Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero).Es decir que los [Start Doing] se convertirán en [More of]. 
+**More of:** Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero).Es decir que los [Start Doing] se convertirán en [More of]. 
 
 - Tener 1 reuniones semanales. Una al principio de la semana, para ver que vamos a estar haciendo y la Segunda al final, para ver que falto revisar/solucionar y ayudarnos.
 
-*Keep Doing:* Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
+**Keep Doing:** Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
 
 - Trabajar en trello.
 - Tratar de hacer el poryecto en linea, por si surgen dudas, las cuales nos podamos ayudar mutuamente.
 
-*Less of:* En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. 
+**Less of:** En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. 
 
 - Tener 2 reuniones semanales. Una al principio de la semana, para ver que vamos a estar haciendo y la Segunda al final, para ver que falto revisar/solucionar y ayudarnos.
 
-*Stop Doing:* En este punto exponemos aquellas practicas que a pesar de ser [Less of] pues podemos eliminarlas.
+**Stop Doing:** En este punto exponemos aquellas practicas que a pesar de ser [Less of] pues podemos eliminarlas.
 
 - Dejar pasar los dias para empezar a organizarnos.
 
 ---
 
-#### Sprint-3
+### Sprint-3
 
-*Start Doing:* Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
+**Start Doing:** Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
 
 - Trabajar con Asana en vez de con Trello.
 - Tener un control de calidad.
 - Organizarnos mejor con las tareas de cada uno.
 
-*More of:* Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero).Es decir que los [Start Doing] se convertirán en [More of]. 
+**More of:** Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero).Es decir que los [Start Doing] se convertirán en [More of]. 
 
 - Tener 1 reuniones semanales. Una al principio de la semana, para ver que vamos a estar haciendo y la Segunda al final, para ver que falto revisar/solucionar y ayudarnos.
 
-*Keep Doing:* Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
+**Keep Doing:** Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
 
 - Trabajar en trello.
 - Tratar de hacer el poryecto en linea, por si surgen dudas, las cuales nos podamos ayudar mutuamente.
 
-*Less of:* En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. 
+**Less of:** En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. 
 
 - Tener 2 reuniones semanales. Una al principio de la semana, para ver que vamos a estar haciendo y la Segunda al final, para ver que falto revisar/solucionar y ayudarnos.
 
-*Stop Doing:* En este punto exponemos aquellas practicas que a pesar de ser [Less of] pues podemos eliminarlas.
+**Stop Doing:** En este punto exponemos aquellas practicas que a pesar de ser [Less of] pues podemos eliminarlas.
 
 - Dejar pasar los dias para empezar a organizarnos.
 
 ---
 
-#### Sprint-4
+### Sprint-4
 
-*Start Doing:* Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
+**Start Doing:** Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
 
 - Trabajar con Asana en vez de con Trello.
 - Hacer QA.
 - Ayudarnos mas entre nosotros.
 
-*More of:* Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero).Es decir que los [Start Doing] se convertirán en [More of]. 
+**More of:** Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero).Es decir que los [Start Doing] se convertirán en [More of]. 
 
 - Organizarnos mejor con las tareas de cada uno.
 
-*Keep Doing:* Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
+**Keep Doing:** Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
 
 - Trabajar en trello.
 - Tener 1 reuniones semanales. Una al principio de la semana, para ver que vamos a estar haciendo y la Segunda al final, para ver que falto revisar/solucionar y ayudarnos.
 - Tratar de hacer el poryecto en linea, por si surgen dudas, las cuales nos podamos ayudar mutuamente.
 
-*Less of:* En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. 
+**Less of:** En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. 
 
 - Tener 2 reuniones semanales. Una al principio de la semana, para ver que vamos a estar haciendo y la Segunda al final, para ver que falto revisar/solucionar y ayudarnos.
 - Juntarnos despues de clases.
 
-*Stop Doing:* En este punto exponemos aquellas practicas que a pesar de ser [Less of] podemos eliminarlas.
+**Stop Doing:** En este punto exponemos aquellas practicas que a pesar de ser [Less of] podemos eliminarlas.
 
 - Dejar pasar los dias para empezar a organizarnos.
