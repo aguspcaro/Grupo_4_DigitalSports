@@ -2,7 +2,7 @@
     box-sizing: border-box;
   }
 
-.home {
+.main {
     display: flex;
     flex-direction: column;
 }
@@ -10,6 +10,7 @@
 .carousel-container img {
     width: 100%;
     background-size: cover;
+
 }
 
 .home-main {
@@ -19,6 +20,7 @@
 }
 
 .banner-home {
+    width: 100%;
     margin: 10px 0px 10px 0px;
 }
 
@@ -35,14 +37,6 @@
 }
 
 .outstanding-article {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
-    background-color: #2196F3;
-    padding: 10px;
-}
-
-.outstanding-article {
     display: flex;
     flex-direction: column;
     flex: 0 1 23%;
@@ -54,44 +48,6 @@
     width: 100%;
 }
 
-/*
-.outstanding-article2 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 23%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.outstanding-article2 img {
-    width: 100%;
-}
-
-.outstanding-article3 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 23%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.outstanding-article3 img {
-    width: 100%;
-}
-
-.outstanding-article4 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 23%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.outstanding-article4 img {
-    width: 100%;
-}
-
-*/
 .outstanding-article-info {
     display: flex;
     flex-direction: column;
@@ -127,72 +83,19 @@
 }
 /*Ofertas*/
 
-.offer {
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-}
 
 .offer-section-title {
     margin: 10px 0px 10px;
 }
 
-
-.offer-article {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
-    background-color: #2196F3;
-    padding: 10px;
-}
-
-.offer-article1 {
+.offer-article{
     display: flex;
-    flex-direction: column;
-    flex: 0 1 48%;
-    background-color: #ffffff;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: blueviolet;
     align-items: flex-start;
 }
 
-.offer-article1 img {
-    width: 100%;
-}
-
-.offer-article2 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 48%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.offer-article2 img {
-    width: 100%;
-}
-
-.offer-article3 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 30%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.offer-article3 img {
-    width: 100%;
-}
-
-.offer-article4 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 30%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.offer-article4 img {
-    width: 100%;
-}
 
 .offer-article-info {
     display: flex;
@@ -202,7 +105,7 @@
 
 .offer-article-title {
     margin: 0;
-    font-size: 40px;
+    font-size: 14px;
 }
 
 .offer-article-container-description {
@@ -223,8 +126,9 @@
     margin-left: 5px;
 }
 
-.offer-article3, .offer-article4 {
-    display: none;
+.offer-article1-image {
+    width: 100%;
+    height: auto;
 }
 
 /*Lanzamientos*/
@@ -250,18 +154,6 @@
 
 
 .releases-article1 img {
-    width: 100%;
-}
-
-.releases-article2 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 48%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.releases-article2 img {
     width: 100%;
 }
 
@@ -295,9 +187,6 @@
     margin-left: 5px;
 }
 
-.releases-article3, .releases-article4 {
-    display: none;
-}
 
 /*Recomendados*/
 
@@ -319,54 +208,6 @@
     background-color: #2196F3;
     padding: 10px;
     margin: 10px 0px 10px;
-}
-
-.recommended-article1 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 48%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.recommended-article1 img {
-    width: 100%;
-}
-
-.recommended-article2 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 48%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.recommended-article2 img {
-    width: 100%;
-}
-
-.recommended-article3 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 48%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.recommended-article3 img {
-    width: 100%;
-}
-
-.recommended-article4 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 48%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.recommended-article4 img {
-    width: 100%;
 }
 
 .recommended-article-info {
@@ -400,35 +241,48 @@
     margin-left: 5px;
 }
 
-.recommended-article3, .recommended-article4 {
-    display: none;
-}
-
-
-img {
-    width: 100%;
-}
+/* PASO A PANTALLA GRANDE ---------------------------------------------------------------------------*/
 
 @media(min-width: 768px){
+
+.carousel-container{
+        width: 100%;
+        max-height: 30%;
+        background-size: cover;
+    
+}
 
 .outstanding {
         display: flex;
         flex-direction: column;
-       margin: 10px;
-}
-
-.outstanding-article {
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-        grid-gap: 10px;
-        background-color: #2196F3;
-        padding: 10px;
+        margin: 10px;
 }
 
 .outstanding-section-title {
     font-size: 26px;
     font-weight: bold;
 }
+.offer-article{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border: 1px red solid;
+}
+.offer-article1 {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 1 23%;
+    background-color: yellowgreen;
+    padding: 10px;
+    border: 1px solid blue;
+    
+}
+
+.offer-article1-image {
+    width: 100%;
+    height: auto;
+}
+
 
 .offer-section-title {
     font-size: 26px;
@@ -542,41 +396,18 @@ img {
     background-color: #ffffff;
 }
 
+
 .offer-article{
     display: flex;
+    flex:0 1 23%;
+    flex-direction: row;
+    flex-wrap:nowrap;
     justify-content: space-between;
-
-}
-
-.offer-article1 {
-    flex:0 1 25%;
-    display: flex;
     align-items: center;
     background-color: #ffffff;
+    
 }
 
-.offer-article2 {
-    flex:0 1 25%;
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
-}
-
-.offer-article3 {
-    flex:0 1 25%;
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
-}
-.offer-article4 {
-    flex:0 1 25%;
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
-}
-.recommended-article3, .recommended-article4 {
-    display: block;
-};
 
 .recommended-article{
     display: flex;
@@ -614,10 +445,4 @@ img {
     background-color: #ffffff;
     align-items: flex-start;
 }
-}
-
-.offer-article{
-  display:flex;
-  
-
 }

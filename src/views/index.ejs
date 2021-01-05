@@ -2,114 +2,48 @@
 <link rel="stylesheet" href="/stylesheet/style-home.css">
 
 
-</head>
-
 <body>
     <main class="main">
         <%- include("partials/header")  %>
 
-        <div class="home">
+        
             <div class="carousel-container">
-                <img src="/images/girl-in-the-gym.jpg" class="carrousel-img">
+                <img src="/images/sportiva.jpg" class="carrousel-img">
             </div>
-            <div class="home-main">
-            
+                
                 <section class="outstanding">
                     <div class="outstanding-section-title">Productos destacados para vos</div>
                 </section>
-
-                <section class="outstanding-article">
-                    <% products.forEach (function(product){ %>
-                        <article class="outstanding-article">
-                            <a href="/products/detail/<%=product.id%>"> <img src="/images/products/<%=product.image%>"
-                                    class="outstanding-article1-image"></a>
-                            <div class="outstanding-article-info">
-                                <p class="outstanding-article-title"><%=product.name%></p>
-                                <div class="outstanding-article-container-description">
-                                    <p class="outstanding-article-description">$ <%=product.precio%></p>
-                                    <span class="outstanding-article-description-span">$<%=product.promocional%></span>
-                                </div>
-                            </div>
-                        </article>
-                    <%})%>
-
-                </section>
-            </div>
-            <div>
+                
                 <section class="offer">
                     <div class="offer-section-title">Ofertas</div>
-                    <section class="offer-article">
-                        
-                        <section class="offer-article">
-                            <% products.forEach (function(product){ %>
-                                <article class="offer-article">
-                                    <a href="/products/detail/<%=product.id%>"> <img src="/images/products/<%=product.image%>"
-                                            class="offer-article1-image"></a>
-                                    <div class="offer-article-info">
-                                        <p class="offer-article-title"><%=product.name%></p>
-                                        <div class="offer-article-container-description">
-                                            <p class="offer-article-description">$ <%=product.precio%></p>
-                                            <span class="offer-article-description-span">$<%=product.promocional%></span>
-                                        </div>
-                                    </div>
-                                </article>
-                            <%})%>
-
-                        
-                    </section>
                 </section>
-            </div>
 
-            <div>
-                <section class="releases">
-                    <div class="releases-section-title">Lanzamientos</div>
-                    <section class="releases-article">
+                <section class="offer-article">
 
-                        <section class="releases-article">
-                            <% products.forEach (function(product){ %>
-                                <article class="releases-article1">
-                                    <a href="/products/detail/<%=product.id%>"> <img src="/images/products/<%=product.image%>"
-                                            class="releases-article1-image"></a>
-                                    <div class="releases-article-info">
-                                        <p class="releases-article-title"><%=product.name%></p>
-                                        <div class="releases-article-container-description">
-                                            <p class="releases-article-description">$ <%=product.precio%></p>
-                                            <span class="releases-article-description-span">$<%=product.promocional%></span>
-                                        </div>
-                                    </div>
-                                </article>
-                            <%})%>
-
-                    </section>
+                    <% products.forEach(function (product){ %>
+        
+                    <article class="offer-article1">
+                       <img src="/images/products/<%=product.image%>"
+                                class="offer-article1-image">
+                        <div class="offer-article-info">
+                            <p class="offer-article-title"><%= product.name%></p>
+                            <div class="offer-article-container-description">
+                                <p class="offer-article-description">$<%= product.precio%></p>
+                                <span class="offer-article-description-span">$<%= product.descuento%></span>
+                        </div>
+                    </article>
+                    <%})%>
                 </section>
-            </div>
+            
+            
+               
 
             <div class="banner-home"><img src="/images/home_banner.jpg" class="banner-home"></div>
 
-            <div>
-                <section class="recommended">
-                    <div class="recommended-section-title">Recomendados</div>
-                <section class="recommended-article">
-
-                    <section class="recommended-article">
-                        <% products.forEach (function(product){ %>
-                            <article class="recommended-article">
-                                <a href="/products/detail/<%=product.id%>"> <img src="/images/products/<%=product.image%>"
-                                        class="recommended-article1-image"></a>
-                                <div class="recommended-article-info">
-                                    <p class="recommended-article-title"><%=product.name%></p>
-                                    <div class="recommended-article-container-description">
-                                        <p class="recommended-article-description">$ <%=product.precio%></p>
-                                        <span class="recommended-article-description-span">$<%=product.promocional%></span>
-                                    </div>
-                                </div>
-                            </article>
-                        <%})%>
-                    </section>
-                </section>
-            </div>
-        </div>
-
+            
+        
+        
         <%- include("partials/form-suscribe")  %>
 
 
@@ -118,4 +52,3 @@
     </main>
 </body>
 
-</html>
