@@ -6,8 +6,10 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
 let usersControllers = {
-  root : function(req, res, next) {
-    res.render("users", { users } );
+  root: function(req, res, next) {
+    // el error es porque estoy exportando todo el json y en el ejs no hay manera que llame la propiedad .nameRegister de todos //
+    
+    res.render("users", { users });
   },
   register: function (req, res, next) {
     res.render("register");
@@ -25,7 +27,8 @@ let usersControllers = {
     let usuario = JSON.stringify(users);
     fs.writeFileSync(usersFilePath, usuario);
 
-    res.redirect('/users');
+    res.redirect('/users'); 
+
   },
   login: function (req, res, next) {
     res.render("login");
@@ -36,11 +39,11 @@ let usersControllers = {
   suscribe: function (req, res, next) {
     res.render("thankYou");
   },
-  delete : function(req, res) {
+  delete : function(req, res, next) {
     const filtrar = users.filter((user) => user.id != req.params.id);
     let user = JSON.stringify(filtrar);
     fs.writeFileSync(usersFilePath, user);
-    res.redirect("/users");
+    res.redirect("/");
   },
   edit : function(req, res) {
     users.forEach(function(user) {
@@ -63,7 +66,7 @@ let usersControllers = {
       return busca.id == codigo;
     });
 
-    res.render('users', { user });
+    res.render('/', { user });
   }
 };
 

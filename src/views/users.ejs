@@ -11,25 +11,27 @@
 
         <%- include("partials/header")  %>
 
-
         <h1>Usuarios</h1>
 
-
+        
 
         <section class="offer-article">         
-                
+            
+
             <div class="containerDetalle">
-                        
-                <h4><%=users.nameRegister%> Usuario</h4>
+                
+                <h4><%= users %> Usuario</h4>
 
                 <div>
-                    <a  href="/users/vista/<%= users.id%>"><button type="submit" class="">Editar</button></a>
+                    <form  action="/users/vista/<%= users.id%>/?_method=PUT" method="PUT">
+                        <button type="submit" class="">Editar</button>
+                    </form>
 
                     
     
-                    <a href="/users/delete/<%=users.id%>/?_method=DELETE" method="POST">
-                        <button type="submit" class="">ELIMINAR</button>
-                    </a>
+                    <form action="/users/delete/<%=users.id%>/?_method=DELETE" method="POST">
+                        <button type="submit" class="action-button delete">ELIMINAR</button>
+                    </form>
 
                 </div>
 
