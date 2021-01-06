@@ -11,17 +11,56 @@
                 <img src="/images/sportiva.jpg" class="carrousel-img">
             </div>
                 
-                <section class="outstanding">
-                    <div class="outstanding-section-title">Productos destacados para vos</div>
-                </section>
-                
+            <section class="offer">
+                <div class="offer-section-title">Productos destacados para vos</div>
+            </section>
+
+            <section class="offer-article">
+
+                <% destacado.forEach(function (product){ %>
+    
+                <article class="offer-article1">
+                    <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                        class="offer-article1-image"></a>
+                    <div class="offer-article-info">
+                        <p class="offer-article-title"><%= product.name%></p>
+                        <div class="offer-article-container-description">
+                            <p class="offer-article-description">$<%= product.precio%></p>
+                            <span class="offer-article-description-span">$<%= product.promocional%></span>
+                    </div>
+                </article>
+                <%})%>
+            </section>
+
+
+            <section class="offer">
+                <div class="offer-section-title">Ofertas</div>
+            </section>
+
+            <section class="offer-article">
+
+                <% oferta.forEach(function (product){ %>
+    
+                <article class="offer-article1">
+                   <img src="/images/products/<%=product.image%>"
+                            class="offer-article1-image">
+                    <div class="offer-article-info">
+                        <p class="offer-article-title"><%= product.name%></p>
+                        <div class="offer-article-container-description">
+                            <p class="offer-article-description">$<%= product.precio%></p>
+                            <span class="offer-article-description-span">$<%= product.promocional%></span>
+                    </div>
+                </article>
+                <%})%>
+            </section>
+
                 <section class="offer">
-                    <div class="offer-section-title">Ofertas</div>
+                    <div class="offer-section-title">Lanzamientos</div>
                 </section>
 
                 <section class="offer-article">
 
-                    <% products.forEach(function (product){ %>
+                    <% lanzamiento.forEach(function (product){ %>
         
                     <article class="offer-article1">
                        <img src="/images/products/<%=product.image%>"
@@ -30,7 +69,7 @@
                             <p class="offer-article-title"><%= product.name%></p>
                             <div class="offer-article-container-description">
                                 <p class="offer-article-description">$<%= product.precio%></p>
-                                <span class="offer-article-description-span">$<%= product.descuento%></span>
+                                <span class="offer-article-description-span">$<%= product.promocional%></span>
                         </div>
                     </article>
                     <%})%>
@@ -41,7 +80,26 @@
 
             <div class="banner-home"><img src="/images/home_banner.jpg" class="banner-home"></div>
 
-            
+            <section class="offer">
+                <div class="offer-section-title">Recomendados</div>
+            </section>
+
+            <section class="offer-article">
+
+                <% recomendado.forEach(function (product){ %>
+    
+                <article class="offer-article1">
+                   <img src="/images/products/<%=product.image%>"
+                            class="offer-article1-image">
+                    <div class="offer-article-info">
+                        <p class="offer-article-title"><%= product.name%></p>
+                        <div class="offer-article-container-description">
+                            <p class="offer-article-description">$<%= product.precio%></p>
+                            <span class="offer-article-description-span">$<%= product.promocional%></span>
+                    </div>
+                </article>
+                <%})%>
+            </section>
         
         
         <%- include("partials/form-suscribe")  %>
