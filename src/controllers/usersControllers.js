@@ -14,11 +14,12 @@ let usersControllers = {
   },
   registration: function (req, res, next) {
     users.push({
-      name: req.body.nameRegister,
-      lastName: req.body.lastNameRegister,
-      email: req.body.emailRegister,
-      password: req.body.passwordRegister,
-      verifyPassword : req.body.confirmPasswordRegister
+      id: Date.now(),
+      nameRegister: req.body.nameRegister,
+      lastNameRegister: req.body.lastNameRegister,
+      emailRegister: req.body.emailRegister,
+      passwordRegister: req.body.passwordRegister,
+      confirmPasswordRegister : req.body.confirmPasswordRegister
     });
     
     let usuario = JSON.stringify(users);
@@ -34,9 +35,36 @@ let usersControllers = {
   },
   suscribe: function (req, res, next) {
     res.render("thankYou");
-  
-
   },
+  delete : function(req, res) {
+    const filtrar = users.filter((user) => user.id != req.params.id);
+    let user = JSON.stringify(filtrar);
+    fs.writeFileSync(usersFilePath, user);
+    res.redirect("/users");
+  },
+  edit : function(req, res) {
+    users.forEach(function(user) {
+      if (user.id == req.params.id) {
+        user.nameRegister = req.body.nameRegister;
+        user.lastNameRegister = req.body.lastNameRegister;
+        user.emailRegister = req.body.emailRegister;
+        user.passwordRegister = req.body.passwordRegister;
+        user.confirmPasswordRegister = req.body.confirmPasswordRegister;
+      }
+    })
+    let usuario = JSON.stringify(users);
+    fs.writeFileSync(usersFilePath, usuario);
+
+    res.redirect("/users")
+  },
+  modificar : function(req, res) {
+    let codigo = req.params.id;
+    let user = users.find(function (busca) {
+      return busca.id == codigo;
+    });
+
+    res.render('users', { user });
+  }
 };
 
 module.exports = usersControllers;

@@ -2,213 +2,106 @@
 <link rel="stylesheet" href="/stylesheet/style-home.css">
 
 
-</head>
-
 <body>
     <main class="main">
         <%- include("partials/header")  %>
 
-        <div class="home">
+        
             <div class="carousel-container">
-                <img src="/images/girl-in-the-gym.jpg" class="carrousel-img">
+                <img src="/images/home-image.jpg" class="carrousel-img">
             </div>
-            <div class="home-main">
-                <section class="outstanding">
-                    <div class="outstanding-section-title">Productos destacados para vos</div>
-                </section>
-                <section class="outstanding-article">
+                
+            <section class="offer">
+                <div class="offer-section-title">Productos destacados para vos</div>
+            </section>
 
-                    <article class="outstanding-article1">
-                        <a href="/products/detail"> <img src="/images/Zapatilla-Nike-Todos.jpeg"
-                                class="outstanding-article1-image"></a>
-                        <div class="outstanding-article-info">
-                            <p class="outstanding-article-title">Nike Todos</p>
-                            <div class="outstanding-article-container-description">
-                                <p class="outstanding-article-description">$ 5999</p>
-                                <span class="outstanding-article-description-span">$7600</span>
-                            </div>
-                        </div>
-                    </article>
+            <section class="offer-article">
 
-                    <article class="outstanding-article2">
-                        <a href="/products/detail"><img src="/images/camiseta_river_titular.jpg"
-                                class="outstanding-article2-image"></a>
-                        <div class="outstanding-article-info">
-                            <p class="outstanding-article-title">Camiseta River Plate</p>
-                            <div class="outstanding-article-container-description">
-                                <p class="outstanding-article-description">$ 5999</p>
-                                <span class="outstanding-article-description-span">$7600</span>
-                            </div>
-                        </div>
-                    </article>
+                <% destacado.forEach(function (product){ %>
+    
+                <article class="offer-article1">
+                    <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                        class="offer-article1-image"></a>
+                    <div class="offer-article-info">
+                        <p class="offer-article-title"><%= product.name%></p>
+                        <div class="offer-article-container-description">
+                            <p class="offer-article-description">$<%= product.precio%></p>
+                            <span class="offer-article-description-span">$<%= product.promocional%></span>
+                    </div>
+                </article>
+                <%})%>
+            </section>
 
-                    <article class="outstanding-article3">
-                        <a href="/products/detail"><img src="/images/camiseta_river_alternativa.jpg"
-                                class="outstanding-articles3-image"></a>
-                        <div class="outstanding-article-info">
-                            <p class="outstanding-article-title">Camiseta River Plate Alternativa</p>
-                            <div class="outstanding-article-container-description">
-                                <p class="outstanding-article-description">$ 5999</p>
-                                <span class="outstanding-article-description-span">$7600</span>
-                            </div>
-                        </div>
-                    </article>
 
-                </section>
-            </div>
-            <div>
+            <section class="offer">
+                <div class="offer-section-title">Ofertas</div>
+            </section>
+
+            <section class="offer-article">
+
+                <% oferta.forEach(function (product){ %>
+    
+                <article class="offer-article1">
+                    <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                        class="offer-article1-image"></a>
+                    <div class="offer-article-info">
+                        <p class="offer-article-title"><%= product.name%></p>
+                        <div class="offer-article-container-description">
+                            <p class="offer-article-description">$<%= product.precio%></p>
+                            <span class="offer-article-description-span">$<%= product.promocional%></span>
+                    </div>
+                </article>
+                <%})%>
+            </section>
+
                 <section class="offer">
-                    <div class="offer-section-title">Ofertas</div>
-                    <section class="offer-article">
-                        <article class="offer-article1">
-                            <a href="/products/detail"><img src="/images/Converse-chuck-Taylor.jpeg"
-                                    class="offer-article1-image"></a>
-                            <div class="offer-article-info">
-                                <p class="offer-article-title">Converse Chuck Taylor</p>
-                                <div class="offer-article-container-description">
-                                    <p class="offer-article-description">$ 5999</p>
-                                    <span class="offer-article-description-span">$7600</span>
-                                </div>
-                            </div>
-                        </article>
-
-                        <article class="offer-article2">
-                            <a href="/products/detail"><img src="/images/ojotas_havaianas.jpg" class="offer-article2-image"></a>
-                            <div class="offer-article-info">
-                                <p class="offer-article-title">Ojotas Havaianas</p>
-                                <div class="offer-article-container-description">
-                                    <p class="offer-article-description">$ 3700</p>
-                                    <span class="offer-article-description-span">$5200</span>
-                                </div>
-
-                            </div>
-                        </article>
-
-                        <article class="offer-article3">
-                            <a href="/products/detail"><img src="/images/camiseta-argentina-promo.jpg"
-                                    class="offer-article3-image"></a>
-                            <p class="offer-article-title">Camiseta Argentina</p>
-                            <div class="offer-article-container-description">
-                                <p class="offer-article-description">$ 3700</p>
-                                <span class="offer-article-description-span">$5200</span>
-                            </div>
-                        </article>
-
-                        <article class="offer-article4">
-                            <a href="/products/detail"><img src="/images/camiseta_river_titular.jpg"
-                                    class="offer-article4-image"></a>
-                            <p class="offer-article-title">Camiseta River Titular Niños</p>
-                            <div class="offer-article-container-description">
-                                <p class="offer-article-description">$ 3700</p>
-                                <span class="offer-article-description-span">$5200</span>
-                            </div>
-                        </article>
-                    </section>
+                    <div class="offer-section-title">Lanzamientos</div>
                 </section>
-            </div>
 
-            <div>
-                <section class="releases">
-                    <div class="releases-section-title">Lanzamientos</div>
-                    <section class="releases-article">
-                        <article class="releases-article1">
-                            <img src="/images/buzo-con-capucha-warm-up.jpg" class="releases-article1-image">
-                            <div class="releases-article-info">
-                                <p class="releases-article-title">Buzo con capucha</p>
-                                <div class="releases-article-container-description">
-                                    <p class="releases-article-description">$ 5999</p>
-                                    <span class="releases-article-description-span">$7600</span>
-                                </div>
-                            </div>
-                        </article>
+                <section class="offer-article">
 
-                        <article class="releases-article2">
-                            <img src="/images/musculosa_under_armor.jpg" class="releases-article2-image">
-                            <div class="releases-article-info">
-                                <p class="releases-article-title">Conjunto Deportivo Dama</p>
-                                <div class="releases-article-container-description">
-                                    <p class="releases-article-description">$ 3700</p>
-                                    <span class="releases-article-description-span">$5200</span>
-                                </div>
-
-                            </div>
-                        </article>
-
-                        <article class="releases-article3">
-                            <img src="/images/camiseta-argentina-promo.jpg" class="releases-article3-image">
-                            <p class="releases-article-title">Camiseta Argentina</p>
-                            <div class="releases-article-container-description">
-                                <p class="releases-article-description">$ 3700</p>
-                                <span class="releases-article-description-span">$5200</span>
-                            </div>
-                        </article>
-
-                        <article class="releases-article4">
-                            <img src="/images/camiseta_river_titular.jpg" class="releases-article4-image">
-                            <p class="releases-article-title">Camiseta River Titular</p>
-                            <div class="releases-article-container-description">
-                                <p class="releases-article-description">$ 3700</p>
-                                <span class="releases-article-description-span">$5200</span>
-                            </div>
-                        </article>
-                    </section>
+                    <% lanzamiento.forEach(function (product){ %>
+        
+                    <article class="offer-article1">
+                        <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                            class="offer-article1-image"></a>
+                        <div class="offer-article-info">
+                            <p class="offer-article-title"><%= product.name%></p>
+                            <div class="offer-article-container-description">
+                                <p class="offer-article-description">$<%= product.precio%></p>
+                                <span class="offer-article-description-span">$<%= product.promocional%></span>
+                        </div>
+                    </article>
+                    <%})%>
                 </section>
-            </div>
+            
+            
+               
 
             <div class="banner-home"><img src="/images/home_banner.jpg" class="banner-home"></div>
 
-            <div>
-                <section class="recommended">
-                    <div class="recommended-section-title">Recomendados</div>
-                    <section class="recommended-article">
-                        <article class="recommended-article1">
-                            <a href="/products/detail"><img src="/images/musculosa-man-under_armour.jpeg"
-                                    class="recommended-article1-image"></a>
-                            <div class="recommended-article-info">
-                                <p class="recommended-article-title">Musculosa Under Armor</p>
-                                <div class="recommended-article-container-description">
-                                    <p class="recommended-article-description">$ 5999</p>
-                                    <span class="recommended-article-description-span">$7600</span>
-                                </div>
-                            </div>
-                        </article>
+            <section class="offer">
+                <div class="offer-section-title">Recomendados</div>
+            </section>
 
-                        <article class="recommended-article2">
-                            <a href="/products/detail"><img src="/images/Converse-chuck-Taylor.jpeg"
-                                    class="recommended-article2-image"></a>
-                            <div class="recommended-article-info">
-                                <p class="recommended-article-title">Zapatilla Puma Vicky</p>
-                                <div class="recommended-article-container-description">
-                                    <p class="recommended-article-description">$ 3700</p>
-                                    <span class="recommended-article-description-span">$5200</span>
-                                </div>
+            <section class="offer-article">
 
-                            </div>
-                        </article>
-
-                        <article class="recommended-article3">
-                            <a href="/products/detail"><img src="/images/Adidas_Afa_Away.jpeg"
-                                    class="recommended-article3-image"></a>
-                            <p class="recommended-article-title">Camiseta Argentina Alternativa Niños</p>
-                            <div class="recommended-article-container-description">
-                                <p class="recommended-article-description">$ 3700</p>
-                                <span class="recommended-article-description-span">$5200</span>
-                            </div>
-                        </article>
-
-                        <article class="recommended-article4">
-                       <a href="/products/detail"><img src="/images/Adidas_Copa_Gloro.jpeg" class="recommended-article4-image"></a>
-                            <p class="recommended-article-title">Adidas Copa Gloro</p>
-                            <div class="recommended-article-container-description">
-                                <p class="recommended-article-description">$ 3700</p>
-                                <span class="recommended-article-description-span">$5200</span>
-                            </div>
-                        </article>
-                    </section>
-                </section>
-            </div>
-        </div>
-
+                <% recomendado.forEach(function (product){ %>
+    
+                <article class="offer-article1">
+                    <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                        class="offer-article1-image"></a>
+                    <div class="offer-article-info">
+                        <p class="offer-article-title"><%= product.name%></p>
+                        <div class="offer-article-container-description">
+                            <p class="offer-article-description">$<%= product.precio%></p>
+                            <span class="offer-article-description-span">$<%= product.promocional%></span>
+                    </div>
+                </article>
+                <%})%>
+            </section>
+        
+        
         <%- include("partials/form-suscribe")  %>
 
 
@@ -217,4 +110,3 @@
     </main>
 </body>
 
-</html>

@@ -2,6 +2,7 @@
 
 <link rel="stylesheet" href="/stylesheet/style-home.css">
 <link rel="stylesheet" href="/stylesheet/admproduct.css">
+<link rel="stylesheet" href="/stylesheet/users.css">
 
 </head>
 
@@ -15,30 +16,25 @@
 
 
 
-        <section class="offer-article">
-
-            <% products.forEach(function (users){ %>
-
-            <article class="offer-article1">
-               
-                <div class="offer-article-info">
-                    <p class="offer-article-title"></p>
-                    
+        <section class="offer-article">         
                 
-                    <div class="containerDetalle">
-                      
-                        <a  href=""><button type="submit" class="">Editar</button></a>
+            <div class="containerDetalle">
+                        
+                <h4><%=users.nameRegister%> Usuario</h4>
 
-                        <a href=""><button type="submit">Detalle</button></a>
+                <div>
+                    <a  href="/users/vista/<%= users.id%>"><button type="submit" class="">Editar</button></a>
 
-                        <form action="" method="POST">
-							<button type="submit" class="">ELIMINAR</button>
-						</form>
+                    
+    
+                    <a href="/users/delete/<%=users.id%>/?_method=DELETE" method="POST">
+                        <button type="submit" class="">ELIMINAR</button>
+                    </a>
 
-                    </div>
                 </div>
-            </article>
-            <% }) %>
+
+
+            </div>
 
         </section>
 
