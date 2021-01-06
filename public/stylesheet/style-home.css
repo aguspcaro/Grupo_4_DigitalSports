@@ -24,6 +24,7 @@
     margin: 10px 0px 10px 0px;
 }
 
+
 /*Destacados*/
 
 
@@ -255,16 +256,13 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    border: 1px red solid;
 }
 .offer-article1 {
     display: flex;
     flex-wrap: wrap;
     flex: 0 1 23%;
-    background-color: yellowgreen;
-    padding: 10px;
-    border: 1px solid blue;
-    
+    background-color: #ffffff;
+    padding: 10px;    
 }
 
 .offer-article1-image {
