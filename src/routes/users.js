@@ -19,6 +19,9 @@ router.get('/register', usersControllers.register);
 router.post('/register', uploads.any(), usersControllers.registration);
 router.get('/login', usersControllers.login);
 router.post('/login', usersControllers.checkLogin);
-router.post('/suscribe', usersControllers.suscribe); 
+router.post('/suscribe', usersControllers.suscribe);
+router.delete("/delete/:id", usersControllers.delete);
+router.get("/vista/:id", usersControllers.modificar);
+router.put("/:id", uploads.any(), usersControllers.edit);
 
 module.exports = router;

@@ -73,7 +73,7 @@ let productsControllers = {
         product.stock = req.body.stock;
         product.categoria = req.body.categoria;
       }
-});
+    });
 
     let productos = JSON.stringify(products);
 
