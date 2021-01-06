@@ -3,90 +3,38 @@ body {
     font-size: 16px;
 }
 
-
-.menu {
-    font-size: 1em;
-    display: flex;
-    flex-direction: row;
-    margin-top: 2%;
-}
-
-.menu .home {
-    color: grey;
-    font-size: 1.2em;
-    margin-top: 5%;
-}
-
-.menu .home:hover {
-    color: #0985d9;
-}
-
-.menu .menu-producto {
-    font-size: 1em;
-    margin-left: 0.5em;
-}
-
 /* Container Padre */
 
 .container-section-producto {
     background: white;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
     font-size: 16px;
-    margin-bottom: 3%;
+    width: 100%;
+    margin-top: 5%;
 }
 
 /* Container imagen izquirda */
 
 .container-img {
     display: flex;
+    width: 60%;
+    border: solid 0.5px grey;
+    margin-right: 10%;
 }
 
 .article-imagen-left {
-    width: 40vw;
-    border: solid 0.5px grey;
-}
-
-.arrowIzq {
-    font-size: 4em;
-    color: grey;
-    position: absolute;
-    top: 55vh;
-    left: 10vw;
-}
-
-.arrowDer {
-    font-size: 4em;
-    color: grey;
-    position: absolute;
-    top: 55vh;
-    left: 43.5vw;
-}
-
-/* Container imagen derecha */
-
-.container-imagenes {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-
-}
-
-.article-imagen-right {
-    width: 12.5vw;
-    border: solid 1px grey;
+    height: auto;
+    width: 100%;
 }
 
 /* Container detalle del producto*/
 
 .container-detalle {
     display: flex;
-    flex-wrap: nowrap;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: space-between;
     background: rgb(255, 255, 255);
-    width: 30vw;
+    width: 40%;
 }
 
 /* titulo detalle */
@@ -100,7 +48,7 @@ body {
 
 .container-texto-nombre h3 {
     margin-top: 0px;
-    font-size: 1.7em;
+    font-size: 1.5em;
     line-height: 20px;
     font-weight: 500;
     width: 100%;
@@ -113,6 +61,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    margin-top: 10%;
     width: 100%;
 }
 
@@ -121,9 +70,8 @@ body {
 }
 
 .container-texto-precio h4 {
-    
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 /* Container talle */
@@ -131,46 +79,35 @@ body {
 .container-detalle-caracteristicas {
     display: flex;
     flex-direction: column;
-    margin-bottom: 5%;
     width: 100%;
 }
 
 .container-detalle-caracteristicas p {
-    font-size: 1.8em;
+    font-size: 1.5em;
     margin-bottom: 2%;
 }
 
 .container-detalle-talles-numero {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
     border-bottom: 1px solid grey;
     border-top: 1px solid grey;
     width: 100%;
     max-width: 90%;
     font-size: 1.5em;
-    padding: 4px;
+    margin-bottom: 5%;
 }
 
-
-
-
-
-
-
-.container-detalle-talles-numero input[type="radio"]:checked+label:before {
-    display: none;
-
-}
 
 .container-detalle-color {
     display: flex;
     flex-direction: column;
     width: 90%;
+    font-size: 1.2em
 }
 
 .container-detalle-color label {
-    font-size: 1.5em;
+    font-size: 0.8em;
     font-style: italic;
     border-bottom: 1px solid grey;
     border-top: 1px solid grey;
@@ -181,7 +118,8 @@ body {
 
 .container-detalle-comprar {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    margin-top: 5%;
     width: 100%;
 
 }
@@ -247,7 +185,7 @@ body {
 
 @media (max-width: 760px) {
     body {
-        width: 100vw;
+        width: 100%;
         font-size: 10px;
         display: flex;
         flex-direction: column;
@@ -258,14 +196,6 @@ body {
         display: flex;
         flex-direction: column;
         font-size: 1em;
-    }
-
-    .menu {
-        display: none;
-    }
-
-    .container-imagenes .article-imagen-right {
-        display: none;
     }
 
     .container-img {
@@ -353,33 +283,8 @@ body {
         margin-top: 2%;
     }
 
-    .container-imagenes {
-        display: none;
-    }
-
     .container-detalle {
         margin-left: 1%;
-    }
-
-    .container-detalle {
-        width: 60%;
-    }
-
-    .container-imag .article-imagen-left {
-        height: 50vh;
-        margin-top: 5%;
-    }
-
-    .arrowIzq {
-        display: none;
-    }
-
-    .arrowDer {
-        display: none;
-    }
-
-    .menu {
-        display: none;
     }
 
 

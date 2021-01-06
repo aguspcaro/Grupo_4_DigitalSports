@@ -5,31 +5,13 @@
 <body>
     <main class="main">
         <%- include("partials/header")  %>
-        <div class="menu">
-            <div>
-                <p><a href="#"><i class="fas fa-home home"></i></a></p>
-            </div>            
-            <div class="detalle titulo">
-                <p class="menu-producto">/ Seccion de la home / Nombre del producto</p>
-            </div>
-        </div>
-        <div class="contenedorPadre">
+        
             <section class="container-section-producto">
 
 
                 <div class="container-img">
-                    <a href=""><i class="fas fa-angle-left arrowIzq"></i></a>
-                    <a href=""><i class="fas fa-angle-right arrowDer"></i></a>
-                    <img class="article-imagen-left" src="/images/products/<%=product.image%>" alt="" >
+                    <img class="article-imagen-left" src="/images/products/<%=product.image%>">
                 </div>
-
-                <div class="container-imagenes">
-                    <img class="article-imagen-right" src="/images/products/<%=product.image%>" alt="" >  
-                    <img class="article-imagen-right" src="/images/products/<%=product.image%>" alt="" >
-                    <img class="article-imagen-right" src="/images/products/<%=product.image%>" alt="" >                
-                </div>
-
-
 
                 <div class="container-detalle">
 
@@ -51,7 +33,7 @@
                         </div>
                         
                         <div class="container-detalle-talles-numero">
-                            <input type="radio" name="talle" id="36">
+                            
                             <label ><%= product.talle %></label>
                         
                         </div>
@@ -62,26 +44,24 @@
                         </div>
                         
                     </div>
-                    
-                    <div class="container-detalle-comprar">
-                        <button type="submit" class="section-loginButtonEnterOk"><a href=""><i class="fas fa-shopping-cart carrito"></i></a></button>
-                        <div class="logo-like">
-                            <p>
-                                <a href=""><i class="fas fa-heart like"></i></a>
-                            </p>
-                            
-                        </div>
-                        
-                        <div class="container-detalle-envio">
-                            <p>Envío:</p>
-                            <label ><%= product.envio %></label>
-                        </div>
-                    </div>
-
-
                 </div>
 
             </section>
+
+            <div class="container-detalle-comprar">
+                <button type="submit" class="section-loginButtonEnterOk"><a href=""><i class="fas fa-shopping-cart carrito"></i></a></button>
+                <div class="logo-like">
+                    <p>
+                        <a href=""><i class="fas fa-heart like"></i></a>
+                    </p>
+                    
+                </div>
+                
+                <div class="container-detalle-envio">
+                    <p>Envío:</p>
+                    <label ><%= product.envio %></label>
+                </div>
+            </div>
 
             <div class="container-descripcion">
                 <hr>
@@ -90,8 +70,6 @@
                 <p><%= product.description%></p>
                 <hr>
             </div>
-
-        </div>
    
         <%- include("partials/form-suscribe")  %>
 
