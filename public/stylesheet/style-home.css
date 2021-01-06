@@ -25,73 +25,16 @@
 }
 
 
-/*Destacados*/
-
-
-.outstanding-section-title {
-    margin: 10px 0px 10px;
-}
-
-.outstanding-article {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 23%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.outstanding-article img {
-    width: 100%;
-}
-
-.outstanding-article-info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.outstanding-article-title {
-    margin: 0;
-    font-size: 14px;
-}
-
-.outstanding-article-container-description {
-    display: flex;
-}
-
-.outstanding-article-description{
-    margin: 0;
-    font-size: 12px;
-    font-weight: bold;
-    display: inline;
-}
-
-.outstanding-article-description-span {
-    color:  #ee7209;
-    text-decoration: line-through;
-    font-size: 12px;
-    margin-left: 5px;
-}
-
-
-.outstanding-article3, .outstanding-article4 {
-    display: none;
-}
-/*Ofertas*/
-
-
 .offer-section-title {
     margin: 10px 0px 10px;
 }
 
 .offer-article{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    background-color: blueviolet;
-    align-items: flex-start;
-}
-
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    }
 
 .offer-article-info {
     display: flex;
@@ -127,110 +70,6 @@
     height: auto;
 }
 
-/*Lanzamientos*/
-
-.releases {
-    display: flex;
-    flex-direction: column;
-    margin: 10px 0px 10px;
-}
-
-.releases-section-title {
-    margin: 10px 0px 10px;
-}
-
-.releases-article {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-gap: 10px;
-    background-color: #2196F3;
-    padding: 10px;
-    
-}
-
-
-.releases-article1 img {
-    width: 100%;
-}
-
-
-.releases-article-info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
-.releases-article-title {
-    margin: 0;
-    font-size: 12px;
-}
-
-.releases-article-container-description {
-    display: flex;
-}
-
-.releases-article-description {
-    margin: 0;
-    font-size: 12px;
-    font-weight: bold;
-    display: inline;
-}
-
-.releases-article-description-span {
-    color:  #ee7209;
-    text-decoration: line-through;
-    font-size: 12px;
-    margin-left: 5px;
-}
-
-
-/*Recomendados*/
-
-.recommended{
-    display: flex;
-    flex-direction: column;
-    margin: 10px;
-}
-
-.recommended-section-title {
-    margin: 10px 0px 10px;
-}
-
-.recommended-article {
-    
-}
-
-.recommended-article-info {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    
-}
-
-.recommended-article-title {
-    margin: 0;
-    font-size: 12px;
-    
-}
-
-.recommended-article-container-description {
-    display: flex;
-}
-
-.recommended-article-description {
-    margin: 0;
-    font-size: 12px;
-    font-weight: bold;
-    display: inline;
-}
-
-.recommended-article-description-span {
-    color:  #ee7209;
-    text-decoration: line-through;
-    font-size: 12px;
-    margin-left: 5px;
-}
-
 /* PASO A PANTALLA GRANDE ---------------------------------------------------------------------------*/
 
 @media(min-width: 768px){
@@ -248,22 +87,13 @@
         margin: 10px;
 }
 
-.outstanding-section-title {
-    font-size: 26px;
-    font-weight: bold;
-}
+
 .offer-article{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-}
-.offer-article1 {
-    display: flex;
-    flex-wrap: wrap;
-    flex: 0 1 23%;
-    background-color: #ffffff;
-    padding: 10px;    
-}
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    }
 
 .offer-article1-image {
     width: 100%;
@@ -274,162 +104,4 @@
 .offer-section-title {
     font-size: 26px;
     font-weight: bold;
-}
-
-.releases-article {
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 10px;
-    background-color: #2196F3;
-    padding: 10px;
-    
-}
-.releases-section-title {
-    font-size: 26px;
-    font-weight: bold;
-}
-
-.recommended-section-title {
-    font-size: 26px;
-    font-weight: bold;
-}
-
-.outstanding-article-title {
-    margin: 0;
-    font-size: 14px;
-}
-
-.offer-article-title {
-    margin: 0;
-    font-size: 14px;
-}
-
-.releases-article-title {
-    margin: 0;
-    font-size: 14px;
-}
-
-.recommended-article-title {
-    margin: 0;
-    font-size: 14px;
-}
-
-
-.outstanding-article-description {
-    margin: 0;
-    font-size: 16px;
-}
-
-.offer-article-description {
-    margin: 0;
-    font-size: 16px;
-}
-
-.releases-article-description {
-    margin: 0;
-    font-size: 16px;
-}
-
-.recommended-article-description {
-    margin: 0;
-    font-size: 16px;
-}
-
-
-.outstanding-article-description-span {
-    margin-left: 10px;
-    font-size: 16px;
-}
-
-.offer-article-description-span {
-    margin-left: 10px;
-    font-size: 16px;
-}
-
-.releases-article-description-span {
-    margin-left: 10px;
-    font-size: 16px;
-}
-
-.recommended-article-description-span {
-    margin-left: 10px;
-    font-size: 16px;
-}
-
-
-.outstanding-article3 {
-    display: block;
-}
-
-.outstanding-article1 {
-    flex:0 1 23%;
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
-}
-
-
-.outstanding-article2 {
-    flex:0 1 23%;
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
-}
-
-.outstanding-article3 {
-    flex:0 1 23%;
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
-}
-
-
-.offer-article{
-    display: flex;
-    flex:0 1 23%;
-    flex-direction: row;
-    flex-wrap:nowrap;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ffffff;
-    
-}
-
-
-.recommended-article{
-    display: flex;
-    justify-content: space-between;
-}
-
-.recommended-article1 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 23%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.recommended-article2 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 23%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.recommended-article3 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 23%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
-
-.recommended-article4 {
-    display: flex;
-    flex-direction: column;
-    flex: 0 1 23%;
-    background-color: #ffffff;
-    align-items: flex-start;
-}
 }
