@@ -7,10 +7,10 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
 let usersControllers = {
   root : function(req, res, next) {
-    res.render("users", { users } );
+    res.render("users/users", { users } );
   },
   register: function (req, res, next) {
-    res.render("register");
+    res.render("users/register");
   },
   registration: function (req, res, next) {
     users.push({
@@ -25,10 +25,10 @@ let usersControllers = {
     let usuario = JSON.stringify(users);
     fs.writeFileSync(usersFilePath, usuario);
 
-    res.redirect('/users');
+    res.redirect('users/users');
   },
   login: function (req, res, next) {
-    res.render("login");
+    res.render("users/login");
   },
   checkLogin: function (req, res, next) {
     res.send("Has ingresado correctamente");
@@ -40,7 +40,7 @@ let usersControllers = {
     const filtrar = users.filter((user) => user.id != req.params.id);
     let user = JSON.stringify(filtrar);
     fs.writeFileSync(usersFilePath, user);
-    res.redirect("/users");
+    res.redirect("users/users");
   },
   edit : function(req, res) {
     users.forEach(function(user) {
@@ -55,7 +55,7 @@ let usersControllers = {
     let usuario = JSON.stringify(users);
     fs.writeFileSync(usersFilePath, usuario);
 
-    res.redirect("/users")
+    res.redirect("users/users")
   },
   modificar : function(req, res) {
     let codigo = req.params.id;
@@ -63,7 +63,7 @@ let usersControllers = {
       return busca.id == codigo;
     });
 
-    res.render('users', { user });
+    res.render('users/users', { user });
   }
 };
 

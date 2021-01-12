@@ -7,10 +7,10 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 
 let productsControllers = {
   root: function (req, res, next) {
-    res.render('products', { products });
+    res.render('products/products', { products });
   },
   cart: function (req, res, next) {
-    res.render('cart');
+    res.render('products/cart');
   },
   detail: function (req, res, next) {
     
@@ -19,10 +19,10 @@ let productsControllers = {
       return buscar.id==detalleProducto
     });
 
-    res.render('detail', {product});
+    res.render('products/detail', {product});
   },
   adm: function (req, res, next) {
-    res.render('admproduct');
+    res.render('products/admproduct');
   },
   createproduct: function (req, res, next) {
     products.push({
@@ -43,7 +43,7 @@ let productsControllers = {
     let producto = JSON.stringify(products);
     fs.writeFileSync(productsFilePath, producto);
 
-    res.redirect('/products');
+    res.redirect('products/products');
   },
 
   modificar: function (req, res, next) {
@@ -52,7 +52,7 @@ let productsControllers = {
       return busca.id == codigo;
     });
 
-    res.render('producto-modificar', { product });
+    res.render('products/producto-modificar', { product });
 
     
   },
@@ -79,7 +79,7 @@ let productsControllers = {
 
     fs.writeFileSync(productsFilePath, productos);
 
-    res.redirect('/products');
+    res.redirect('products/products');
   },
 
 
