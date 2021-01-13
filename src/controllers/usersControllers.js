@@ -33,7 +33,7 @@ let usersControllers = {
       let usuario = JSON.stringify(users);
       fs.writeFileSync(usersFilePath, usuario);
   
-      return res.redirect('/');
+      return res.redirect('login');
     } else {
       return res.render("users/register", {errors : errors.errors})
     }

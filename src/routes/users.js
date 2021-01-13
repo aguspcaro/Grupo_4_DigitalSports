@@ -30,16 +30,20 @@ router.post('/register', uploads.any(), [
     let usersFilePath = path.join(__dirname, '../data/users.json')
     let usersJson = JSON.parse(fs.readFileSync(usersFilePath, {encoding: "utf-8"}));
     let users;
+    
     if(usersJson == ""){
       users = [];
     } else {
       users = usersJson;
     }
     for(let i = 0; i < users.length; i++){
-      if(users[i].email == value)
-      return false;
+      
+      if(users[i].email == value){
+        return false;
+      }
+      return true;
     }
-  }).withMessage("email ya existente")
+  }).withMessage("*Email ya existente")
 
 ] ,usersControllers.registration);
 router.get('/login', usersControllers.login);
