@@ -10,21 +10,14 @@
         <%- include("../partials/header")  %>
         
         <% if( typeof errors != "undefined") { %> <!-- SIRVE PARA QUE CUANDO CARGUEMOS EL REGISTER NO SE NOS INICIE CON LOS ERRORES-->
-            
-            
-            <ul>
-                
-                <% for(let i = 0; i < errors.length; i++) { %>
-                    
-                    
-                    <li>
-                        <%= errors[i].msg %>
-                    </li>
-                <% } %>
-            </ul>
-
+     
+        <% } %>
         
-        <% } %>  
+        <% let errores = []; %>
+        <% errors.forEach(function(error){ %>
+            <%console.log(error.msg) %>
+            <%errores.push(error.msg) %>
+        <% }) %>  
         <section class="section-registerContainer">
             <div class="section-registerContainerTitle">
                 <h4 class="section-registerTitle">Registro</h4>
@@ -36,6 +29,7 @@
                         <label for="name" class="section-register__labelName">Nombre<span
                                 class="section-register__spanLabelName">*</span></label>
                         <input type="text" name="name" id="name" class="section-register__inputName" placeholder="Nombre Completo">
+                        <p><%= errores.msg %></p>
                         
                     </div>
 
@@ -44,14 +38,14 @@
                                 class="section-register__spanLabelLastName">*</span></label>
                         <input type="text" name="lastName" id="lastName"
                             class="section-register__inputLastName"placeholder="Apellido Completo"> 
-                        
+                        <p><%= errores.msg %></p>
                     </div>
 
                     <div class="section-registerContainerEmail">
                         <label for="email" class="section-register__labelEmail">Correo Electrónico<span
                                 class="section-register__spanLabelEmail">*</span></label>
                         <input type="email" name="email" id="email" class="section-register__inputEmail">
-                        
+                        <p><%= errores.msg %></p>
                     </div>
 
                 </div>
@@ -62,7 +56,7 @@
                                 class="section-register__spanLabelPassword">*</span></label>
                         <input type="password" name="password" id="password"
                             class="section-register__inputPassword " placeholder="Mínimo 8 caracteres">
-                        
+                        <p><%= errores.msg %></p>
                     </div>
 
                     <div class="section-registerContainerConfirmPassword">
@@ -70,7 +64,7 @@
                             <span class="section-register__spanLabelConfirmPassword">*</span></label>
                         <input type="password" name="confirmPassword" id="confirmPassword"
                             class="section-register__inputConfirmPassword" placeholder="Mínimo 8 caracteres">
-                        
+                        <p><%= errores.msg %></p>
                     </div>
 
                     <div class="section-registerContainerRequired">
@@ -103,8 +97,6 @@
 
 
         </section>
-
-
 
 
         <%- include("../partials/form-suscribe")  %>

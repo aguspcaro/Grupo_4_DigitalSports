@@ -21,11 +21,11 @@ router.get("/", usersControllers.root);
 router.get('/register', usersControllers.register);
 router.post('/register', uploads.any(), [
 
-  check("name").isLength({min: 2}).withMessage("* Debes completar este campo name"),
-  check("lastName").isLength({min: 3}).withMessage("* Debes completar este campo lastName"),
-  check("email").isEmail().withMessage("* Debes completar este campo email"),
-  check("password").isLength({min: 8}).withMessage("* Debes completar este campo password"),
-  check("confirmPassword").isLength({min: 8}).withMessage("* Debes completar este campo confirmPassword"),
+  check("name").isLength({min: 2}).withMessage("* Debes completar este campo"),
+  check("lastName").isLength({min: 3}).withMessage("* Debes completar este campo"),
+  check("email").isEmail().withMessage("* Debes completar este campo"),
+  check("password").isLength({min: 8}).withMessage("* Debes completar este campo"),
+  check("confirmPassword").isLength({min: 8}).withMessage("* Debes completar este campo"),
   body("email").custom(function (value) {
     let usersFilePath = path.join(__dirname, '../data/users.json')
     let usersJson = JSON.parse(fs.readFileSync(usersFilePath, {encoding: "utf-8"}));
@@ -43,7 +43,7 @@ router.post('/register', uploads.any(), [
       }
       return true;
     }
-  }).withMessage("*Email ya existente")
+  }).withMessage("* Email ya existente")
 
 ] ,usersControllers.registration);
 router.get('/login', usersControllers.login);
