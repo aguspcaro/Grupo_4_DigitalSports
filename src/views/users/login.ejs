@@ -18,24 +18,33 @@
                     <label for="email" class="section-login__labelEmail">Correo Electrónico<span
                             class="section-login__spanLabelEmail">*</span></label>
                     <input type="email" name="emailLogin" id="email" class="section-login__inputEmail">
+                   <% if (errors.emailLogin != undefined) { %>
+                    <small class="error-input"><%=errors.emailLogin.msg%></small>
+                   <% } %>
                 </div>
 
                 <div class="section-loginContainerPassword">
                     <label for="password" class="section-loginLabelPassword">Contraseña <span
                             class="section-login__spanLabelPassword">*</span></label>
                     <input type="password" name="passwordLogin" id="password" class="section-login__inputPassword">
-                    <a href="" class="section-loginResetPassword">Reestablecer Contraseña</a>
+                    <% if (errors.passwordLogin != undefined) { %>
+                        <small class="error-input"><%=errors.passwordLogin.msg%></small>
+                       <% } %>
+                    <div class="section-loginRecordame">
+                        <input type="checkbox"><small >Recordar mis datos</small>   
+                    </div>
                     <div class="section-loginContainerRequired">
                         <small class="section-loginRequired">*Campos Requeridos</small>
                     </div>
                 </div>
- </form>
+                <div class="section-loginContainerButton">
+                    <a class="section-loginButtonCheckIn" href="/users/register">Registrarse</a>
+                    <button class="section-loginButtonEnterOk" href="/">Ingresar</button>
+                </div>
+         </form>
+         
+                
 
- <div class="section-loginContainerButton">
-    <a class="section-loginButtonCheckIn" href="/users/register">Registrarse</a>
-<form action="/users/login" method="POST">
-    <button class="section-loginButtonEnterOk" href="/">Ingresar</button>
-</form>
 
 
         </section>

@@ -92,9 +92,10 @@ a {
     color: #606060;
 }
 
-.section-loginResetPassword {
-    margin-top: 5px;
-    color: #0985d9;
+.section-loginRecordame {
+    margin: 10px 0px 0px 0px;
+    font-size: 16px;
+
 }
 
 
@@ -116,7 +117,7 @@ a {
 .section-loginButtonEnterOk {
     font-weight: 400;
     height: 30px;
-    border-radius:3px;
+    border-radius: 3px;
     font-size: 18px;
     width: 100px;
     background-color: #0985d9;
@@ -164,6 +165,10 @@ a {
     margin-top: 10px;
 }
 
+.error-input {
+    color: red;
+}
+
 /*breackpoints*/
 
 
@@ -173,7 +178,7 @@ a {
     }
 
     .section-loginContainerButton {
-        width: 95%;
+        width: 100%;
     }
 
 }
@@ -184,7 +189,7 @@ a {
     }
 
     .section-loginContainerButton {
-        width: 60%;
+        width: 100%;
     }
 }
 
@@ -196,7 +201,7 @@ a {
     }
 
     .section-loginContainerButton {
-        width: 50%;
+        width: 100%;
     }
 
 }
@@ -208,7 +213,7 @@ a {
     }
 
     .section-loginContainerButton {
-        width: 40%;
+        width: 100%;
     }
 
 }

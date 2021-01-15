@@ -75,12 +75,27 @@ let usersControllers = {
   },
 
   login: function (req, res, next) {
-    res.render("users/login");
-  },
+    res.render("users/login", {errors: {}});
+},
 
 
   checkLogin: function (req, res, next) {
-    res.send("Has ingresado correctamente");
+
+    console.log(req.body.emailLogin)
+
+      let errors = validationResult(req);
+
+      if (errors.isEmpty()) {
+          res.send("Te logueaste perfectamente")
+      } 
+
+   
+
+      else {
+        console.log(errors.mapped())
+        res.render("users/login", {errors: errors.mapped()})
+      }
+
   },
 
   suscribe: function (req, res, next) {

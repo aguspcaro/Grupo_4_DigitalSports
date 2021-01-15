@@ -52,8 +52,15 @@ router.post('/register', uploads.any(), [
   }).withMessage("* Las contraseñas tienen que ser iguales")
 
 ] ,usersControllers.registration);
+
+
+let validationLogin = [
+  check('emailLogin').isEmail().withMessage('* Este campo debe ser un email válido'),
+  check('passwordLogin').isLength({min:8}).withMessage('* Contraseña Incorrecta')
+]
+
 router.get('/login', usersControllers.login);
-router.post('/login', usersControllers.checkLogin);
+router.post('/login', validationLogin , usersControllers.checkLogin);
 router.post('/suscribe', usersControllers.suscribe);
 router.delete("/delete/:id", usersControllers.delete);
 router.get("/vista/:id", usersControllers.modificar);
