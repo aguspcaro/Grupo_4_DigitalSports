@@ -30,7 +30,9 @@
                     <% if (errors.passwordLogin != undefined) { %>
                         <small class="error-input"><%=errors.passwordLogin.msg%></small>
                        <% } %>
-                    <a href="" class="section-loginResetPassword">Reestablecer Contraseña</a>
+                    <div class="section-loginRecordame">
+                        <input type="checkbox"><small >Recordar mis datos</small>   
+                    </div>
                     <div class="section-loginContainerRequired">
                         <small class="section-loginRequired">*Campos Requeridos</small>
                     </div>
