@@ -9,7 +9,7 @@ var productsRouter = require('./routes/products');
 var usersRouter = require('./routes/users');
 var session = require("express-session");
 var app = express();
-var bcrypt = require("bcrypt");
+var bcrypt = require("bcryptjs");
 // view engine setup
 app.use(session({secret: "esto es un secreto!!"}));
 app.set('views', path.join(__dirname, 'views'));

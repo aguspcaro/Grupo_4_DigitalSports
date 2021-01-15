@@ -1,11 +1,12 @@
 const fs = require('fs');
 const path = require('path');
-
+var bcrypt = require("bcryptjs");
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 let { check, validationResult, body} = require("express-validator");
 const { ValidatorsImpl } = require('express-validator/src/chain');
+const { UnorderedCollection } = require('http-errors');
 
 
 let usersControllers = {
@@ -81,27 +82,30 @@ let usersControllers = {
 
   checkLogin: function (req, res, next) {
 
-    console.log(req.body.emailLogin)
+    
 
       let errors = validationResult(req);
 
       if (errors.isEmpty()) {
       
-       users.forEach(function (user) {
-         if (user.email == req.body.emailLogin & bcrypt.compareSync(req.body.password, user.password)) {
-             req.session.user= user.email;
-         }else{
-
-        res.render("login",{errors:[{msg: "Credenciales invalidas"}] })
-       }
-
-        });
+       let usuarioLogueado = users.find(function(user){
+        req.body.emailUser==user.email ;
+      })
       
-      
-        res.send("Te logueaste perfectamente")
-      
-        } 
+        if (usuarioLogueado!= undefined){
+          res.send("logueado");
 
+        }else{
+
+          res.render("/user/login");
+        }
+
+      
+          
+
+      }
+
+        
       else {
         console.log(errors.mapped())
         res.render("users/login", {errors: errors.mapped()})

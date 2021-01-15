@@ -6,6 +6,8 @@ const path = require('path');
 let { check, validationResult, body} = require("express-validator");
 const fs = require("fs");
 
+
+
 let storage = multer.diskStorage({
   destination: function (req, file, cb) {
     return cb(null, path.join('.', 'public', 'images', 'users'));
