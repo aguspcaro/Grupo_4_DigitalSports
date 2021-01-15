@@ -1,12 +1,14 @@
 const fs = require('fs');
 const path = require('path');
-var bcrypt = require("bcryptjs");
+const bcrypt = require("bcryptjs");
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-let { check, validationResult, body} = require("express-validator");
+const { check, validationResult, body} = require("express-validator");
 const { ValidatorsImpl } = require('express-validator/src/chain');
 const { UnorderedCollection } = require('http-errors');
+
+
 
 
 let usersControllers = {
@@ -16,7 +18,7 @@ let usersControllers = {
   },
 
   register: function (req, res, next) {
-    
+    errors = {};
     res.render("users/register");
   },
 
@@ -29,9 +31,10 @@ let usersControllers = {
         name: req.body.name,
         lastName: req.body.lastName,
         email: req.body.email,
-        password: req.body.password,
-        confirmPassword: req.body.confirmPassword
+        password: bcrypt.hashSync(req.body.password, 10),
+        confirmPassword: bcrypt.hashSync(req.body.confirmPassword, 10)
       });
+      
       
       let usuario = JSON.stringify(users);
       fs.writeFileSync(usersFilePath, usuario);
@@ -76,6 +79,7 @@ let usersControllers = {
   },
 
   login: function (req, res, next) {
+    
     res.render("users/login", {errors: {}});
 },
 
@@ -85,29 +89,38 @@ let usersControllers = {
     
 
       let errors = validationResult(req);
+      let usuarioLogueado
+
 
       if (errors.isEmpty()) {
       
-       let usuarioLogueado = users.find(function(user){
-        req.body.emailUser==user.email ;
-      })
-      
-        if (usuarioLogueado!= undefined){
-          res.send("logueado");
 
-        }else{
+        let usuarioLogueado = users.find(function(user){
 
-          res.render("/user/login");
-        }
+         return  user.email==req.body.emailLogin && bcrypt.compareSync(req.body.passwordLogin,user.password);
+        
+        });
 
-      
+          if (usuarioLogueado==undefined){
+           
+            let prueba = {errors:[{msg: "Credenciales invalidas"}]};
+            console.log(prueba);
+              return res.render("users/login", {errors:[{msg: "Credenciales invalidas"}]});
+
+
+          }
+          req.session.user = usuarioLogueado;
           
+        res.send("logueado");
 
+
+
+      
       }
 
         
       else {
-        console.log(errors.mapped())
+        
         res.render("users/login", {errors: errors.mapped()})
       }
 
@@ -115,9 +128,25 @@ let usersControllers = {
 
   suscribe: function (req, res, next) {
     res.render("thankYou");
-  }
+  },
+
+ 
   
+check: function (req,res,next) {
+  
+  if (req.session.user==undefined){
+      res.send("no hay ningun usuario logueado");
+   }else{
+
+    res.send("user logueado");
+   }
+
+
+
+}
   
 };
+
+
 
 module.exports = usersControllers;

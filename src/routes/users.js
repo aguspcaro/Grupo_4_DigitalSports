@@ -46,6 +46,12 @@ router.post('/register', uploads.any(), [
       return true;
     }
   }).withMessage("* Email ya existente")
+  /*body("confirmPassword").custom(function(req, value) {
+    console.log(value)
+    if(value != req.body.password){
+      return true;
+    }
+  }).withMessage("* Las contraseñas tienen que ser iguales")*/
 
 ] ,usersControllers.registration);
 
@@ -61,5 +67,5 @@ router.post('/suscribe', usersControllers.suscribe);
 router.delete("/delete/:id", usersControllers.delete);
 router.get("/vista/:id", usersControllers.modificar);
 router.put("/:id", uploads.any(), usersControllers.edit);
-
+router.get("/login/check", usersControllers.check)
 module.exports = router;
