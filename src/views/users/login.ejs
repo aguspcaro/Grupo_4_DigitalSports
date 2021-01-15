@@ -18,12 +18,18 @@
                     <label for="email" class="section-login__labelEmail">Correo Electrónico<span
                             class="section-login__spanLabelEmail">*</span></label>
                     <input type="email" name="emailLogin" id="email" class="section-login__inputEmail">
+                   <% if (errors.emailLogin!=undefined) { %>
+                    <small><%=errors.emailLogin.msg%></small>
+                   <% } %>
                 </div>
 
                 <div class="section-loginContainerPassword">
                     <label for="password" class="section-loginLabelPassword">Contraseña <span
                             class="section-login__spanLabelPassword">*</span></label>
                     <input type="password" name="passwordLogin" id="password" class="section-login__inputPassword">
+                    <% if (errors.passwordLogin!=undefined) { %>
+                        <small><%=errors.passwordLogin.msg%></small>
+                       <% } %>
                     <a href="" class="section-loginResetPassword">Reestablecer Contraseña</a>
                     <div class="section-loginContainerRequired">
                         <small class="section-loginRequired">*Campos Requeridos</small>
