@@ -111,12 +111,13 @@ a {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    border: solid 1px green;
 }
 
 .section-loginButtonEnterOk {
     font-weight: 400;
     height: 30px;
-    border-radius:3px;
+    border-radius: 3px;
     font-size: 18px;
     width: 100px;
     background-color: #0985d9;
@@ -162,6 +163,10 @@ a {
     color: red;
     font-size: 12px;
     margin-top: 10px;
+}
+
+.error-input {
+    color: red;
 }
 
 /*breackpoints*/

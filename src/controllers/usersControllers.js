@@ -80,6 +80,9 @@ let usersControllers = {
 
 
   checkLogin: function (req, res, next) {
+
+    console.log(req.body.emailLogin)
+
       let errors = validationResult(req);
 
       if (errors.isEmpty()) {
