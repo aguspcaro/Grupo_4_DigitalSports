@@ -111,7 +111,6 @@ a {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    border: solid 1px green;
 }
 
 .section-loginButtonEnterOk {
@@ -178,7 +177,7 @@ a {
     }
 
     .section-loginContainerButton {
-        width: 95%;
+        width: 100%;
     }
 
 }
@@ -189,7 +188,7 @@ a {
     }
 
     .section-loginContainerButton {
-        width: 60%;
+        width: 100%;
     }
 }
 
@@ -201,7 +200,7 @@ a {
     }
 
     .section-loginContainerButton {
-        width: 50%;
+        width: 100%;
     }
 
 }
@@ -213,7 +212,7 @@ a {
     }
 
     .section-loginContainerButton {
-        width: 40%;
+        width: 100%;
     }
 
 }
