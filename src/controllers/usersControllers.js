@@ -83,10 +83,21 @@ let usersControllers = {
       let errors = validationResult(req);
 
       if (errors.isEmpty()) {
-          res.send("Te logueaste perfectamente")
-      } 
+      
+       users.forEach(function (user) {
+         if (user.email == req.body.emailLogin & bcrypt.compareSync(req.body.password, user.password)) {
+             req.session.user= user.email;
+         }else{
 
-   
+        res.render("login",{errors:[{msg: "Credenciales invalidas"}] })
+       }
+
+        });
+      
+      
+        res.send("Te logueaste perfectamente")
+      
+        } 
 
       else {
         console.log(errors.mapped())

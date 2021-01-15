@@ -7,10 +7,11 @@ const methodOverride = require("method-override");
 var mainRouter = require('./routes/main');
 var productsRouter = require('./routes/products');
 var usersRouter = require('./routes/users');
-
+var session = require("express-session");
 var app = express();
-
+var bcrypt = require("bcrypt");
 // view engine setup
+app.use(session({secret: "esto es un secreto!!"}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(methodOverride("_method"));
