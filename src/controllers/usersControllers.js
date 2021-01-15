@@ -4,9 +4,9 @@ const path = require('path');
 const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
-let { check, validationResult, body} = require("express-validator");
+const { check, validationResult, body} = require("express-validator");
 const { ValidatorsImpl } = require('express-validator/src/chain');
-
+const bcrypt = require("bcrypt");
 
 let usersControllers = {
 
@@ -15,7 +15,7 @@ let usersControllers = {
   },
 
   register: function (req, res, next) {
-    
+    errors = {};
     res.render("users/register");
   },
 
@@ -28,8 +28,8 @@ let usersControllers = {
         name: req.body.name,
         lastName: req.body.lastName,
         email: req.body.email,
-        password: req.body.password,
-        confirmPassword: req.body.confirmPassword
+        password: bcrypt.hashSync(req.body.password, 10),
+        confirmPassword: bcrypt.hashSync(req.body.confirmPassword, 10)
       });
       
       let usuario = JSON.stringify(users);
