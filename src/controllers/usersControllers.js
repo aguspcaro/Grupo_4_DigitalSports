@@ -32,6 +32,7 @@ let usersControllers = {
         confirmPassword: bcrypt.hashSync(req.body.confirmPassword, 10)
       });
       
+      
       let usuario = JSON.stringify(users);
       fs.writeFileSync(usersFilePath, usuario);
   

@@ -43,13 +43,13 @@ router.post('/register', uploads.any(), [
       }
       return true;
     }
-  }).withMessage("* Email ya existente"),
-  body("confirmPassword", "password").custom(function(value) {
+  }).withMessage("* Email ya existente")
+  /*body("confirmPassword").custom(function(req, value) {
     console.log(value)
-    if(value != value){
+    if(value != req.body.password){
       return true;
     }
-  }).withMessage("* Las contraseñas tienen que ser iguales")
+  }).withMessage("* Las contraseñas tienen que ser iguales")*/
 
 ] ,usersControllers.registration);
 
