@@ -258,7 +258,11 @@
     cursor: pointer;
 }
 
-
+.errores {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 1px;
+}
 @media (min-width:576px) {
     .section-form-register {
         width: 80%

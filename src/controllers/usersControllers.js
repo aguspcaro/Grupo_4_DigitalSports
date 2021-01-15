@@ -5,6 +5,7 @@ const usersFilePath = path.join(__dirname, '../data/users.json');
 const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 let { check, validationResult, body} = require("express-validator");
+const { ValidatorsImpl } = require('express-validator/src/chain');
 
 
 let usersControllers = {
@@ -14,6 +15,7 @@ let usersControllers = {
   },
 
   register: function (req, res, next) {
+    
     res.render("users/register");
   },
 
@@ -35,7 +37,7 @@ let usersControllers = {
   
       return res.redirect('login');
     } else {
-      return res.render("users/register", {errors : errors.errors})
+      return res.render("users/register", {errors : errors.mapped()})
     }
     
   },
