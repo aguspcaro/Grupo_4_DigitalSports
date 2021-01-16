@@ -102,9 +102,19 @@ let usersControllers = {
 
 
           }
+         
+          delete usuarioLogueado.password;
           req.session.user = usuarioLogueado;
-          
-        res.send("logueado");
+       
+          let guardar = req.body.user;
+          if (req.body.recordame != undefined){
+          res.cookie("recordame",guardar,{maxAge:60000})
+          }
+       
+       
+       
+       
+          res.send("logueado");
 
 
 
@@ -130,7 +140,7 @@ check: function (req,res,next) {
   if (req.session.user==undefined){
       res.send("no hay ningun usuario logueado");
    }else{
-
+    
     res.send("user logueado");
    }
 

@@ -10,6 +10,8 @@ var usersRouter = require('./routes/users');
 var session = require("express-session");
 var app = express();
 var bcrypt = require("bcryptjs");
+var rememberMiddlware = require("./middlewares/rememberMiddleware")
+
 // view engine setup
 app.use(session({secret: "esto es un secreto!!"}));
 app.set('views', path.join(__dirname, 'views'));
@@ -20,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
-
+app.use( rememberMiddlware);
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
