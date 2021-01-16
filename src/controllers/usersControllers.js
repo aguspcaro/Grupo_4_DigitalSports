@@ -21,9 +21,19 @@ let usersControllers = {
     console.log(user)
     if (req.session.user==undefined){
       res.send("no hay ningun usuario logueado");
-    }else{
+    } else{
     
       return res.render("users/users", {user});
+    }
+  },
+  modificar : function(req, res) {
+    errors = {};
+    let user = req.session.user;
+    if (req.session.user==undefined){
+      res.send("no hay ningun usuario logueado");
+    }else {
+    
+      return res.render("users/user-modificar", {user});
     }
   },
 
@@ -105,7 +115,7 @@ let usersControllers = {
 
         let usuarioLogueado = users.find(function(user){
 
-         return  user.email==req.body.emailLogin && bcrypt.compareSync(req.body.passwordLogin,user.password);
+         return  user.email==req.body.emailLogin && bcrypt.compareSync(req.body.passwordLogin, user.password);
         
         });
 
@@ -117,7 +127,7 @@ let usersControllers = {
 
           }
          
-          delete usuarioLogueado.password;
+          //delete usuarioLogueado.password;
           req.session.user = usuarioLogueado;
        
           let guardar = req.body.user;
@@ -128,7 +138,7 @@ let usersControllers = {
        
        
        
-          res.send("logueado");
+          return res.render("users/users", {user : usuarioLogueado});
 
 
 

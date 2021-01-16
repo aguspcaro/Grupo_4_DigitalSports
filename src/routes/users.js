@@ -20,9 +20,10 @@ let uploads = multer({ storage: storage });
 
 
 // VISTA DEL USUARIO : SUS DATOS PARA MODIFICAR/ELIMINAR
-router.get("/login/user/:id", usersControllers.root);
+router.get("/login/user/", usersControllers.root);
 router.delete("/delete/:id", usersControllers.delete);
-router.put("/login/user/user-modificar/:id", uploads.any(), usersControllers.edit);
+router.get("/login/user/user-modificar/", usersControllers.modificar)
+router.put("/login/user/user-modificar/", uploads.any(), usersControllers.edit);
 
 //VISTA DEL REGISTRO DE USUARRIO
 router.get('/register', usersControllers.register);

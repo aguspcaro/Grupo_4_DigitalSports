@@ -25,7 +25,7 @@
                     <div class="section-registerContainerName">
                         <label for="name" class="section-register__labelName">Nombre<span
                                 class="section-register__spanLabelName">*</span></label>
-                        <input type="text" name="name" id="name" class="section-register__inputName" placeholder="">
+                        <input type="text" name="name" id="name" class="section-register__inputName" value="<%= user.name %>">
                         <p class="errores"><%= typeof errors.name == "undefined" ? "" : errors.name.msg %></p>
                         
                     </div>
@@ -34,14 +34,14 @@
                         <label for="lastName" class="section-register__labelLastName">Apellido<span
                                 class="section-register__spanLabelLastName">*</span></label>
                         <input type="text" name="lastName" id="lastName"
-                            class="section-register__inputLastName"placeholder=""> 
+                            class="section-register__inputLastName" value="<%= user.lastName%>"> 
                         <p class="errores"><%= typeof errors.lastName == "undefined" ? "" : errors.lastName.msg %></p>
                     </div>
 
                     <div class="section-registerContainerEmail">
                         <label for="email" class="section-register__labelEmail">Correo Electrónico<span
                                 class="section-register__spanLabelEmail">*</span></label>
-                        <input type="email" name="email" id="email" class="section-register__inputEmail">
+                        <input type="email" name="email" id="email" class="section-register__inputEmail" value="<%= user.email%>">
                         <p class="errores"><%= typeof errors.email == "undefined" ? "" : errors.email.msg %></p>
                     </div>
 
@@ -49,7 +49,7 @@
 
                 <div class="section-registerContainerRight">
                     <div class="section-registerContainerPassword">
-                        <label for="password" class="section-registerLabelPassword">Contraseña<span
+                        <label for="password" class="section-registerLabelPassword">Contraseña Actual<span
                                 class="section-register__spanLabelPassword">*</span></label>
                         <input type="password" name="password" id="password"
                             class="section-register__inputPassword " placeholder="Mínimo 8 caracteres">
@@ -60,7 +60,7 @@
                         <label for="edad" class="section-registerLabelConfirmPassword">Fecha de Nacimiento
                             <span class="section-register__spanLabelConfirmPassword">*</span></label>
                         <input type="date" name="edad" id="edad"
-                            class="section-register__inputConfirmPassword" >
+                            class="section-register__inputConfirmPassword" value="<%= user.edad%>">
                         
 
                     </div>
