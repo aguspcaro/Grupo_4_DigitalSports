@@ -6,9 +6,14 @@
 
 <body>
     
-    <% if ( errors[0].msg !=undefined) { %>
-        <small class="error-input"><%=errors[0].msg%></small>
-       <% } %>
+    <% if ( errors.msg != undefined) { %>
+
+        <% for (let i = 0; i < errors.msg.length; i++) { %>
+            <small class="error-input"><%=errors[i].msgc%></small>
+        
+        <% } %>
+
+    <% } %>
 
     <main class="main">
         <%- include("../partials/header")  %>

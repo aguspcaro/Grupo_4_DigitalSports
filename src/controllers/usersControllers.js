@@ -89,7 +89,7 @@ let usersControllers = {
     
 
       let errors = validationResult(req);
-      let usuarioLogueado
+      let usuarioLogueado;
 
 
       if (errors.isEmpty()) {
@@ -105,7 +105,7 @@ let usersControllers = {
            
             let prueba = {errors:[{msg: "Credenciales invalidas"}]};
             console.log(prueba);
-              return res.render("users/login", {errors:[{msg: "Credenciales invalidas"}]});
+            return res.render("users/login", {errors:[{msg: "Credenciales invalidas"}]});
 
 
           }
