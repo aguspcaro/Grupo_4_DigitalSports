@@ -18,7 +18,7 @@ let usersControllers = {
   },
 
   register: function (req, res, next) {
-    errors = {};
+    
     res.render("users/register");
   },
 
@@ -80,7 +80,7 @@ let usersControllers = {
 
   login: function (req, res, next) {
     
-    res.render("users/login", {errors: {}});
+    res.render("users/login", {errors:{},error:false});
 },
 
 
@@ -90,7 +90,7 @@ let usersControllers = {
 
       let errors = validationResult(req);
       let usuarioLogueado
-
+        console.log(errors)
 
       if (errors.isEmpty()) {
       
@@ -103,9 +103,8 @@ let usersControllers = {
 
           if (usuarioLogueado==undefined){
            
-            let prueba = {errors:[{msg: "Credenciales invalidas"}]};
-            console.log(prueba);
-              return res.render("users/login", {errors:[{msg: "Credenciales invalidas"}]});
+          
+              return res.render("users/login", {errors:{msg: "Credenciales invalidas"}});
 
 
           }
