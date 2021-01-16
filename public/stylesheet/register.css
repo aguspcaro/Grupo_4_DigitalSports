@@ -170,7 +170,7 @@
     color: #606060;
 }
 
-/*Confirm Password*/
+/*Fecha de nacimiento*/
 
 .section-registerContainerConfirmPassword {
     display: flex;
@@ -201,6 +201,15 @@
 .section-register__inputConfirmPassword:focus {
     outline: 0px;
     color: #606060;
+}
+
+/* Pais */
+
+.pais {
+    height: 35px;
+}
+.nombrePaises {
+    margin-top: 3%;
 }
 
 /*Campos Requeridos*/

@@ -13,9 +13,32 @@ const { UnorderedCollection } = require('http-errors');
 
 let usersControllers = {
 
+// USUARIO
+
   root : function(req, res, next) {
-    res.render("users/users", { users } );
+    errors = {};
+    let user = req.session.user
+    console.log(user)
+    if (req.session.user==undefined){
+      res.send("no hay ningun usuario logueado");
+    } else{
+    
+      return res.render("users/users", {user});
+    }
   },
+  modificar : function(req, res) {
+    errors = {};
+    let user = req.session.user;
+    if (req.session.user==undefined){
+      res.send("no hay ningun usuario logueado");
+    }else {
+    
+      return res.render("users/user-modificar", {user});
+    }
+  },
+
+
+// REGISTER
 
   register: function (req, res, next) {
     
@@ -32,7 +55,8 @@ let usersControllers = {
         lastName: req.body.lastName,
         email: req.body.email,
         password: bcrypt.hashSync(req.body.password, 10),
-        confirmPassword: bcrypt.hashSync(req.body.confirmPassword, 10)
+        edad: req.body.edad,
+        pais: req.body.pais
       });
       
       
@@ -48,18 +72,19 @@ let usersControllers = {
 
   edit : function(req, res) {
     users.forEach(function(user) {
-      if (user.id == req.params.id) {
+      if (user.id == req.session.user.id) {
         user.name = req.body.name;
         user.lastName = req.body.lastName;
         user.email = req.body.email;
         user.password = req.body.password;
-        user.confirmPassword = req.body.confirmPassword;
+        edad= req.body.edad,
+        pais= req.body.pais
       }
     })
     let usuario = JSON.stringify(users);
     fs.writeFileSync(usersFilePath, usuario);
 
-    res.redirect("users/users")
+    res.redirect("users/users", usuario)
   },
 
   delete : function(req, res) {
@@ -71,7 +96,7 @@ let usersControllers = {
 
    
 
-
+// LOGIN
   login: function (req, res, next) {
     
     res.render("users/login", {errors:{}});
@@ -84,14 +109,13 @@ let usersControllers = {
 
       let errors = validationResult(req);
       let usuarioLogueado
-        console.log(errors)
 
       if (errors.isEmpty()) {
       
 
         let usuarioLogueado = users.find(function(user){
 
-         return  user.email==req.body.emailLogin && bcrypt.compareSync(req.body.passwordLogin,user.password);
+         return  user.email==req.body.emailLogin && bcrypt.compareSync(req.body.passwordLogin, user.password);
         
         });
 
@@ -103,7 +127,7 @@ let usersControllers = {
 
           }
          
-          delete usuarioLogueado.password;
+          //delete usuarioLogueado.password;
           req.session.user = usuarioLogueado;
        
           let guardar = req.body.user;
@@ -114,7 +138,7 @@ let usersControllers = {
        
        
        
-          res.send("logueado");
+          return res.render("users/users", {user : usuarioLogueado});
 
 
 
@@ -143,8 +167,6 @@ check: function (req,res,next) {
     
     res.send("user logueado");
    }
-
-
 
 }
   

@@ -13,7 +13,12 @@ var bcrypt = require("bcryptjs");
 var rememberMiddlware = require("./middlewares/rememberMiddleware")
 
 // view engine setup
-app.use(session({secret: "esto es un secreto!!"}));
+app.use(session(
+  {
+    secret: "esto es un secreto!!",
+    resave: false,
+    saveUninitialized: true
+}));
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(methodOverride("_method"));

@@ -19,7 +19,13 @@ let storage = multer.diskStorage({
 let uploads = multer({ storage: storage });
 
 
-router.get("/", usersControllers.root);
+// VISTA DEL USUARIO : SUS DATOS PARA MODIFICAR/ELIMINAR
+router.get("/login/user/", usersControllers.root);
+router.delete("/delete/:id", usersControllers.delete);
+router.get("/login/user/user-modificar/", usersControllers.modificar)
+router.put("/login/user/user-modificar/", uploads.any(), usersControllers.edit);
+
+//VISTA DEL REGISTRO DE USUARRIO
 router.get('/register', usersControllers.register);
 router.post('/register', uploads.any(), [
 
@@ -27,7 +33,7 @@ router.post('/register', uploads.any(), [
   check("lastName").isLength({min: 3}).withMessage("* Debes completar este campo"),
   check("email").isEmail().withMessage("* Debes completar este campo"),
   check("password").isLength({min: 8}).withMessage("* Debes completar este campo"),
-  check("confirmPassword").isLength({min: 8}).withMessage("* Debes completar este campo"),
+  check("edad").isLength({min: 8}).withMessage("* Debes completar este campo"),
   body("email").custom(function (value) {
     let usersFilePath = path.join(__dirname, '../data/users.json')
     let usersJson = JSON.parse(fs.readFileSync(usersFilePath, {encoding: "utf-8"}));
@@ -56,16 +62,24 @@ router.post('/register', uploads.any(), [
 ] ,usersControllers.registration);
 
 
+
 let validationLogin = [
   check('emailLogin').isEmail().withMessage('* Este campo debe ser un email válido'),
   check('passwordLogin').isLength({min:8}).withMessage('* Contraseña Incorrecta')
 ]
 
+// VISTA DEL LOGIN
 router.get('/login', usersControllers.login);
 router.post('/login', validationLogin , usersControllers.checkLogin);
-router.post('/suscribe', usersControllers.suscribe);
-router.delete("/delete/:id", usersControllers.delete);
 
-router.put("/:id", uploads.any(), usersControllers.edit);
+// VISTA DEL USUARIO LOGUEADO
 router.get("/login/check", usersControllers.check)
+
+// DATOS QUE VIENEN POR EL FORM DE SUSCRIBIRSE
+router.post('/suscribe', usersControllers.suscribe);
+
+
+
+
+
 module.exports = router;
