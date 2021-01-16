@@ -19,12 +19,12 @@ let usersControllers = {
 
   register: function (req, res, next) {
     
-    res.render("users/register");
+    res.render("users/register",{errors:{}});
   },
 
   registration: function (req, res, next) {
     let errors = validationResult(req);
-    console.log(errors)
+    
     if( errors.isEmpty() ) {
       users.push({
         id: Date.now(),
@@ -69,18 +69,12 @@ let usersControllers = {
     res.redirect("users/users");
   },
 
-  modificar : function(req, res) {
-    let codigo = req.params.id;
-    let user = users.find(function (busca) {
-      return busca.id == codigo;
-    });
+   
 
-    res.render('users/users', { user });
-  },
 
   login: function (req, res, next) {
     
-    res.render("users/login", {errors:{},error:false});
+    res.render("users/login", {errors:{}});
 },
 
 
