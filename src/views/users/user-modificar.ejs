@@ -16,10 +16,11 @@
         
         <section class="section-registerContainer">
             <div class="section-registerContainerTitle">
-                <h4 class="section-registerTitle">Registro</h4>
+                <h4 class="section-registerTitle">Perfil</h4>
             </div>
 
-            <form method="POST" action="/users/register" class="section-form-register" enctype="multipart/form-data">
+            <form method="POST" action="/users/login/user/<%=user.id%>?_method=PUT" class="section-form-register" enctype="multipart/form-data">
+
                 <div class="section-registerContainerLeft">
                     <div class="section-registerContainerName">
                         <label for="name" class="section-register__labelName">Nombre<span
@@ -111,7 +112,6 @@
 
 
             </form>
-
 
         </section>
 
