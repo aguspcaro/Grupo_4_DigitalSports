@@ -65,7 +65,7 @@ router.get('/login', usersControllers.login);
 router.post('/login', validationLogin , usersControllers.checkLogin);
 router.post('/suscribe', usersControllers.suscribe);
 router.delete("/delete/:id", usersControllers.delete);
-router.get("/vista/:id", usersControllers.modificar);
+
 router.put("/:id", uploads.any(), usersControllers.edit);
 router.get("/login/check", usersControllers.check)
 module.exports = router;

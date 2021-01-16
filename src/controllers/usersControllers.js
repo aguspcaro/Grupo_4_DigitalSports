@@ -18,13 +18,13 @@ let usersControllers = {
   },
 
   register: function (req, res, next) {
-    errors = {};
-    res.render("users/register");
+    
+    res.render("users/register",{errors:{}});
   },
 
   registration: function (req, res, next) {
     let errors = validationResult(req);
-    console.log(errors)
+    
     if( errors.isEmpty() ) {
       users.push({
         id: Date.now(),
@@ -69,18 +69,12 @@ let usersControllers = {
     res.redirect("users/users");
   },
 
-  modificar : function(req, res) {
-    let codigo = req.params.id;
-    let user = users.find(function (busca) {
-      return busca.id == codigo;
-    });
+   
 
-    res.render('users/users', { user });
-  },
 
   login: function (req, res, next) {
     
-    res.render("users/login", {errors: {}});
+    res.render("users/login", {errors:{}});
 },
 
 
@@ -89,8 +83,8 @@ let usersControllers = {
     
 
       let errors = validationResult(req);
-      let usuarioLogueado;
-
+      let usuarioLogueado
+        console.log(errors)
 
       if (errors.isEmpty()) {
       
@@ -103,15 +97,24 @@ let usersControllers = {
 
           if (usuarioLogueado==undefined){
            
-            let prueba = {errors:[{msg: "Credenciales invalidas"}]};
-            console.log(prueba);
-            return res.render("users/login", {errors:[{msg: "Credenciales invalidas"}]});
+          
+              return res.render("users/login", {errors:{msg: "Credenciales invalidas"}});
 
 
           }
+         
+          delete usuarioLogueado.password;
           req.session.user = usuarioLogueado;
-          
-        res.send("logueado");
+       
+          let guardar = req.body.user;
+          if (req.body.recordame != undefined){
+          res.cookie("recordame",guardar,{maxAge:60000})
+          }
+       
+       
+       
+       
+          res.send("logueado");
 
 
 
@@ -137,7 +140,7 @@ check: function (req,res,next) {
   if (req.session.user==undefined){
       res.send("no hay ningun usuario logueado");
    }else{
-
+    
     res.send("user logueado");
    }
 

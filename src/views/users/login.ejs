@@ -6,14 +6,9 @@
 
 <body>
     
-    <% if ( errors.msg != undefined) { %>
-
-        <% for (let i = 0; i < errors.msg.length; i++) { %>
-            <small class="error-input"><%=errors[i].msgc%></small>
-        
-        <% } %>
-
-    <% } %>
+    <% if ( errors.msg !=undefined) { %>
+        <small class="error-input"><%=errors.msg%></small>
+       <% } %>
 
     <main class="main">
         <%- include("../partials/header")  %>
@@ -41,7 +36,7 @@
                         <small class="error-input"><%=errors.passwordLogin.msg%></small>
                        <% } %>
                     <div class="section-loginRecordame">
-                        <input type="checkbox"><small >Recordar mis datos</small>   
+                        <input name="recordame" type="checkbox"><small >Recordar mis datos</small>   
                     </div>
                     <div class="section-loginContainerRequired">
                         <small class="section-loginRequired">*Campos Requeridos</small>
