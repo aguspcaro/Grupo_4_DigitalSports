@@ -5,7 +5,8 @@ const multer = require('multer');
 const path = require('path');
 let { check, validationResult, body} = require("express-validator");
 const fs = require("fs");
-let userLogueado = require('../middlewares/userLogueadoMiddleware')
+let userPermisos = require('../middlewares/userLogueadoMiddleware')
+let userPermited = require('../middlewares/permitedMiddleware')
 
 
 let storage = multer.diskStorage({
@@ -22,11 +23,11 @@ let uploads = multer({ storage: storage });
 // VISTA DEL USUARIO : SUS DATOS PARA MODIFICAR/ELIMINAR
 router.get("/login/user/", usersControllers.root);
 router.delete("/login/user/:id", usersControllers.delete);
-router.get("/login/user/user-modificar/", usersControllers.modificar)
+router.get("/login/user/user-modificar/", userPermited,usersControllers.modificar)
 router.put("/login/user/user-modificar/:id", uploads.any(), usersControllers.edit);
 
 //VISTA DEL REGISTRO DE USUARRIO
-router.get('/register', usersControllers.register);
+router.get('/register',  userPermisos, usersControllers.register);
 router.post('/register', uploads.any(), [
 
   check("name").isLength({min: 2}).withMessage("* Debes completar este campo"),
@@ -65,11 +66,11 @@ router.post('/register', uploads.any(), [
 
 let validationLogin = [
   check('emailLogin').isEmail().withMessage('* Este campo debe ser un email válido'),
-  check('passwordLogin').isLength({min:8}).withMessage('* Contraseña Incorrecta')
+  check('passwordLogin').isLength({min:8}).withMessage('* La contraseña debe téner 8 carácteres como mínimo.')
 ]
 
 // VISTA DEL LOGIN
-router.get('/login', userLogueado , usersControllers.login);
+router.get('/login', userPermisos , usersControllers.login);
 router.post('/login', validationLogin , usersControllers.checkLogin);
 
 // VISTA DEL USUARIO LOGUEADO

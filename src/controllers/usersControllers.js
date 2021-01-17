@@ -18,6 +18,8 @@ let usersControllers = {
   root : function(req, res, next) {
     errors = {};
     let user = req.session.user
+
+    
     
     if (req.session.user==undefined){
       res.send("no hay ningun usuario logueado");
@@ -29,10 +31,9 @@ let usersControllers = {
   modificar : function(req, res) {
     errors = {};
     let user = req.session.user;
-    console.log("hola")
-    console.log(user)
-    console.log("hola2")
 
+    console.log(user)
+  
 
     if (req.session.user==undefined){
       res.send("no hay ningun usuario logueado");
@@ -140,7 +141,7 @@ let usersControllers = {
           
 
           if (req.body.recordame != undefined){
-          res.cookie("recordame", usuarioLogueado.email,{maxAge:60000})
+          res.cookie("recordame", usuarioLogueado, {maxAge:60000})
           }
         
        
