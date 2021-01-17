@@ -6,9 +6,7 @@
 
 <body>
     
-    <% if ( errors.msg !=undefined) { %>
-        <small class="error-input"><%=errors.msg%></small>
-       <% } %>
+  
 
     <main class="main">
         <%- include("../partials/header")  %>
@@ -34,6 +32,9 @@
                     <input type="password" name="passwordLogin" id="password" class="section-login__inputPassword">
                     <% if (errors.passwordLogin != undefined) { %>
                         <small class="error-input"><%=errors.passwordLogin.msg%></small>
+                       <% } %>
+                       <% if ( errors.msg !=undefined) { %>
+                        <small class="error-input"><%=errors.msg%></small>
                        <% } %>
                     <div class="section-loginRecordame">
                         <input name="recordame" type="checkbox"><small >Recordar mis datos</small>   

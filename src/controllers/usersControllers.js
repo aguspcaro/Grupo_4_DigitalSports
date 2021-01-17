@@ -29,6 +29,11 @@ let usersControllers = {
   modificar : function(req, res) {
     errors = {};
     let user = req.session.user;
+    console.log("hola")
+    console.log(user)
+    console.log("hola2")
+
+
     if (req.session.user==undefined){
       res.send("no hay ningun usuario logueado");
     }else {
@@ -107,45 +112,37 @@ let usersControllers = {
 
   checkLogin: function (req, res, next) {
 
-    
-
       let errors = validationResult(req);
+ 
       let usuarioLogueado
 
       if (errors.isEmpty()) {
-      
 
         let usuarioLogueado = users.find(function(user){
 
-         return  user.email==req.body.emailLogin && bcrypt.compareSync(req.body.passwordLogin, user.password);
+          return  user.email==req.body.emailLogin && bcrypt.compareSync(req.body.passwordLogin, user.password);
         
         });
 
+        
+         req.session.user = usuarioLogueado;
+   
+
           if (usuarioLogueado==undefined){
-           
-          
-              return res.render("users/login", {errors:{msg: "Credenciales invalidas"}});
-
-
+           return res.render("users/login", {errors:{msg: "Los datos son incorrectos. Verificalos y volvé a intentarlo."}});
           }
          
-          //delete usuarioLogueado.password;
-          req.session.user = usuarioLogueado;
-       
-          let guardar = req.body.user;
-          if (req.cookie.recordame != undefined){
-          res.cookie("recordame",guardar,{maxAge:60000})
+          
+
+          if (req.body.recordame != undefined){
+          res.cookie("recordame", usuarioLogueado.email,{maxAge:60000})
           }
-       
+        
        
        
        
           return res.render("users/users", {user : usuarioLogueado});
-
-
-
-      
-      }
+}
 
         
       else {
