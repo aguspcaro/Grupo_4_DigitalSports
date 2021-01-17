@@ -51,23 +51,23 @@
                         <label for="password" class="section-registerLabelPassword">Contraseña<span
                                 class="section-register__spanLabelPassword">*</span></label>
                         <input type="password" name="password" id="password"
-                            class="section-register__inputPassword " placeholder="Mínimo 8 caracteres">
+                            class="section-register__inputPassword">
                         <p class="errores"><%= typeof errors.password == "undefined" ? "" : errors.password.msg %></p>
                     </div>
 
-                    <div class="section-registerContainerConfirmPassword">
-                        <label for="edad" class="section-registerLabelConfirmPassword">Fecha de Nacimiento
-                            <span class="section-register__spanLabelConfirmPassword">*</span></label>
+                    <div class="section-registerContainerAge">
+                        <label for="edad" class="section-registerLabelAge">Fecha de Nacimiento
+                            <span class="section-register__spanLabelAge">*</span></label>
                         <input type="date" name="edad" id="edad"
-                            class="section-register__inputConfirmPassword" >
+                            class="section-register__inputAge" >
                         
 
                     </div>
 
-                    <div class="section-registerContainerConfirmPassword">
-                        <label for="pais" class="section-registerLabelConfirmPassword nombrePaises">Lugar de Nacimiento
-                            <span class="section-register__spanLabelConfirmPassword">*</span>
-                            <select class="section-register__inputConfirmPassword pais" name="pais" required="required">
+                    <div class="section-registerContainerCountry">
+                        <label for="pais" class="section-registerLabelCountry">Lugar de Nacimiento
+                            <span class="section-register__spanLabelCountry">*</span></label>
+                            <select class="section-register__inputCountry" name="pais" required="required">
                                 <option value="1">Argentina</option>
                                 <option value="2">España</option>
                                 <option value="3">México</option>
@@ -80,7 +80,7 @@
                                 <option value="10">Bolivia</option>
                                 <option value="11">Ecuador</option>
                                 <option value="12">Uruguay</option>
-                                </select></label>
+                                </select>
 
                     </div>
 

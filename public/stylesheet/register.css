@@ -170,9 +170,11 @@
     color: #606060;
 }
 
-/*Fecha de nacimiento*/
 
-.section-registerContainerConfirmPassword {
+
+/*Fecha de Nacimiento*/
+
+.section-registerContainerAge {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -180,37 +182,74 @@
     width: 95%;
 }
 
-.section-registerLabelConfirmPassword {
+.section-registerLabelAge {
     font-size: 16px;
 
 }
 
-.section-register__spanLabelConfirmPassword {
+.section-register__spanLabelAge {
     color: red;
 }
 
-.section-register__inputConfirmPassword {
+
+.section-register__inputAge {
     font-weight: 400;
     height: 30px;
     border-radius: 3px;
-    font-size: 18px;
-    width: 95%;
+    font-size: 16px;
+    width: 95.2%;
     border: solid 2px #0985d9;
+    margin-bottom: 16px;
 }
 
-.section-register__inputConfirmPassword:focus {
+.section-register__inputAge:focus {
     outline: 0px;
     color: #606060;
 }
 
-/* Pais */
 
-.pais {
+
+
+
+
+
+
+
+/*Paìs*/
+
+.section-registerContainerCountry {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    width: 95%;
+ }
+
+.section-registerLabelCountry {
+    font-size: 16px;
+
+}
+
+.section-register__spanLabelCountry {
+    color: red;
+}
+
+
+.section-register__inputCountry {
+    font-weight: 400;
     height: 35px;
+    border-radius: 3px;
+    font-size: 16px;
+    width: 95.9%;
+    border: solid 2px #0985d9;
 }
-.nombrePaises {
-    margin-top: 3%;
+
+.section-register__inputCountry:focus {
+    outline: 0px;
+    color: #606060;
 }
+
+
 
 /*Campos Requeridos*/
 
