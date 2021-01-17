@@ -131,7 +131,15 @@ let usersControllers = {
           }
          
           
-       return res.render("users/users", {user : usuarioLogueado});
+
+          if (req.body.recordame != undefined){
+          res.cookie("recordame", usuarioLogueado.email,{maxAge:60000})
+          }
+        
+       
+       
+       
+          return res.render("users/users", {user : usuarioLogueado});
 }
 
         
