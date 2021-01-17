@@ -131,7 +131,7 @@ let usersControllers = {
           req.session.user = usuarioLogueado;
        
           let guardar = req.body.user;
-          if (req.cookie.recordame != undefined){
+          if (req.cookies.recordame != undefined){
           res.cookie("recordame",guardar,{maxAge:60000})
           }
        
