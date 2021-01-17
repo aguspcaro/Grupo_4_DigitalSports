@@ -5,7 +5,7 @@ const multer = require('multer');
 const path = require('path');
 let { check, validationResult, body} = require("express-validator");
 const fs = require("fs");
-
+let userLogueado = require('../middlewares/userLogueadoMiddleware')
 
 
 let storage = multer.diskStorage({
@@ -69,7 +69,7 @@ let validationLogin = [
 ]
 
 // VISTA DEL LOGIN
-router.get('/login', usersControllers.login);
+router.get('/login', userLogueado , usersControllers.login);
 router.post('/login', validationLogin , usersControllers.checkLogin);
 
 // VISTA DEL USUARIO LOGUEADO
