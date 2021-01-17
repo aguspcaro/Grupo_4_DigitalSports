@@ -21,6 +21,12 @@
 
             <h2><%= user.name %></h2>
             <a  href="/users/login/user/user-modificar/"><button type="submit" class="">Editar</button></a>
+            
+            <form action="/users/login/user/<%=user.id%>?_method=DELETE" class="section-form-register" method="POST">
+
+                <button type="submit" class="">Eliminar</button>
+
+            </form>
         </section>
 
         <%- include("../partials/form-suscribe")  %>

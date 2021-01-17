@@ -75,15 +75,16 @@ let usersControllers = {
     
   },
 
-  edit : function(req, res) {
-    let usuarios = req.session.user;
-    console.log(usuarios.id)
+  edit : function(req, res, next) {
+
+    let cliente = req.params.id;
+
     users.forEach(function(user) {
-      if (user.id == usuarios.id) {
+      if (user.id == cliente) {
         user.name = req.body.name;
         user.lastName = req.body.lastName;
         user.email = req.body.email;
-        user.password = req.body.password;
+        user.password = bcrypt.hashSync(req.body.password, 10);
         edad= req.body.edad,
         pais= req.body.pais
       }
@@ -91,14 +92,18 @@ let usersControllers = {
     let usuario = JSON.stringify(users);
     fs.writeFileSync(usersFilePath, usuario);
 
-    res.redirect("users/login")
+    res.redirect("/")
   },
 
   delete : function(req, res) {
-    const filtrar = users.filter((user) => user.id != req.params.id);
+    let usuario = req.params.id;
+    
+    console.log(usuario)
+    const filtrar = users.filter((user) => user.id != usuario);
+   
     let user = JSON.stringify(filtrar);
     fs.writeFileSync(usersFilePath, user);
-    res.redirect("users/users");
+    res.redirect("/users/login");
   },
 
    
