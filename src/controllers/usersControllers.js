@@ -18,7 +18,7 @@ let usersControllers = {
   root : function(req, res, next) {
     errors = {};
     let user = req.session.user
-    console.log(user)
+    
     if (req.session.user==undefined){
       res.send("no hay ningun usuario logueado");
     } else{
@@ -71,8 +71,10 @@ let usersControllers = {
   },
 
   edit : function(req, res) {
+    let usuarios = req.session.user;
+    console.log(usuarios.id)
     users.forEach(function(user) {
-      if (user.id == req.session.user.id) {
+      if (user.id == usuarios.id) {
         user.name = req.body.name;
         user.lastName = req.body.lastName;
         user.email = req.body.email;
@@ -84,7 +86,7 @@ let usersControllers = {
     let usuario = JSON.stringify(users);
     fs.writeFileSync(usersFilePath, usuario);
 
-    res.redirect("users/users", usuario)
+    res.redirect("users/login")
   },
 
   delete : function(req, res) {
