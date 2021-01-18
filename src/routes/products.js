@@ -1,28 +1,25 @@
-var express = require('express');
-var router = express.Router();
-let productsControllers = require('../controllers/productsControllers');
+const express = require('express');
+const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
+//CONTROLADOR
+const productsControllers = require('../controllers/productsControllers');
 
-let storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        return cb(null, path.join('.', 'public', 'images', 'products'));
-    },
+//MIDDLEWARES
+const storage = require("../middlewares/storageMulterMiddleware");
+const uploads = multer({storage: storage});
 
-    filename: function (req, file, cb) {
-        return cb(null, Date.now() + path.extname(file.originalname));
-    },
-});
-
-
-let uploads = multer({
-    storage: storage
-});
-
+//VISTA DE LOS PRODUCTOS
 router.get('/', productsControllers.root);
+
+//VISTA DEL CARRITO DE COMPRA
 router.get('/cart', productsControllers.cart);
+
+//VISTA DEL DETALLE DEL PRODUCTO
 router.get('/detail/:id', productsControllers.detail);
+
+//PRODUCTOS Y SUS HERRAMIENTAS (EDITAR, ELIMINAR, CREAR)
 router.get('/create', productsControllers.adm);
 router.post('/create', uploads.any(), productsControllers.createproduct);
 router.get('/vista/:id', productsControllers.modificar);

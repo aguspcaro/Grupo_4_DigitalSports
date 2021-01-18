@@ -9,11 +9,9 @@ const { ValidatorsImpl } = require('express-validator/src/chain');
 const { UnorderedCollection } = require('http-errors');
 
 
-
-
 let usersControllers = {
 
-// USUARIO
+// VISTA PERFIL USUARIO Y SUS ACCIONES
 
   root : function(req, res, next) {
     errors = {};
@@ -26,6 +24,7 @@ let usersControllers = {
       return res.render("users/users", {user});
     }
   },
+
   modificar : function(req, res) {
     errors = {};
     let user = req.session.user;
@@ -40,39 +39,6 @@ let usersControllers = {
     
       return res.render("users/user-modificar", {user});
     }
-  },
-
-
-// REGISTER
-
-  register: function (req, res, next) {
-    
-    res.render("users/register",{errors:{}});
-  },
-
-  registration: function (req, res, next) {
-    let errors = validationResult(req);
-    
-    if( errors.isEmpty() ) {
-      users.push({
-        id: Date.now(),
-        name: req.body.name,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 10),
-        edad: req.body.edad,
-        pais: req.body.pais
-      });
-      
-      
-      let usuario = JSON.stringify(users);
-      fs.writeFileSync(usersFilePath, usuario);
-  
-      return res.redirect('login');
-    } else {
-      return res.render("users/register", {errors : errors.mapped()})
-    }
-    
   },
 
   edit : function(req, res, next) {
@@ -106,9 +72,41 @@ let usersControllers = {
     res.redirect("/users/login");
   },
 
-   
+
+// VISTA DEL REGISTER
+
+  register: function (req, res, next) {
+    
+    res.render("users/register",{errors:{}});
+  },
+
+  registration: function (req, res, next) {
+    let errors = validationResult(req);
+    
+    if( errors.isEmpty() ) {
+      users.push({
+        id: Date.now(),
+        name: req.body.name,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        password: bcrypt.hashSync(req.body.password, 10),
+        edad: req.body.edad,
+        pais: req.body.pais
+      });
+      
+      
+      let usuario = JSON.stringify(users);
+      fs.writeFileSync(usersFilePath, usuario);
+  
+      return res.redirect('login');
+    } else {
+      return res.render("users/register", {errors : errors.mapped()})
+    }
+    
+  }, 
 
 // LOGIN
+
   login: function (req, res, next) {
     
     res.render("users/login", {errors:{}});
@@ -156,12 +154,6 @@ let usersControllers = {
       }
 
   },
-
-  suscribe: function (req, res, next) {
-    res.render("thankYou");
-  },
-
- 
   
 check: function (req,res,next) {
   
@@ -172,7 +164,14 @@ check: function (req,res,next) {
     res.send("user logueado");
    }
 
+},
+
+// FORMULARIO DE SUSCRIPCION
+
+suscribe: function (req, res, next) {
+  res.render("thankYou");
 }
+
   
 };
 
