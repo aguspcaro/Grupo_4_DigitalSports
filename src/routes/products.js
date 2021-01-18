@@ -3,23 +3,23 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 
-//CONTROLADOR
+// CONTROLADOR
 const productsControllers = require('../controllers/productsControllers');
 
-//MIDDLEWARES
+// MIDDLEWARES
 const storage = require("../middlewares/storageMulterMiddleware");
 const uploads = multer({storage: storage});
 
-//VISTA DE LOS PRODUCTOS
+//  DE LOS PRODUCTOS
 router.get('/', productsControllers.root);
 
-//VISTA DEL CARRITO DE COMPRA
+// VISTA DEL CARRITO DE COMPRA
 router.get('/cart', productsControllers.cart);
 
-//VISTA DEL DETALLE DEL PRODUCTO
+//  DEL DETALLE DEL PRODUCTO
 router.get('/detail/:id', productsControllers.detail);
 
-//PRODUCTOS Y SUS HERRAMIENTAS (EDITAR, ELIMINAR, CREAR)
+// PRODUCTOS Y SUS HERRAMIENTAS (EDITAR, ELIMINAR, CREAR)
 router.get('/create', productsControllers.adm);
 router.post('/create', uploads.any(), productsControllers.createproduct);
 router.get('/vista/:id', productsControllers.modificar);

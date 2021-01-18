@@ -19,14 +19,23 @@
                 <h4 class="section-registerTitle">Perfil</h4>
             </div>
 
-            <h2><%= user.name %></h2>
-            <a  href="/users/login/user/user-modificar/"><button type="submit" class="">Editar</button></a>
+            <h2>Hola <%= user.name %></h2>
+         
+            <div>
+                <a  href="/users/login/user/user-modificar/"><button type="submit" class="">Editar</button></a>
+                
             
-            <form action="/users/login/user/<%=user.id%>?_method=DELETE" class="section-form-register" method="POST">
+                <form action="/users/login/user/<%=user.id%>?_method=DELETE" class="section-form-register" method="POST">
+    
+                    <button type="submit" class="">Eliminar</button>
+    
+                </form>
+    
+                
+                <a  href="/users/login/user/user-modificar/"><button>Cerrar Sesión</button></a>
+    
+            </div>
 
-                <button type="submit" class="">Eliminar</button>
-
-            </form>
         </section>
 
         <%- include("../partials/form-suscribe")  %>
