@@ -10,7 +10,7 @@ const productsControllers = require('../controllers/productsControllers');
 const storage = require("../middlewares/storageMulterMiddleware");
 const uploads = multer({storage: storage});
 
-//  DE LOS PRODUCTOS
+// VISTA DE LOS PRODUCTOS
 router.get('/', productsControllers.root);
 
 // VISTA DEL CARRITO DE COMPRA

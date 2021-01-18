@@ -65,7 +65,6 @@ let usersControllers = {
   delete : function(req, res) {
     let usuario = req.params.id;
     
-    console.log(usuario)
     const filtrar = users.filter((user) => user.id != usuario);
    
     let user = JSON.stringify(filtrar);
