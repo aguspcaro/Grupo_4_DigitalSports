@@ -1,7 +1,7 @@
 let { check, validationResult, body} = require("express-validator");
 const path = require('path');
 const fs = require("fs");
-let validationRegisterMiddleware = [
+let validationEditMiddleware = [
 
   check("name").isLength({min: 2}).withMessage("* Debes completar este campo"),
 
@@ -26,7 +26,10 @@ let validationRegisterMiddleware = [
     } else {
         users = JSON.parse(usersJson)
     }
-    
+    console.log(users)
+    let filtradoUsers = users.filter(function(valor) {
+        valor.email != value
+    })
     for(let i = 0; i < users.length; i++) {
         if(users[i].email == value){
             return false;
@@ -38,4 +41,4 @@ let validationRegisterMiddleware = [
   
 ]
 
-module.exports = validationRegisterMiddleware;
+module.exports = validationEditMiddleware;

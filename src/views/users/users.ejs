@@ -22,7 +22,7 @@
             <h2>Hola <%= user.name %></h2>
          
             <div>
-                <a  href="/users/login/user/user-modificar/"><button type="submit" class="">Editar</button></a>
+                <a  href="/users/login/user/user-modificar/<%= user.id %>"><button type="submit" class="">Editar</button></a>
                 
             
                 <form action="/users/login/user/<%=user.id%>?_method=DELETE" class="section-form-register" method="POST">

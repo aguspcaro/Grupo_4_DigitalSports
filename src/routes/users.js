@@ -15,12 +15,13 @@ const validationLogin = require("../middlewares/validationLoginMiddleware");
 const uploads = multer({ storage: storage });
 const userPermisos = require('../middlewares/userLogueadoMiddleware');
 const userPermited = require('../middlewares/permitedMiddleware');
+const validationEditMiddleware = require("../middlewares/validationEditMiddleware");
 
 // VISTA DEL USUARIO : SUS DATOS PARA MODIFICAR/ELIMINAR
 router.get("/login/user/", usersControllers.root);
 router.delete("/login/user/:id", usersControllers.delete);
-router.get("/login/user/user-modificar/", userPermited,usersControllers.modificar)
-router.put("/login/user/user-modificar/:id", uploads.any(), usersControllers.edit);
+router.get("/login/user/user-modificar/:id", userPermited,usersControllers.modificar)
+router.put("/login/user/user-modificar/:id", validationEditMiddleware, uploads.any(), usersControllers.edit);
 
 // VISTA DEL REGISTRO DE USUARRIO
 router.get('/register', userPermisos, usersControllers.register);
