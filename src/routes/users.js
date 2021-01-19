@@ -24,21 +24,7 @@ router.put("/login/user/user-modificar/:id", uploads.any(), usersControllers.edi
 
 // VISTA DEL REGISTRO DE USUARRIO
 router.get('/register', userPermisos, usersControllers.register);
-router.post('/register', uploads.any(), [body("email").custom(function (value) {
-    let usersFilePath = path.join(__dirname, '../data/users.json');
-    
-    let usersJson = JSON.parse(fs.readFileSync(usersFilePath, {encoding: "utf-8"}));
-    
-    if(usersJson == undefined) {
-        return false;
-    } else {
-        usersJson.find(function(buscar) {
-            (buscar.email == value)
-        
-        });
-    }
-    
-  }).withMessage("* Email ya existente")] , validationRegisterMiddleware, usersControllers.registration);
+router.post('/register', uploads.any(), validationRegisterMiddleware, usersControllers.registration);
 
 // VISTA DEL LOGIN
 router.get('/login', userPermisos , usersControllers.login);

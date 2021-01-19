@@ -14,7 +14,28 @@ let validationRegisterMiddleware = [
   check("edad").isLength({min: 8}).withMessage("* Debes completar este campo"),
 
   check("edad").isDate().isLength({min: 6}).withMessage("* Debes completar este campo"),
-   
+  
+  body("email").custom(function (value) {
+    let usersFilePath = path.join(__dirname, '../data/users.json');
+    
+    let usersJson = fs.readFileSync(usersFilePath, {encoding: "utf-8"});
+    console.log(usersJson)
+    let users;
+    if(usersJson == "") {
+        users = [];
+    } else {
+        users = JSON.parse(usersJson)
+    }
+    console.log(users)
+    for(let i = 0; i < users.length; i++) {
+        if(users[i].email == value){
+            return false;
+        }
+    }
+    return true;
+
+  }).withMessage("* Email ya existente")
+  
 ]
 
 module.exports = validationRegisterMiddleware;
