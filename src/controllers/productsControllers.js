@@ -13,13 +13,12 @@ let productsControllers = {
     res.render('products/cart');
   },
   detail: function (req, res, next) {
-    
-    let detalleProducto=req.params.id;
-    let product=products.find(function(buscar){
-      return buscar.id==detalleProducto
+    let detalleProducto = req.params.id;
+    let product = products.find(function (buscar) {
+      return buscar.id == detalleProducto;
     });
 
-    res.render('products/detail', {product});
+    res.render('products/detail', { product });
   },
   adm: function (req, res, next) {
     res.render('products/admproduct');
@@ -43,7 +42,7 @@ let productsControllers = {
     let producto = JSON.stringify(products);
     fs.writeFileSync(productsFilePath, producto);
 
-    res.redirect('products/products');
+    res.redirect('');
   },
 
   modificar: function (req, res, next) {
@@ -53,8 +52,6 @@ let productsControllers = {
     });
 
     res.render('products/producto-modificar', { product });
-
-    
   },
 
   edit: function (req, res) {
@@ -79,12 +76,13 @@ let productsControllers = {
 
     fs.writeFileSync(productsFilePath, productos);
 
-    res.redirect('products/products');
+    res.redirect('/');
   },
 
-
   delete: function (req, res, next) {
-    const filtrado = products.filter((producto) => producto.id != req.params.id);
+    const filtrado = products.filter(
+      (producto) => producto.id != req.params.id
+    );
 
     let producto = JSON.stringify(filtrado);
     fs.writeFileSync(productsFilePath, producto);
