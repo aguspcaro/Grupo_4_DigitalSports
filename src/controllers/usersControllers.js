@@ -23,32 +23,39 @@ let usersControllers = {
   },
 
   modificar: function (req, res) {
-    errors = {};
+    let errors = validationResult(req);
     let user = req.session.user;
 
     if (req.session.user == undefined) {
       res.send('no hay ningun usuario logueado');
     } else {
-      return res.render('users/user-modificar', { user });
+      return res.render('users/user-modificar', {
+        errors: errors.mapped(),
+        user,
+      });
     }
   },
 
   edit: function (req, res, next) {
+    let errors = validationResult(req);
     let cliente = req.params.id;
+    if (errors.isEmpty()) {
+      users.forEach(function (user) {
+        if (user.id == cliente) {
+          user.name = req.body.name;
+          user.lastName = req.body.lastName;
+          user.email = req.body.email;
+          user.password = bcrypt.hashSync(req.body.password, 10);
+          (edad = req.body.edad), (pais = req.body.pais);
+        }
+      });
+      let usuario = JSON.stringify(users);
+      fs.writeFileSync(usersFilePath, usuario);
 
-    users.forEach(function (user) {
-      if (user.id == cliente) {
-        user.name = req.body.name;
-        user.lastName = req.body.lastName;
-        user.email = req.body.email;
-        user.password = bcrypt.hashSync(req.body.password, 10);
-        (edad = req.body.edad), (pais = req.body.pais);
-      }
-    });
-    let usuario = JSON.stringify(users);
-    fs.writeFileSync(usersFilePath, usuario);
-
-    res.redirect('/');
+      res.redirect('/');
+    } else {
+      res.redirect('user-modificar');
+    }
   },
 
   delete: function (req, res) {
