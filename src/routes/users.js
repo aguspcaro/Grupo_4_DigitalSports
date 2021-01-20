@@ -21,7 +21,12 @@ const validationEditMiddleware = require("../middlewares/validationEditMiddlewar
 router.get("/login/user/", usersControllers.root);
 router.delete("/login/user/:id", usersControllers.delete);
 router.get("/login/user/user-modificar/:id", userPermited,usersControllers.modificar)
-router.put("/login/user/user-modificar/:id", validationEditMiddleware, uploads.any(), usersControllers.edit);
+router.put("/login/user/user-modificar/:id", [
+    
+    check("name").isLength({min:2}).withMessage("* Debes completar este campo"),
+    check("email").isEmail().withMessage("* Debes completar este campo")
+
+], uploads.any(), usersControllers.edit);
 
 // VISTA DEL REGISTRO DE USUARRIO
 router.get('/register', userPermisos, usersControllers.register);
