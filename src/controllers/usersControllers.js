@@ -35,6 +35,7 @@ let usersControllers = {
   edit: function (req, res, next) {
     let user = req.session.user;
     let errors = validationResult(req);
+
     let cliente = req.params.id;
     if (errors.isEmpty()) {
       users.forEach(function (user) {
@@ -52,6 +53,7 @@ let usersControllers = {
 
       res.redirect('/');
     } else {
+      console.log(errors);
       res.render('users/user-modificar', { errors: errors.mapped(), user });
     }
   },
