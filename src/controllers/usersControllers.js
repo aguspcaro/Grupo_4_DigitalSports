@@ -26,17 +26,14 @@ let usersControllers = {
     let errors = validationResult(req);
     let user = req.session.user;
 
-    if (req.session.user == undefined) {
-      res.send('no hay ningun usuario logueado');
-    } else {
-      return res.render('users/user-modificar', {
-        errors: errors.mapped(),
-        user,
-      });
-    }
+    return res.render('users/user-modificar', {
+      errors: errors.mapped(),
+      user,
+    });
   },
 
   edit: function (req, res, next) {
+    let user = req.session.user;
     let errors = validationResult(req);
     let cliente = req.params.id;
     if (errors.isEmpty()) {
@@ -49,12 +46,13 @@ let usersControllers = {
           (edad = req.body.edad), (pais = req.body.pais);
         }
       });
+
       let usuario = JSON.stringify(users);
       fs.writeFileSync(usersFilePath, usuario);
 
       res.redirect('/');
     } else {
-      res.redirect('user-modificar');
+      res.render('users/user-modificar', { errors: errors.mapped(), user });
     }
   },
 

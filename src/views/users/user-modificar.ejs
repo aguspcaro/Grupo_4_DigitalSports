@@ -62,6 +62,7 @@
                             <span class="section-register__spanLabelAge">*</span></label>
                         <input type="date" name="edad" id="edad"
                             class="section-register__inputAge" value="<%=user.edad%>">
+                            <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
                         
 
                     </div>
