@@ -104,3 +104,33 @@
 **Stop Doing:** En este punto exponemos aquellas practicas que a pesar de ser [Less of] podemos eliminarlas.
 
 - Dejar pasar los dias para empezar a organizarnos.
+
+
+---
+
+
+### Sprint-5
+
+**Start Doing:** Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
+
+- Empezar a trabajar en equipo.
+- Ayudarnos mas entre nosotros.
+- Empezar a ayudarnos cuando nos trabamos.
+
+**More of:** Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero).Es decir que los [Start Doing] se convertirán en [More of]. 
+
+- Organizarnos mejor con las tareas de cada uno.
+- Hacer QA
+
+**Keep Doing:** Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
+
+
+- Seguir diviendo el trabajo como venimos haciendo.
+- Tratar de hacer el poryecto en linea, por si surgen dudas, las cuales nos podamos ayudar mutuamente.
+
+**Less of:** En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. 
+
+
+**Stop Doing:** En este punto exponemos aquellas practicas que a pesar de ser [Less of] podemos eliminarlas.
+
+- Dejar pasar los dias para empezar a organizarnos.

@@ -37,14 +37,15 @@ let usersControllers = {
     let errors = validationResult(req);
 
     let cliente = req.params.id;
-    if (errors.isEmpty()) {
+    
       users.forEach(function (user) {
         if (user.id == cliente) {
           user.name = req.body.name;
           user.lastName = req.body.lastName;
           user.email = req.body.email;
           user.password = bcrypt.hashSync(req.body.password, 10);
-          (edad = req.body.edad), (pais = req.body.pais);
+          edad = req.body.edad,
+          pais = req.body.pais;
         }
       });
 
@@ -52,10 +53,7 @@ let usersControllers = {
       fs.writeFileSync(usersFilePath, usuario);
 
       res.redirect('/');
-    } else {
-      console.log(errors);
-      res.render('users/user-modificar', { errors: errors.mapped(), user });
-    }
+    
   },
 
   delete: function (req, res) {

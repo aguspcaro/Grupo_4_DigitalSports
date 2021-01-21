@@ -36,9 +36,8 @@
                         <input type="text" name="lastName" id="lastName"
                             class="section-register__inputLastName" value="<%= user.lastName%>"> 
                         <p class="errores">
-                            <% if (errors.lastName != undefined) { %>
-                                <small class="error-input"><%=errors.lastName.msg%></small>
-                               <% } %>
+                            <p class="errores"><%= typeof errors.lastName == "undefined" ? "" : errors.lastName.msg %></p>
+
                         </p>
                     </div>
 
