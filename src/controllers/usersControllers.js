@@ -7,6 +7,7 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const { check, validationResult, body } = require('express-validator');
 const { ValidatorsImpl } = require('express-validator/src/chain');
 const { UnorderedCollection } = require('http-errors');
+const db = require("../../database/models/index")
 
 let usersControllers = {
   // VISTA PERFIL USUARIO Y SUS ACCIONES

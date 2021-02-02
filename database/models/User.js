@@ -5,7 +5,7 @@ mnodule.exports = function(sequelize, dataTypes) {
     let cols = {
 
         id: {
-            type: dataTypes.BIGINT,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
@@ -14,7 +14,7 @@ mnodule.exports = function(sequelize, dataTypes) {
             allowNull: false
         },
         password: {
-            type: dataTypes.STRING,
+            type: dataTypes.STRING(100),
             allowNull: false
         }
     };
@@ -27,6 +27,14 @@ mnodule.exports = function(sequelize, dataTypes) {
 
     let User = sequelize.define(alias, cols, config);
 
+    User.associate = function(models) {
+        User.hasOne(models.Profile, {
+            as: "profiles",
+            foreignKey: "id_user"
+        })
+    }
+
     return User;
+
 
 }
