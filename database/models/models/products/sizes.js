@@ -10,7 +10,7 @@ module.exports =  function(sequelize, dataTypes){
             autoIncrement: true
         },
         name:{
-            type : dataTypes.STRING
+            type : dataTypes.STRING(100)
         },
 
         }
@@ -21,11 +21,15 @@ module.exports =  function(sequelize, dataTypes){
 
     let sizes = sequelize.define(alias, cols, config);
 
-    //Genero.associate = function(models){
-      //      Genero.hasMany(models.Pelicula, {
-        //        as: "peliculas",
-          //      foreignKey: "genre_id"
-            //});
+    Sizes.associate = function(models){
+            
+      Sizes.hasMany(models.products, {
+      
+          as: "sizes",
+      foreignKey: "id"
+       })
+ }
+
  
 
 return sizes;

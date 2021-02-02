@@ -1,6 +1,6 @@
 module.exports =  function(sequelize, dataTypes){
 
-    let alias = "Brands";
+    let alias = "Sports";
 
     let cols={
 
@@ -15,24 +15,22 @@ module.exports =  function(sequelize, dataTypes){
 
         }
         let config = {
-            tableName: "brands",
+            tableName: "sports",
             Timestamps: true
     }
 
-    let brands = sequelize.define(alias, cols, config);
+    let sports = sequelize.define(alias, cols, config);
 
-     Brands.associate = function(models){
+    Sports.associate = function(models){
             
-      Brands.hasMany(models.products, {
+      Sports.hasMany(models.products, {
       
-          as: "brands",
+          as: "sports",
       foreignKey: "id"
        })
  }
 
- 
-
-return brands;
+return sports;
 
 
 }

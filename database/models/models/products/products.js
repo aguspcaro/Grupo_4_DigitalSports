@@ -7,18 +7,21 @@ module.exports =  function(sequelize, dataTypes){
         id:{
             type : dataTypes.INTEGER ,  
             primaryKey: true,
-            autoIncrement: true
+            autoIncrement: true,
+            allowNull: false
         },
         name:{
-            type : dataTypes.STRING
+            type : dataTypes.STRING(100),
+            allowNull: false
         },
 
         description:{ 
-            type : dataTypes.STRING
+            type : dataTypes.STRING(255),
+            allowNull: false
         },
 
         image:{ 
-            type : dataTypes.STRING
+            type : dataTypes.STRING(100)
         },
 
         stock:{ 
@@ -26,7 +29,8 @@ module.exports =  function(sequelize, dataTypes){
         },
 
         category:{ 
-            type : dataTypes.STRING
+            type : dataTypes.STRING(50),
+            allowNull: false
         },
 
         price:{ 
@@ -58,11 +62,33 @@ module.exports =  function(sequelize, dataTypes){
 
     let products = sequelize.define(alias, cols, config);
 
-    //Genero.associate = function(models){
-      //      Genero.hasOne(models.Pelicula, {
-        //        as: "peliculas",
-          //      foreignKey: "genre_id"
-            //});
+    Products.associate = function(models){
+           
+            
+            products.hasOne(models.sizes, {
+            
+                as: "sizes",
+            foreignKey: "id_size"
+             }),
+             
+            products.hasOne(models.brands, {
+            
+                as: "brands",
+            foreignKey: "id_brand"
+             }),
+             
+            products.hasOne(models.sports, {
+            
+                as: "sports",
+            foreignKey: "id_sport"
+             })
+
+
+        
+        
+        }
+    
+         
  
 
 return products;
