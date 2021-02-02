@@ -42,7 +42,7 @@ let productsControllers = {
     let producto = JSON.stringify(products);
     fs.writeFileSync(productsFilePath, producto);
 
-    res.redirect('');
+    res.redirect('/');
   },
 
   modificar: function (req, res, next) {
