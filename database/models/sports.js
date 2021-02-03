@@ -16,7 +16,10 @@ module.exports =  function(sequelize, dataTypes){
         }
         let config = {
             tableName: "sports",
-            timestamps: true
+            timestamps: true,
+            createdAt: "created_at",
+            updatedAt: "updated_at",
+            deletedAt: "deletedAt_at"
         }
 
     let Sports = sequelize.define(alias, cols, config); // ESTA VARIABLE ES LA MISMA QUE SE USA ABAJO EN EL ASSOCIATE?
