@@ -74,7 +74,15 @@ let usersControllers = {
   },
 
   registration: function (req, res, next) {
-    let errors = validationResult(req);
+
+    db.User.findAll()
+      .then(function(user) {
+        return res.render("users/ejemplo", { user:user})
+      }).catch(function(errn){
+        res.send(errn)
+      })
+
+/*    let errors = validationResult(req);
 
     if (errors.isEmpty()) {
       users.push({
@@ -93,7 +101,7 @@ let usersControllers = {
       return res.redirect('login');
     } else {
       return res.render('users/register', { errors: errors.mapped() });
-    }
+    } */
   },
 
   // LOGIN
