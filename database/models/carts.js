@@ -19,7 +19,10 @@ module.exports = function(sequelize, dataTypes) {
     let config = {
 
         tableName: "carts",
-        timestamp: true
+        timestamp: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
+        deletedAt: "deleted_at"
     };
 
     let Cart = sequelize.define(alias, cols, config);
@@ -29,12 +32,12 @@ module.exports = function(sequelize, dataTypes) {
         Cart.belongsTo(models.User, {
 
             as: "users",
-            foreignKey: "id_user"
+            foreignKey: "user_id"
         }),
         Cart.hasOne(models.Payment, {  // Aca pongo hasOne y no hasMany, porque en principio solo podes tener medio de pago a la vez. No podes pagar parte en credito y parte en debito. O es debito o es credito o es lo que tenga que ser.
             
             as: "payments",
-            foreignKey: "id_payment"
+            foreignKey: "payment_id"
         })
     }
 

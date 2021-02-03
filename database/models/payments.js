@@ -18,7 +18,10 @@ module.exports = function(sequelize, dataTypes) {
     let config = {
 
         tableName: "payments",
-        timestamp: true
+        timestamp: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
+        deletedAt: "deleted_at"
     };
 
     let Payment = sequelize.define(alias, cols, config);
@@ -27,7 +30,7 @@ module.exports = function(sequelize, dataTypes) {
         Payment.belongsTo(models.Cart, {
 
             as: "carts",
-            foreignKey: "id_payment"
+            foreignKey: "payment_id"
         })
     }
 

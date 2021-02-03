@@ -62,7 +62,7 @@ module.exports =  function(sequelize, dataTypes){
 
     let Products = sequelize.define(alias, cols, config);
 
-   // Products.associate = function(models){
+    Products.associate = function(models){
            
             
         Products.hasOne(models.Sizes, {
@@ -92,4 +92,4 @@ module.exports =  function(sequelize, dataTypes){
  
 
     return Products;
-
+}

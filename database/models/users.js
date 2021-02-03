@@ -23,7 +23,10 @@ module.exports = function(sequelize, dataTypes) {
     let config = { // Aca vamos a especificar como se llama esta tabla en nuestra base de datos. Como se llama users, aca ponemos users. 
 
         tableName: "users",
-        timestamp: true
+        timestamp: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
+        deletedAt: "deleted_at"
     };
 
     let User = sequelize.define(alias, cols, config); // Esta variable la vamos a usar para hacer la asociacion --> User.associate --> User.hasOne.
@@ -31,11 +34,11 @@ module.exports = function(sequelize, dataTypes) {
     User.associate = function(models) {
         User.hasOne(models.Profile, { // models.Profile (hace referencia al alias que declaramos en el modelo de profiles.js) let alias = "Profile".
             as: "profiles", // aca va un nombre fantasia el cual voy a usar mas adelante en el controlador.
-            foreignKey: "id_user" // aca va el nombre de la foreignKey dentro de la tabla de profiles. La cual hace la relacion entre las dos tablas.
+            foreignKey: "user_id" // aca va el nombre de la foreignKey dentro de la tabla de profiles. La cual hace la relacion entre las dos tablas.
         }),
         User.hasMany(models.Cart, {
             as: "carts",
-            foreignKey: "id_user"
+            foreignKey: "user_id"
         })
         
     }

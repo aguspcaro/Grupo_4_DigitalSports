@@ -35,7 +35,10 @@ module.exports = function(sequelize, dataTypes) {
     let config = {
 
         tableName: "profiles",
-        timestamp: true
+        timestamp: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
+        deletedAt: "deleted_at"
     };
 
     let Profile = sequelize.define(alias, cols, config);
@@ -45,7 +48,7 @@ module.exports = function(sequelize, dataTypes) {
         Profile.belongsTo(models.User, {
 
             as: "users",
-            foreignKey: "id_user" // profile no tiene foreignKey dentro de user. Pero se relacionan a traves de esta foreignKey. Por eso va la de user_id.
+            foreignKey: "user_id" // profile no tiene foreignKey dentro de user. Pero se relacionan a traves de esta foreignKey. Por eso va la de user_id.
         })
     }
     return Profile;
