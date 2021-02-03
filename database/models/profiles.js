@@ -1,4 +1,4 @@
-mnodule.exports = function(sequelize, dataTypes) {
+module.exports = function(sequelize, dataTypes) {
 
     let alias = "Profile";
     
@@ -12,7 +12,6 @@ mnodule.exports = function(sequelize, dataTypes) {
         image: {
             type: dataTypes.STRING,
             primaryKey: true,
-            autoIncrement: true
         },
         first_name: {
             type: dataTypes.STRING(100),

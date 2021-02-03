@@ -1,5 +1,5 @@
 // ACA LE ESTAMOS EXPLICANDO A SEQUELIZE CUALES Y COMO SON LAS TABLAS
-mnodule.exports = function(sequelize, dataTypes) {
+module.exports = function(sequelize, dataTypes) {
 
     let alias = "User"; // Este alias lo vamos a usar cuando querramos llamar a models.User, en este caso.. para una relacion en otra tabla.
     

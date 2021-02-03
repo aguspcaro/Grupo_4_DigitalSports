@@ -60,38 +60,38 @@ module.exports =  function(sequelize, dataTypes){
             Timestamps: true
     }
 
-    let products = sequelize.define(alias, cols, config);
+    let Products = sequelize.define(alias, cols, config);
 
     Products.associate = function(models){
            
             
-            products.hasOne(models.sizes, {
-            
-                as: "sizes",
+        Products.hasOne(models.Sizes, {
+        
+            as: "sizes",
             foreignKey: "id_size"
-             }),
-             
-            products.hasOne(models.brands, {
+        }),
             
-                as: "brands",
+        Products.hasOne(models.Brands, {
+        
+            as: "brands",
             foreignKey: "id_brand"
-             }),
-             
-            products.hasOne(models.sports, {
+        }),
             
-                as: "sports",
+        Products.hasOne(models.Sports, {
+        
+            as: "sports",
             foreignKey: "id_sport"
-             })
+        })
 
 
-        
-        
-        }
+    
+    
+    }
     
          
  
 
-return products;
+    return Products;
 
 
 }
