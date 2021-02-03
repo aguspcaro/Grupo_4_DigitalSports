@@ -1,6 +1,6 @@
 module.exports =  function(sequelize, dataTypes){
 
-    let alias = "Products";
+    let alias = "Products"; // EN LA ASOCIACION QUE HACEMOS EN SPORTS, VAS A TENER QUE LLAMARLO CON ESTE MISMO NOMBRE. CON  MAYUSCULA.
 
     let cols={
 
@@ -42,7 +42,7 @@ module.exports =  function(sequelize, dataTypes){
         },
 
         size_id:{ 
-            type : dataTypes.INTEGER
+            type : dataTypes.INTEGER // David, en las tabla estan llamados distinto. Estan como id_size. Y creo... que no se especifican las claves foraneas. En los videos no las tienen en cuenta.
         },
         
         brand_id:{ 

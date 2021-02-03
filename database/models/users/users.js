@@ -1,8 +1,9 @@
+// ACA LE ESTAMOS EXPLICANDO A SEQUELIZE CUALES Y COMO SON LAS TABLAS
 mnodule.exports = function(sequelize, dataTypes) {
 
-    let alias = "User";
+    let alias = "User"; // Este alias lo vamos a usar cuando querramos llamar a models.User, en este caso.. para una relacion en otra tabla.
     
-    let cols = {
+    let cols = { // Aca vamos a declarar las columnas que vamos a querer usar de nuestra Base de Datos. Podemos poner todas como algunas de ellas. 
 
         id: {
             type: dataTypes.INTEGER,
@@ -19,22 +20,27 @@ mnodule.exports = function(sequelize, dataTypes) {
         }
     };
 
-    let config = {
+    let config = { // Aca vamos a especificar como se llama esta tabla en nuestra base de datos. Como se llama users, aca ponemos users. 
 
         tableName: "users",
         timestamp: true
     };
 
-    let User = sequelize.define(alias, cols, config);
+    let User = sequelize.define(alias, cols, config); // Esta variable la vamos a usar para hacer la asociacion --> User.associate --> User.hasOne.
 
     User.associate = function(models) {
-        User.hasOne(models.Profile, {
-            as: "profiles",
+        User.hasOne(models.Profile, { // models.Profile (hace referencia al alias que declaramos en el modelo de profiles.js) let alias = "Profile".
+            as: "profiles", // aca va un nombre fantasia el cual voy a usar mas adelante en el controlador.
+            foreignKey: "id_user" // aca va el nombre de la foreignKey dentro de la tabla de profiles. La cual hace la relacion entre las dos tablas.
+        }),
+        User.hasMany(models.Cart, {
+            as: "carts",
             foreignKey: "id_user"
         })
+        
     }
 
-    return User;
+    return User; // Aca retornamos la variable a la cual le guardamos todas las configuraciones --> let User = sequelize.define.. 
 
 
 }
