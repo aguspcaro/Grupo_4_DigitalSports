@@ -57,39 +57,36 @@ module.exports =  function(sequelize, dataTypes){
         }
         let config = {
             tableName: "products",
-            timestamps: true
+            timestamps: true,
     }
 
+
     let Products = sequelize.define(alias, cols, config);
+
 
     Products.associate = function(models){
            
          
-         
-           
-            
         Products.hasOne(models.Sizes, {
         
             as: "sizes",
             foreignKey: "id_size"
         }),
+
             
         Products.hasOne(models.Brands, {
         
             as: "brands",
             foreignKey: "id_brand"
         }),
+
             
         Products.hasOne(models.Sports, {
         
             as: "sports",
             foreignKey: "id_sport"
         })
-
-
-    
-    
-    }    
+}    
     
     return Products;
 
