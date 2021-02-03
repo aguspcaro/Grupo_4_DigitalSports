@@ -16,16 +16,11 @@ let productsControllers = {
   prueba: function (req,res, next) {
     console.log(db.models)
     db.Products.findByPk(1).then(product=> {
-      
-      
+    
       res.render("products/prueba",{product:product});
      })
     
     
-
-
-  
-
 },
 
   cart: function (req, res, next) {

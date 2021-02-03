@@ -62,11 +62,11 @@ module.exports =  function(sequelize, dataTypes){
 
     let Products = sequelize.define(alias, cols, config);
 
-   // Products.associate = function(models){
+    Products.associate = function(models){
            
-      //      
-      //      products.hasOne(models.sizes, {
-            
+         
+         
+           
         Products.hasOne(models.Sizes, {
         
             as: "sizes",
@@ -88,10 +88,8 @@ module.exports =  function(sequelize, dataTypes){
 
     
     
-    }
+    }    
     
-         
- 
-
     return Products;
 
+}
