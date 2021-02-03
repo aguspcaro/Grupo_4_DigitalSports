@@ -57,12 +57,21 @@ module.exports =  function(sequelize, dataTypes){
         }
         let config = {
             tableName: "products",
-            timestamps: true
+            timestamps: true,
+            createdAt: "created_at",
+            updatedAt: "updated_at",
+            deletedAt: "deletedAt_at"
     }
 
     let Products = sequelize.define(alias, cols, config);
 
     Products.associate = function(models){
+<<<<<<< HEAD
+=======
+           
+         
+         
+>>>>>>> 2680ce521eaabcfdb66f6cd649547462f958ac64
            
             
         Products.hasOne(models.Sizes, {
@@ -86,10 +95,12 @@ module.exports =  function(sequelize, dataTypes){
 
     
     
-    }
+    }    
     
-         
- 
-
     return Products;
+<<<<<<< HEAD
 }
+=======
+
+}
+>>>>>>> 2680ce521eaabcfdb66f6cd649547462f958ac64
