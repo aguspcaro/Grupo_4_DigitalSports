@@ -16,7 +16,10 @@ module.exports =  function(sequelize, dataTypes){
         }
         let config = {
             tableName: "sizes",
-            timestamps: true
+            timestamps: true,
+            createdAt: "created_at",
+            updatedAt: "updated_at",
+            deletedAt: "deletedAt_at"
     }
 
     let Sizes = sequelize.define(alias, cols, config);
