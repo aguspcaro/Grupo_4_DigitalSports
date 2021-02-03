@@ -64,8 +64,6 @@ module.exports =  function(sequelize, dataTypes){
 
    // Products.associate = function(models){
            
-      //      
-      //      products.hasOne(models.sizes, {
             
         Products.hasOne(models.Sizes, {
         
