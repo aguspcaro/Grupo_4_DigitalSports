@@ -41,15 +41,15 @@ module.exports =  function(sequelize, dataTypes){
             type : dataTypes.FLOAT(7,2)
         },
 
-        size_id:{ 
+        id_size:{ 
             type : dataTypes.INTEGER
         },
         
-        brand_id:{ 
+        id_brand:{ 
             type : dataTypes.INTEGER
         },
         
-        sport_id:{ 
+        id_sport:{ 
             type : dataTypes.INTEGER
         },
 
@@ -57,36 +57,36 @@ module.exports =  function(sequelize, dataTypes){
         }
         let config = {
             tableName: "products",
-            Timestamps: true
+            timestamps: false
     }
 
     let products = sequelize.define(alias, cols, config);
 
-    Products.associate = function(models){
+   // Products.associate = function(models){
            
+      //      
+      //      products.hasOne(models.sizes, {
             
-            products.hasOne(models.sizes, {
-            
-                as: "sizes",
-            foreignKey: "id_size"
-             }),
+     //           as: "sizes",
+     //       foreignKey: "id_size"
+     //        }),
              
-            products.hasOne(models.brands, {
+     //       products.hasOne(models.brands, {
             
-                as: "brands",
-            foreignKey: "id_brand"
-             }),
+       //         as: "brands",
+      //      foreignKey: "id_brand"
+      //       }),
              
-            products.hasOne(models.sports, {
-            
-                as: "sports",
-            foreignKey: "id_sport"
-             })
+       //     products.hasOne(models.sports, {
+        //    
+        //        as: "sports",
+        //    foreignKey: "id_sport"
+          //   })
 
 
         
         
-        }
+    //    }
     
          
  
