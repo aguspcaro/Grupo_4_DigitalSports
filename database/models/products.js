@@ -67,6 +67,7 @@ module.exports =  function(sequelize, dataTypes){
          
          
            
+            
         Products.hasOne(models.Sizes, {
         
             as: "sizes",
