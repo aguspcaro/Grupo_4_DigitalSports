@@ -1,6 +1,6 @@
 module.exports =  function(sequelize, dataTypes){
 
-    let alias = "Products";
+    let alias = "Products"; // EN LA ASOCIACION QUE HACEMOS EN SPORTS, VAS A TENER QUE LLAMARLO CON ESTE MISMO NOMBRE. CON  MAYUSCULA.
 
     let cols={
 
@@ -41,8 +41,8 @@ module.exports =  function(sequelize, dataTypes){
             type : dataTypes.FLOAT(7,2)
         },
 
-        id_size:{ 
-            type : dataTypes.INTEGER
+        size_id:{ 
+            type : dataTypes.INTEGER // David, en las tabla estan llamados distinto. Estan como id_size. Y creo... que no se especifican las claves foraneas. En los videos no las tienen en cuenta.
         },
         
         id_brand:{ 
@@ -57,41 +57,41 @@ module.exports =  function(sequelize, dataTypes){
         }
         let config = {
             tableName: "products",
-            timestamps: false
+            timestamps: true
     }
 
-    let products = sequelize.define(alias, cols, config);
+    let Products = sequelize.define(alias, cols, config);
 
    // Products.associate = function(models){
            
       //      
       //      products.hasOne(models.sizes, {
             
-     //           as: "sizes",
-     //       foreignKey: "id_size"
-     //        }),
-             
-     //       products.hasOne(models.brands, {
+        Products.hasOne(models.Sizes, {
+        
+            as: "sizes",
+            foreignKey: "id_size"
+        }),
             
-       //         as: "brands",
-      //      foreignKey: "id_brand"
-      //       }),
-             
-       //     products.hasOne(models.sports, {
-        //    
-        //        as: "sports",
-        //    foreignKey: "id_sport"
-          //   })
+        Products.hasOne(models.Brands, {
+        
+            as: "brands",
+            foreignKey: "id_brand"
+        }),
+            
+        Products.hasOne(models.Sports, {
+        
+            as: "sports",
+            foreignKey: "id_sport"
+        })
 
 
-        
-        
-    //    }
+    
+    
+    }
     
          
  
 
-return products;
+    return Products;
 
-
-}

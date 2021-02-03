@@ -1,4 +1,4 @@
-mnodule.exports = function(sequelize, dataTypes) {
+module.exports = function(sequelize, dataTypes) {
 
     let alias = "Payment";
     
@@ -22,6 +22,14 @@ mnodule.exports = function(sequelize, dataTypes) {
     };
 
     let Payment = sequelize.define(alias, cols, config);
+
+    Payment.associate = function(models) {
+        Payment.belongsTo(models.Cart, {
+
+            as: "carts",
+            foreignKey: "id_payment"
+        })
+    }
 
     return Payment;
 

@@ -35,12 +35,7 @@ router.put(
 
 // VISTA DEL REGISTRO DE USUARRIO
 router.get('/register', userInSesion, usersControllers.register);
-router.post(
-  '/register',
-  uploads.any(),
-  validationRegisterMiddleware,
-  usersControllers.registration
-);
+router.post('/register', uploads.any(), validationRegisterMiddleware, usersControllers.registration);
 
 // VISTA DEL LOGIN
 router.get('/login', userInSesion, usersControllers.login);

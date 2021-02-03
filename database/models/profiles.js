@@ -1,4 +1,4 @@
-mnodule.exports = function(sequelize, dataTypes) {
+module.exports = function(sequelize, dataTypes) {
 
     let alias = "Profile";
     
@@ -12,7 +12,6 @@ mnodule.exports = function(sequelize, dataTypes) {
         image: {
             type: dataTypes.STRING,
             primaryKey: true,
-            autoIncrement: true
         },
         first_name: {
             type: dataTypes.STRING(100),
@@ -41,5 +40,13 @@ mnodule.exports = function(sequelize, dataTypes) {
 
     let Profile = sequelize.define(alias, cols, config);
 
+
+    Profile.associate = function(models) {
+        Profile.belongsTo(models.User, {
+
+            as: "users",
+            foreignKey: "id_user" // profile no tiene foreignKey dentro de user. Pero se relacionan a traves de esta foreignKey. Por eso va la de user_id.
+        })
+    }
     return Profile;
 }
