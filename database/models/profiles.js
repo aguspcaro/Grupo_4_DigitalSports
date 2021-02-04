@@ -28,6 +28,10 @@ module.exports = function(sequelize, dataTypes) {
         birthday: {
             type: dataTypes.DATEONLY,
             allowNull: false
+        },
+        user_id : {
+            type: dataTypes.INTEGER, 
+            allowNull: false
         }
 
     };

@@ -75,9 +75,9 @@ let usersControllers = {
 
   registration: function (req, res, next) {
 
-    db.User.findAll()
+    db.User.findAll() // User hace referencia al nombre fantasia que le asigne dentro del modelo (alias: "User")
       .then(function(user) {
-        return res.render("users/ejemplo", { user:user})
+        return res.render("users/ejemplo", { user : user})
       }).catch(function(errn){
         res.send(errn)
       })

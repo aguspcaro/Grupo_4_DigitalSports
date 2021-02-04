@@ -43,7 +43,6 @@
 
 
 .section-registerContainerName {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
@@ -75,7 +74,6 @@
 /*Apellido*/
 
 .section-registerContainerLastName {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
@@ -107,7 +105,6 @@
 /*Mail*/
 
 .section-registerContainerEmail {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
@@ -126,7 +123,7 @@
     font-weight: 400;
     height: 30px;
     border-radius: 3px;
-    font-size: 16px;
+    font-size: 18px;
     width: 95%;
     border: solid 2px #0985d9;
 }
@@ -172,7 +169,7 @@
 
 
 
-/*Fecha de Nacimiento*/
+/*Fecha de Nacimiento y Edad*/
 
 .section-registerContainerAge {
     display: flex;
@@ -196,7 +193,7 @@
     font-weight: 400;
     height: 30px;
     border-radius: 3px;
-    font-size: 16px;
+    font-size: 18px;
     width: 95.2%;
     border: solid 2px #0985d9;
 }
@@ -210,47 +207,6 @@
 .user-modified {
     margin: 10px 0px;
 }
-
-
-
-
-
-
-
-/*Paìs*/
-
-.section-registerContainerCountry {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    width: 95%;
- }
-
-.section-registerLabelCountry {
-    font-size: 16px;
-
-}
-
-.section-register__spanLabelCountry {
-    color: red;
-}
-
-
-.section-register__inputCountry {
-    font-weight: 400;
-    height: 35px;
-    border-radius: 3px;
-    font-size: 16px;
-    width: 95.9%;
-    border: solid 2px #0985d9;
-}
-
-.section-register__inputCountry:focus {
-    outline: 0px;
-    color: #606060;
-}
-
 
 
 /*Campos Requeridos*/

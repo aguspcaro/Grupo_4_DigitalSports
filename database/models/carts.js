@@ -12,6 +12,14 @@ module.exports = function(sequelize, dataTypes) {
         buy_total: {
             type : dataTypes.FLOAT(7,2),
             allowNull:false
+        },
+        user_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+        payment_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
 
     };

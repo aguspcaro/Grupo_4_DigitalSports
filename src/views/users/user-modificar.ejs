@@ -25,7 +25,7 @@
                     <div class="section-registerContainerName">
                         <label for="name" class="section-register__labelName">Nombre<span
                                 class="section-register__spanLabelName">*</span></label>
-                        <input type="text" name="name" id="name" class="section-register__inputName" value="<%= user.name%>">
+                        <input type="text" name="name" id="name" class="section-register__inputName">
                         <p class="errores"><%= typeof errors.name == "undefined" ? "" : errors.name.msg %></p>
                         
                     </div>
@@ -34,7 +34,7 @@
                         <label for="lastName" class="section-register__labelLastName">Apellido<span
                                 class="section-register__spanLabelLastName">*</span></label>
                         <input type="text" name="lastName" id="lastName"
-                            class="section-register__inputLastName" value="<%= user.lastName%>"> 
+                            class="section-register__inputLastName" > 
                         <p class="errores">
                             <p class="errores"><%= typeof errors.lastName == "undefined" ? "" : errors.lastName.msg %></p>
 
@@ -59,6 +59,15 @@
                         <p class="errores"><%= typeof errors.password == "undefined" ? "" : errors.password.msg %></p>
                     </div>
 
+                    <div class="section-registerContainerAge">
+                        <label for="edad" class="section-registerLabelAge">Edad
+                            <span class="section-register__spanLabelAge">*</span></label>
+                        <input type="number name="edad" id="edad"
+                            class="section-register__inputAge" >
+                            <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
+
+                    </div>
+
                     
                     <div class="section-registerContainerAge">
                         <label for="edad" class="section-registerLabelAge">Fecha de Nacimiento
@@ -66,38 +75,13 @@
                         <input type="date" name="edad" id="edad"
                             class="section-register__inputAge" value="<%=user.edad%>">
                             <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
-                        
 
                     </div>
-
-                    <div class="section-registerContainerCountry">
-                        <label for="pais" class="section-registerLabelCountry">Lugar de Nacimiento
-                            <span class="section-register__spanLabelCountry">*</span></label>
-                            <select class="section-register__inputCountry" name="pais" required="required" value="<%=user.pais%>">
-                                <option value="1">Argentina</option>
-                                <option value="2">España</option>
-                                <option value="3">México</option>
-                                <option value="4">Guatemala</option>
-                                <option value="5">Honduras</option>
-                                <option value="6">El Salvador</option>
-                                <option value="7">Venezuela</option>
-                                <option value="8">Colombia</option>
-                                <option value="9">Cuba</option>
-                                <option value="10">Bolivia</option>
-                                <option value="11">Ecuador</option>
-                                <option value="12">Uruguay</option>
-                                </select>
-
-                    </div>
-
 
 
                     <div class="section-registerContainerRequired">
                         <small class="section-registerRequired">*Campos Requeridos</small>
                     </div>
-
-                  
-
 
 
                     <div class="section-registerContainerButton">

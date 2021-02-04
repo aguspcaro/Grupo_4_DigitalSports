@@ -42,15 +42,15 @@ module.exports =  function(sequelize, dataTypes){
         },
 
         size_id:{ 
-            type : dataTypes.INTEGER // David, en las tabla estan llamados distinto. Estan como id_size. Y creo... que no se especifican las claves foraneas. En los videos no las tienen en cuenta.
+            type : dataTypes.INTEGER 
         },
         
         id_brand:{ 
-            type : dataTypes.INTEGER
+            type : dataTypes.INTEGER // Deberia ser brand_id
         },
         
         id_sport:{ 
-            type : dataTypes.INTEGER
+            type : dataTypes.INTEGER // Deberia ser sport_id
         },
 
 
@@ -60,21 +60,18 @@ module.exports =  function(sequelize, dataTypes){
             timestamps: true,
             createdAt: "created_at",
             updatedAt: "updated_at",
-            deletedAt: "deletedAt_at"
+            deletedAt: "deletedAt_at" // deberia ser deleted_at
     }
 
     let Products = sequelize.define(alias, cols, config);
 
     Products.associate = function(models){
-<<<<<<< HEAD
-=======
            
          
          
->>>>>>> 2680ce521eaabcfdb66f6cd649547462f958ac64
            
             
-        Products.hasOne(models.Sizes, {
+        Products.hasOne(models.Sizes, { // lo mismo para estos 3. Deberian ser size_id, brand_id, sport_id
         
             as: "sizes",
             foreignKey: "id_size"
@@ -98,9 +95,5 @@ module.exports =  function(sequelize, dataTypes){
     }    
     
     return Products;
-<<<<<<< HEAD
-}
-=======
 
 }
->>>>>>> 2680ce521eaabcfdb66f6cd649547462f958ac64
