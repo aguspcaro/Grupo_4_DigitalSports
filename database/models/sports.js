@@ -19,7 +19,7 @@ module.exports =  function(sequelize, dataTypes){
             timestamps: true,
             createdAt: "created_at",
             updatedAt: "updated_at",
-            deletedAt: "deletedAt_at", 
+            deletedAt: "deleted_at", 
             paranoid: true
         }
 

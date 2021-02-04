@@ -30,7 +30,7 @@ module.exports = function(sequelize, dataTypes) {
         paranoid: true,
         createdAt: "created_at",
         updatedAt: "updated_at",
-        deletedAt: "deletedAt_at",
+        deletedAt: "deleted_at",
     };
 
     let Cart = sequelize.define(alias, cols, config);
