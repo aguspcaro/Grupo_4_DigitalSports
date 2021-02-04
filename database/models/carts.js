@@ -40,12 +40,12 @@ module.exports = function(sequelize, dataTypes) {
         Cart.belongsTo(models.User, {
 
             as: "users",
-            foreignKey: "id_user"
+            foreignKey: "user_id"
         }),
-        Cart.hasOne(models.Payment, {  // Aca pongo hasOne y no hasMany, porque en principio solo podes tener medio de pago a la vez. No podes pagar parte en credito y parte en debito. O es debito o es credito o es lo que tenga que ser.
+        Cart.belongsTo(models.Payment, {  
             
             as: "payments",
-            foreignKey: "id_payment"
+            foreignKey: "payment_id"
         })
     }
 

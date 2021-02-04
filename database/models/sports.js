@@ -29,8 +29,8 @@ module.exports =  function(sequelize, dataTypes){
             
         Sports.hasMany(models.Products, {
       
-            as: "sports", 
-            foreignKey: "id"
+            as: "products", 
+            foreignKey: "sport_id"
         })
     }
 

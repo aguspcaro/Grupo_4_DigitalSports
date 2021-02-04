@@ -30,8 +30,8 @@ module.exports =  function(sequelize, dataTypes){
             
         Sizes.hasMany(models.Products, {
       
-            as: "sizes",
-            foreignKey: "id"
+            as: "products",
+            foreignKey: "size_id"
         })
     }
 

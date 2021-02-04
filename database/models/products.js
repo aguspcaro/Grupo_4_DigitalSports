@@ -77,22 +77,22 @@ module.exports =  function(sequelize, dataTypes){
          
            
             
-        Products.hasOne(models.Sizes, {
+        Products.belongsTo(models.Sizes, {
         
             as: "sizes",
-            foreignKey: "id_size"
+            foreignKey: "size_id"
         }),
             
-        Products.hasOne(models.Brands, {
+        Products.belongsTo(models.Brands, {
         
             as: "brands",
-            foreignKey: "id_brand"
+            foreignKey: "brand_id"
         }),
             
-        Products.hasOne(models.Sports, {
+        Products.belongsTo(models.Sports, {
         
             as: "sports",
-            foreignKey: "id_sport"
+            foreignKey: "sport_id"
         })
 
 

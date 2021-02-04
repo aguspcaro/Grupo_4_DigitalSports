@@ -28,10 +28,10 @@ module.exports = function(sequelize, dataTypes) {
     let Payment = sequelize.define(alias, cols, config);
 
     Payment.associate = function(models) {
-        Payment.belongsTo(models.Cart, {
+        Payment.hasMany(models.Cart, {
 
             as: "carts",
-            foreignKey: "id_payment"
+            foreignKey: "payment_id"
         })
     }
 
