@@ -33,15 +33,6 @@ let mainControllers = {
     let palabraBuscada = req.query.homeSearch;
 
     res.send(palabraBuscada);
-  },
-  prueba: function (req, res) {
-    db.Products.findAll() 
-    .then(function(resultado) {
-      console.log(resultado)
-    })
-    .catch(function(err){
-      console.log(err)
-    })
   }
 }
 

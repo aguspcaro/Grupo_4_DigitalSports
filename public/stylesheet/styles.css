@@ -139,6 +139,19 @@ body {
   color: #0985d9;
 }
 
+.enter {
+  text-decoration: none;
+}
+
+.check {
+  color: #6ad872;
+}
+
+.check:hover {
+  color: #2bca36;
+}
+
+
 /*PARA SUSCRIBIRSE*/
 
 .div-suscribeContainer {
