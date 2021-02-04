@@ -10,7 +10,7 @@ module.exports =  function(sequelize, dataTypes){
             autoIncrement: true
         },
         name:{
-            type : dataTypes.STRING(100)
+            type : dataTypes.STRING(100),
         },
 
         }
@@ -19,7 +19,8 @@ module.exports =  function(sequelize, dataTypes){
             timestamps: true,
             createdAt: "created_at",
             updatedAt: "updated_at",
-            deletedAt: "deletedAt_at"
+            deletedAt: "deletedAt_at", 
+            paranoid: true
         }
 
     let Sports = sequelize.define(alias, cols, config); // ESTA VARIABLE ES LA MISMA QUE SE USA ABAJO EN EL ASSOCIATE?

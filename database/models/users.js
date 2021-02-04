@@ -23,7 +23,11 @@ module.exports = function(sequelize, dataTypes) {
     let config = { // Aca vamos a especificar como se llama esta tabla en nuestra base de datos. Como se llama users, aca ponemos users. 
 
         tableName: "users",
-        timestamp: true
+        timestamp: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
+        deletedAt: "deletedAt_at",
+        paranoid: true
     };
 
     let User = sequelize.define(alias, cols, config); // Esta variable la vamos a usar para hacer la asociacion --> User.associate --> User.hasOne.

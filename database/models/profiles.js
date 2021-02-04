@@ -11,7 +11,6 @@ module.exports = function(sequelize, dataTypes) {
         },
         image: {
             type: dataTypes.STRING,
-            primaryKey: true,
         },
         first_name: {
             type: dataTypes.STRING(100),
@@ -22,20 +21,27 @@ module.exports = function(sequelize, dataTypes) {
             allowNull: false
         },
         age: {
-            type: dataTypes.BIGINT(11),
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         birthday: {
             type: dataTypes.DATEONLY,
             allowNull: false
+        },
+        user_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
-
-    };
+};
 
     let config = {
 
         tableName: "profiles",
-        timestamp: true
+        timestamp: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
+        deletedAt: "deletedAt_at",
+        paranoid: true
     };
 
     let Profile = sequelize.define(alias, cols, config);

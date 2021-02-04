@@ -11,14 +11,18 @@ module.exports = function(sequelize, dataTypes) {
         },
         method: {
             type: dataTypes.STRING(100),
-            allowNull: false
-        }
+            allowNull: false,
+         }
     };
 
     let config = {
 
         tableName: "payments",
-        timestamp: true
+        timestamp: true,
+        paranoid: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
+        deletedAt: "deletedAt_at",
     };
 
     let Payment = sequelize.define(alias, cols, config);

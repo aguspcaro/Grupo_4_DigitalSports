@@ -12,14 +12,25 @@ module.exports = function(sequelize, dataTypes) {
         buy_total: {
             type : dataTypes.FLOAT(7,2),
             allowNull:false
+        },
+        user_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
+        },
+        payment_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
-
     };
 
     let config = {
 
         tableName: "carts",
-        timestamp: true
+        timestamp: true,
+        paranoid: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
+        deletedAt: "deletedAt_at",
     };
 
     let Cart = sequelize.define(alias, cols, config);
