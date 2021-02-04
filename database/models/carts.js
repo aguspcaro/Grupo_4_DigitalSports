@@ -21,16 +21,22 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.INTEGER,
             allowNull: false
         }
-
     };
 
     let config = {
 
         tableName: "carts",
         timestamp: true,
+<<<<<<< HEAD
         createdAt: "created_at",
         updatedAt: "updated_at",
         deletedAt: "deleted_at"
+=======
+        paranoid: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
+        deletedAt: "deleted_at",
+>>>>>>> fb34b1c04810769e6d9036fbf6b1383e6fc6176e
     };
 
     let Cart = sequelize.define(alias, cols, config);
@@ -42,7 +48,7 @@ module.exports = function(sequelize, dataTypes) {
             as: "users",
             foreignKey: "user_id"
         }),
-        Cart.hasOne(models.Payment, {  // Aca pongo hasOne y no hasMany, porque en principio solo podes tener medio de pago a la vez. No podes pagar parte en credito y parte en debito. O es debito o es credito o es lo que tenga que ser.
+        Cart.belongsTo(models.Payment, {  
             
             as: "payments",
             foreignKey: "payment_id"

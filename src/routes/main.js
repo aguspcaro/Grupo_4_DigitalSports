@@ -9,5 +9,6 @@ router.get('/', mainControllers.index);
 /* GET Buscador Home page */
 router.get('/search', mainControllers.search);
 
+router.get('/prueba', mainControllers.prueba)
 
 module.exports = router;

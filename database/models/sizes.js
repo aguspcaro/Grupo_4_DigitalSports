@@ -10,7 +10,8 @@ module.exports =  function(sequelize, dataTypes){
             autoIncrement: true
         },
         name:{
-            type : dataTypes.STRING(100)
+            type : dataTypes.STRING(100),
+            allowNull: false
         },
 
         }
@@ -19,7 +20,8 @@ module.exports =  function(sequelize, dataTypes){
             timestamps: true,
             createdAt: "created_at",
             updatedAt: "updated_at",
-            deletedAt: "deletedAt_at"
+            deletedAt: "deleted_at",
+            paranoid: true
     }
 
     let Sizes = sequelize.define(alias, cols, config);
@@ -28,8 +30,8 @@ module.exports =  function(sequelize, dataTypes){
             
         Sizes.hasMany(models.Products, {
       
-            as: "sizes",
-            foreignKey: "id"
+            as: "products",
+            foreignKey: "size_id"
         })
     }
 
