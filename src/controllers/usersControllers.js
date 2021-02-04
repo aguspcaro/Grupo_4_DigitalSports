@@ -137,7 +137,7 @@ let usersControllers = {
         res.cookie('recordame', usuarioLogueado, { maxAge: 60000 });
       }
 
-      return res.render('users/users', { user: usuarioLogueado });
+      return res.redirect('/');
     } else {
       res.render('users/login', { errors: errors.mapped() });
     }

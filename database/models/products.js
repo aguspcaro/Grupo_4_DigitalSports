@@ -21,11 +21,13 @@ module.exports =  function(sequelize, dataTypes){
         },
 
         image:{ 
-            type : dataTypes.STRING(100)
+            type : dataTypes.STRING(100),
+            allowNull: false
         },
 
         stock:{ 
-            type : dataTypes.INTEGER
+            type : dataTypes.INTEGER,
+            allowNull: false
         },
 
         category:{ 
@@ -42,15 +44,18 @@ module.exports =  function(sequelize, dataTypes){
         },
 
         size_id:{ 
-            type : dataTypes.INTEGER // David, en las tabla estan llamados distinto. Estan como id_size. Y creo... que no se especifican las claves foraneas. En los videos no las tienen en cuenta.
+            type : dataTypes.INTEGER,
+            allowNull: false
         },
         
-        id_brand:{ 
-            type : dataTypes.INTEGER
+        brand_id:{ 
+            type : dataTypes.INTEGER,
+            allowNull: false
         },
         
-        id_sport:{ 
-            type : dataTypes.INTEGER
+        sport_id:{ 
+            type : dataTypes.INTEGER,
+            allowNull: false
         },
 
 
@@ -60,9 +65,9 @@ module.exports =  function(sequelize, dataTypes){
             timestamps: true,
             createdAt: "created_at",
             updatedAt: "updated_at",
-            deletedAt: "deletedAt_at"
-}
-
+            deletedAt: "deleted_at",
+            paranoid: true
+    }
 
     let Products = sequelize.define(alias, cols, config);
 
@@ -70,24 +75,27 @@ module.exports =  function(sequelize, dataTypes){
     Products.associate = function(models){
            
          
-        Products.hasOne(models.Sizes, {
+         
+           
+            
+        Products.belongsTo(models.Sizes, {
         
             as: "sizes",
-            foreignKey: "id_size"
+            foreignKey: "size_id"
         }),
 
             
-        Products.hasOne(models.Brands, {
+        Products.belongsTo(models.Brands, {
         
             as: "brands",
-            foreignKey: "id_brand"
+            foreignKey: "brand_id"
         }),
 
             
-        Products.hasOne(models.Sports, {
+        Products.belongsTo(models.Sports, {
         
             as: "sports",
-            foreignKey: "id_sport"
+            foreignKey: "sport_id"
         })
 }    
     

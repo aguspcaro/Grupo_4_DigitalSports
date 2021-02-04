@@ -11,7 +11,6 @@ module.exports = function(sequelize, dataTypes) {
         },
         image: {
             type: dataTypes.STRING,
-            primaryKey: true,
         },
         first_name: {
             type: dataTypes.STRING(100),
@@ -22,30 +21,37 @@ module.exports = function(sequelize, dataTypes) {
             allowNull: false
         },
         age: {
-            type: dataTypes.BIGINT(11),
+            type: dataTypes.INTEGER,
             allowNull: false
         },
         birthday: {
             type: dataTypes.DATEONLY,
             allowNull: false
+        },
+        user_id: {
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
-
-    };
+};
 
     let config = {
 
         tableName: "profiles",
-        timestamp: true
+        timestamp: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
+        deletedAt: "deleted_at",
+        paranoid: true
     };
 
     let Profile = sequelize.define(alias, cols, config);
 
 
     Profile.associate = function(models) {
-        Profile.belongsTo(models.User, {
+        Profile.hasOne(models.User, {
 
             as: "users",
-            foreignKey: "id_user" // profile no tiene foreignKey dentro de user. Pero se relacionan a traves de esta foreignKey. Por eso va la de user_id.
+            foreignKey: "user_id" // profile no tiene foreignKey dentro de user. Pero se relacionan a traves de esta foreignKey. Por eso va la de user_id.
         })
     }
     return Profile;

@@ -11,23 +11,27 @@ module.exports = function(sequelize, dataTypes) {
         },
         method: {
             type: dataTypes.STRING(100),
-            allowNull: false
-        }
+            allowNull: false,
+         }
     };
 
     let config = {
 
         tableName: "payments",
-        timestamp: true
+        timestamp: true,
+        paranoid: true,
+        createdAt: "created_at",
+        updatedAt: "updated_at",
+        deletedAt: "deleted_at",
     };
 
     let Payment = sequelize.define(alias, cols, config);
 
     Payment.associate = function(models) {
-        Payment.belongsTo(models.Cart, {
+        Payment.hasMany(models.Cart, {
 
             as: "carts",
-            foreignKey: "id_payment"
+            foreignKey: "payment_id"
         })
     }
 
