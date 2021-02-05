@@ -35,23 +35,23 @@
                 <div>
                     <label for="">Deporte</label>
                     <select name="deporte">
-                        <option value="<%=product.deporte%>"><%=product.deporte%></option>
-                        <option value="futbol">Fútbol</option>
-                        <option value="basquet">Basquet</option>
-                        <option value="natacion">Natación</option>
-                        <option value="voley">Voley</option>
-                        <option value="running">Running</option>
+                        <option value="<%=product.sport_id%>"><%=product.sport_id%></option>
+                        <option value="1">Fútbol</option>
+                        <option value="2">Natacion</option>
+                        <option value="3">Basquet</option>
+                        <option value="4">Voley</option>
+                        <option value="5">Running</option>
                     </select>
 
                     <label for="">Marca</label>
 
                     <select name="marca">
-                        <option value="<%=product.marca%>"><%=product.marca%></option>
-                        <option value="adidas">adidas</option>
-                        <option value="nike">nike</option>
-                        <option value="topper">topper</option>
-                        <option value="fila">fila</option>
-                        <option value="reebok">rebook</option>
+                        <option value="<%=product.brand_id%>"><%=product.brand_id%></option>
+                        <option value="1">adidas</option>
+                        <option value="2">nike</option>
+                        <option value="3">topper</option>
+                        <option value="4">fila</option>
+                        <option value="5">reebok</option>
 
                     </select>
                 </div>
@@ -61,12 +61,12 @@
                 <div>
                     <label for="">Talle</label>
                     <select name="talle">
-                        <option value="<%=product.talle%>"><%=product.talle%></option>
-                        <option value="s">S</option>
-                        <option value="m">M</option>
-                        <option value="l">L</option>
-                        <option value="xl">XL</option>
-                        <option value="xxl">XXL</option>
+                        <option value="<%=product.size_id%>"><%=product.size_id%></option>
+                        <option value="1">S</option>
+                        <option value="2">M</option>
+                        <option value="3">L</option>
+                        <option value="4">XL</option>
+                        <option value="5">XXL</option>
 
 
                     </select>
@@ -76,7 +76,7 @@
                     <label for="">Publico</label>
 
                     <select name="publico">
-                        <option value="<%=product.publico%>"><%=product.publico%></option>
+                        <option value="<%=product.public%>"><%=product.public%></option>
                         <option value="mujeres">mujeres</option>
                         <option value="hombres">hombres</option>
                         <option value="niños">niños</option>
@@ -88,17 +88,17 @@
                     <label for="">Envío gratis</label>
 
                     <select name="envio">
-                        <option value="<%=product.envio%>"><%=product.envio%></option>
+                        <option value="<%=product.shipping%>"><%=product.shipping%></option>
                         <option value="gratis">Gratis</option>
                         <option value="correo">Correo</option>
 
                     </select>
 
-                    <input class="inputPrecio" value="<%=product.precio%>"type="number" name="precio" placeholder=""">
+                    <input class="inputPrecio" value="<%=product.price%>"type="number" name="precio" placeholder=""">
                  
                     <label class=" labelSku" for="">Categoría</label>
                     <select name="categoria">
-                        <option value="<%=product.categoria%>"><%=product.categoria%></option>
+                        <option value="<%=product.category%>"><%=product.category%></option>
                         <option value="ofertas">Ofertas</option>
                         <option value="recomendados">Recomendados</option>
                         <option value="destacados">Destacados</option>
@@ -111,7 +111,7 @@
                 <div>
                     <label class=" labelPromocional" for="">Precio Promocional</label>
 
-                    <input class="inputPromocional" value="<%=product.promocional%>" type="number" name="promocional" placeholder=""">
+                    <input class="inputPromocional" value="<%=product.promPrice%>" type="number" name="promocional" placeholder=""">
                     
                         <label class=" labelstock" for="">Stock</label>
 
