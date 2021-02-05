@@ -24,7 +24,21 @@ let mainControllers = {
     let recomendado = products.filter (function (product) {
     return product.categoria == 'recomendados'
     } );
-    res.render ('index', {destacado, oferta, lanzamiento, recomendado})
+
+
+    let userLogueado
+
+
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
+
+    res.render ('index', {destacado, oferta, lanzamiento, recomendado,  userLogueado})
 
       
   },

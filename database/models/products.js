@@ -34,7 +34,16 @@ module.exports =  function(sequelize, dataTypes){
             type : dataTypes.STRING(50),
             allowNull: false
         },
+        
+        public:{ 
+            type : dataTypes.STRING(50),
+            allowNull: false
+        },
 
+        shipping:{ 
+            type : dataTypes.STRING(50),
+            allowNull: false
+        },
         price:{ 
             type : dataTypes.FLOAT(7,2)
         },
@@ -45,17 +54,17 @@ module.exports =  function(sequelize, dataTypes){
 
         size_id:{ 
             type : dataTypes.INTEGER,
-            allowNull: false
+            
         },
         
         brand_id:{ 
             type : dataTypes.INTEGER,
-            allowNull: false
+           
         },
         
         sport_id:{ 
             type : dataTypes.INTEGER,
-            allowNull: false
+           
         },
 
 
@@ -64,8 +73,8 @@ module.exports =  function(sequelize, dataTypes){
             tableName: "products",
             timestamps: true,
             createdAt: "created_at",
-            updatedAt: "updated_at",
-            deletedAt: "deleted_at",
+           updatedAt: "updated_at",
+           deletedAt: "deleted_at",
             paranoid: true
     }
 
@@ -97,7 +106,9 @@ module.exports =  function(sequelize, dataTypes){
             as: "sports",
             foreignKey: "sport_id"
         })
-}    
+
+
+    }    
     
     return Products;
 

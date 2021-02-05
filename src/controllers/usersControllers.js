@@ -14,22 +14,40 @@ let usersControllers = {
 
   root: function (req, res, next) {
     errors = {};
-    let user = req.session.user;
+    let userLogueado
 
+
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
     if (req.session.user == undefined) {
       res.send('no hay ningun usuario logueado');
     } else {
-      return res.render('users/users', { user });
+      return res.render('users/users', { userLogueado });
     }
   },
 
   modificar: function (req, res) {
     let errors = validationResult(req);
-    let user = req.session.user;
+    let userLogueado
+
+
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
 
     return res.render('users/user-modificar', {
-      errors: errors.mapped(),
-      user,
+      errors: errors.mapped(), userLogueado
     });
   },
 
@@ -70,7 +88,18 @@ let usersControllers = {
   // VISTA DEL REGISTER
 
   register: function (req, res, next) {
-    res.render('users/register', { errors: {} });
+    let userLogueado
+
+
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
+    res.render('users/register', { errors: {}, userLogueado });
   },
 
   registration: function (req, res, next) {
@@ -107,14 +136,27 @@ let usersControllers = {
   // LOGIN
 
   login: function (req, res, next) {
-    res.render('users/login', { errors: {} });
+
+    let userLogueado
+
+
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
+   
+    res.render('users/login', { errors: {}, userLogueado});
   },
 
   checkLogin: function (req, res, next) {
+
     let errors = validationResult(req);
 
-    let usuarioLogueado;
-
+    //si no hay errores
     if (errors.isEmpty()) {
       let usuarioLogueado = users.find(function (user) {
         return (
@@ -124,12 +166,16 @@ let usersControllers = {
       });
 
       req.session.user = usuarioLogueado;
+      
+      console.log(req.session.user)
+  
 
       if (usuarioLogueado == undefined) {
+        let userLogueado = {}
         return res.render('users/login', {
           errors: {
-            msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.',
-          },
+            msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.', 
+          }, userLogueado
         });
       }
 
@@ -137,17 +183,22 @@ let usersControllers = {
         res.cookie('recordame', usuarioLogueado, { maxAge: 60000 });
       }
 
-      return res.redirect('/');
-    } else {
-      res.render('users/login', { errors: errors.mapped() });
+      res.redirect('/');
+    } 
+    
+    //si hay errores
+    else {
+      let userLogueado = {}
+      res.render('users/login', { errors: errors.mapped(), userLogueado});
     }
   },
 
   check: function (req, res, next) {
+    
     if (req.session.user == undefined) {
       res.send('no hay ningun usuario logueado');
     } else {
-      res.send('user logueado');
+      res.redirect('/');
     }
   },
 
