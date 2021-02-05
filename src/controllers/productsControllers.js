@@ -38,7 +38,7 @@ let productsControllers = {
     res.render('products/admproduct');
   },
   createproduct: function (req, res, next) {
-    products.push({
+/*     products.push({
       id: Date.now(),
       name: req.body.name,
       description: req.body.coments,
@@ -54,9 +54,37 @@ let productsControllers = {
       categoria: req.body.categoria,
     });
     let producto = JSON.stringify(products);
-    fs.writeFileSync(productsFilePath, producto);
+    fs.writeFileSync(productsFilePath, producto); */
 
-    res.redirect('/');
+    db.Sizes.create({
+    
+    name: req.body.talle,
+
+    /* description: req.body.coments,
+
+    image: req.files[0].filename,
+
+    stock: req.body.stock,
+
+    category: req.body.categoria,
+
+    price: req.body.precio,
+    
+    promPrice: req.body.promocional,
+
+    size_id: req.body.talle,
+    
+    brand_id: req.body.marca,
+    
+    sport_id: req.body.deporte, */
+    
+    })
+    .then(function(resultado) {
+        res.send(resultado)
+    })
+    .catch(function(err) {
+      console.log(err)
+    })
   },
 
   modificar: function (req, res, next) {
