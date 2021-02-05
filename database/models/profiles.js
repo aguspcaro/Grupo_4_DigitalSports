@@ -28,13 +28,8 @@ module.exports = function(sequelize, dataTypes) {
             type: dataTypes.DATEONLY,
             allowNull: false
         },
-<<<<<<< HEAD
-        user_id : {
-            type: dataTypes.INTEGER, 
-=======
         user_id: {
             type: dataTypes.INTEGER,
->>>>>>> fb34b1c04810769e6d9036fbf6b1383e6fc6176e
             allowNull: false
         }
 };
@@ -45,12 +40,8 @@ module.exports = function(sequelize, dataTypes) {
         timestamp: true,
         createdAt: "created_at",
         updatedAt: "updated_at",
-<<<<<<< HEAD
-        deletedAt: "deleted_at"
-=======
         deletedAt: "deleted_at",
         paranoid: true
->>>>>>> fb34b1c04810769e6d9036fbf6b1383e6fc6176e
     };
 
     let Profile = sequelize.define(alias, cols, config);

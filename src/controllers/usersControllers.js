@@ -13,28 +13,54 @@ let usersControllers = {
   // VISTA PERFIL USUARIO Y SUS ACCIONES
 
   root: function (req, res, next) {
-    errors = {};
+    /*errors = {};*/
     let user = req.session.user;
-
-    if (req.session.user == undefined) {
-      res.send('no hay ningun usuario logueado');
-    } else {
-      return res.render('users/users', { user });
-    }
+    db.User.findByPk(req.params.id)
+      .then(function(user) {
+        if (user == undefined) {
+          res.send('no hay ningun usuario logueado');
+        } else {
+          return res.render('users/users', { user : user });
+        }
+      }).catch(function(errno){
+        res.send(errno)
+      })
+    
   },
 
   modificar: function (req, res) {
-    let errors = validationResult(req);
+    
+    db.User.findOne({include: [{association:"users"}]})
+      .then(function(user) {
+        
+        console.log(user)
+        res.render("users/user-modificar", { user : user })
+      }).catch(function(errno) {
+          res.send(errno)
+      })
+
+    
+    /* let errors = validationResult(req);
     let user = req.session.user;
 
     return res.render('users/user-modificar', {
       errors: errors.mapped(),
       user,
-    });
+    }); */
   },
 
   edit: function (req, res, next) {
-    let user = req.session.user;
+
+    /*db.User.update({
+      email: req.body.email,
+      password: req.body.password
+    },{
+      where: { 
+        id: req.params.id
+      }
+    })*/
+
+    /*let user = req.session.user;
     let errors = validationResult(req);
 
     let cliente = req.params.id;
@@ -54,7 +80,7 @@ let usersControllers = {
       fs.writeFileSync(usersFilePath, usuario);
 
       res.redirect('/');
-    
+    */
   },
 
   delete: function (req, res) {
@@ -75,12 +101,12 @@ let usersControllers = {
 
   registration: function (req, res, next) {
 
-    db.User.findAll() // User hace referencia al nombre fantasia que le asigne dentro del modelo (alias: "User")
-      .then(function(user) {
-        return res.render("users/ejemplo", { user : user})
-      }).catch(function(errn){
-        res.send(errn)
-      })
+    db.User.create({
+      email: req.body.email,
+      password: req.body.password
+    })
+
+    res.redirect("/users/login")
 
 /*    let errors = validationResult(req);
 
@@ -113,13 +139,24 @@ let usersControllers = {
   checkLogin: function (req, res, next) {
     let errors = validationResult(req);
 
-    let usuarioLogueado;
+   
 
+    db.User.findAll({
+      include: [{ association: "users"}]
+    })
+    .then(function(user) {
+        console.log(user)
+        res.render("users/users", {user:user})
+    }).catch(function(errno) {
+        res.send(errno)
+    })
+    
     if (errors.isEmpty()) {
-      let usuarioLogueado = users.find(function (user) {
+      let usuarioLogueado = user.find(function (usuario) {
         return (
           user.email == req.body.emailLogin &&
-          bcrypt.compareSync(req.body.passwordLogin, user.password)
+          user.password == req.body.passwordLogin
+          /*bcrypt.compareSync(req.body.passwordLogin, user.password)*/
         );
       });
 
@@ -140,7 +177,7 @@ let usersControllers = {
       return res.render('users/users', { user: usuarioLogueado });
     } else {
       res.render('users/login', { errors: errors.mapped() });
-    }
+    } 
   },
 
   check: function (req, res, next) {

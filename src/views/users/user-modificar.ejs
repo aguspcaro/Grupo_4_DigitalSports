@@ -25,7 +25,7 @@
                     <div class="section-registerContainerName">
                         <label for="name" class="section-register__labelName">Nombre<span
                                 class="section-register__spanLabelName">*</span></label>
-                        <input type="text" name="name" id="name" class="section-register__inputName">
+                        <input type="text" name="name" id="name" class="section-register__inputName" >
                         <p class="errores"><%= typeof errors.name == "undefined" ? "" : errors.name.msg %></p>
                         
                     </div>
@@ -62,7 +62,7 @@
                     <div class="section-registerContainerAge">
                         <label for="edad" class="section-registerLabelAge">Edad
                             <span class="section-register__spanLabelAge">*</span></label>
-                        <input type="number name="edad" id="edad"
+                        <input type="number" name="edad" id="edad"
                             class="section-register__inputAge" >
                             <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
 
@@ -73,7 +73,7 @@
                         <label for="edad" class="section-registerLabelAge">Fecha de Nacimiento
                             <span class="section-register__spanLabelAge">*</span></label>
                         <input type="date" name="edad" id="edad"
-                            class="section-register__inputAge" value="<%=user.edad%>">
+                            class="section-register__inputAge" >
                             <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
 
                     </div>

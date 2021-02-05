@@ -19,16 +19,10 @@ module.exports = function(sequelize, dataTypes) {
 
         tableName: "payments",
         timestamp: true,
-<<<<<<< HEAD
-        createdAt: "created_at",
-        updatedAt: "updated_at",
-        deletedAt: "deleted_at"
-=======
         paranoid: true,
         createdAt: "created_at",
         updatedAt: "updated_at",
         deletedAt: "deleted_at",
->>>>>>> fb34b1c04810769e6d9036fbf6b1383e6fc6176e
     };
 
     let Payment = sequelize.define(alias, cols, config);

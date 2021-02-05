@@ -26,12 +26,8 @@ module.exports = function(sequelize, dataTypes) {
         timestamp: true,
         createdAt: "created_at",
         updatedAt: "updated_at",
-<<<<<<< HEAD
-        deletedAt: "deleted_at"
-=======
         deletedAt: "deleted_at",
         paranoid: true
->>>>>>> fb34b1c04810769e6d9036fbf6b1383e6fc6176e
     };
 
     let User = sequelize.define(alias, cols, config); // Esta variable la vamos a usar para hacer la asociacion --> User.associate --> User.hasOne.

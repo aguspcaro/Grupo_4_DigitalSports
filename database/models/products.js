@@ -44,17 +44,6 @@ module.exports =  function(sequelize, dataTypes){
         },
 
         size_id:{ 
-<<<<<<< HEAD
-            type : dataTypes.INTEGER 
-        },
-        
-        id_brand:{ 
-            type : dataTypes.INTEGER // Deberia ser brand_id
-        },
-        
-        id_sport:{ 
-            type : dataTypes.INTEGER // Deberia ser sport_id
-=======
             type : dataTypes.INTEGER,
             allowNull: false
         },
@@ -67,7 +56,6 @@ module.exports =  function(sequelize, dataTypes){
         sport_id:{ 
             type : dataTypes.INTEGER,
             allowNull: false
->>>>>>> fb34b1c04810769e6d9036fbf6b1383e6fc6176e
         },
 
 
@@ -77,12 +65,8 @@ module.exports =  function(sequelize, dataTypes){
             timestamps: true,
             createdAt: "created_at",
             updatedAt: "updated_at",
-<<<<<<< HEAD
-            deletedAt: "deletedAt_at" // deberia ser deleted_at
-=======
             deletedAt: "deleted_at",
             paranoid: true
->>>>>>> fb34b1c04810769e6d9036fbf6b1383e6fc6176e
     }
 
     let Products = sequelize.define(alias, cols, config);
@@ -93,11 +77,7 @@ module.exports =  function(sequelize, dataTypes){
          
            
             
-<<<<<<< HEAD
-        Products.hasOne(models.Sizes, { // lo mismo para estos 3. Deberian ser size_id, brand_id, sport_id
-=======
         Products.belongsTo(models.Sizes, {
->>>>>>> fb34b1c04810769e6d9036fbf6b1383e6fc6176e
         
             as: "sizes",
             foreignKey: "size_id"
