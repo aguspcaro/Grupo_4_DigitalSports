@@ -10,21 +10,54 @@ const db = require("../../database/models/index")
 let productsControllers = {
 
   root: function (req, res, next) {
-  res.render('products/products', { products });
+    let userLogueado
+
+
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
+  res.render('products/products', { products, userLogueado });
   
 },
   prueba: function (req,res, next) {
     console.log(db.models)
+    let userLogueado
+
+
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
     db.Products.findByPk(1).then(product=> {
     
-      res.render("products/prueba",{product:product});
+      res.render("products/prueba",{product:product, userLogueado});
      })
     
     
 },
 
   cart: function (req, res, next) {
-    res.render('products/cart');
+    let userLogueado
+
+
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
+    res.render('products/cart', {userLogueado});
   },
   detail: function (req, res, next) {
     let detalleProducto = req.params.id;
@@ -32,10 +65,33 @@ let productsControllers = {
       return buscar.id == detalleProducto;
     });
 
-    res.render('products/detail', { product });
+    let userLogueado
+
+
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
+
+    res.render('products/detail', { product, userLogueado });
   },
   adm: function (req, res, next) {
-    res.render('products/admproduct');
+    let userLogueado
+
+
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
+    res.render('products/admproduct', {userLogueado});
   },
   createproduct: function (req, res, next) {
     products.push({
@@ -65,7 +121,19 @@ let productsControllers = {
       return busca.id == codigo;
     });
 
-    res.render('products/producto-modificar', { product });
+    let userLogueado
+
+
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
+
+    res.render('products/producto-modificar', { product, userLogueado });
   },
 
   edit: function (req, res) {

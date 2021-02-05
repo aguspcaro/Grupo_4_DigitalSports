@@ -74,9 +74,7 @@
 /*Apellido*/
 
 .section-registerContainerLastName {
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     width: 95%;
 }
 

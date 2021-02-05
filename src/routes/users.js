@@ -19,7 +19,7 @@ const validationEditMiddleware = require('../middlewares/validationEditMiddlewar
 
 // VISTA DEL USUARIO : SUS DATOS PARA MODIFICAR/ELIMINAR
 
-router.get('/login/user/:id', usersControllers.root);
+router.get('/login/user', usersControllers.root);
 router.delete('/login/user/:id', usersControllers.delete);
 router.get(
   '/login/user/user-modificar/:id',
@@ -41,7 +41,7 @@ router.post('/register', uploads.any(), validationRegisterMiddleware, usersContr
 router.get('/login', userInSesion, usersControllers.login);
 router.post('/login', validationLogin, usersControllers.checkLogin);
 
-// VISTA DEL USUARIO LOGUEADO
+ //VISTA DEL USUARIO LOGUEADO
 router.get('/login/check', usersControllers.check);
 
 // DATOS QUE VIENEN POR EL FORM DE SUSCRIBIRSE

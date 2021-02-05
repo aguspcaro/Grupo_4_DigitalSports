@@ -16,11 +16,13 @@
 
             <a href="/products/create"><i class="fas fa-folder-plus main-navIcons__add"></i></a>
 
-            <a href=""><i class="fas fa-heart main-navIcons__heart"></i></a>
+            <% if (userLogueado.session != undefined) { %>
+                <a href="/users/login/user"><i class="fas fa-user-check check"></i></a>
+            <% } %>
 
             <a href="/products/cart"><i class="fas fa-shopping-cart main-navIcons__cart"></i></a>
             
-            <a href="/users/login"><i><i class="fas fa-user main-navIcons__user"></i></i></a>
+            <a href="/users/login"><i class="fas fa-user main-navIcons__user enter"></i></a>
        
        
         </div>

@@ -24,7 +24,21 @@ let mainControllers = {
     let recomendado = products.filter (function (product) {
     return product.categoria == 'recomendados'
     } );
-    res.render ('index', {destacado, oferta, lanzamiento, recomendado})
+
+
+    let userLogueado
+
+
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
+
+    res.render ('index', {destacado, oferta, lanzamiento, recomendado,  userLogueado})
 
       
   },
@@ -33,15 +47,6 @@ let mainControllers = {
     let palabraBuscada = req.query.homeSearch;
 
     res.send(palabraBuscada);
-  },
-  prueba: function (req, res) {
-    db.Products.findAll() 
-    .then(function(resultado) {
-      console.log(resultado)
-    })
-    .catch(function(err){
-      console.log(err)
-    })
   }
 }
 

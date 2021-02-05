@@ -18,14 +18,14 @@
             <div class="section-registerContainerTitle">
                 <h4 class="section-registerTitle">Perfil</h4>
             </div>
-            
-            <h2>Hola <%= user.email %></h2>
+
+            <h2>Hola <%= userLogueado.session.name %></h2>
          
             <div>
-                <a  href="/users/login/user/user-modificar/<%= user.id %>"><button type="submit" class="">Editar</button></a>
+                <a  href="/users/login/user/user-modificar/<%= userLogueado.session.id %>"><button type="submit" class="">Editar</button></a>
                 
             
-                <form action="/users/login/user/<%=user.id%>?_method=DELETE" class="section-form-register" method="POST">
+                <form action="/users/login/user/<%=userLogueado.session.id%>?_method=DELETE" class="section-form-register" method="POST">
     
                     <button type="submit" class="">Eliminar</button>
     
