@@ -8,23 +8,6 @@ const db = require("../../database/models/index")
 
 let mainControllers = {
   index: function (req, res, next) {
-    
-    let destacado = products.filter (function (product) {
-      return product.categoria == 'destacados'
-    } );
-    
-    let oferta = products.filter (function (product) {
-    return product.categoria == 'ofertas'
-    } );
-
-    let lanzamiento = products.filter (function (product) {
-    return product.categoria == 'lanzamientos'
-    } );
-
-    let recomendado = products.filter (function (product) {
-    return product.categoria == 'recomendados'
-    } );
-
 
     let userLogueado
 
@@ -37,11 +20,48 @@ let mainControllers = {
     else {
       userLogueado = {}
     }
+    
+    let promesaLanzamientos = db.Products.findAll(
+      {
+        where: {
+          category: "Lanzamientos"
+      }
+    }
+    )
 
-    res.render ('index', {destacado, oferta, lanzamiento, recomendado,  userLogueado})
+    let promesaOfertas = db.Products.findAll(
+      {
+        where: {
+          category: "Ofertas"
+      }
+    }
+    )
 
-      
-  },
+    let promesaDestacados = db.Products.findAll(
+      {
+        where: {
+          category: "Destacados"
+      }
+    }
+    )
+
+    let promesaRecomendados= db.Products.findAll(
+      {
+        where: {
+          category: "Recomendados"
+      }
+    }
+    )
+
+
+  Promise.all([promesaDestacados, promesaOfertas, promesaLanzamientos, promesaRecomendados, ])
+    .then(function(resultado) {
+      res.render('index', {resultado,userLogueado})
+    })
+    .catch(function(err) {
+      console.log(err)
+    })  
+},
 
   search: function (req, res) {
     let palabraBuscada = req.query.homeSearch;
