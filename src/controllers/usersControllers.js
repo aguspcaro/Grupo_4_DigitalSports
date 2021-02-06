@@ -7,23 +7,37 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const { check, validationResult, body } = require('express-validator');
 const { ValidatorsImpl } = require('express-validator/src/chain');
 const { UnorderedCollection } = require('http-errors');
-const db = require("../../database/models/index")
+const db = require("../../database/models/index");
+   
 
-let usersControllers = {
+
+let usersControllers = { 
   // VISTA PERFIL USUARIO Y SUS ACCIONES
 
   root: function (req, res, next) {
     /*errors = {};*/
-    let user = req.session.user;
+  
+    let userLogueado;
+    
+    
+    if (req.session != undefined) {
+     userLogueado = {
+        session: req.session.user
+      }
+    }
+    else {
+      userLogueado = {}
+    }
+
     db.User.findByPk(req.params.id)
       .then(function(user) {
-        if (user == undefined) {
-          res.send('no hay ningun usuario logueado');
+        if (user.id == undefined) {
+          return res.send('no hay ningun usuario logueado');
         } else {
           return res.render('users/users', { user : user });
         }
       }).catch(function(errno){
-        res.send(errno)
+        return res.send(errno)
       })
     
   },
@@ -63,10 +77,10 @@ let usersControllers = {
     db.User.findOne({include: [{association:"users"}]})
       .then(function(user) {
         
-        console.log(user)
-        res.render("users/user-modificar", { user : user })
+        
+        return res.render("users/user-modificar", { user : user })
       }).catch(function(errno) {
-          res.send(errno)
+          return res.send(errno)
       })
 
     let errors = validationResult(req);
@@ -181,11 +195,11 @@ let usersControllers = {
 
   // LOGIN
 
-  login: function (req, res, next) {
+  login: function (req, res, next) { // NO HAY SESSION. SIMPLEMENTE HAY QUE HACER UNA VERIFICACION A LA BASE DE DATOS
 
-    let userLogueado
-
-
+    let userLogueado;
+    
+    
     if (req.session != undefined) {
      userLogueado = {
         session: req.session.user
@@ -195,38 +209,74 @@ let usersControllers = {
       userLogueado = {}
     }
    
-    res.render('users/login', { errors: {}, userLogueado});
+    return res.render('users/login', { errors: {}, userLogueado});
   },
 
   checkLogin: function (req, res, next) {
-
-   
-
-    db.User.findAll({
-      include: [{ association: "users"}]
-    })
-    .then(function(user) {
-        console.log(user)
-        res.render("users/users", {user:user})
-    }).catch(function(errno) {
-        res.send(errno)
-    })
-    
     let errors = validationResult(req);
-
-    //si no hay errores
+    let usuarioLogueado;
+    req.session.user
     if (errors.isEmpty()) {
-      let usuarioLogueado = user.find(function (usuario) {
+
+      db.User.findAll({ // "User" es el alias que asigne en el modelo
+        where: {
+          email: req.body.emailLogin,
+          password: req.body.passwordLogin
+        }
+      }) 
+        
+      .then(function(user) {
+        
+        userLogueado = user;
+        if (userLogueado == undefined) {
+          let userLogueado;
+          return res.render('users/login', {
+            errors: {
+              msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.', 
+            }, userLogueado
+          });
+        } else {
+          let usuario;
+          userLogueado.forEach(function(user){ usuario = user.dataValues})
+          //console.log(usuario)
+          return res.render('users/users', {usuario})
+        }
+  
+        if (req.body.recordame != undefined) {
+          res.cookie('recordame', usuarioLogueado, { maxAge: 60000 });
+        };
+  
+        
+
+      })
+       
+          
+      .catch(function(errno) {
+        res.send(errno)
+      });
+      
+      
+    } else {
+      let userLogueado = {}
+      return res.render('users/login', { errors: errors.mapped(), userLogueado});
+    }
+
+    
+
+    // SE INTERCAMBIA POR EL db.User.FindAll
+
+    /*if (errors.isEmpty()) {
+      let usuarioLogueado = users.find(function (user) {
         return (
           user.email == req.body.emailLogin &&
           user.password == req.body.passwordLogin
-          /*bcrypt.compareSync(req.body.passwordLogin, user.password)*/
+          //bcrypt.compareSync(req.body.passwordLogin, user.password)
         );
       });
-
+      
       req.session.user = usuarioLogueado;
       
-      console.log(req.session.user)
+      
   
 
       if (usuarioLogueado == undefined) {
@@ -245,19 +295,19 @@ let usersControllers = {
       res.redirect('/');
     } 
     
-    //si hay errores
+   
     else {
       let userLogueado = {}
-      res.render('users/login', { errors: errors.mapped(), userLogueado});
-    }
+      return res.render('users/login', { errors: errors.mapped(), userLogueado});
+    } */
   },
 
   check: function (req, res, next) {
     
     if (req.session.user == undefined) {
-      res.send('no hay ningun usuario logueado');
+      return res.send('no hay ningun usuario logueado');
     } else {
-      res.redirect('/');
+      return res.redirect('/');
     }
   },
 
