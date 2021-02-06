@@ -82,7 +82,11 @@ let productsControllers = {
   },
   createproduct: function (req, res, next) {
     
-      db.Products.create({
+    
+   
+    
+    
+    db.Products.create({
         name: req.body.name,
         description: req.body.coments,
         image: req.files[0].filename,
