@@ -20,8 +20,9 @@
                             <h3><%= product.name %></h3>
                         </div>
                         <div class="container-texto-precio">
-                            <h2><strong>$<%= product.precio %></strong></h2>
+                            <h2><strong>$<%= product.promPrice %></strong></h2>
                         </div>
+                        <span></span>
                     </div>
 
                     <div class="container-detalle-caracteristicas">
@@ -33,19 +34,45 @@
                         
                         <div class="container-detalle-talles-numero">
                             
-                            <label ><%= product.talle %></label>
+                            <label ><%= product.sizes.name%></label>
                         
                         </div>
 
-                        <div class="container-detalle-color">
-                            <p>Stock</p>
-                            <label class="colores" for=""><%= product.stock %></label>
+
+                        <div>
+                            <p><label>Marca</label></p>
+                        </div>
+                        
+                        <div class="container-detalle-talles-numero">
+                            
+                            <label ><%= product.brands.name%></label>
+                        
                         </div>
 
-                        <div class="container-detalle-envio">
-                            <p>Envío:</p>
-                            <label ><%= product.envio %></label>
+
+                        <div>
+                            <p><label>Unidades</label></p>
                         </div>
+                        
+                        <div class="container-detalle-talles-numero">
+                            
+                            <label ><%= product.stock%></label>
+                        
+                        </div>
+
+
+                        
+                        <div>
+                            <p><label>Deporte</label></p>
+                        </div>
+                        
+                        <div class="container-detalle-talles-numero">
+                            
+                            <label ><%= product.sports.name%></label>
+                        
+                        </div>
+
+                     
                         
                     </div>
                 </div>

@@ -21,7 +21,6 @@ router.get('/detail/:id', productsControllers.detail);
 
 // PRODUCTOS Y SUS HERRAMIENTAS (EDITAR, ELIMINAR, CREAR)
 router.get('/create', productsControllers.adm);
-router.get('/prueba', productsControllers.prueba);
 router.post('/create', uploads.any(), productsControllers.createproduct);
 router.get('/vista/:id', productsControllers.modificar);
 router.put('/:id', uploads.any(), productsControllers.edit);
