@@ -22,12 +22,12 @@ const validationEditMiddleware = require('../middlewares/validationEditMiddlewar
 router.get('/login/perfil', usersControllers.root);
 router.delete('/login/perfil/:id', usersControllers.delete);
 router.get(
-  '/login/user/user-modificar/:id',
+  '/login/perfil/user-modificar/:id',
   userOfSesion,
   usersControllers.modificar
 );
 router.put(
-  '/login/user/user-modificar/:id',
+  '/login/perfil/user-modificar/:id',
   validationEditMiddleware,
   uploads.any(),
   usersControllers.edit

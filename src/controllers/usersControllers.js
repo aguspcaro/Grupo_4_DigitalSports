@@ -70,31 +70,28 @@ let usersControllers = {
   },*/
 
   modificar: function (req, res) {
-    db.User.findOne({include: [{association:"users"}]})
+
+    let errors = validationResult(req);
+    let userLogueado;
+
+    if (req.session != undefined) {
+    db.User.findByPk(req.params.id)
       .then(function(user) {
         
+        userLogueado = user;
         
-        return res.render("users/user-modificar", { user : user })
+        return res.render('users/user-modificar', { errors: errors.mapped(), userLogueado });
+        
       }).catch(function(errno) {
           return res.send(errno)
       })
-
-    let errors = validationResult(req);
-    let userLogueado
-
-
-    if (req.session != undefined) {
-     userLogueado = {
-        session: req.session.user
-      }
     }
     else {
       userLogueado = {}
+      return res.redirect("/");
     }
 
-    return res.render('users/user-modificar', {
-      errors: errors.mapped(), userLogueado
-    });
+    
   },
 
   edit: function (req, res, next) {
