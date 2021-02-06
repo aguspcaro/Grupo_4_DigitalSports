@@ -16,16 +16,16 @@
         
         <section class="section-registerContainer">
             <div class="section-registerContainerTitle">
-                <h4 class="section-registerTitle">Perfil</h4>
+                <h4 class="section-registerTitle">Perfil de <%= userLogueado.email %></h4>
             </div>
-            <% for(let i = 0; i < userLogueado.length; i ++) { %>
-            <h2>Hola <%= usuario.email%></h2>
-            <% } %>
+            
+            
+            
             <div>
-                <a  href="/users/login/user/user-modificar/<%= usuario.id %>"><button type="submit" class="">Editar</button></a>
+                <a  href="/users/login/perfil/user-modificar/<%= userLogueado.id %>"><button type="submit" class="">Editar</button></a>
                 
             
-                <form action="/users/login/user/<%=usuario.id%>?_method=DELETE" class="section-form-register" method="POST">
+                <form action="/users/login/perfil/<%=userLogueado.id%>?_method=DELETE" class="section-form-register" method="POST">
     
                     <button type="submit" class="">Eliminar</button>
     

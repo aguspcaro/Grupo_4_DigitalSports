@@ -15,30 +15,26 @@ let usersControllers = {
   // VISTA PERFIL USUARIO Y SUS ACCIONES
 
   root: function (req, res, next) {
-    /*errors = {};*/
   
+    req.session.user;
     let userLogueado;
     
     
+    
     if (req.session != undefined) {
-     userLogueado = {
-        session: req.session.user
-      }
-    }
+      userLogueado = req.session.user;
+      console.log(userLogueado.id)
+      return res.render('users/users', {userLogueado});
+      
+    }  
     else {
-      userLogueado = {}
+      userLogueado = {};
+      return res.redirect("/")
     }
 
-    db.User.findByPk(req.params.id)
-      .then(function(user) {
-        if (user.id == undefined) {
-          return res.send('no hay ningun usuario logueado');
-        } else {
-          return res.render('users/users', { user : user });
-        }
-      }).catch(function(errno){
-        return res.send(errno)
-      })
+   
+    
+  
     
   },
 
@@ -196,9 +192,8 @@ let usersControllers = {
   // LOGIN
 
   login: function (req, res, next) { // NO HAY SESSION. SIMPLEMENTE HAY QUE HACER UNA VERIFICACION A LA BASE DE DATOS
-
-    let userLogueado;
     
+    userLogueado = req.session.user
     
     if (req.session != undefined) {
      userLogueado = {
@@ -206,16 +201,15 @@ let usersControllers = {
       }
     }
     else {
-      userLogueado = {}
+      userLogueado = {};
     }
-   
     return res.render('users/login', { errors: {}, userLogueado});
   },
 
   checkLogin: function (req, res, next) {
     let errors = validationResult(req);
-    let usuarioLogueado;
-    req.session.user
+    let userLogueado;
+
     if (errors.isEmpty()) {
 
       db.User.findAll({ // "User" es el alias que asigne en el modelo
@@ -229,21 +223,29 @@ let usersControllers = {
         
         userLogueado = user;
         if (userLogueado == undefined) {
-          let userLogueado;
+          userLogueado;
           return res.render('users/login', {
             errors: {
               msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.', 
-            }, userLogueado
-          });
+            }, userLogueado });
         } else {
           let usuario;
           userLogueado.forEach(function(user){ usuario = user.dataValues})
+          
+          if (req.session != undefined) {
+            
+            req.session.user = usuario;
+
+          } else {
+             req.session.user = {};
+           }
+           // console.log(req.session.user)
           //console.log(usuario)
-          return res.render('users/users', {usuario})
+          return res.redirect('login/perfil')
         }
   
         if (req.body.recordame != undefined) {
-          res.cookie('recordame', usuarioLogueado, { maxAge: 60000 });
+          res.cookie('recordame', usuario, { maxAge: 60000 });
         };
   
         
@@ -257,7 +259,7 @@ let usersControllers = {
       
       
     } else {
-      let userLogueado = {}
+      userLogueado = {}
       return res.render('users/login', { errors: errors.mapped(), userLogueado});
     }
 

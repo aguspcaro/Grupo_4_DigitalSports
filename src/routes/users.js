@@ -19,8 +19,8 @@ const validationEditMiddleware = require('../middlewares/validationEditMiddlewar
 
 // VISTA DEL USUARIO : SUS DATOS PARA MODIFICAR/ELIMINAR
 
-router.get('/login/user', usersControllers.root);
-router.delete('/login/user/:id', usersControllers.delete);
+router.get('/login/perfil', usersControllers.root);
+router.delete('/login/perfil/:id', usersControllers.delete);
 router.get(
   '/login/user/user-modificar/:id',
   userOfSesion,
