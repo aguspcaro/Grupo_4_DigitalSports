@@ -50,10 +50,9 @@ module.exports = function(sequelize, dataTypes) {
     /*Profile.associate = function(models) {
         Profile.hasOne(models.User, {
 
-            as: "users",
+            as: "user",
             foreignKey: "user_id" // profile no tiene foreignKey dentro de user. Pero se relacionan a traves de esta foreignKey. Por eso va la de user_id.
-       })
+        })
     }*/
-    
     return Profile;
 }

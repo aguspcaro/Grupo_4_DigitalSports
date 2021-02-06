@@ -7,13 +7,50 @@ const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const { check, validationResult, body } = require('express-validator');
 const { ValidatorsImpl } = require('express-validator/src/chain');
 const { UnorderedCollection } = require('http-errors');
-const db = require("../../database/models/index")
+const db = require("../../database/models/index");
+   
 
-let usersControllers = {
+
+let usersControllers = { 
   // VISTA PERFIL USUARIO Y SUS ACCIONES
 
   root: function (req, res, next) {
-    errors = {};
+  
+    req.session.user;
+    let userLogueado;
+    
+    
+    
+    if (req.session != undefined) {
+      userLogueado = req.session.user;
+      console.log(userLogueado.id)
+      return res.render('users/users', {userLogueado});
+      
+    }  
+    else {
+      userLogueado = {};
+      return res.redirect("/")
+    }
+
+   
+    
+  
+    
+  },
+
+  /* modificar: function (req, res) {
+    
+    
+
+    
+    let errors = validationResult(req);
+    let user = req.session.user;
+
+    return res.render('users/user-modificar', {
+      errors: errors.mapped(),
+      user,
+    }); */
+    /*errors = {};
     let userLogueado
 
 
@@ -30,29 +67,45 @@ let usersControllers = {
     } else {
       return res.render('users/users', { userLogueado });
     }
-  },
+  },*/
 
   modificar: function (req, res) {
-    let errors = validationResult(req);
-    let userLogueado
 
+    let errors = validationResult(req);
+    let userLogueado;
 
     if (req.session != undefined) {
-     userLogueado = {
-        session: req.session.user
-      }
+    db.User.findByPk(req.params.id)
+      .then(function(user) {
+        
+        userLogueado = user;
+        
+        return res.render('users/user-modificar', { errors: errors.mapped(), userLogueado });
+        
+      }).catch(function(errno) {
+          return res.send(errno)
+      })
     }
     else {
       userLogueado = {}
+      return res.redirect("/");
     }
 
-    return res.render('users/user-modificar', {
-      errors: errors.mapped(), userLogueado
-    });
+    
   },
 
   edit: function (req, res, next) {
-    let user = req.session.user;
+
+    /*db.User.update({
+      email: req.body.email,
+      password: req.body.password
+    },{
+      where: { 
+        id: req.params.id
+      }
+    })*/
+
+    /*let user = req.session.user;
     let errors = validationResult(req);
 
     let cliente = req.params.id;
@@ -72,7 +125,7 @@ let usersControllers = {
       fs.writeFileSync(usersFilePath, usuario);
 
       res.redirect('/');
-    
+    */
   },
 
   delete: function (req, res) {
@@ -104,12 +157,12 @@ let usersControllers = {
 
   registration: function (req, res, next) {
 
-    db.User.findAll()
-      .then(function(user) {
-        return res.render("users/ejemplo", { user:user})
-      }).catch(function(errn){
-        res.send(errn)
-      })
+    db.User.create({
+      email: req.body.email,
+      password: req.body.password
+    })
+
+    res.redirect("/users/login")
 
 /*    let errors = validationResult(req);
 
@@ -135,39 +188,94 @@ let usersControllers = {
 
   // LOGIN
 
-  login: function (req, res, next) {
-
-    let userLogueado
-
-
+  login: function (req, res, next) { // NO HAY SESSION. SIMPLEMENTE HAY QUE HACER UNA VERIFICACION A LA BASE DE DATOS
+    
+    userLogueado = req.session.user
+    
     if (req.session != undefined) {
      userLogueado = {
         session: req.session.user
       }
     }
     else {
-      userLogueado = {}
+      userLogueado = {};
     }
-   
-    res.render('users/login', { errors: {}, userLogueado});
+    return res.render('users/login', { errors: {}, userLogueado});
   },
 
   checkLogin: function (req, res, next) {
-
     let errors = validationResult(req);
+    let userLogueado;
 
-    //si no hay errores
     if (errors.isEmpty()) {
+
+      db.User.findAll({ // "User" es el alias que asigne en el modelo
+        where: {
+          email: req.body.emailLogin,
+          password: req.body.passwordLogin
+        }
+      }) 
+        
+      .then(function(user) {
+        
+        userLogueado = user;
+        if (userLogueado == undefined) {
+          userLogueado;
+          return res.render('users/login', {
+            errors: {
+              msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.', 
+            }, userLogueado });
+        } else {
+          let usuario;
+          userLogueado.forEach(function(user){ usuario = user.dataValues})
+          
+          if (req.session != undefined) {
+            
+            req.session.user = usuario;
+
+          } else {
+             req.session.user = {};
+           }
+           // console.log(req.session.user)
+          //console.log(usuario)
+          return res.redirect('login/perfil')
+        }
+  
+        if (req.body.recordame != undefined) {
+          res.cookie('recordame', usuario, { maxAge: 60000 });
+        };
+  
+        
+
+      })
+       
+          
+      .catch(function(errno) {
+        res.send(errno)
+      });
+      
+      
+    } else {
+      userLogueado = {}
+      return res.render('users/login', { errors: errors.mapped(), userLogueado});
+    }
+
+    
+
+    // SE INTERCAMBIA POR EL db.User.FindAll
+
+    /*if (errors.isEmpty()) {
       let usuarioLogueado = users.find(function (user) {
         return (
           user.email == req.body.emailLogin &&
-          bcrypt.compareSync(req.body.passwordLogin, user.password)
+          user.password == req.body.passwordLogin
+          //bcrypt.compareSync(req.body.passwordLogin, user.password)
         );
       });
-
+      
       req.session.user = usuarioLogueado;
       
-      console.log(req.session.user)
+      
   
 
       if (usuarioLogueado == undefined) {
@@ -186,19 +294,19 @@ let usersControllers = {
       res.redirect('/');
     } 
     
-    //si hay errores
+   
     else {
       let userLogueado = {}
-      res.render('users/login', { errors: errors.mapped(), userLogueado});
-    }
+      return res.render('users/login', { errors: errors.mapped(), userLogueado});
+    } */
   },
 
   check: function (req, res, next) {
     
     if (req.session.user == undefined) {
-      res.send('no hay ningun usuario logueado');
+      return res.send('no hay ningun usuario logueado');
     } else {
-      res.redirect('/');
+      return res.redirect('/');
     }
   },
 
