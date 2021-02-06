@@ -56,8 +56,11 @@ let productsControllers = {
     else {
       userLogueado = {}
     }
-    db.Products.findByPk(req.params.id)
+    db.Products.findByPk(req.params.id, {
+      include : ['sizes', 'brands', 'sports']
+    })
     .then(function(product){
+     
       return res.render('products/detail', { product:product, userLogueado });
 
     })
