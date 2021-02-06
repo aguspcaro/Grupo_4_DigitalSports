@@ -315,6 +315,11 @@ let usersControllers = {
   suscribe: function (req, res, next) {
     res.render('thankYou');
   },
+
+  closed: function(req, res, next) {
+    req.session.destroy()
+    res.redirect('/')
+  }
 };
 
 module.exports = usersControllers;

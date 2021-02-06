@@ -16,20 +16,29 @@
         
         <section class="section-registerContainer">
             <div class="section-registerContainerTitle">
-                <h4 class="section-registerTitle">Perfil de <%= userLogueado.email %></h4>
+                <h4 class="section-registerTitle">Bienvenido <%= userLogueado.email%></h4>
             </div>
             
             
             
-            <div>
-                <a  href="/users/login/perfil/user-modificar/<%= userLogueado.id %>"><button type="submit" class="">Editar</button></a>
-                
-            
-                <form action="/users/login/perfil/<%=userLogueado.id%>?_method=DELETE" class="section-form-register" method="POST">
+           <div class="container-session">
+                <a  href="/users/login/perfil/user-modificar/<%= userLogueado.id %>" class="buttonSesionEdit">Editar</a></class=>
+            </div> 
+               <form action="/users/login/perfil/<%=userLogueado.id%>?_method=DELETE" class="section-form-register container-session  " method="POST">
     
-                    <button type="submit" class="">Eliminar</button>
-    
-                </form>
+                <button type="submit" class="buttonSesionDelete">Eliminar</button>
+
+            </form>
+
+
+
+            <div class="container-session">
+                <a href="/users/login/closed" class="buttonSesionClosed">Cerrar sesión</a>
+            </div>
+
+              
+
+         
     
             
     
