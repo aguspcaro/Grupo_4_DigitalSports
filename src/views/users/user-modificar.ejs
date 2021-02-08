@@ -15,78 +15,101 @@
         
         
         <section class="section-registerContainer">
+
             <div class="section-registerContainerTitle">
+
                 <h4 class="section-registerTitle">Editar Perfil</h4> <!-- hacerlo dinamico-->
+
             </div>
 
-            <form method="POST" action="/users/login/perfil/user-modificar/<%=userLogueado.id%>?_method=PUT" class="section-form-register" enctype="multipart/form-data">
+            <form method="POST" action="/users/login/perfil/editar/<%=userLogueado.id%>?_method=PUT" class="section-form-register" enctype="multipart/form-data">
 
                 <div class="section-registerContainerLeft">
+
                     <div class="section-registerContainerName">
-                        <label for="name" class="section-register__labelName">Nombre<span
-                                class="section-register__spanLabelName">*</span></label>
-                        <input type="text" name="name" id="name" class="section-register__inputName" >
+
+                        <label for="name" class="section-register__labelName">Nombre<span class="section-register__spanLabelName">*</span></label>
+
+                        <input type="text" name="name" id="name" class="section-register__inputName" value="<%= userLogueado.profile.first_name%>">
+
                         <p class="errores"><%= typeof errors.name == "undefined" ? "" : errors.name.msg %></p>
                         
                     </div>
 
                     <div class="section-registerContainerLastName">
-                        <label for="lastName" class="section-register__labelLastName">Apellido<span
-                                class="section-register__spanLabelLastName">*</span></label>
-                        <input type="text" name="lastName" id="lastName"
-                            class="section-register__inputLastName" > 
+
+                        <label for="lastName" class="section-register__labelLastName">Apellido<span class="section-register__spanLabelLastName">*</span></label>
+
+                        <input type="text" name="lastName" id="lastName" class="section-register__inputLastName" value="<%= userLogueado.profile.last_name%>"> 
+
                         <p class="errores">
+
                             <p class="errores"><%= typeof errors.lastName == "undefined" ? "" : errors.lastName.msg %></p>
 
                         </p>
+
                     </div>
 
                     <div class="section-registerContainerEmail">
-                        <label for="email" class="section-register__labelEmail">Correo Electrónico<span
-                                class="section-register__spanLabelEmail">*</span></label>
+
+                        <label for="email" class="section-register__labelEmail">Correo Electrónico<span class="section-register__spanLabelEmail">*</span></label>
+
                         <input type="email" name="email" id="email" class="section-register__inputEmail" value="<%= userLogueado.email%>">
+
                         <p class="errores"><%= typeof errors.email == "undefined" ? "" : errors.email.msg %></p>
+
                     </div>
 
                 </div>
 
                 <div class="section-registerContainerRight">
+
                     <div class="section-registerContainerPassword">
-                        <label for="password" class="section-registerLabelPassword">Contraseña<span
-                                class="section-register__spanLabelPassword">*</span></label>
-                        <input type="password" name="password" id="password"
-                            class="section-register__inputPassword">
+
+                        <label for="password" class="section-registerLabelPassword">Modificar contraseña<span class="section-register__spanLabelPassword">*</span></label>
+
+                        <input type="password" name="password" id="password" class="section-register__inputPassword">
+
                         <p class="errores"><%= typeof errors.password == "undefined" ? "" : errors.password.msg %></p>
+
+
                     </div>
 
                     <div class="section-registerContainerAge">
-                        <label for="edad" class="section-registerLabelAge">Edad
-                            <span class="section-register__spanLabelAge">*</span></label>
-                        <input type="date" name="edad" id="edad"
-                            class="section-register__inputAge" >
-                            <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
+
+                        <label for="edad" class="section-registerLabelAge">Edad <span class="section-register__spanLabelAge">*</span></label>
+
+                        <input type="number" name="edad" id="edad" class="section-register__inputAge" value="<%= userLogueado.profile.age%>">
+
+                        <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
 
                     </div>
 
                     
                     <div class="section-registerContainerAge">
-                        <label for="edad" class="section-registerLabelAge">Fecha de Nacimiento
-                            <span class="section-register__spanLabelAge">*</span></label>
-                        <input type="date" name="birth" id="birth"
-                            class="section-register__inputAge" >
-                            <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
+
+                        <label for="edad" class="section-registerLabelAge">Fecha de Nacimiento <span class="section-register__spanLabelAge">*</span></label>
+
+                        <input type="date" name="birthday" id="birthday" class="section-register__inputAge" value="<%= userLogueado.profile.birthday%>" >
+
+                        <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
 
                     </div>
 
 
                     <div class="section-registerContainerRequired">
+
                         <small class="section-registerRequired">*Campos Requeridos</small>
+
                     </div>
 
 
                     <div class="section-registerContainerButton">
+
                         <button type="submit" class="section-registerCreateAccount">Guardar Cambios</button>
+
                     </div>
+
                 </div>
 
 
