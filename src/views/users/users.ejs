@@ -26,7 +26,12 @@
     
             
            <div class="container-session">
-                <a  href="/users/login/perfil/editar/<%= userLogueado.id %>" class="buttonSesionEdit">Editar</a></class=>
+                <a  href="/users/login/perfil/editar/<%= userLogueado.id %>" class="buttonSesionEdit">Editar Usuario</a>
+            </div>
+            
+            
+            <div class="container-session">
+                <a  href="/users/login/perfil/editarPerfil/<%= userLogueado.id %>" class="buttonSesionEdit">Editar Perfil</a>
             </div> 
                <form action="/users/login/perfil/<%=userLogueado.id%>?_method=DELETE" class="section-form-register container-session  " method="POST">
     

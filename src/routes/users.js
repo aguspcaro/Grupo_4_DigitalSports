@@ -33,6 +33,18 @@ router.put(
   usersControllers.editUsuario
 );
 
+router.get(
+  '/login/perfil/editarPerfil/:id',
+  userOfSesion,
+  usersControllers.mostrarEdicionPerfil
+);
+router.put(
+  '/login/perfil/editarPerfil/:id',
+  validationEditMiddleware,
+  uploads.any(),
+  usersControllers.editPerfil
+);
+
 router.get("/login/perfil/crearPerfil/:id", userOfSesion, usersControllers.mostrarPerfil);
 router.post("/login/perfil", uploads.any(),usersControllers.createPerfil);
 
