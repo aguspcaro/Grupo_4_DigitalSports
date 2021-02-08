@@ -9,13 +9,11 @@ const db = require("../../database/models/index")
 let mainControllers = {
   index: function (req, res, next) {
 
-    let userLogueado
+    let userLogueado;
 
 
     if (req.session != undefined) {
-     userLogueado = {
-        session: req.session.user
-      }
+     userLogueado = req.session.user;
     }
     else {
       userLogueado = {}

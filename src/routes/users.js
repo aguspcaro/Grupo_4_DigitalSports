@@ -17,38 +17,24 @@ const userInSesion = require('../middlewares/userInSesionMiddleware');
 const userOfSesion = require('../middlewares/userOFSesionMiddleware');
 const validationEditMiddleware = require('../middlewares/validationEditMiddleware');
 
-// VISTA DEL USUARIO : SUS DATOS PARA MODIFICAR/ELIMINAR
 
-router.get('/login/perfil', usersControllers.root);
+// VISTA DEL CENTRO DE COMANDOS DEL USUARIO
+router.get('/login/perfil', userOfSesion, usersControllers.root);
 router.delete('/login/perfil/:id', usersControllers.delete);
-router.get(
-  '/login/perfil/editar/:id',
-  userOfSesion,
-  usersControllers.mostrarUsuario
-);
-router.put(
-  '/login/perfil/editar/:id',
-  validationEditMiddleware,
-  uploads.any(),
-  usersControllers.editUsuario
-);
 
-router.get(
-  '/login/perfil/editarPerfil/:id',
-  userOfSesion,
-  usersControllers.mostrarEdicionPerfil
-);
-router.put(
-  '/login/perfil/editarPerfil/:id',
-  validationEditMiddleware,
-  uploads.any(),
-  usersControllers.editPerfil
-);
+// VISTA DE LA EDICION DEL USUARIO
+router.get('/login/perfil/editar/:id', userOfSesion, usersControllers.mostrarUsuario);
+router.put('/login/perfil/editar/:id', validationEditMiddleware, uploads.any(), usersControllers.editUsuario);
 
+// VISTA DE LA EDICION DEL PERFIL
+router.get('/login/perfil/editar/:id', userOfSesion, usersControllers.mostrarEdicionPerfil);
+router.put('/login/perfil/editar/:id', validationEditMiddleware, uploads.any(), usersControllers.editPerfil);
+
+// VISTA DE LA CREACION DEL PERFIL
 router.get("/login/perfil/crearPerfil/:id", userOfSesion, usersControllers.mostrarPerfil);
 router.post("/login/perfil", uploads.any(),usersControllers.createPerfil);
 
-// VISTA DEL REGISTRO DE USUARRIO
+// VISTA DEL REGISTRO DE USUARIO
 router.get('/register', userInSesion, usersControllers.mostrarRegister);
 router.post('/register', uploads.any(), validationRegisterMiddleware, usersControllers.createRegister);
 
@@ -58,10 +44,11 @@ router.post('/login', validationLogin, usersControllers.checkLogin);
 
  //VISTA DEL USUARIO LOGUEADO
 router.get('/login/check', usersControllers.check);
-
 router.get('/login/closed', usersControllers.closed);
 
 // DATOS QUE VIENEN POR EL FORM DE SUSCRIBIRSE
 router.post('/suscribe', usersControllers.suscribe);
+
+
 
 module.exports = router;

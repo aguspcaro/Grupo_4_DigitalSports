@@ -12,7 +12,7 @@ const db = require("../../database/models/index");
 
 
 let usersControllers = { 
-  // VISTA PERFIL USUARIO Y SUS ACCIONES
+  // // MUESTRA LA VISTA PARA EL ACCIONAR DEL USUARIO : CREAR PERFIL, CERRAR SESION..
 
   root: function (req, res, next) {
   
@@ -23,43 +23,49 @@ let usersControllers = {
     
     if (req.session != undefined) {
       userLogueado = req.session.user;
-      //console.log(userLogueado.id)
-      return res.render('users/users', {userLogueado});
       
     }  
     else {
       userLogueado = {};
-      return res.redirect("/")
+      res.redirect("/")
     }
 
    
+    return res.render('users/users', {userLogueado});
     
   
     
   },
+
+  // MUESTRA LA VISTA PARA EDITAR EL PERFIL
+
   mostrarEdicionPerfil: function(req, res, next) {
     let userLogueado;
     let errors = validationResult(req);
+    
     if (req.session != undefined) {
-      
+
       db.Profile.findOne({where : {user_id: req.params.id}})
 
       .then(function(user) {
-        userLogueado = user
-        //console.log(userLogueado)
+        userLogueado = user;
         
         return res.render('users/perfil-modificar', { errors: errors.mapped(), userLogueado})
       
       
       }).catch(function(errno){console.log(errno)})
-    }
-    else {
+
+
+    } else {
       userLogueado = {}
       return res.redirect("/");
     }
-    
+      
     
   },
+
+  
+
   editPerfil: function(req, res, next) {
 
     
@@ -79,7 +85,7 @@ let usersControllers = {
     }).then(function(user){ res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
   },
 
-
+// MUESTRA LA VISTA PARA EDITAR EL USUARIO
 
   mostrarUsuario: function (req, res) {
 
@@ -141,7 +147,7 @@ let usersControllers = {
     
   },
 
-  // VISTA DEL REGISTER
+ // MUESTRA LA VISTA PARA REGISTRARSE
 
   mostrarRegister: function (req, res, next) {
     let userLogueado
@@ -169,7 +175,7 @@ let usersControllers = {
 
   },
 
-  // LOGIN
+// MUESTRA LA VISTA PARA LOGUEARSE
 
   login: function (req, res, next) { 
     
@@ -265,6 +271,8 @@ let usersControllers = {
     res.redirect('/')
   },
 
+  // MUESTRA LA VISTA PARA CREAR PERFIL
+
   mostrarPerfil: function(req, res, next) {
     let userLogueado;
     if (req.session.user == undefined) {
@@ -275,6 +283,7 @@ let usersControllers = {
       return res.render('users/crearPerfil', {errors: {}, userLogueado});
     }
   },
+  
   createPerfil : function(req, res, next) {
 
     let userLogueado = req.session.user;
