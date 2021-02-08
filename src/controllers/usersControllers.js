@@ -38,13 +38,16 @@ let usersControllers = {
     
   },
 
-  modificar: function (req, res) {
+  mostrarUsuario: function (req, res) {
 
     let errors = validationResult(req);
     let userLogueado;
 
     if (req.session != undefined) {
-    db.User.findByPk(req.params.id)
+      console.log(req.session)
+
+      db.User.findByPk(req.params.id, { include : ["profile"], row: true, nest: true })
+
       .then(function(user) {
         
         userLogueado = user;
@@ -63,7 +66,7 @@ let usersControllers = {
     
   },
 
-  edit: function (req, res, next) {
+  editUsuario: function (req, res, next) {
 
     let userLogueado;
 
@@ -77,7 +80,7 @@ let usersControllers = {
       }
     });
 
-    res.redirect("/users/login/perfil/user-modificar/" + req.params.id)
+    res.redirect("/users/login/perfil/editar/" + req.params.id)
 
   },
 
@@ -229,7 +232,7 @@ let usersControllers = {
     }
   },
   createPerfil : function(req, res, next) {
-    
+
     let userLogueado = req.session.user;
 
     db.Profile.create({
