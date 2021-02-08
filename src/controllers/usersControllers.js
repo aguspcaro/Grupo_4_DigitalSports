@@ -42,7 +42,7 @@ let usersControllers = {
   mostrarEdicionPerfil: function(req, res, next) {
     let userLogueado;
     let errors = validationResult(req);
-    
+
     if (req.session != undefined) {
 
       db.Profile.findOne({where : {user_id: req.params.id}})
@@ -99,7 +99,6 @@ let usersControllers = {
       .then(function(user) {
         
       
-        //console.log(user);
         userLogueado = user;
         
         return res.render('users/user-modificar', { errors: errors.mapped(), userLogueado });
@@ -196,6 +195,10 @@ let usersControllers = {
     let errors = validationResult(req);
     let userLogueado;
 
+    /*if (req.body.recordame != undefined) {
+      res.cookie('recordame', usuario, { maxAge: 60000 });
+    };*/
+
     if (errors.isEmpty()) {
 
       db.User.findAll({ // "User" es el alias que asigne en el modelo
@@ -225,14 +228,10 @@ let usersControllers = {
           } else {
              req.session.user = {};
            }
-           // console.log(req.session.user)
-          //console.log(usuario)
           return res.redirect('login/perfil')
         }
   
-        if (req.body.recordame != undefined) {
-          res.cookie('recordame', usuario, { maxAge: 60000 });
-        };
+        
   
         
 
@@ -248,6 +247,7 @@ let usersControllers = {
       userLogueado = {}
       return res.render('users/login', { errors: errors.mapped(), userLogueado});
     }
+
 
   },
 
