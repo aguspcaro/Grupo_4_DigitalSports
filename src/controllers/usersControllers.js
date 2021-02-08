@@ -23,7 +23,7 @@ let usersControllers = {
     
     if (req.session != undefined) {
       userLogueado = req.session.user;
-      console.log(userLogueado.id)
+      //console.log(userLogueado.id)
       return res.render('users/users', {userLogueado});
       
     }  
@@ -231,17 +231,18 @@ let usersControllers = {
   createPerfil : function(req, res, next) {
     console.log(req.params.id)
 
-    db.Profile.create({
+    db.Profile.bulkCreate({
 
+      image: req.files[0].filename,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       age: req.body.age,
       birthday: req.body.birthday,
       user_id: req.params.id
 
-    })
+    }).then(function(user){res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
 
-    res.redirect("/users/login/perfil")
+    
   }
 };
 

@@ -34,7 +34,7 @@ router.put(
 );
 
 router.get("/login/perfil/crearPerfil/:id", userOfSesion, usersControllers.mostrarPerfil);
-router.post("/login/perfil", usersControllers.createPerfil);
+router.post("/login/perfil", uploads.any(),usersControllers.createPerfil);
 
 // VISTA DEL REGISTRO DE USUARRIO
 router.get('/register', userInSesion, usersControllers.mostrarRegister);

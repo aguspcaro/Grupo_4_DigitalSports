@@ -206,6 +206,19 @@
     margin: 10px 0px;
 }
 
+/* IMAGEN PERFIL */
+
+.section-registerContainerImage {
+    width: 95%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    
+}
+.botonImagen {
+    margin-top: 1%;
+}
+
 
 /*Campos Requeridos*/
 
