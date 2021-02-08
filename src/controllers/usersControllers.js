@@ -87,8 +87,10 @@ let usersControllers = {
         id: req.params.id
       }
     })  
-    
-    res.redirect('/');
+    .then(data=>res.redirect("/users/login"))
+
+    .catch(error=>console.log(error))
+
     
   },
 
