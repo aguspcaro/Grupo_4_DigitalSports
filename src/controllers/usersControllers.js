@@ -229,16 +229,15 @@ let usersControllers = {
     }
   },
   createPerfil : function(req, res, next) {
-    console.log(req.params.id)
+    //console.log(req.params.id)
 
-    db.Profile.bulkCreate({
+    db.Profile.create({
 
       image: req.files[0].filename,
       first_name: req.body.first_name,
       last_name: req.body.last_name,
       age: req.body.age,
       birthday: req.body.birthday,
-      user_id: req.params.id
 
     }).then(function(user){res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
 
