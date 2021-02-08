@@ -27,8 +27,8 @@ router.get('/login/perfil/editar/:id', userOfSesion, usersControllers.mostrarUsu
 router.put('/login/perfil/editar/:id', validationEditMiddleware, uploads.any(), usersControllers.editUsuario);
 
 // VISTA DE LA EDICION DEL PERFIL
-router.get('/login/perfil/editar/:id', userOfSesion, usersControllers.mostrarEdicionPerfil);
-router.put('/login/perfil/editar/:id', validationEditMiddleware, uploads.any(), usersControllers.editPerfil);
+router.get('/login/perfil/editarPerfil/:id', userOfSesion, usersControllers.mostrarEdicionPerfil);
+router.put('/login/perfil/editarPerfil/:id', validationEditMiddleware, uploads.any(), usersControllers.editPerfil);
 
 // VISTA DE LA CREACION DEL PERFIL
 router.get("/login/perfil/crearPerfil/:id", userOfSesion, usersControllers.mostrarPerfil);
@@ -39,7 +39,7 @@ router.get('/register', userInSesion, usersControllers.mostrarRegister);
 router.post('/register', uploads.any(), validationRegisterMiddleware, usersControllers.createRegister);
 
 // VISTA DEL LOGIN
-router.get('/login', userInSesion, usersControllers.login);
+router.get('/login', usersControllers.login);
 router.post('/login', validationLogin, usersControllers.checkLogin);
 
  //VISTA DEL USUARIO LOGUEADO
