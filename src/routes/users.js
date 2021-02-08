@@ -33,9 +33,12 @@ router.put(
   usersControllers.edit
 );
 
+router.get("/login/perfil/crearPerfil/:id", userOfSesion, usersControllers.mostrarPerfil);
+router.post("/login/perfil", usersControllers.createPerfil);
+
 // VISTA DEL REGISTRO DE USUARRIO
-router.get('/register', userInSesion, usersControllers.register);
-router.post('/register', uploads.any(), validationRegisterMiddleware, usersControllers.registration);
+router.get('/register', userInSesion, usersControllers.mostrarRegister);
+router.post('/register', uploads.any(), validationRegisterMiddleware, usersControllers.createRegister);
 
 // VISTA DEL LOGIN
 router.get('/login', userInSesion, usersControllers.login);

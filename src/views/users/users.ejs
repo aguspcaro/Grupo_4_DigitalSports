@@ -19,7 +19,11 @@
                 <h4 class="section-registerTitle">Bienvenido <%= userLogueado.email%></h4>
             </div>
             
-            
+            <div class="container-session">
+                <a href="/users/login/perfil/crearPerfil/<%= userLogueado.id %>" class="buttonSesionClosed">Crear Perfil</a>
+            </div>
+
+    
             
            <div class="container-session">
                 <a  href="/users/login/perfil/user-modificar/<%= userLogueado.id %>" class="buttonSesionEdit">Editar</a></class=>

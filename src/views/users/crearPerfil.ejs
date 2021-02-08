@@ -16,24 +16,24 @@
         
         <section class="section-registerContainer">
             <div class="section-registerContainerTitle">
-                <h4 class="section-registerTitle">Editar Perfil</h4> <!-- hacerlo dinamico-->
+                <h4 class="section-registerTitle">Crear Perfil</h4> <!-- hacerlo dinamico-->
             </div>
 
-            <form method="POST" action="/users/login/perfil/user-modificar/<%=userLogueado.id%>?_method=PUT" class="section-form-register" enctype="multipart/form-data">
+            <form method="POST" action="/users/login/perfil" class="section-form-register" enctype="multipart/form-data">
 
                 <div class="section-registerContainerLeft">
                     <div class="section-registerContainerName">
-                        <label for="name" class="section-register__labelName">Nombre<span
+                        <label for="first_name" class="section-register__labelName">Nombre<span
                                 class="section-register__spanLabelName">*</span></label>
-                        <input type="text" name="name" id="name" class="section-register__inputName" >
+                        <input type="text" name="first_name" id="first_name" class="section-register__inputName" >
                         <p class="errores"><%= typeof errors.name == "undefined" ? "" : errors.name.msg %></p>
                         
                     </div>
 
                     <div class="section-registerContainerLastName">
-                        <label for="lastName" class="section-register__labelLastName">Apellido<span
+                        <label for="last_name" class="section-register__labelLastName">Apellido<span
                                 class="section-register__spanLabelLastName">*</span></label>
-                        <input type="text" name="lastName" id="lastName"
+                        <input type="text" name="last_name" id="last_name"
                             class="section-register__inputLastName" > 
                         <p class="errores">
                             <p class="errores"><%= typeof errors.lastName == "undefined" ? "" : errors.lastName.msg %></p>
@@ -41,28 +41,16 @@
                         </p>
                     </div>
 
-                    <div class="section-registerContainerEmail">
-                        <label for="email" class="section-register__labelEmail">Correo Electrónico<span
-                                class="section-register__spanLabelEmail">*</span></label>
-                        <input type="email" name="email" id="email" class="section-register__inputEmail" value="<%= userLogueado.email%>">
-                        <p class="errores"><%= typeof errors.email == "undefined" ? "" : errors.email.msg %></p>
-                    </div>
-
+                    
                 </div>
 
                 <div class="section-registerContainerRight">
-                    <div class="section-registerContainerPassword">
-                        <label for="password" class="section-registerLabelPassword">Contraseña<span
-                                class="section-register__spanLabelPassword">*</span></label>
-                        <input type="password" name="password" id="password"
-                            class="section-register__inputPassword">
-                        <p class="errores"><%= typeof errors.password == "undefined" ? "" : errors.password.msg %></p>
-                    </div>
+                    
 
                     <div class="section-registerContainerAge">
-                        <label for="edad" class="section-registerLabelAge">Edad
+                        <label for="age" class="section-registerLabelAge">Edad
                             <span class="section-register__spanLabelAge">*</span></label>
-                        <input type="date" name="edad" id="edad"
+                        <input type="number" name="age" id="age"
                             class="section-register__inputAge" >
                             <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
 
@@ -70,9 +58,9 @@
 
                     
                     <div class="section-registerContainerAge">
-                        <label for="edad" class="section-registerLabelAge">Fecha de Nacimiento
+                        <label for="birthday" class="section-registerLabelAge">Fecha de Nacimiento
                             <span class="section-register__spanLabelAge">*</span></label>
-                        <input type="date" name="birth" id="birth"
+                        <input type="date" name="birthday" id="birthday"
                             class="section-register__inputAge" >
                             <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
 
