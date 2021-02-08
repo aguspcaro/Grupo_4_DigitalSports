@@ -82,14 +82,12 @@ let usersControllers = {
   },
 
   delete: function (req, res) {
+    db.User.destroy ({
+      where: {
+        id: req.params.id
+      }
+    })  
     
-    let usuario = req.params.id;
-    
-
-    const filtrar = users.filter((user) => user.id != usuario);
-
-    let user = JSON.stringify(filtrar);
-    fs.writeFileSync(usersFilePath, user);
     res.redirect('/');
     
   },
