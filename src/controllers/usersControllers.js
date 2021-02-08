@@ -229,6 +229,7 @@ let usersControllers = {
     }
   },
   createPerfil : function(req, res, next) {
+    let userLogueado = req.session.user;
     //console.log(req.params.id)
 
     db.Profile.create({
@@ -238,8 +239,14 @@ let usersControllers = {
       last_name: req.body.last_name,
       age: req.body.age,
       birthday: req.body.birthday,
+      user_id: userLogueado.id
 
-    }).then(function(user){res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
+    },{
+      include: [{
+        association:"user"
+      }]
+    }
+    ).then(function(user){res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
 
     
   }
