@@ -33,9 +33,12 @@ router.put(
   usersControllers.edit
 );
 
+router.get("/login/perfil/crearPerfil/:id", userOfSesion, usersControllers.mostrarPerfil);
+router.post("/login/perfil", uploads.any(),usersControllers.createPerfil);
+
 // VISTA DEL REGISTRO DE USUARRIO
-router.get('/register', userInSesion, usersControllers.register);
-router.post('/register', uploads.any(), validationRegisterMiddleware, usersControllers.registration);
+router.get('/register', userInSesion, usersControllers.mostrarRegister);
+router.post('/register', uploads.any(), validationRegisterMiddleware, usersControllers.createRegister);
 
 // VISTA DEL LOGIN
 router.get('/login', userInSesion, usersControllers.login);
@@ -43,6 +46,8 @@ router.post('/login', validationLogin, usersControllers.checkLogin);
 
  //VISTA DEL USUARIO LOGUEADO
 router.get('/login/check', usersControllers.check);
+
+router.get('/login/closed', usersControllers.closed);
 
 // DATOS QUE VIENEN POR EL FORM DE SUSCRIBIRSE
 router.post('/suscribe', usersControllers.suscribe);

@@ -21,7 +21,7 @@
                     
                     
                         <label class=" labelDescri" for="">Descripción del producto</label>
-                <textarea class="coments" style="resize: none;" name="coments" rows="10" value="<%=product.description%>" placeholder="<%=product.description%>" cols="40" ></textarea>
+                <textarea class="coments" style="resize: none;" name="coments" rows="10" value="<%=product.description%>" cols="40" ></textarea>
                 <label class="fotoProducto">Subir fotos del producto</label>
                 <input required class="inputarchivo" ide="file-input" multiple="multiple" type="file" name="adjunto"
                     accept=".pdf,.jpg,.png">
@@ -94,7 +94,7 @@
 
                     </select>
                     <label class="labelPrecio" for="">Precio</label>
-                    <input class="inputPrecio" value="<%=product.price%>"type="number" name="precio" placeholder=""">
+                    <input class="inputPrecio" value="<%=product.price%>"type="number" name="precio" >
                  
                     <label class=" labelSku" for="">Categoría</label>
                     <select name="categoria">
@@ -111,14 +111,14 @@
                 <div>
                     <label class=" labelPromocional" for="">Precio Promocional</label>
 
-                    <input class="inputPromocional" value="<%=product.promPrice%>" type="number" name="promocional" placeholder=""">
+                    <input class="inputPromocional" value="<%=product.promPrice%>" type="number" name="promocional" >
                     
                         <label class="labelstock" for="">Stock</label>
 
-                    <input class="inputstock" value="<%=product.stock%>"type="number" name="stock" placeholder="">
+                    <input class="inputstock" value="<%=product.stock%>"type="number" name="stock">
                         
-                    <label for="">Agregar Producto</label>
-                    <button >Agregar</button>
+                    <label for="">Editar Producto</label>
+                    <button >Editar</button>
                     
                 </div>
              
