@@ -11,18 +11,23 @@ module.exports = function(sequelize, dataTypes) {
         },
         image: {
             type: dataTypes.STRING,
+            allowNull: false
         },
         first_name: {
-            type: dataTypes.STRING(100)
+            type: dataTypes.STRING(100),
+            allowNull: false
         },
         last_name: {
-            type: dataTypes.STRING(100)
+            type: dataTypes.STRING(100),
+            allowNull: false
         },
         age: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: false
         },
         birthday: {
-            type: dataTypes.DATEONLY
+            type: dataTypes.DATEONLY,
+            allowNull: false
         },
         user_id: {
             type: dataTypes.INTEGER

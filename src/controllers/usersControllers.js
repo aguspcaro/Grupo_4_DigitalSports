@@ -1,8 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcryptjs');
-const usersFilePath = path.join(__dirname, '../data/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
+//const usersFilePath = path.join(__dirname, '../data/users.json');
+//const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const { check, validationResult, body } = require('express-validator');
 const { ValidatorsImpl } = require('express-validator/src/chain');
@@ -37,23 +37,65 @@ let usersControllers = {
   
     
   },
+  mostrarEdicionPerfil: function(req, res, next) {
+    let userLogueado;
+    
+   
+    
+    db.Profile.findOne({where : {user_id: req.params.id}})
+
+    .then(function(user) {
+      userLogueado = user
+      console.log(userLogueado)
+      
+      return res.render('users/perfil-modificar', { errors: errors.mapped(), userLogueado : userLogueado });
+    
+    
+    }).catch(function(errno) {
+        return res.send(errno)
+    })
+    
+    
+  },
+  editPerfil: function(req, res, next) {
+
+    
+    db.Profile.update({
+
+      image: req.files[0].filename,
+      fisrt_name: req.body.name,
+      last_name: req.body.lastName,
+      age: req.body.edad,
+      birthday: req.body.birthday
+
+    }, {
+      where:{
+        user_id: req.params.id
+      }
+  
+    }).then(function(user){ res.redirect("/users/login/perfil/" + req.params.id)}).catch(function(errno){res.send(errno)})
+  },
+
+
 
   mostrarUsuario: function (req, res) {
 
     let errors = validationResult(req);
     let userLogueado;
-
     if (req.session != undefined) {
-      console.log(req.session)
+      
 
-      db.User.findByPk(req.params.id, { include : ["profile"], row: true, nest: true })
+      db.User.findByPk(req.params.id)
 
       .then(function(user) {
         
+      
+        //console.log(user);
         userLogueado = user;
         
         return res.render('users/user-modificar', { errors: errors.mapped(), userLogueado });
-        
+      
+      
       }).catch(function(errno) {
           return res.send(errno)
       })
@@ -68,8 +110,6 @@ let usersControllers = {
 
   editUsuario: function (req, res, next) {
 
-    let userLogueado;
-
     db.User.update({
       email: req.body.email,
       password: req.body.password
@@ -78,9 +118,10 @@ let usersControllers = {
       where:{
         id: req.params.id
       }
-    });
+  
+    }).then(function(user){ res.redirect("/users/login/perfil/editar/" + req.params.id)}).catch(function(errno){res.send(errno)})
 
-    res.redirect("/users/login/perfil/editar/" + req.params.id)
+
 
   },
 
