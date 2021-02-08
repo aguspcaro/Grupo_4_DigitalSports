@@ -9,10 +9,6 @@
 
         <%- include("../partials/header")  %>
         
-        <% if( typeof errors != "undefined") { %> <!-- SIRVE PARA QUE CUANDO CARGUEMOS EL REGISTER NO SE NOS INICIE CON LOS ERRORES-->
-     
-        <% } %>
-        
         
         <section class="section-registerContainer">
 
@@ -22,7 +18,7 @@
 
             </div>
 
-            <form method="POST" action="/users/login/perfil/<%=userLogueado.id%>?_method=PUT" class="section-form-register" enctype="multipart/form-data">
+            <form method="POST" action="/users/login/perfil/editarPerfil/<%=userLogueado.user_id%>?_method=PUT" class="section-form-register" enctype="multipart/form-data">
 
                 <div class="section-registerContainerLeft">
 
@@ -31,7 +27,7 @@
                         <label for="name" class="section-register__labelName">Nombre<span class="section-register__spanLabelName">*</span></label>
 
                         
-                        <input type="text" name="name" id="name" class="section-register__inputName" value="<%= userLogueado.first_name%>">
+                        <input type="text" name="name" id="name" class="section-register__inputName" value="<%= userLogueado.first_name %>" >
                        
                         <p class="errores"><%= typeof errors.name == "undefined" ? "" : errors.name.msg %></p>
                         
@@ -42,13 +38,22 @@
                         <label for="lastName" class="section-register__labelLastName">Apellido<span class="section-register__spanLabelLastName">*</span></label>
 
                        
-                        <input type="text" name="lastName" id="lastName" class="section-register__inputLastName" value="<%= userLogueado.last_name%>"> 
+                        <input type="text" name="lastName" id="lastName" class="section-register__inputLastName" value="<%= userLogueado.last_name %>" > 
                        
                         <p class="errores">
 
                             <p class="errores"><%= typeof errors.lastName == "undefined" ? "" : errors.lastName.msg %></p>
 
                         </p>
+                        <div class="section-registerContainerImage">
+
+                            <label for="image">Subir foto de perfil</label>
+                            <input class="botonImagen" id="file-input" multiple="multiple" type="file" name="image" accept=".pdf,.jpg,.png">
+                        </div>
+
+                        <div class="container-session">
+                            <a href="/users/login/perfil" class="buttonSesionEdit">Volver</a>
+                        </div>
 
                     </div>
                     
@@ -65,7 +70,7 @@
                         <label for="edad" class="section-registerLabelAge">Edad <span class="section-register__spanLabelAge">*</span></label>
 
                         
-                        <input type="number" name="edad" id="edad" class="section-register__inputAge" value="<%= userLogueado.age%>">
+                        <input type="number" name="edad" id="edad" class="section-register__inputAge" value="<%= userLogueado.age %>"  >
                        
 
                         <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
@@ -77,7 +82,7 @@
 
                         <label for="edad" class="section-registerLabelAge">Fecha de Nacimiento <span class="section-register__spanLabelAge">*</span></label>
 
-                        <input type="date" name="birthday" id="birthday" class="section-register__inputAge" value="<%= userLogueado.birthday%>" >
+                        <input type="date" name="birthday" id="birthday" class="section-register__inputAge" value="<%= userLogueado.birthday %>" >
                       
 
                         <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>

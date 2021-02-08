@@ -39,21 +39,24 @@ let usersControllers = {
   },
   mostrarEdicionPerfil: function(req, res, next) {
     let userLogueado;
-    
-   
-    
-    db.Profile.findOne({where : {user_id: req.params.id}})
-
-    .then(function(user) {
-      userLogueado = user
-      console.log(userLogueado)
+    let errors = validationResult(req);
+    if (req.session != undefined) {
       
-      return res.render('users/perfil-modificar', { errors: errors.mapped(), userLogueado : userLogueado });
-    
-    
-    }).catch(function(errno) {
-        return res.send(errno)
-    })
+      db.Profile.findOne({where : {user_id: req.params.id}})
+
+      .then(function(user) {
+        userLogueado = user
+        //console.log(userLogueado)
+        
+        return res.render('users/perfil-modificar', { errors: errors.mapped(), userLogueado})
+      
+      
+      }).catch(function(errno){console.log(errno)})
+    }
+    else {
+      userLogueado = {}
+      return res.redirect("/");
+    }
     
     
   },
@@ -73,7 +76,7 @@ let usersControllers = {
         user_id: req.params.id
       }
   
-    }).then(function(user){ res.redirect("/users/login/perfil/" + req.params.id)}).catch(function(errno){res.send(errno)})
+    }).then(function(user){ res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
   },
 
 
