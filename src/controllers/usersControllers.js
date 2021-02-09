@@ -147,15 +147,15 @@ let usersControllers = {
   },
 
   delete: function (req, res) {
-    
-    let usuario = req.params.id;
-    
+    db.User.destroy ({
+      where: {
+        id: req.params.id
+      }
+    })  
+    .then(data=>res.redirect("/users/login"))
 
-    const filtrar = users.filter((user) => user.id != usuario);
+    .catch(error=>console.log(error))
 
-    let user = JSON.stringify(filtrar);
-    fs.writeFileSync(usersFilePath, user);
-    res.redirect('/');
     
   },
 
