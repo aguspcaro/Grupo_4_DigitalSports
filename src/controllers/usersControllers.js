@@ -178,17 +178,18 @@ let usersControllers = {
 
   login: function (req, res, next) { 
     
-    userLogueado = req.session.user
+    
     
     if (req.session != undefined) {
-     userLogueado = {
-        session: req.session.user
-      }
+      userLogueado = req.session.user;
+
     }
     else {
       userLogueado = {};
+      
     }
     return res.render('users/login', { errors: {}, userLogueado});
+    
   },
 
   checkLogin: function (req, res, next) {
