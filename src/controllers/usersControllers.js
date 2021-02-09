@@ -12,35 +12,40 @@ const db = require("../../database/models/index");
 
 
 let usersControllers = { 
-  // // MUESTRA LA VISTA PARA EL ACCIONAR DEL USUARIO : CREAR PERFIL, CERRAR SESION..
+
+  // MUESTRA LA VISTA PARA EL ACCIONAR DEL USUARIO : CREAR PERFIL, CERRAR SESION..
 
   root: function (req, res, next) {
   
     req.session.user;
+
     let userLogueado;
-    
-    
+
+    let perfilLogueado = req.session.perfil;
+    console.log(perfilLogueado)
     
     if (req.session != undefined) {
+
       userLogueado = req.session.user;
       
-    }  
-    else {
-      userLogueado = {};
-      res.redirect("/")
-    }
+    } else {
 
+      userLogueado = {};
+
+      res.redirect("/")
+
+    }
    
-    return res.render('users/users', {userLogueado});
-    
-  
+    return res.render('users/users', {userLogueado, perfilLogueado});  
     
   },
 
   // MUESTRA LA VISTA PARA EDITAR EL PERFIL
 
   mostrarEdicionPerfil: function(req, res, next) {
+
     let userLogueado;
+
     let errors = validationResult(req);
 
     if (req.session != undefined) {
@@ -48,6 +53,7 @@ let usersControllers = {
       db.Profile.findOne({where : {user_id: req.params.id}})
 
       .then(function(user) {
+
         userLogueado = user;
         
         return res.render('users/perfil-modificar', { errors: errors.mapped(), userLogueado})
@@ -57,17 +63,16 @@ let usersControllers = {
 
 
     } else {
-      userLogueado = {}
-      return res.redirect("/");
-    }
-      
-    
-  },
 
-  
+      userLogueado = {}
+
+      return res.redirect("/");
+
+    }      
+    
+  },  
 
   editPerfil: function(req, res, next) {
-
     
     db.Profile.update({
 
@@ -78,11 +83,15 @@ let usersControllers = {
       birthday: req.body.birthday
 
     }, {
+
       where:{
+
         user_id: req.params.id
+
       }
   
     }).then(function(user){ res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
+
   },
 
 // MUESTRA LA VISTA PARA EDITAR EL USUARIO
@@ -90,27 +99,30 @@ let usersControllers = {
   mostrarUsuario: function (req, res) {
 
     let errors = validationResult(req);
+
     let userLogueado;
-    if (req.session != undefined) {
-      
+
+    if (req.session != undefined) {      
 
       db.User.findByPk(req.params.id)
 
-      .then(function(user) {
-        
+      .then(function(user) {        
       
         userLogueado = user;
         
-        return res.render('users/user-modificar', { errors: errors.mapped(), userLogueado });
-      
+        return res.render('users/user-modificar', { errors: errors.mapped(), userLogueado });      
       
       }).catch(function(errno) {
+
           return res.send(errno)
       })
-    }
-    else {
+
+    } else {
+
       userLogueado = {}
+
       return res.redirect("/");
+      
     }
 
     
@@ -123,13 +135,14 @@ let usersControllers = {
       password: req.body.password
 
     }, {
+
       where:{
+
         id: req.params.id
+
       }
   
     }).then(function(user){ res.redirect("/users/login/perfil/editar/" + req.params.id)}).catch(function(errno){res.send(errno)})
-
-
 
   },
 
@@ -255,7 +268,7 @@ let usersControllers = {
 
           if (req.body.recordame != undefined) {
 
-            res.cookie('recordame', usuario.email, { maxAge: 60000 });
+            res.cookie('recordame', usuario, { maxAge: 60000 });
 
           };
       
@@ -349,7 +362,11 @@ let usersControllers = {
 
       association: "user"
 
-    }).then(function(user){res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
+    }).then(function(user){
+
+      req.session.perfil = user;
+
+      res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
 
   }
 
