@@ -149,18 +149,22 @@ let usersControllers = {
  // MUESTRA LA VISTA PARA REGISTRARSE
 
   mostrarRegister: function (req, res, next) {
+
     let userLogueado
 
 
     if (req.session != undefined) {
-     userLogueado = {
-        session: req.session.user
-      }
-    }
-    else {
+
+     userLogueado = req.session.user
+
+    } else {
+
       userLogueado = {}
+
     }
+
     res.render('users/register', { errors: {}, userLogueado });
+
   },
 
   createRegister: function (req, res, next) {
@@ -168,9 +172,17 @@ let usersControllers = {
     db.User.create({
       email: req.body.email,
       password: req.body.password
-    })
 
-    res.redirect("/users/login")
+    }).then(function(user){
+
+      req.session.user = user;
+
+      userLogueado = req.session.user
+      
+      res.redirect("/")
+
+    }).catch(function(errno) { res.send(errno)});
+
 
   },
 
@@ -181,45 +193,54 @@ let usersControllers = {
     
     
     if (req.session != undefined) {
+
       userLogueado = req.session.user;
 
-    }
-    else {
+    } else {
+
       userLogueado = {};
       
     }
-    return res.render('users/login', { errors: {}, userLogueado});
     
+    return res.render('users/login', { errors: {}, userLogueado});
+
   },
 
   checkLogin: function (req, res, next) {
+
     let errors = validationResult(req);
+
     let userLogueado;
 
-    /*if (req.body.recordame != undefined) {
-      res.cookie('recordame', usuario, { maxAge: 60000 });
-    };*/
-
+    
     if (errors.isEmpty()) {
 
       db.User.findAll({ // "User" es el alias que asigne en el modelo
+
         where: {
+
           email: req.body.emailLogin,
+
           password: req.body.passwordLogin
+
         }
+
       }) 
         
       .then(function(user) {
         
         userLogueado = user;
+
         if (userLogueado == undefined) {
+
           userLogueado;
-          return res.render('users/login', {
-            errors: {
-              msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.', 
-            }, userLogueado });
+
+          return res.render('users/login', { errors: { msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.' }, userLogueado });
+
         } else {
+
           let usuario;
+
           userLogueado.forEach(function(user){ usuario = user.dataValues})
           
           if (req.session != undefined) {
@@ -227,62 +248,88 @@ let usersControllers = {
             req.session.user = usuario;
 
           } else {
-             req.session.user = {};
-           }
+
+            req.session.user = {};
+
+          }
+
+          if (req.body.recordame != undefined) {
+
+            res.cookie('recordame', usuario.email, { maxAge: 60000 });
+
+          };
+      
           return res.redirect('login/perfil')
         }
-  
-        
-  
-        
 
       })
        
-          
       .catch(function(errno) {
+
         res.send(errno)
+
       });
       
-      
     } else {
-      userLogueado = {}
-      return res.render('users/login', { errors: errors.mapped(), userLogueado});
-    }
 
+      userLogueado = {}
+
+      return res.render('users/login', { errors: errors.mapped(), userLogueado});
+
+    }
 
   },
 
   check: function (req, res, next) {
     
     if (req.session.user == undefined) {
+
       return res.send('no hay ningun usuario logueado');
+
     } else {
+
       return res.redirect('/');
+
     }
+
   },
 
   // FORMULARIO DE SUSCRIPCION
 
   suscribe: function (req, res, next) {
+
     res.render('thankYou');
+
   },
 
+  // CERRAR SESION
+
   closed: function(req, res, next) {
+
     req.session.destroy()
+
     res.redirect('/')
+
   },
 
   // MUESTRA LA VISTA PARA CREAR PERFIL
 
   mostrarPerfil: function(req, res, next) {
+
     let userLogueado;
+
     if (req.session.user == undefined) {
       
       return res.redirect("/");
+
     } else {
+
       userLogueado = req.session.user;
+
       return res.render('users/crearPerfil', {errors: {}, userLogueado});
+
     }
+    
   },
   
   createPerfil : function(req, res, next) {
@@ -299,11 +346,13 @@ let usersControllers = {
       user_id: userLogueado.id
 
     },{
+
       association: "user"
+
     }).then(function(user){res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
 
-    
   }
+
 };
 
 module.exports = usersControllers;
