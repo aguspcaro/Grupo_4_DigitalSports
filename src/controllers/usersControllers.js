@@ -22,7 +22,6 @@ let usersControllers = {
     let userLogueado;
 
     let perfilLogueado = req.session.perfil;
-    console.log(perfilLogueado)
     
     if (req.session != undefined) {
 
@@ -147,16 +146,18 @@ let usersControllers = {
   },
 
   delete: function (req, res) {
+
     db.User.destroy ({
+
       where: {
         id: req.params.id
       }
-    })  
+
+    })
     .then(data=>res.redirect("/users/login"))
 
     .catch(error=>console.log(error))
 
-    
   },
 
  // MUESTRA LA VISTA PARA REGISTRARSE
