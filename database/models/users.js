@@ -13,6 +13,25 @@ module.exports = function(sequelize, dataTypes) {
         email: {
             type: dataTypes.STRING(100),
             allowNull: false
+            /*unique: true,
+            validate: {
+                isEmail: { msg : 'Agrega un correo valido'},
+                // notEmpty: { msg : 'Correo Obligatorio'},
+                isUnique: function (value,next) {
+                    var self = this;
+                    User.findOne({where: {email: value}})
+                        .then(function (usuario) {
+                            if (usuario && self.id !== usuario.id) {
+                                return next('El eMail ya existe');
+                            }
+                            return next();
+                        })
+                        .catch(function (err) {
+                            return console.log(err)
+                        });
+                }
+            }*/
+            
         },
         password: {
             type: dataTypes.STRING(100),

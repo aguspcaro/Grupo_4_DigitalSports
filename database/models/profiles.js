@@ -30,7 +30,8 @@ module.exports = function(sequelize, dataTypes) {
             allowNull: false
         },
         user_id: {
-            type: dataTypes.INTEGER
+            type: dataTypes.INTEGER,
+            allowNull: false
         }
 };
 

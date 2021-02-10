@@ -16,7 +16,7 @@ router.get('/', productsControllers.root);
 // VISTA DEL CARRITO DE COMPRA
 router.get('/cart', productsControllers.cart);
 
-//  DEL DETALLE DEL PRODUCTO
+// DEL DETALLE DEL PRODUCTO
 router.get('/detail/:id', productsControllers.detail);
 
 // PRODUCTOS Y SUS HERRAMIENTAS (EDITAR, ELIMINAR, CREAR)
