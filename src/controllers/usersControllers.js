@@ -185,7 +185,7 @@ let usersControllers = {
 
     db.User.create({
       email: req.body.email,
-      password: req.body.password
+      password: bcrypt.hashSync(req.body.password, 12)
 
     }).then(function(user){
 
