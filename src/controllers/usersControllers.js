@@ -185,7 +185,7 @@ let usersControllers = {
 
     db.User.create({
       email: req.body.email,
-      password: bcrypt.hashSync(req.body.password, 12)
+      password: req.body.password
 
     }).then(function(user){
 
@@ -225,6 +225,14 @@ let usersControllers = {
     let errors = validationResult(req);
 
     let userLogueado;
+
+    /*let usuarioLogueado = users.find(function (user) {
+      return (
+        user.email == req.body.emailLogin &&
+        bcrypt.compareSync(req.body.passwordLogin, user.password)
+      );
+    });*/
+
 
     
     if (errors.isEmpty()) {

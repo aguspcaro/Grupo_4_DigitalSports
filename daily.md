@@ -75,3 +75,43 @@
 *Agustín*
 - En proceso: Organizando las rutas.
 - Problemas: Errores con el js dentro del html.
+
+---
+
+#### Reunión 29/01/2021
+
+*Alejandro*
+- En proceso: Creacion de los modelos brands, sizes y sports
+- Problemas: No me trae las tablas.
+
+*David*
+- En proceso: Creacion del modelo products.
+- Problemas: Error con sequelize.
+
+*Jorge*
+- En proceso: .env para mac.
+- Problemas: No me funciona el .env. Tengo mac.
+
+*Agustín*
+- En proceso: Creacion del .env
+- Problemas: Errores con el js dentro del html.
+
+---
+
+#### Reunión 08/02/2021
+
+*Alejandro*
+- En proceso: Viendo como llamar a las tablas de sizez, brands y sports para la vista del index.
+- Problemas: No me renderiza nada.
+
+*David*
+- En proceso: Relacionando producst con las demas tablas pivot.
+- Problemas: No hubo problemas.
+
+*Jorge*
+- En proceso: Creacion del User.destroy().
+- Problemas: Hay que eliminar al perfil tambien?
+
+*Agustín*
+- En proceso: Modificacion del session y adaptacion de la base de datos para user.
+- Problemas: Millones de errores con sequelize y con las rutas.
