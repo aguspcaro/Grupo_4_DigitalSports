@@ -1,14 +1,6 @@
-const fs = require('fs');
-const path = require('path');
 const bcrypt = require('bcryptjs');
-//const usersFilePath = path.join(__dirname, '../data/users.json');
-//const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const { check, validationResult, body } = require('express-validator');
-const { ValidatorsImpl } = require('express-validator/src/chain');
-const { UnorderedCollection } = require('http-errors');
 const db = require("../../database/models/index");
-   
 
 
 let usersControllers = { 
@@ -150,7 +142,9 @@ let usersControllers = {
     db.User.destroy ({
 
       where: {
+
         id: req.params.id
+
       }
 
     })
@@ -232,8 +226,6 @@ let usersControllers = {
         bcrypt.compareSync(req.body.passwordLogin, user.password)
       );
     });*/
-
-
     
     if (errors.isEmpty()) {
 
