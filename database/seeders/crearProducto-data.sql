@@ -1,17 +1,17 @@
-INSERT INTO `mydb`.`sizes` (`id`, `name`, `created_at`) VALUES ('1', 'S', '2021-02-06 15:32:04');
-INSERT INTO `mydb`.`sizes` (`id`, `name`, `created_at`) VALUES ('2', 'M', '2021-02-06 15:32:04');
-INSERT INTO `mydb`.`sizes` (`id`, `name`, `created_at`) VALUES ('3', 'L', '2021-02-06 15:32:04');
-INSERT INTO `mydb`.`sizes` (`id`, `name`, `created_at`) VALUES ('4', 'XL', '2021-02-06 15:32:04');
-INSERT INTO `mydb`.`sizes` (`id`, `name`, `created_at`) VALUES ('5', 'XXL', '2021-02-06 15:32:04');
+INSERT INTO `mydb`.`sizes` (`name`) VALUES ('S');
+INSERT INTO `mydb`.`sizes` (`name`) VALUES ('M');
+INSERT INTO `mydb`.`sizes` (`name`) VALUES ('L');
+INSERT INTO `mydb`.`sizes` (`name`) VALUES ('XL');
+INSERT INTO `mydb`.`sizes` (`name`) VALUES ('XXL');
 
-INSERT INTO `mydb`.`brands` (`id`, `name`, `created_at`) VALUES ('1', 'adidas', '2021-02-06 15:32:04');
-INSERT INTO `mydb`.`brands` (`id`, `name`, `created_at`) VALUES ('2', 'nike', '2021-02-06 15:32:04');
-INSERT INTO `mydb`.`brands` (`id`, `name`, `created_at`) VALUES ('3', 'topper', '2021-02-06 15:32:04');
-INSERT INTO `mydb`.`brands` (`id`, `name`, `created_at`) VALUES ('4', 'fila', '2021-02-06 15:32:04');
-INSERT INTO `mydb`.`brands` (`id`, `name`, `created_at`) VALUES ('5', 'reebok', '2021-02-06 15:32:04');
+INSERT INTO `mydb`.`brands` (`name`) VALUES ('adidas');
+INSERT INTO `mydb`.`brands` (`name`) VALUES ('nike');
+INSERT INTO `mydb`.`brands` (`name`) VALUES ('topper');
+INSERT INTO `mydb`.`brands` (`name`) VALUES ('fila');
+INSERT INTO `mydb`.`brands` (`name`) VALUES ('reebok');
 
-INSERT INTO `mydb`.`sports` (`id`, `name`, `created_at`) VALUES ('1', 'Fútbol', '2021-02-06 15:32:04');
-INSERT INTO `mydb`.`sports` (`id`, `name`, `created_at`) VALUES ('2', 'Natacion', '2021-02-06 15:32:04');
-INSERT INTO `mydb`.`sports` (`id`, `name`, `created_at`) VALUES ('3', 'Basquet', '2021-02-06 15:32:04');
-INSERT INTO `mydb`.`sports` (`id`, `name`, `created_at`) VALUES ('4', 'Voley', '2021-02-06 15:32:04');
-INSERT INTO `mydb`.`sports` (`id`, `name`, `created_at`) VALUES ('5', 'Running', '2021-02-06 15:32:04');
+INSERT INTO `mydb`.`sports` (`name`) VALUES ('Fútbol');
+INSERT INTO `mydb`.`sports` (`name`) VALUES ('Natacion');
+INSERT INTO `mydb`.`sports` (`name`) VALUES ('Basquet');
+INSERT INTO `mydb`.`sports` (`name`) VALUES ('Voley');
+INSERT INTO `mydb`.`sports` (`name`) VALUES ('Running');
