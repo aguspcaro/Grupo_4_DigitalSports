@@ -1,0 +1,1 @@
+INSERT INTO `mydb`.`users` (`id`, `email`, `password`, `created_at`) VALUES ('54', 'mati@gmail.com', '12345678', '2021-02-17 09:49:09');
