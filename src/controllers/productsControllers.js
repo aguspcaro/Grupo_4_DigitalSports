@@ -1,6 +1,8 @@
 const fs = require('fs');
 const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const db = require("../database/models/index")
+const {validationResult} = require('express-validator')
+
 
 let productsControllers = {
 
@@ -94,27 +96,35 @@ let productsControllers = {
 
   createproduct: function (req, res, next) {  
 
-    db.Products.create({
-      name: req.body.name,
-      description: req.body.coments,
-      image: req.files[0].filename,
-      stock: req.body.stock,
-      category: req.body.categoria,
-      price: req.body.precio,
-      promPrice: req.body.promocional,
-      size_id: req.body.talle,
-      brand_id: req.body.marca,   
-      sport_id: req.body.deporte, 
-      public: req.body.publico,
-      shipping: req.body.envio,
-      
-    }).then(data=> {
+    let error = validationResult(req)
 
-      res.redirect("/")
-
-    }).catch(error=>console.log(error));
-      
-
+    //si no hay errores
+    if(error.isEmpty()) {
+      db.Products.create({
+        name: req.body.name,
+        description: req.body.coments,
+        image: req.files[0].filename,
+        stock: req.body.stock,
+        category: req.body.categoria,
+        price: req.body.precio,
+        promPrice: req.body.promocional,
+        size_id: req.body.talle,
+        brand_id: req.body.marca,   
+        sport_id: req.body.deporte, 
+        public: req.body.publico,
+        shipping: req.body.envio,
+        
+      }).then(data=> {
+  
+        res.redirect("/")
+  
+      }).catch(error=>console.log(error));
+    }
+    //si hay errores
+    else {
+      console.log(error.mapped)
+      res.render('products/admproduct', {errors: error.mapped()})
+    }
   },
    
   modificar: function (req, res, next) {   

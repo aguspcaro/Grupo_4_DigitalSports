@@ -1,124 +1,124 @@
-<%- include("../partials/head")  %>
-<link rel="stylesheet" href="/stylesheet/admproduct.css">
+<%- include("../partials/head") %>
+    <link rel="stylesheet" href="/stylesheet/admproduct.css">
 
 
-</head>
+    </head>
 
-<body>
-    <main class="main">
+    <body>
+        <main class="main">
 
-        <%- include("../partials/header")  %>
+            <%- include("../partials/header") %>
 
 
-        <h1>Agregar Producto</h1>
+                <h1>Agregar Producto</h1>
 
-        <form class="containerPrincipal" action="/products/create" method="POST" enctype="multipart/form-data">
+                <form class="containerPrincipal" action="/products/create" method="POST" enctype="multipart/form-data">
 
-            <div class="containerAdd">
+                    <div class="containerAdd">
 
-                <label class="labelName" for="">Nombre del producto</label>
-                <input class="inputName" type="text" name="name" placeholder=""">
+                        <label class="labelName" for="">Nombre del producto</label>
+                        <input class="inputName" type="text" name="name" placeholder=""">
                     
                     
                         <label class=" labelDescri" for="">Descripción del producto</label>
-                <textarea class="coments" style="resize: none;" name="coments" rows="10" placeholder=""
-                    cols="40"></textarea>
-                <label class="fotoProducto">Subir fotos del producto</label>
-                <input required class="inputarchivo" ide="file-input" multiple="multiple" type="file" name="adjunto"
-                    accept=".pdf,.jpg,.png">
+                        <textarea class="coments" style="resize: none;" name="coments" rows="10" placeholder=""
+                            cols="40"></textarea>
+                        <label class="fotoProducto">Subir fotos del producto</label>
+                        <input required class="inputarchivo" ide="file-input" multiple="multiple" type="file"
+                            name="adjunto" accept=".pdf,.jpg,.png">
 
-            </div>
-
-
+                    </div>
 
 
 
 
-            <div class="containerDetalle">
 
 
-                <div>
-                    <label for="">Deporte</label>
-                    <select name="deporte">
-
-                        <option value="1">Fútbol</option>
-                        <option value="2">Natacion</option>
-                        <option value="3">Basquet</option>
-                        <option value="4">Voley</option>
-                        <option value="5">Running</option>
-                    </select>
-
-                    <label for="">Marca</label>
-
-                    <select name="marca">
-
-                        <option value="1">adidas</option>
-                        <option value="2">nike</option>
-                        <option value="3">topper</option>
-                        <option value="4">fila</option>
-                        <option value="5">reebok</option>
-
-                    </select>
-                </div>
+                    <div class="containerDetalle">
 
 
+                        <div>
+                            <label for="">Deporte</label>
+                            <select name="deporte">
 
-                <div>
-                    <label for="">Talle</label>
-                    <select name="talle">
-                        <option value="1">S</option>
-                        <option value="2">M</option>
-                        <option value="3">L</option>
-                        <option value="4">XL</option>
-                        <option value="5">XXL</option>
+                                <option value="1">Fútbol</option>
+                                <option value="2">Natacion</option>
+                                <option value="3">Basquet</option>
+                                <option value="4">Voley</option>
+                                <option value="5">Running</option>
+                            </select>
 
+                            <label for="">Marca</label>
 
-                    </select>
+                            <select name="marca">
+
+                                <option value="1">adidas</option>
+                                <option value="2">nike</option>
+                                <option value="3">topper</option>
+                                <option value="4">fila</option>
+                                <option value="5">reebok</option>
+
+                            </select>
+                        </div>
 
 
 
-                    <label for="">Publico</label>
+                        <div>
+                            <label for="">Talle</label>
+                            <select name="talle">
+                                <option value="1">S</option>
+                                <option value="2">M</option>
+                                <option value="3">L</option>
+                                <option value="4">XL</option>
+                                <option value="5">XXL</option>
 
-                    <select name="publico">
-                        <option value="mujeres">mujeres</option>
-                        <option value="hombres">hombres</option>
-                        <option value="niños">niños</option>
-                    </select>
-                </div>
 
-                <div>
+                            </select>
 
-                    <label for="">Envío gratis</label>
 
-                    <select name="envio">
 
-                        <option value="gratis">Gratis</option>
-                        <option value="correo">Correo</option>
+                            <label for="">Publico</label>
 
-                    </select>
+                            <select name="publico">
+                                <option value="mujeres">mujeres</option>
+                                <option value="hombres">hombres</option>
+                                <option value="niños">niños</option>
+                            </select>
+                        </div>
 
-                    <label class="labelPrecio" for="">Precio</label>
-                    <input class="inputPrecio"  type="number" name="precio" placeholder=""">
+                        <div>
+
+                            <label for="">Envío gratis</label>
+
+                            <select name="envio">
+
+                                <option value="gratis">Gratis</option>
+                                <option value="correo">Correo</option>
+
+                            </select>
+
+                            <label class="labelPrecio" for="">Precio</label>
+                            <input class="inputPrecio" type="number" name="precio" placeholder=""">
                     
                     <label class=" labelSku" for="">Categoría</label>
-                    <select name="categoria">
-                        <option value="ofertas">Ofertas</option>
-                        <option value="recomendados">Recomendados</option>
-                        <option value="destacados">Destacados</option>
-                        <option value="lanzamientos">Lanzamientos</option>
-                    </select>
+                            <select name="categoria">
+                                <option value="ofertas">Ofertas</option>
+                                <option value="recomendados">Recomendados</option>
+                                <option value="destacados">Destacados</option>
+                                <option value="lanzamientos">Lanzamientos</option>
+                            </select>
 
-                </div>
+                        </div>
 
 
-                <div>
-                    <label class=" labelPromocional" for="">Precio Promocional</label>
+                        <div>
+                            <label class=" labelPromocional" for="">Precio Promocional</label>
 
-                    <input class="inputPromocional" type="number" name="promocional" placeholder="">
-                    
-                        <label class=" labelstock" for="">Stock</label>
+                            <input class="inputPromocional" type="number" name="promocional" placeholder="">
 
-                    <input class="inputstock" type="number" name="stock" placeholder=""">
+                            <label class=" labelstock" for="">Stock</label>
+
+                            <input class="inputstock" type="number" name="stock" placeholder=""">
                         
                     <label for="">Agregar Producto</label>
                     <button >Agregar</button>
@@ -132,14 +132,14 @@
                
         
 
-                <%- include("../partials/footer")  %>
+                <%- include(" ../partials/footer") %>
 
-  
+
 
         </main>
 
 
 
-</body>
+    </body>
 
-</html>
+    </html>
