@@ -15,21 +15,49 @@
         
         
         <section class="section-registerContainer">
+
             <div class="section-registerContainerTitle">
-                <h4 class="section-registerTitle">Perfil</h4>
+                
+                <h4 class="section-registerTitle">Bienvenido <%= userLogueado.email%></h4>
+            </div>
+            
+            <div class="container-session">
+
+                <a href="/users/login/perfil/crearPerfil/<%= userLogueado.id %>" class="buttonSesionClosed">Crear Perfil</a>
+
+            </div>          
+
+            <div class="container-session">
+
+                <a  href="/users/login/perfil/editar/<%= userLogueado.id %>" class="buttonSesionEdit">Editar Usuario</a>
+
+            </div>
+            
+            <% if(perfilLogueado != undefined) { %>
+
+            <div class="container-session">
+
+                <a  href="/users/login/perfil/editarPerfil/<%= userLogueado.id %>" class="buttonSesionEdit">Editar Perfil</a>
+
+            </div>
+            
+            <% } %>
+
+                <form action="/users/login/perfil/<%=userLogueado.id%>?_method=DELETE" class="section-form-register container-session  " method="POST">
+    
+                <button type="submit" class="buttonSesionDelete">Eliminar</button>
+
+            </form>
+
+
+
+            <div class="container-session">
+                <a href="/users/login/closed" class="buttonSesionClosed">Cerrar sesión</a>
             </div>
 
-            <h2>Hola <%= userLogueado.session.name %></h2>
+              
+
          
-            <div>
-                <a  href="/users/login/user/user-modificar/<%= userLogueado.session.id %>"><button type="submit" class="">Editar</button></a>
-                
-            
-                <form action="/users/login/user/<%=userLogueado.session.id%>?_method=DELETE" class="section-form-register" method="POST">
-    
-                    <button type="submit" class="">Eliminar</button>
-    
-                </form>
     
             
     

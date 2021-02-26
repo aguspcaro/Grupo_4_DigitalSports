@@ -13,10 +13,30 @@ module.exports = function(sequelize, dataTypes) {
         email: {
             type: dataTypes.STRING(100),
             allowNull: false
+            /*unique: true,
+            validate: {
+                isEmail: { msg : 'Agrega un correo valido'},
+                // notEmpty: { msg : 'Correo Obligatorio'},
+                isUnique: function (value,next) {
+                    var self = this;
+                    User.findOne({where: {email: value}})
+                        .then(function (usuario) {
+                            if (usuario && self.id !== usuario.id) {
+                                return next('El eMail ya existe');
+                            }
+                            return next();
+                        })
+                        .catch(function (err) {
+                            return console.log(err)
+                        });
+                }
+            }*/
+            
         },
         password: {
             type: dataTypes.STRING(100),
-            allowNull: false
+            allowNull: false,
+            
         }
     };
 
@@ -34,7 +54,7 @@ module.exports = function(sequelize, dataTypes) {
 
     User.associate = function(models) {
         User.hasOne(models.Profile, { // models.Profile (hace referencia al alias que declaramos en el modelo de profiles.js) let alias = "Profile".
-            as: "profiles", // aca va un nombre fantasia el cual voy a usar mas adelante en el controlador.
+            as: "profile", // aca va un nombre fantasia el cual voy a usar mas adelante en el controlador.
             foreignKey: "user_id" // aca va el nombre de la foreignKey dentro de la tabla de profiles. La cual hace la relacion entre las dos tablas.
         }),
         User.hasMany(models.Cart, {

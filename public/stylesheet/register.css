@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 30px 0px 50px 0px;
+    justify-content: center;
     width: 100%;
 
 }
@@ -43,7 +43,6 @@
 
 
 .section-registerContainerName {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
@@ -104,7 +103,6 @@
 /*Mail*/
 
 .section-registerContainerEmail {
-    display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 20px;
@@ -123,7 +121,7 @@
     font-weight: 400;
     height: 30px;
     border-radius: 3px;
-    font-size: 16px;
+    font-size: 18px;
     width: 95%;
     border: solid 2px #0985d9;
 }
@@ -169,7 +167,7 @@
 
 
 
-/*Fecha de Nacimiento*/
+/*Fecha de Nacimiento y Edad*/
 
 .section-registerContainerAge {
     display: flex;
@@ -193,7 +191,7 @@
     font-weight: 400;
     height: 30px;
     border-radius: 3px;
-    font-size: 16px;
+    font-size: 18px;
     width: 95.2%;
     border: solid 2px #0985d9;
 }
@@ -208,46 +206,18 @@
     margin: 10px 0px;
 }
 
+/* IMAGEN PERFIL */
 
-
-
-
-
-
-/*Paìs*/
-
-.section-registerContainerCountry {
+.section-registerContainerImage {
+    width: 95%;
+    margin-bottom: 15px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    width: 95%;
- }
-
-.section-registerLabelCountry {
-    font-size: 16px;
-
+    
 }
-
-.section-register__spanLabelCountry {
-    color: red;
+.botonImagen {
+    margin-top: 1%;
 }
-
-
-.section-register__inputCountry {
-    font-weight: 400;
-    height: 35px;
-    border-radius: 3px;
-    font-size: 16px;
-    width: 95.9%;
-    border: solid 2px #0985d9;
-}
-
-.section-register__inputCountry:focus {
-    outline: 0px;
-    color: #606060;
-}
-
 
 
 /*Campos Requeridos*/
@@ -304,6 +274,75 @@
     background-color: #6ad872;
     cursor: pointer;
 }
+
+
+.container-session {
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttonSesionClosed {
+    font-weight: 400;
+    border-radius: 3px;
+    font-size: 18px;
+    width: 150px;
+    height: 30px;
+    background-color: #0985d9;
+    border: solid 1px #0985d9;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    text-align: center;
+   }
+
+    .buttonSesionEdit {
+        font-weight: 400;
+        border-radius: 3px;
+        font-size: 18px;
+        width: 150px;
+        height: 30px;
+        background-color: #0985d9;
+        border: solid 1px #0985d9;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 18px;
+        text-align: center;
+        }
+
+        .buttonSesionDelete {
+            font-weight: 400;
+            border-radius: 3px;
+            font-size: 18px;
+            width: 100px;
+            height: 30px;
+            background-color: #0985d9;
+            border: solid 1px #0985d9;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+        
+            }
+    
+
+            .buttonSesionClosed:hover {
+                background-color:  #ee7209;
+                border: solid 1px #ee7209;
+            }
+
+            .buttonSesionEdit:hover {
+                background-color:  #6ad872;
+                border: solid 1px #6ad872;
+            }
+
+            .buttonSesionDelete:hover {
+                background-color:   red;
+                border: solid 1px red;
+            }
+
+
 
 .errores {
     color: red;

@@ -34,7 +34,16 @@ module.exports =  function(sequelize, dataTypes){
             type : dataTypes.STRING(50),
             allowNull: false
         },
+        
+        public:{ 
+            type : dataTypes.STRING(50),
+            allowNull: false
+        },
 
+        shipping:{ 
+            type : dataTypes.STRING(50),
+            allowNull: false
+        },
         price:{ 
             type : dataTypes.FLOAT(7,2)
         },
@@ -45,17 +54,17 @@ module.exports =  function(sequelize, dataTypes){
 
         size_id:{ 
             type : dataTypes.INTEGER,
-            allowNull: false
+            
         },
         
         brand_id:{ 
             type : dataTypes.INTEGER,
-            allowNull: false
+           
         },
         
         sport_id:{ 
             type : dataTypes.INTEGER,
-            allowNull: false
+           
         },
 
 
@@ -64,12 +73,13 @@ module.exports =  function(sequelize, dataTypes){
             tableName: "products",
             timestamps: true,
             createdAt: "created_at",
-            updatedAt: "updated_at",
-            deletedAt: "deleted_at",
+           updatedAt: "updated_at",
+           deletedAt: "deleted_at",
             paranoid: true
     }
 
     let Products = sequelize.define(alias, cols, config);
+
 
     Products.associate = function(models){
            
@@ -82,12 +92,14 @@ module.exports =  function(sequelize, dataTypes){
             as: "sizes",
             foreignKey: "size_id"
         }),
+
             
         Products.belongsTo(models.Brands, {
         
             as: "brands",
             foreignKey: "brand_id"
         }),
+
             
         Products.belongsTo(models.Sports, {
         
@@ -96,8 +108,6 @@ module.exports =  function(sequelize, dataTypes){
         })
 
 
-    
-    
     }    
     
     return Products;

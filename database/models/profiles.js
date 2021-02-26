@@ -11,6 +11,7 @@ module.exports = function(sequelize, dataTypes) {
         },
         image: {
             type: dataTypes.STRING,
+            allowNull: false
         },
         first_name: {
             type: dataTypes.STRING(100),
@@ -48,9 +49,9 @@ module.exports = function(sequelize, dataTypes) {
 
 
     Profile.associate = function(models) {
-        Profile.hasOne(models.User, {
+        Profile.belongsTo(models.User, {
 
-            as: "users",
+            as: "user",
             foreignKey: "user_id" // profile no tiene foreignKey dentro de user. Pero se relacionan a traves de esta foreignKey. Por eso va la de user_id.
         })
     }

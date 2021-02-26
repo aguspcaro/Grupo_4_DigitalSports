@@ -124,7 +124,6 @@
 
 **Keep Doing:** Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
 
-
 - Seguir diviendo el trabajo como venimos haciendo.
 - Tratar de hacer el poryecto en linea, por si surgen dudas, las cuales nos podamos ayudar mutuamente.
 
@@ -134,3 +133,36 @@
 **Stop Doing:** En este punto exponemos aquellas practicas que a pesar de ser [Less of] podemos eliminarlas.
 
 - Dejar pasar los dias para empezar a organizarnos.
+
+
+---
+
+
+### Sprint-6
+
+**Start Doing:** Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
+
+- Poder empezar a resolver errores de sprints anteriores. Estamos muy ajustados de tiempo siempre.
+- Mejor organizacion entre nosotros.
+- Incentivarnos entre nosotros para esforzarnos aun mas.
+
+**More of:** Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero).Es decir que los [Start Doing] se convertirán en [More of]. 
+
+- Ayudarnos aun mas entre nosotros. Se sienten las ganas de ayudar a nuestro compañero de trabajo.
+- Hacer QA.
+- Una vez que uno termina su tarea intentar ayudar al resto.
+
+**Keep Doing:** Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
+
+- Seguir diviendo el trabajo como venimos haciendo.
+- Tener reuniones mas seguidas.
+- Sacarnos las dudas en clase o despues de clase.
+- Tratar de hacer el poryecto en linea, por si surgen dudas, las cuales nos podamos ayudar mutuamente.
+
+**Less of:** En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. 
+
+- Pelearnos entre nosotros.
+
+**Stop Doing:** En este punto exponemos aquellas practicas que a pesar de ser [Less of] podemos eliminarlas.
+
+- No hubo en esta ocasion.

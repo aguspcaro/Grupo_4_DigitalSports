@@ -18,6 +18,7 @@
         <section class="offer-article">
 
             <% products.forEach(function (product){ %>
+                console.log(product)
 
             <article class="offer-article1">
                <img src="/images/products/<%=product.image%>"
@@ -25,8 +26,8 @@
                 <div class="offer-article-info">
                     <p class="offer-article-title"><%= product.name%></p>
                     <div class="offer-article-container-description">
-                        <p class="offer-article-description">$<%= product.precio%></p>
-                        <span class="offer-article-description-span">$<%= product.promocional%></span>
+                        <p class="offer-article-description">$<%= product.promPrice%></p>
+                        <span class="offer-article-description-span">$<%= product.price%></span>
                     </div>
                 
                     <div class="containerDetalle">

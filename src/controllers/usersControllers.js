@@ -1,212 +1,376 @@
-const fs = require('fs');
-const path = require('path');
 const bcrypt = require('bcryptjs');
-const usersFilePath = path.join(__dirname, '../data/users.json');
-const users = JSON.parse(fs.readFileSync(usersFilePath, 'utf-8'));
-const toThousand = (n) => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
 const { check, validationResult, body } = require('express-validator');
-const { ValidatorsImpl } = require('express-validator/src/chain');
-const { UnorderedCollection } = require('http-errors');
-const db = require("../../database/models/index")
+const db = require("../../database/models/index");
 
-let usersControllers = {
-  // VISTA PERFIL USUARIO Y SUS ACCIONES
+
+let usersControllers = { 
+
+  // MUESTRA LA VISTA PARA EL ACCIONAR DEL USUARIO : CREAR PERFIL, CERRAR SESION..
 
   root: function (req, res, next) {
-    errors = {};
-    let userLogueado
+  
+    req.session.user;
 
+    let userLogueado;
 
+    let perfilLogueado = req.session.perfil;
+    
     if (req.session != undefined) {
-     userLogueado = {
-        session: req.session.user
-      }
-    }
-    else {
-      userLogueado = {}
-    }
-    if (req.session.user == undefined) {
-      res.send('no hay ningun usuario logueado');
+
+      userLogueado = req.session.user;
+      
     } else {
-      return res.render('users/users', { userLogueado });
+
+      userLogueado = {};
+
+      res.redirect("/")
+
     }
+   
+    return res.render('users/users', {userLogueado, perfilLogueado});  
+    
   },
 
-  modificar: function (req, res) {
-    let errors = validationResult(req);
-    let userLogueado
+  // MUESTRA LA VISTA PARA EDITAR EL PERFIL
 
+  mostrarEdicionPerfil: function(req, res, next) {
+
+    let userLogueado;
+
+    let errors = validationResult(req);
 
     if (req.session != undefined) {
-     userLogueado = {
-        session: req.session.user
-      }
-    }
-    else {
-      userLogueado = {}
-    }
 
-    return res.render('users/user-modificar', {
-      errors: errors.mapped(), userLogueado
-    });
+      db.Profile.findOne({where : {user_id: req.params.id}})
+
+      .then(function(user) {
+
+        userLogueado = user;
+        
+        return res.render('users/perfil-modificar', { errors: errors.mapped(), userLogueado})
+      
+      
+      }).catch(function(errno){console.log(errno)})
+
+
+    } else {
+
+      userLogueado = {}
+
+      return res.redirect("/");
+
+    }      
+    
+  },  
+
+  editPerfil: function(req, res, next) {
+    
+    db.Profile.update({
+
+      image: req.files[0].filename,
+      fisrt_name: req.body.name,
+      last_name: req.body.lastName,
+      age: req.body.edad,
+      birthday: req.body.birthday
+
+    }, {
+
+      where:{
+
+        user_id: req.params.id
+
+      }
+  
+    }).then(function(user){ res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
+
   },
 
-  edit: function (req, res, next) {
-    let user = req.session.user;
+// MUESTRA LA VISTA PARA EDITAR EL USUARIO
+
+  mostrarUsuario: function (req, res) {
+
     let errors = validationResult(req);
 
-    let cliente = req.params.id;
-    
-      users.forEach(function (user) {
-        if (user.id == cliente) {
-          user.name = req.body.name;
-          user.lastName = req.body.lastName;
-          user.email = req.body.email;
-          user.password = bcrypt.hashSync(req.body.password, 10);
-          edad = req.body.edad,
-          pais = req.body.pais;
-        }
-      });
+    let userLogueado;
 
-      let usuario = JSON.stringify(users);
-      fs.writeFileSync(usersFilePath, usuario);
+    if (req.session != undefined) {      
 
-      res.redirect('/');
+      db.User.findByPk(req.params.id)
+
+      .then(function(user) {        
+      
+        userLogueado = user;
+        
+        return res.render('users/user-modificar', { errors: errors.mapped(), userLogueado });      
+      
+      }).catch(function(errno) {
+
+          return res.send(errno)
+      })
+
+    } else {
+
+      userLogueado = {}
+
+      return res.redirect("/");
+      
+    }
+
     
+  },
+
+  editUsuario: function (req, res, next) {
+
+    db.User.update({
+      email: req.body.email,
+      password: req.body.password
+
+    }, {
+
+      where:{
+
+        id: req.params.id
+
+      }
+  
+    }).then(function(user){ res.redirect("/users/login/perfil/editar/" + req.params.id)}).catch(function(errno){res.send(errno)})
+
   },
 
   delete: function (req, res) {
-    let usuario = req.params.id;
 
-    const filtrar = users.filter((user) => user.id != usuario);
+    db.User.destroy ({
 
-    let user = JSON.stringify(filtrar);
-    fs.writeFileSync(usersFilePath, user);
-    res.redirect('/');
+      where: {
+
+        id: req.params.id
+
+      }
+
+    })
+    .then(data=>res.redirect("/users/login"))
+
+    .catch(error=>console.log(error))
+
   },
 
-  // VISTA DEL REGISTER
+ // MUESTRA LA VISTA PARA REGISTRARSE
 
-  register: function (req, res, next) {
+  mostrarRegister: function (req, res, next) {
+
     let userLogueado
 
 
     if (req.session != undefined) {
-     userLogueado = {
-        session: req.session.user
-      }
-    }
-    else {
-      userLogueado = {}
-    }
-    res.render('users/register', { errors: {}, userLogueado });
-  },
 
-  registration: function (req, res, next) {
+     userLogueado = req.session.user
 
-    db.User.findAll()
-      .then(function(user) {
-        return res.render("users/ejemplo", { user:user})
-      }).catch(function(errn){
-        res.send(errn)
-      })
-
-/*    let errors = validationResult(req);
-
-    if (errors.isEmpty()) {
-      users.push({
-        id: Date.now(),
-        name: req.body.name,
-        lastName: req.body.lastName,
-        email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 10),
-        edad: req.body.edad,
-        pais: req.body.pais,
-      });
-
-      let usuario = JSON.stringify(users);
-      fs.writeFileSync(usersFilePath, usuario);
-
-      return res.redirect('login');
     } else {
-      return res.render('users/register', { errors: errors.mapped() });
-    } */
+
+      userLogueado = {}
+
+    }
+
+    res.render('users/register', { errors: {}, userLogueado });
+
   },
 
-  // LOGIN
+  createRegister: function (req, res, next) {
 
-  login: function (req, res, next) {
+    db.User.create({
+      email: req.body.email,
+      password: req.body.password
 
-    let userLogueado
+    }).then(function(user){
+
+      req.session.user = user;
+
+      userLogueado = req.session.user
+      
+      res.redirect("/")
+
+    }).catch(function(errno) { res.send(errno)});
 
 
+  },
+
+// MUESTRA LA VISTA PARA LOGUEARSE
+
+  login: function (req, res, next) { 
+    
+    
+    
     if (req.session != undefined) {
-     userLogueado = {
-        session: req.session.user
-      }
+
+      userLogueado = req.session.user;
+
+    } else {
+
+      userLogueado = {};
+      
     }
-    else {
-      userLogueado = {}
-    }
-   
-    res.render('users/login', { errors: {}, userLogueado});
+    
+    return res.render('users/login', { errors: {}, userLogueado});
+
   },
 
   checkLogin: function (req, res, next) {
 
     let errors = validationResult(req);
 
-    //si no hay errores
-    if (errors.isEmpty()) {
-      let usuarioLogueado = users.find(function (user) {
-        return (
-          user.email == req.body.emailLogin &&
-          bcrypt.compareSync(req.body.passwordLogin, user.password)
-        );
-      });
+    let userLogueado;
 
-      req.session.user = usuarioLogueado;
-      
-      console.log(req.session.user)
-  
-
-      if (usuarioLogueado == undefined) {
-        let userLogueado = {}
-        return res.render('users/login', {
-          errors: {
-            msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.', 
-          }, userLogueado
-        });
-      }
-
-      if (req.body.recordame != undefined) {
-        res.cookie('recordame', usuarioLogueado, { maxAge: 60000 });
-      }
-
-      res.redirect('/');
-    } 
+    /*let usuarioLogueado = users.find(function (user) {
+      return (
+        user.email == req.body.emailLogin &&
+        bcrypt.compareSync(req.body.passwordLogin, user.password)
+      );
+    });*/
     
-    //si hay errores
-    else {
-      let userLogueado = {}
-      res.render('users/login', { errors: errors.mapped(), userLogueado});
+    if (errors.isEmpty()) {
+
+      db.User.findAll({ // "User" es el alias que asigne en el modelo
+
+        where: {
+
+          email: req.body.emailLogin,
+
+          password: req.body.passwordLogin
+
+        }
+
+      }) 
+        
+      .then(function(user) {
+        
+        userLogueado = user;
+
+        if (userLogueado == undefined) {
+
+          userLogueado;
+
+          return res.render('users/login', { errors: { msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.' }, userLogueado });
+
+        } else {
+
+          let usuario;
+
+          userLogueado.forEach(function(user){ usuario = user.dataValues})
+          
+          if (req.session != undefined) {
+            
+            req.session.user = usuario;
+
+          } else {
+
+            req.session.user = {};
+
+          }
+
+          if (req.body.recordame != undefined) {
+
+            res.cookie('recordame', usuario, { maxAge: 60000 });
+
+          };
+      
+          return res.redirect('login/perfil')
+        }
+
+      })
+       
+      .catch(function(errno) {
+
+        res.send(errno)
+
+      });
+      
+    } else {
+
+      userLogueado = {}
+
+      return res.render('users/login', { errors: errors.mapped(), userLogueado});
+
     }
+
   },
 
   check: function (req, res, next) {
     
     if (req.session.user == undefined) {
-      res.send('no hay ningun usuario logueado');
+
+      return res.send('no hay ningun usuario logueado');
+
     } else {
-      res.redirect('/');
+
+      return res.redirect('/');
+
     }
+
   },
 
   // FORMULARIO DE SUSCRIPCION
 
   suscribe: function (req, res, next) {
+
     res.render('thankYou');
+
   },
+
+  // CERRAR SESION
+
+  closed: function(req, res, next) {
+
+    req.session.destroy()
+
+    res.redirect('/')
+
+  },
+
+  // MUESTRA LA VISTA PARA CREAR PERFIL
+
+  mostrarPerfil: function(req, res, next) {
+
+    let userLogueado;
+
+    if (req.session.user == undefined) {
+      
+      return res.redirect("/");
+
+    } else {
+
+      userLogueado = req.session.user;
+
+      return res.render('users/crearPerfil', {errors: {}, userLogueado});
+
+    }
+    
+  },
+  
+  createPerfil : function(req, res, next) {
+
+    let userLogueado = req.session.user;
+
+    db.Profile.create({
+
+      image: req.files[0].filename,
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      age: req.body.age,
+      birthday: req.body.birthday,
+      user_id: userLogueado.id
+
+    },{
+
+      association: "user"
+
+    }).then(function(user){
+
+      req.session.perfil = user;
+
+      res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
+
+  }
+
 };
 
 module.exports = usersControllers;
