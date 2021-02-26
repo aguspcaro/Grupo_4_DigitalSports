@@ -18,7 +18,6 @@ let usersControllers = {
       userLogueado = req.session.user;
 
       return res.render('users/users', {userLogueado, perfilLogueado});  
-
       
     } else {
 
@@ -46,8 +45,7 @@ let usersControllers = {
 
         userLogueado = user;
         
-        return res.render('users/perfil-modificar', { errors: errors.mapped(), userLogueado})
-      
+        return res.render('users/perfil-modificar', { errors: errors.mapped(), userLogueado})      
       
       }).catch(function(errno){console.log(errno)})
 
@@ -121,6 +119,7 @@ let usersControllers = {
   editUsuario: function (req, res, next) {
 
     db.User.update({
+
       email: req.body.email,
       password: req.body.password
 
@@ -147,6 +146,7 @@ let usersControllers = {
       }
 
     })
+
     .then(data=>res.redirect("/users/login"))
 
     .catch(error=>console.log(error))
@@ -157,8 +157,7 @@ let usersControllers = {
 
   mostrarRegister: function (req, res, next) {
 
-    let userLogueado
-
+    let userLogueado;
 
     if (req.session != undefined) {
 
@@ -177,6 +176,7 @@ let usersControllers = {
   createRegister: function (req, res, next) {
 
     db.User.create({
+
       email: req.body.email,
       password: req.body.password
 
@@ -319,7 +319,13 @@ let usersControllers = {
 
   closed: function(req, res, next) {
 
-    req.session.destroy()
+    let userLogueado;
+
+    req.session.destroy();
+
+    req.cookies.recordame = ""
+
+    userLogueado = {}
 
     res.redirect('/')
 

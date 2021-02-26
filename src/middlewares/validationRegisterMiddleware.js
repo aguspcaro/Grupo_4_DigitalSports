@@ -1,4 +1,4 @@
-let { check, validationResult, body } = require('express-validator');
+let { check, body } = require('express-validator');
 const path = require('path');
 const fs = require('fs');
 const db = require('../database/models');
