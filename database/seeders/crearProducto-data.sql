@@ -1,17 +1,17 @@
-INSERT INTO `mydb`.`sizes` (`name`) VALUES ('S');
-INSERT INTO `mydb`.`sizes` (`name`) VALUES ('M');
-INSERT INTO `mydb`.`sizes` (`name`) VALUES ('L');
-INSERT INTO `mydb`.`sizes` (`name`) VALUES ('XL');
-INSERT INTO `mydb`.`sizes` (`name`) VALUES ('XXL');
+INSERT INTO `mydb`.`sizes` (`name`,"created_at") VALUES ('S', "2021-02-23 15:46:02");
+INSERT INTO `mydb`.`sizes` (`name`,"created_at") VALUES ('M', "2021-02-23 15:46:02");
+INSERT INTO `mydb`.`sizes` (`name`,"created_at") VALUES ('L', "2021-02-23 15:46:02");
+INSERT INTO `mydb`.`sizes` (`name`,"created_at") VALUES ('XL', "2021-02-23 15:46:02");
+INSERT INTO `mydb`.`sizes` (`name`,"created_at") VALUES ('XXL', "2021-02-23 15:46:02");
 
-INSERT INTO `mydb`.`brands` (`name`) VALUES ('adidas');
-INSERT INTO `mydb`.`brands` (`name`) VALUES ('nike');
-INSERT INTO `mydb`.`brands` (`name`) VALUES ('topper');
-INSERT INTO `mydb`.`brands` (`name`) VALUES ('fila');
-INSERT INTO `mydb`.`brands` (`name`) VALUES ('reebok');
+INSERT INTO `mydb`.`brands` (`name`,"created_at") VALUES ('adidas', "2021-02-23 15:46:02");
+INSERT INTO `mydb`.`brands` (`name`,"created_at") VALUES ('nike', "2021-02-23 15:46:02");
+INSERT INTO `mydb`.`brands` (`name`,"created_at") VALUES ('topper', "2021-02-23 15:46:02");
+INSERT INTO `mydb`.`brands` (`name`,"created_at") VALUES ('fila', "2021-02-23 15:46:02");
+INSERT INTO `mydb`.`brands` (`name`,"created_at") VALUES ('reebok', "2021-02-23 15:46:02");
 
-INSERT INTO `mydb`.`sports` (`name`) VALUES ('Fútbol');
-INSERT INTO `mydb`.`sports` (`name`) VALUES ('Natacion');
-INSERT INTO `mydb`.`sports` (`name`) VALUES ('Basquet');
-INSERT INTO `mydb`.`sports` (`name`) VALUES ('Voley');
-INSERT INTO `mydb`.`sports` (`name`) VALUES ('Running');
+INSERT INTO `mydb`.`sports` (`name`,"created_at") VALUES ('Fútbol', "2021-02-23 15:46:02");
+INSERT INTO `mydb`.`sports` (`name`,"created_at") VALUES ('Natacion', "2021-02-23 15:46:02");
+INSERT INTO `mydb`.`sports` (`name`,"created_at") VALUES ('Basquet', "2021-02-23 15:46:02");
+INSERT INTO `mydb`.`sports` (`name`,"created_at") VALUES ('Voley', "2021-02-23 15:46:02");
+INSERT INTO `mydb`.`sports` (`name`,"created_at") VALUES ('Running', "2021-02-23 15:46:02");
