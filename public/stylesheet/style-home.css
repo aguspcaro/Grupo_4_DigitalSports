@@ -100,8 +100,14 @@
     height: auto;
 }
 
+.offer-article1 {
+    width: 50%;
+    height: auto;
+}
+
 
 .offer-section-title {
     font-size: 26px;
     font-weight: bold;
+}
 }
