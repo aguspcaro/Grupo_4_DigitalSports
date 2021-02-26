@@ -17,6 +17,7 @@ const userInSesion = require('../middlewares/userInSesionMiddleware');
 const userOfSesion = require('../middlewares/userOFSesionMiddleware');
 const validationEditMiddleware = require('../middlewares/validationEditMiddleware');
 const cookiesRemember = require('../middlewares/rememberMiddleware');
+const userInSesionMiddleware = require('../middlewares/userInSesionMiddleware');
 
 
 // VISTA DEL CENTRO DE COMANDOS DEL USUARIO
@@ -32,15 +33,15 @@ router.get('/login/perfil/editarPerfil/:id', userOfSesion, cookiesRemember,  use
 router.put('/login/perfil/editarPerfil/:id', uploads.any(), usersControllers.editPerfil);
 
 // VISTA DE LA CREACION DEL PERFIL
-router.get("/login/perfil/crearPerfil/:id", userOfSesion, cookiesRemember,  usersControllers.mostrarPerfil);
+router.get("/login/perfil/crearPerfil/:id", userOfSesion, cookiesRemember, usersControllers.mostrarPerfil);
 router.post("/login/perfil", uploads.any(), usersControllers.createPerfil);
 
 // VISTA DEL REGISTRO DE USUARIO
 router.get('/register', userInSesion, cookiesRemember, usersControllers.mostrarRegister);
-router.post('/register', uploads.any(), usersControllers.createRegister);
+router.post('/register', uploads.any(), validationRegisterMiddleware, usersControllers.createRegister);
 
 // VISTA DEL LOGIN
-router.get('/login', cookiesRemember, usersControllers.login);
+router.get('/login', cookiesRemember, userInSesion,usersControllers.login);
 router.post('/login', validationLogin, usersControllers.checkLogin);
 
  //VISTA DEL USUARIO LOGUEADO

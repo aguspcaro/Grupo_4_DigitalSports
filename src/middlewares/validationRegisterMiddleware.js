@@ -1,6 +1,4 @@
 let { check, body } = require('express-validator');
-const path = require('path');
-const fs = require('fs');
 const db = require('../database/models');
 const { userInfo } = require('os');
 
@@ -10,22 +8,20 @@ let validationRegisterMiddleware = [
 
   check('password')
     .isLength({ min: 8 })
-    .withMessage('* Debes completar este campo'),
+    .withMessage('* La contraseña deberá ser mayor a 8 caracteres'),
 
-  body('email')
-    .custom(function (value) {
+  body('email').custom(function (value) {
 
-      if( 
-      db.User.findOne({
-        where : {
-          email: value
-        }
-      }) ){
-        return true;
-      }
+    let user = db.User.findOne({ where : { email: value } })
+  
+    if(user == value) {
+
+      return true;
+
+    }
    
-    })
-    .withMessage('* Email ya existente'),
+  }).withMessage('* Email ya existente')
+
 ];
 
 module.exports = validationRegisterMiddleware;

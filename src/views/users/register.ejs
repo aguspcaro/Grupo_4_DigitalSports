@@ -21,7 +21,7 @@
                     <div class="section-registerContainerEmail">
                         <label for="email" class="section-register__labelEmail">Correo Electrónico<span
                                 class="section-register__spanLabelEmail">*</span></label>
-                        <input type="email" name="email" id="email" class="section-register__inputEmail">
+                        <input type="email" name="email" id="email" class="section-register__inputEmail" value = "<%= usuario.email %>">
                         <p class="errores"><%= typeof errors.email == "undefined" ? "" : errors.email.msg %></p>
                     </div>
 

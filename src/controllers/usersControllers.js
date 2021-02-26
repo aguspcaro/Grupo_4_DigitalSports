@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const { check, validationResult, body } = require('express-validator');
+const { validationResult } = require('express-validator');
 const db = require("../database/models/index");
 
 
@@ -157,6 +157,8 @@ let usersControllers = {
 
   mostrarRegister: function (req, res, next) {
 
+    let usuario;
+
     let userLogueado;
 
     if (req.session != undefined) {
@@ -169,26 +171,44 @@ let usersControllers = {
 
     }
 
-    res.render('users/register', { errors: {}, userLogueado });
+    res.render('users/register', { errors: {}, userLogueado, usuario });
 
   },
 
   createRegister: function (req, res, next) {
 
-    db.User.create({
+    let userLogueado;
 
-      email: req.body.email,
-      password: req.body.password
+    let errors = validationResult(req);
 
-    }).then(function(user){
+    if(errors.isEmpty()){ 
 
-      req.session.user = user;
+      db.User.create({
 
-      userLogueado = req.session.user
-      
-      res.redirect("/")
+        email: req.body.email,
+        password: req.body.password
 
-    }).catch(function(errno) { res.send(errno)});
+      }).then(function(user){
+
+        req.session.user = user;
+
+        userLogueado = req.session.user
+        
+        res.redirect("/")
+
+      }).catch(function(errno) { res.send(errno)});
+
+    } else {
+
+      let usuario = { // esto sirve para devolver al usuario lo que habia escrito mal en el input
+
+        email : req.body.email
+
+      }
+
+      res.render('users/register', { errors: errors.mapped(), userLogueado, usuario });
+
+    }
 
 
   },
@@ -319,13 +339,15 @@ let usersControllers = {
 
   closed: function(req, res, next) {
 
-    let userLogueado;
 
     req.session.destroy();
 
-    req.cookies.recordame = ""
+    if(req.session == undefined){
 
-    userLogueado = {}
+      res.clearCookie("recordame")
+
+    }
+
 
     res.redirect('/')
 
