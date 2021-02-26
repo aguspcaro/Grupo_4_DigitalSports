@@ -91,14 +91,17 @@ let productsControllers = {
         public: req.body.publico,
         shipping: req.body.envio,
         
-      }).then(data=>res.redirect("/"))
+      }).then(data=> {
+        console.log(data)
+        res.redirect("/")
+      })
+        
+      
 
       .catch(error=>console.log(error))
-    
-      },
- 
->>>>>>> d28033d380d32e1cf6cd6d3f4b8a98bb1cafe6e3
-  modificar: function (req, res, next) {
+    },
+   
+     modificar: function (req, res, next) {
     
     db.Products.findByPk(req.params.id)
     .then(function(product){
