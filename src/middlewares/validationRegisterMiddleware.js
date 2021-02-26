@@ -1,7 +1,7 @@
 let { check, validationResult, body } = require('express-validator');
 const path = require('path');
 const fs = require('fs');
-const db = require('../../database/models');
+const db = require('../database/models');
 const { userInfo } = require('os');
 
 let validationRegisterMiddleware = [

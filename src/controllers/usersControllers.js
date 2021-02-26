@@ -1,6 +1,6 @@
 const bcrypt = require('bcryptjs');
 const { check, validationResult, body } = require('express-validator');
-const db = require("../../database/models/index");
+const db = require("../database/models/index");
 
 
 let usersControllers = { 
@@ -9,8 +9,6 @@ let usersControllers = {
 
   root: function (req, res, next) {
   
-    req.session.user;
-
     let userLogueado;
 
     let perfilLogueado = req.session.perfil;
@@ -18,6 +16,9 @@ let usersControllers = {
     if (req.session != undefined) {
 
       userLogueado = req.session.user;
+
+      return res.render('users/users', {userLogueado, perfilLogueado});  
+
       
     } else {
 
@@ -25,9 +26,7 @@ let usersControllers = {
 
       res.redirect("/")
 
-    }
-   
-    return res.render('users/users', {userLogueado, perfilLogueado});  
+    }   
     
   },
 

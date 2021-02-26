@@ -3,13 +3,12 @@ const path = require('path');
 
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-const db = require("../../database/models/index")
+const db = require("../database/models/index")
 
 let mainControllers = {
   index: function (req, res, next) {
 
     let userLogueado;
-
 
     if (req.session != undefined) {
      userLogueado = req.session.user;
