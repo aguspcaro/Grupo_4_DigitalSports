@@ -94,7 +94,7 @@ let productsControllers = {
     res.render('products/admproduct', {userLogueado});
   },
   createproduct: function (req, res, next) {
-    products.push({
+    /* products.push({
       id: Date.now(),
       name: req.body.name,
       description: req.body.coments,
@@ -111,6 +111,30 @@ let productsControllers = {
     });
     let producto = JSON.stringify(products);
     fs.writeFileSync(productsFilePath, producto);
+ */
+ 
+
+ db.Products.create( {
+   name: "Zapatillas",
+   description: "Las mejores",
+   image: "sportday.jpg",
+   stock: 2,
+   public: "Hombre",
+   shipping: "Si",
+   price: 10000,
+   promPrice: 8000,
+   category: 2,
+   size_id: 2,
+   brand_id:2,
+   sport_id:2
+ } )
+ .then(function(resultado) {
+   console.log(resultado)
+ })
+.catch(function(err) {
+   console.log(err)
+})
+
 
     res.redirect('/');
   },
