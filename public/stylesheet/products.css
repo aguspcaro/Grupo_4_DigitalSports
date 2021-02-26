@@ -55,10 +55,14 @@
     height: auto;
 }
 @media(min-width: 768px){
-.offer-article{
+    .offer-article{
     display: grid;
     grid-template-columns: auto auto auto auto;
     grid-gap: 10px;
     padding: 10px;
+    }
+    .offer-article {
+        width: 20%;
+        height: auto;
     }
 }
