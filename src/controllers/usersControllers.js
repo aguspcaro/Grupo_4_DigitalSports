@@ -261,22 +261,20 @@ let usersControllers = {
       }) 
         
       .then(function(user) {
-        
+
+        let usuario;
+
         userLogueado = user;
 
-        if (userLogueado == undefined) {
+        userLogueado.forEach(function(user){ usuario = user.dataValues}) // esto sirve para recorrer al usuario. Desde la bd viene adentro de muchos objetos. Hay un solo usuario, no muchos. 
 
-          userLogueado;
-
+        if (usuario == undefined) { //si puso mal el mail o mal la contraseña. esto va a ser undefined, por ende salta el error.
+          
           return res.render('users/login', { errors: { msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.' }, userLogueado });
 
-        } else {
-
-          let usuario;
-
-          userLogueado.forEach(function(user){ usuario = user.dataValues})
-          
-          if (req.session != undefined) {
+        } else { // si existe guardamelo en usuario. 
+         
+          if (req.session != undefined) { 
             
             req.session.user = usuario;
 
@@ -290,8 +288,8 @@ let usersControllers = {
 
             res.cookie('recordame', usuario, { maxAge: 60000 });
 
-          };
-      
+          };          
+
           return res.redirect('login/perfil')
         }
 
@@ -303,7 +301,7 @@ let usersControllers = {
 
       });
       
-    } else {
+    } else { // si existen errores en el middleware de la ruta. van a saltar estos errores.
 
       userLogueado = {}
 
