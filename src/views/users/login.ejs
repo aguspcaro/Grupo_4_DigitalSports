@@ -21,7 +21,7 @@
                 <div class="section-loginContainerEmail">
                     <label for="email" class="section-login__labelEmail">Correo Electrónico<span
                             class="section-login__spanLabelEmail">*</span></label>
-                    <input type="email" name="emailLogin" id="email" class="section-login__inputEmail">
+                    <input type="email" name="emailLogin" id="email" class="section-login__inputEmail" value= "<%= users.email %>">
                    <% if (errors.emailLogin != undefined) { %>
                     <small class="error-input"><%=errors.emailLogin.msg%></small>
                    <% } %>
@@ -30,7 +30,7 @@
                 <div class="section-loginContainerPassword">
                     <label for="password" class="section-loginLabelPassword">Contraseña <span
                             class="section-login__spanLabelPassword">*</span></label>
-                    <input type="password" name="passwordLogin" id="password" class="section-login__inputPassword">
+                    <input type="password" name="passwordLogin" id="password" class="section-login__inputPassword" value= "<%= users.password %>">
                     <% if (errors.passwordLogin != undefined) { %>
                         <small class="error-input"><%=errors.passwordLogin.msg%></small>
                        <% } %>

@@ -217,7 +217,7 @@ let usersControllers = {
 
   login: function (req, res, next) { 
     
-    
+    let users ={}
     
     if (req.session != undefined) {
 
@@ -229,22 +229,17 @@ let usersControllers = {
       
     }
     
-    return res.render('users/login', { errors: {}, userLogueado});
+    return res.render('users/login', { errors: {}, userLogueado, users});
 
   },
 
   checkLogin: function (req, res, next) {
 
+    let users ={}
+
     let errors = validationResult(req);
 
     let userLogueado;
-
-    /*let usuarioLogueado = users.find(function (user) {
-      return (
-        user.email == req.body.emailLogin &&
-        bcrypt.compareSync(req.body.passwordLogin, user.password)
-      );
-    });*/
     
     if (errors.isEmpty()) {
 
@@ -262,6 +257,11 @@ let usersControllers = {
         
       .then(function(user) {
 
+        users = {
+          email: req.body.emailLogin,
+          password: req.body.passwordLogin
+        }
+
         let usuario;
 
         userLogueado = user;
@@ -269,8 +269,9 @@ let usersControllers = {
         userLogueado.forEach(function(user){ usuario = user.dataValues}) // esto sirve para recorrer al usuario. Desde la bd viene adentro de muchos objetos. Hay un solo usuario, no muchos. 
 
         if (usuario == undefined) { //si puso mal el mail o mal la contraseña. esto va a ser undefined, por ende salta el error.
-          
-          return res.render('users/login', { errors: { msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.' }, userLogueado });
+          console.log("o aca");
+
+          return res.render('users/login', { users ,errors: { msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.' }, userLogueado });
 
         } else { // si existe guardamelo en usuario. 
          
@@ -305,7 +306,14 @@ let usersControllers = {
 
       userLogueado = {}
 
-      return res.render('users/login', { errors: errors.mapped(), userLogueado});
+      console.log("aca");
+
+      users = {
+        email: req.body.emailLogin,
+        password: req.body.passwordLogin
+      }
+
+      return res.render('users/login', { errors: errors.mapped(), userLogueado, users});
 
     }
 
