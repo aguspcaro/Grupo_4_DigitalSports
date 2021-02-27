@@ -76,6 +76,13 @@ let productsControllers = {
 
   adm: function (req, res, next) {
 
+
+    let busquedaDeporte = db.sports.findAll()
+
+    let busquedaTalle = db.sizes.findAll()
+
+
+
     let userLogueado;
 
     if (req.session != undefined) {
@@ -91,6 +98,9 @@ let productsControllers = {
       res.redirect("/")
 
     }
+
+
+
 
   },
 
