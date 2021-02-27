@@ -84,7 +84,7 @@ let usersControllers = {
 
 // MUESTRA LA VISTA PARA EDITAR EL USUARIO
 
-  mostrarUsuario: function (req, res) {
+  mostrarUsuario: function (req, res) { // no andan los errores
 
     let errors = validationResult(req);
 
@@ -170,7 +170,7 @@ let usersControllers = {
 
  // MUESTRA LA VISTA PARA REGISTRARSE
 
-  mostrarRegister: function (req, res, next) {
+  mostrarRegister: function (req, res, next) { // el error del email existente te lo tira siempre. pareciera que si encuentra algo un poco parecido lo tira.
 
     let usuario = {}
 
