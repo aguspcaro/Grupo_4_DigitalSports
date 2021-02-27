@@ -90,29 +90,44 @@ let usersControllers = {
 
     let userLogueado;
 
-    if (req.session != undefined) {      
+    if(errors.isEmpty()) { 
 
-      db.User.findByPk(req.params.id)
+      if (req.session != undefined) {      
 
-      .then(function(user) {        
-      
-        userLogueado = user;
+        db.User.findByPk(req.params.id)
+
+        .then(function(user) {
+
+          users = {
+            email: req.body.email,
+            password: req.body.password
+          }
         
-        return res.render('users/user-modificar', { errors: errors.mapped(), userLogueado });      
-      
-      }).catch(function(errno) {
+          userLogueado = user;
+          
+          return res.render('users/user-modificar', { errors , userLogueado });      
+        
+        }).catch(function(errno) {
 
-          return res.send(errno)
-      })
+            return res.send(errno)
+        })
 
+      } else {
+
+        userLogueado = {}
+
+        return res.redirect("/");
+        
+      }
     } else {
 
-      userLogueado = {}
+      users = {
+        email: req.body.email,
+        password: req.body.password
+      }
 
-      return res.redirect("/");
-      
+      return res.render("users/user_modificar", {errors: errors.mapped(), users})
     }
-
     
   },
 
@@ -157,7 +172,7 @@ let usersControllers = {
 
   mostrarRegister: function (req, res, next) {
 
-    let usuario;
+    let usuario = {}
 
     let userLogueado;
 
@@ -176,6 +191,8 @@ let usersControllers = {
   },
 
   createRegister: function (req, res, next) {
+
+    let usuario;
 
     let userLogueado;
 
@@ -200,7 +217,7 @@ let usersControllers = {
 
     } else {
 
-      let usuario = { // esto sirve para devolver al usuario lo que habia escrito mal en el input
+      usuario = { // esto sirve para devolver al usuario lo que habia escrito mal en el input
 
         email : req.body.email
 
@@ -257,7 +274,7 @@ let usersControllers = {
         
       .then(function(user) {
 
-        users = {
+        users = { // esto nos sirve para devolverle a la vista el mail erroneo que ingreso
           email: req.body.emailLogin,
           password: req.body.passwordLogin
         }
@@ -269,7 +286,6 @@ let usersControllers = {
         userLogueado.forEach(function(user){ usuario = user.dataValues}) // esto sirve para recorrer al usuario. Desde la bd viene adentro de muchos objetos. Hay un solo usuario, no muchos. 
 
         if (usuario == undefined) { //si puso mal el mail o mal la contraseña. esto va a ser undefined, por ende salta el error.
-          console.log("o aca");
 
           return res.render('users/login', { users ,errors: { msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.' }, userLogueado });
 
@@ -302,11 +318,9 @@ let usersControllers = {
 
       });
       
-    } else { // si existen errores en el middleware de la ruta. van a saltar estos errores.
+    } else { // si existen errores en el middleware de la ruta, van a saltar estos errores.
 
       userLogueado = {}
-
-      console.log("aca");
 
       users = {
         email: req.body.emailLogin,

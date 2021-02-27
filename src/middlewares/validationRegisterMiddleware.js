@@ -4,7 +4,7 @@ const { userInfo } = require('os');
 
 let validationRegisterMiddleware = [
   
-  check('email').isEmail().withMessage('* Debes completar este campo'),
+  check('email').isEmail().withMessage('* Debes completar este campo con un email válido'),
 
   check('password')
     .isLength({ min: 8 })

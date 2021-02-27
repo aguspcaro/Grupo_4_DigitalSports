@@ -1,54 +1,31 @@
-let { check, validationResult, body } = require('express-validator');
-const path = require('path');
-const fs = require('fs');
+let { check, body } = require('express-validator');
+const db = require('../database/models');
 let validationEditMiddleware = [
-  check('name')
-    .isLength({ min: 2 })
-    .withMessage('* Debes completar este campo'),
 
-  check('lastName')
-    .isLength({ min: 3 })
-    .withMessage('* Debes completar este campo'),
+  check('email').isEmail().withMessage('* Debes completar este campo con una email válido'),
 
-  check('email').isEmail().withMessage('* Debes completar este campo'),
+  check('password').isLength({ min: 8 }).withMessage('* La contraseña deberá ser mayor a 8 caracteres'),
 
-  check('password')
-    .isLength({ min: 8 })
-    .withMessage('* Debes completar este campo'),
+  /*body('email').custom(function (value) {
 
-  check('edad')
-    .isLength({ min: 8 })
-    .withMessage('* Debes completar este campo'),
+    let user = db.User.findAll({ where : { email: value } })
 
-  check('edad')
-    .isDate()
-    .isLength({ min: 6 })
-    .withMessage('* Debes completar este campo'),
+    console.log(user);
 
-  body('email')
-    .custom(function (value) {
-      let usersFilePath = path.join(__dirname, '../data/users.json');
+    let userDos = db.findByPk({where:{id: req.params.id}})
 
-      let usersJson = fs.readFileSync(usersFilePath, { encoding: 'utf-8' });
+    console.log(userDos);
+  
+    if((user == value) && (user != userDos)) {
+      console.log("salio bien");
 
-      let users;
-      if (usersJson == '') {
-        users = [];
-      } else {
-        users = JSON.parse(usersJson);
-      }
-      console.log(users);
-      let filtradoUsers = users.filter(function (valor) {
-        valor.email != value;
-      });
-      for (let i = 0; i < users.length; i++) {
-        if (users[i].email == value) {
-          return false;
-        }
-      }
       return true;
-    })
-    .withMessage('* Email ya existente'),
-];
+    } else {
+      console.log("salio mal");
+    }
+   
+  }).withMessage('* Email ya existente')*/
+
+]
 
 module.exports = validationEditMiddleware;
