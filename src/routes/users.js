@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require('path');
 const fs = require('fs');
 const multer = require('multer');
-const { check, validationResult, body } = require('express-validator');
+const { check, body } = require('express-validator');
 
 // CONTROLADOR
 const usersControllers = require('../controllers/usersControllers');

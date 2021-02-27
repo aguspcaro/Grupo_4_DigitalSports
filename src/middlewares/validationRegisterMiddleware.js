@@ -10,7 +10,7 @@ let validationRegisterMiddleware = [
     .isLength({ min: 8 })
     .withMessage('* La contraseña deberá ser mayor a 8 caracteres'),
 
-  body('email').custom(function (value) {
+/*   body('email').custom(function (value) {
 
     let user = db.User.findOne({ where : { email: value } })
   
@@ -20,7 +20,7 @@ let validationRegisterMiddleware = [
 
     }
    
-  }).withMessage('* Email ya existente')
+  }).withMessage('* Email ya existente') */
 
 ];
 

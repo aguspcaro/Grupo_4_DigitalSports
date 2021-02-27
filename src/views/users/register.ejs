@@ -21,10 +21,16 @@
                     <div class="section-registerContainerEmail">
                         <label for="email" class="section-register__labelEmail">Correo Electrónico<span
                                 class="section-register__spanLabelEmail">*</span></label>
-                        <input type="email" name="email" id="email" class="section-register__inputEmail" value = "<%= usuario.email %>">
-                        <p class="errores"><%= typeof errors.email == "undefined" ? "" : errors.email.msg %></p>
+                        <input type="email" name="email" id="email" class="section-register__inputEmail">
+
+                       <span class="errores">
+                        <% if (errors.email) { %>
+                            <%= errors.email.msg  %> 
+                           <% } %>
+                       </span>
                     </div>
 
+              
                 </div>
 
                 <div class="section-registerContainerRight">
@@ -33,7 +39,12 @@
                                 class="section-register__spanLabelPassword">*</span></label>
                         <input type="password" name="password" id="password"
                             class="section-register__inputPassword">
-                        <p class="errores"><%= typeof errors.password == "undefined" ? "" : errors.password.msg %></p>
+                       <span class="errores">
+                        <% if (errors.password) { %>
+                            <%= errors.password.msg  %> 
+                        <% } %>
+                       </span>
+                       
                     </div>
 
                     <div class="section-registerContainerRequired">

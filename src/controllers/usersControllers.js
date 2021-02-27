@@ -181,12 +181,14 @@ let usersControllers = {
 
     let errors = validationResult(req);
 
+    console.log(errors)
+
     if(errors.isEmpty()){ 
 
       db.User.create({
 
         email: req.body.email,
-        password: req.body.password
+        password: bcrypt.hashSync(req.body.password, 10)
 
       }).then(function(user){
 
@@ -202,7 +204,8 @@ let usersControllers = {
 
       let usuario = { // esto sirve para devolver al usuario lo que habia escrito mal en el input
 
-        email : req.body.email
+        email : req.body.email,
+        password: req.body.password
 
       }
 
