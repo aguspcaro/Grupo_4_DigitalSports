@@ -126,6 +126,30 @@ padding:4px;
 text-align: center;
 }
 
+.erroresName{
+
+    color: red;
+    font-size: 12px;
+}
+
+.erroresPrecio{
+
+    color: red;
+    font-size: 12px;
+}
+
+.erroresPromocional{
+
+    color: red;
+    font-size: 12px;
+}
+
+.erroresDeporte{
+
+    color: red;
+    font-size: 12px;
+}
+
 
 @media (min-width: 1024px) {
 
