@@ -6,6 +6,9 @@ const talle = document.querySelector("[name = talle]")
 const marca = document.querySelector("[name = marca]")
 const publico = document.querySelector("[name = publico]")
 const envio = document.querySelector("[name = envio]")
+const categorias = document.querySelector("[name = categoria]")
+
+console.log(categorias)
 
 nombre.addEventListener("blur", () => {
     if (nombre.value.length < 3) {
@@ -96,9 +99,21 @@ envio.addEventListener("blur", ()=>{
     if(envio.value<=0 ||
      envio.value == ""){
          classEnvio = document.querySelector("span.erroresEnvio")
-         classEnvio.innerHTML = "Elija un Público válido!!"
+         classEnvio.innerHTML = "Elija una forma de Envío válido!!"
              }else{
                  classEnvio.innerHTML = "";
+
+             }
+
+})
+
+categorias.addEventListener("blur", ()=>{
+    if(categorias.value<=0 ||
+     categorias.value == ""){
+         classCategorias = document.querySelector("span.erroresCategorias")
+         classCategorias.innerHTML = "Elija un Categoría válida!!"
+             }else{
+                 classCategorias.innerHTML = "";
 
              }
 

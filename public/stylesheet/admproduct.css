@@ -173,6 +173,12 @@ text-align: center;
     font-size: 12px;
 
 }    
+.erroresCategorias{
+
+    color: red;
+    font-size: 12px;
+
+}    
 
 @media (min-width: 1024px) {
 

@@ -149,6 +149,7 @@
                         <option value="destacados">Destacados</option>
                         <option value="lanzamientos">Lanzamientos</option>
                     </select>
+                    <span class="erroresCategorias"></span>
                     <span class="errores">
                         <% if (errors.categoria) { %>
                             <%= errors.categoria.msg  %> 
@@ -197,7 +198,7 @@
         </main>
 
 
-        <script src="/js/validationProductCreate.js"></script>
+        <script src="/js/validator.js"></script>
     </body>
 
     </html>
