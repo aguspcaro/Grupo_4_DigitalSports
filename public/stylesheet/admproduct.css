@@ -150,6 +150,29 @@ text-align: center;
     font-size: 12px;
 }
 
+.erroresTalle{
+
+    color: red;
+    font-size: 12px;
+    }
+.erroresMarca{
+
+    color: red;
+    font-size: 12px;
+
+}    
+.erroresPublico{
+
+    color: red;
+    font-size: 12px;
+
+}    
+.erroresEnvio{
+
+    color: red;
+    font-size: 12px;
+
+}    
 
 @media (min-width: 1024px) {
 

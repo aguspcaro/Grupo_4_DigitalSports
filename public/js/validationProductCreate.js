@@ -3,8 +3,9 @@ const precio = document.querySelector("input.inputPrecio")
 const promPrecio=document.querySelector("input.inputPromocional")
 const deporte = document.querySelector("[name = deporte]")
 const talle = document.querySelector("[name = talle]")
-
-
+const marca = document.querySelector("[name = marca]")
+const publico = document.querySelector("[name = publico]")
+const envio = document.querySelector("[name = envio]")
 
 nombre.addEventListener("blur", () => {
     if (nombre.value.length < 3) {
@@ -56,10 +57,48 @@ deporte.addEventListener("blur", ()=>{
 talle.addEventListener("blur", ()=>{
     if(talle.value<=0 ||
      talle.value == ""){
-         classDeporte = document.querySelector("span.erroresDeporte")
-         classDeporte.innerHTML = "Elija un deporte válido!!"
+         classTalle = document.querySelector("span.erroresTalle")
+         classTalle.innerHTML = "Elija un talle válido!!"
              }else{
-                 classDeporte.innerHTML = "";
+                 classTalle.innerHTML = "";
+
+             }
+
+})
+
+marca.addEventListener("blur", ()=>{
+    if(marca.value<=0 ||
+     marca.value == ""){
+         classMarca = document.querySelector("span.erroresMarca")
+         classMarca.innerHTML = "Elija un Marca válida!!"
+             }else{
+                 classMarca.innerHTML = "";
+
+             }
+
+})
+
+
+publico.addEventListener("blur", ()=>{
+    if(publico.value<=0 ||
+     publico.value == ""){
+         classPublico = document.querySelector("span.erroresPublico")
+         classPublico.innerHTML = "Elija un Público válido!!"
+             }else{
+                 classPublico.innerHTML = "";
+
+             }
+
+})
+
+
+envio.addEventListener("blur", ()=>{
+    if(envio.value<=0 ||
+     envio.value == ""){
+         classEnvio = document.querySelector("span.erroresEnvio")
+         classEnvio.innerHTML = "Elija un Público válido!!"
+             }else{
+                 classEnvio.innerHTML = "";
 
              }
 

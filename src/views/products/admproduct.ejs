@@ -70,6 +70,7 @@
                         </option>
                         <% }) %>
                     </select>
+                    <span class="erroresMarca"></span>
                     <span class="errores">
                         <% if (errors.marca) { %>
                             <%= errors.marca.msg  %> 
@@ -89,6 +90,7 @@
                         </option>
                         <% }) %>
                     </select>
+                    <span class ="erroresTalle"></span>
                     <span class="errores">
                         <% if (errors.talle) { %>
                             <%= errors.talle.msg  %> 
@@ -105,6 +107,7 @@
                         <option value="hombres">hombres</option>
                         <option value="niños">niños</option>
                     </select>
+                    <span class="erroresPublico"></span>
                     <span class="errores">
                         <% if (errors.publico) { %>
                             <%= errors.publico.msg  %> 
@@ -122,6 +125,7 @@
                         <option value="correo">Correo</option>
 
                     </select>
+                    <span class="erroresEnvio"></span>
                     <span class="errores">
                         <% if (errors.envio) { %>
                             <%= errors.envio.msg  %> 
