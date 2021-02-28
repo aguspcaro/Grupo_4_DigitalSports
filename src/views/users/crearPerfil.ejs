@@ -19,25 +19,21 @@
                 <h4 class="section-registerTitle">Crear Perfil</h4> <!-- hacerlo dinamico-->
             </div>
 
-            <form method="POST" action="/users/login/perfil" class="section-form-register" enctype="multipart/form-data">
+            <form method="POST" action="/users/login/perfil/<%=userLogueado.id%>" class="section-form-register" enctype="multipart/form-data">
 
                 <div class="section-registerContainerLeft">
                     <div class="section-registerContainerName">
-                        <label for="first_name" class="section-register__labelName">Nombre<span
-                                class="section-register__spanLabelName">*</span></label>
-                        <input type="text" name="first_name" id="first_name" class="section-register__inputName" >
+                        <label for="first_name" class="section-register__labelName">Nombre<span class="section-register__spanLabelName">*</span></label>
+                        <input type="text" name="first_name" id="first_name" class="section-register__inputName" value="<%= usuario.first_name %>" >
                         <p class="errores"><%= typeof errors.name == "undefined" ? "" : errors.name.msg %></p>
                         
                     </div>
 
                     <div class="section-registerContainerLastName">
-                        <label for="last_name" class="section-register__labelLastName">Apellido<span
-                                class="section-register__spanLabelLastName">*</span></label>
-                        <input type="text" name="last_name" id="last_name"
-                            class="section-register__inputLastName" > 
+                        <label for="last_name" class="section-register__labelLastName">Apellido<span class="section-register__spanLabelLastName">*</span></label>
+                        <input type="text" name="last_name" id="last_name" class="section-register__inputLastName" value="<%= usuario.last_name %>"> 
                         <p class="errores">
                             <p class="errores"><%= typeof errors.lastName == "undefined" ? "" : errors.lastName.msg %></p>
-
                         </p>
                     </div>
 
@@ -56,9 +52,8 @@
                     <div class="section-registerContainerAge">
                         <label for="age" class="section-registerLabelAge">Edad
                             <span class="section-register__spanLabelAge">*</span></label>
-                        <input type="number" name="age" id="age"
-                            class="section-register__inputAge" >
-                            <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
+                        <input type="number" name="age" id="age" class="section-register__inputAge" value="<%= usuario.age %>" >
+                        <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
 
                     </div>
 
@@ -66,9 +61,8 @@
                     <div class="section-registerContainerAge">
                         <label for="birthday" class="section-registerLabelAge">Fecha de Nacimiento
                             <span class="section-register__spanLabelAge">*</span></label>
-                        <input type="date" name="birthday" id="birthday"
-                            class="section-register__inputAge" >
-                            <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
+                        <input type="date" name="birthday" id="birthday" class="section-register__inputAge" value="<%= usuario.birthday %>">
+                        <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
 
                     </div>
 

@@ -21,6 +21,7 @@ let usersControllers = {
       
     } else {
 
+
       userLogueado = {};
 
       res.redirect("/")
@@ -388,46 +389,81 @@ let usersControllers = {
 
   mostrarPerfil: function(req, res, next) {
 
-    let userLogueado;
+    let userLogueado = req.session.user;
+    console.log(userLogueado);
 
-    if (req.session.user == undefined) {
-      
-      return res.redirect("/");
+    db.Profile.findOne({where: {user_id: req.params.id}})
 
-    } else {
+    .then(function(usuario){
 
-      userLogueado = req.session.user;
+      if(usuario){
 
-      return res.render('users/crearPerfil', {errors: {}, userLogueado});
+        return res.render('users/crearPerfil', {errors: {}, userLogueado, usuario});
 
-    }
-    
+      } else {
+
+        return res.render('users/crearPerfil', {errors: {}, userLogueado, usuario: {}});
+
+      }
+
+
+    })
   },
   
   createPerfil : function(req, res, next) {
 
     let userLogueado = req.session.user;
 
-    db.Profile.create({
+    db.Profile.findOne({where: {user_id: req.params.id}}).then(function(perfil){
+      userLogueado;
+      console.log(perfil);
+      if(perfil == undefined) { 
 
-      image: req.files[0].filename,
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      age: req.body.age,
-      birthday: req.body.birthday,
-      user_id: userLogueado.id
+        db.Profile.create({
 
-    },{
+          image: req.files[0].filename,
+          first_name: req.body.first_name,
+          last_name: req.body.last_name,
+          age: req.body.age,
+          birthday: req.body.birthday,
+          user_id: userLogueado.id
 
-      association: "user"
+        },{
 
-    }).then(function(user){
+          association: "user"
 
-      req.session.perfil = user;
+        }).then(function(user){
 
-      res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
+          req.session.perfil = user;
 
+          res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
+
+      } else {
+
+        console.log("her i am");
+        db.Profile.update({
+
+          image: req.files[0].filename,
+          first_name: req.body.first_name,
+          last_name: req.body.last_name,
+          age: req.body.edad,
+          birthday: req.body.birthday,
+          
+    
+        }, {
+    
+          where:{
+    
+            user_id: req.params.id
+    
+          }
+      
+        }).then(function(user){ res.redirect("/users/login/perfil")}).catch(function(errno){console.log(errno)})
+      }
+
+    })
   }
+
 
 };
 

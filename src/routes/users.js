@@ -31,8 +31,8 @@ router.get('/login/perfil/editarPerfil/:id', userOfSesion, cookiesRemember, user
 router.put('/login/perfil/editarPerfil/:id', uploads.any(), usersControllers.editPerfil);
 
 // VISTA DE LA CREACION DEL PERFIL
-router.get("/login/perfil/crearPerfil/:id", userOfSesion, cookiesRemember, userInSesion, usersControllers.mostrarPerfil);
-router.post("/login/perfil", uploads.any(), usersControllers.createPerfil);
+router.get("/login/perfil/crearPerfil/:id", usersControllers.mostrarPerfil);
+router.post("/login/perfil/:id", uploads.any(), usersControllers.createPerfil);
 
 // VISTA DEL REGISTRO DE USUARIO
 router.get('/register', userInSesion, cookiesRemember, userInSesion, usersControllers.mostrarRegister);
