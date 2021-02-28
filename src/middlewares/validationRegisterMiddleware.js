@@ -14,7 +14,7 @@ let validationRegisterMiddleware = [
 
     let user = db.User.findOne({ where : { email: value } })
   
-    if(user === value) {
+    if(user == value) {
 
       return true;
 
