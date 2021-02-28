@@ -42,9 +42,9 @@ router.get('/cart', userOfSesion,productsControllers.cart);
 router.get('/detail/:id', productsControllers.detail);
 
 // PRODUCTOS Y SUS HERRAMIENTAS (EDITAR, ELIMINAR, CREAR)
-router.get('/create', userOfSesion, userInSesion, productsControllers.adm);
+router.get('/create', userOfSesion, productsControllers.adm);
 router.post('/create', uploads.any(), validator, productsControllers.createproduct);
-router.get('/vista/:id', userOfSesion, userInSesion, productsControllers.modificar);
+router.get('/vista/:id', userOfSesion, productsControllers.modificar);
 router.put('/:id', uploads.any(), validator, productsControllers.edit);
 router.delete('/delete/:id', productsControllers.delete);
 
