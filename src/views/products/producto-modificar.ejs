@@ -18,6 +18,11 @@
                 
                 <label class="labelName" for="">Nombre del producto</label>
                 <input class="inputName" type="text" name="name" value="<%= product.name%>" >
+                <span class="errores">
+                    <% if (errors.name) { %>
+                        <%= errors.name.msg  %> 
+                    <% } %>
+                   </span>
                     
                     
                         <label class=" labelDescri" for="">Descripción del producto</label>

@@ -88,7 +88,7 @@ let productsControllers = {
 
     Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca])
     .then(function([resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca]) {
-      res.render('products/admproduct', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle});
+      res.render('products/admproduct', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, errors:{}, body: {}});
     })
     .catch(function(err) {
       console.log(err)
@@ -137,15 +137,34 @@ let productsControllers = {
         shipping: req.body.envio,
         
       }).then(data=> {
-  
+        
         res.redirect("/")
   
       }).catch(error=>console.log(error));
     }
     //si hay errores
     else {
-      console.log(error.mapped())
-      res.render('products/admproduct', {errors: error.mapped()})
+
+          //busqueda para llevar luego a la vista 
+
+    let busquedaDeporte = db.Sports.findAll()
+
+    let busquedaTalle = db.Sizes.findAll()
+
+    let busquedaMarca = db.Brands.findAll()
+
+
+    let body = req.body
+    console.log(req.body)
+
+    Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca])
+    .then(function([resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca]) {
+      res.render('products/admproduct', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, errors:error.mapped(), body});
+    })
+    .catch(function(err) {
+      console.log(err)
+    })
+     
     }
   },
    
@@ -165,7 +184,7 @@ let productsControllers = {
   
       Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca, busquedaDelProducto])
       .then(function([resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca, product]) {
-        res.render('products/producto-modificar', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, product});
+        res.render('products/producto-modificar', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, product, errors:{}});
       })
       .catch(function(err) {
         console.log(err)
@@ -229,7 +248,7 @@ let productsControllers = {
 
     // si hay errores
     else {
-      console.log(errors.mapped())
+      res.render('products/producto-modificar', {errors: errors.mapped()})
     }
    
 },

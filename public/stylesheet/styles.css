@@ -345,6 +345,13 @@ body {
   margin-top: 30px;
 }
 
+.errores {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 1px;
+  display: block;
+}
+
 @media (min-width: 500px) {
   .section-suscribeFormInput {
     font-weight: 400;
