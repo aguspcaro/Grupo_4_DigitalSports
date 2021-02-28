@@ -18,7 +18,7 @@ const userOfSesion = require('../middlewares/userOFSesionMiddleware');
 
 
 //checkeo de cada campo del formulario
-let validatorCreate = [
+let validator = [
     check('name').isLength({min:5}).withMessage('Debe ingresar un nombre.'),
     check('deporte').isInt().withMessage('Debe seleccionar un deporte.'),
     check('marca').isInt().withMessage('Debe seleccionar una marca.'),
@@ -26,7 +26,7 @@ let validatorCreate = [
     check('publico').isLength().withMessage('Debe seleccionar el público objetivo.'),
     check('envio').isLength().withMessage('Debe seleccionar las condiciones del envío.'),
     check('precio').isInt().withMessage('Debe seleccionar un precio.'),
-    check('categoria').isInt().withMessage('Debe seleccionar una categoría.'),
+    check('categoria').isLength().withMessage('Debe seleccionar una categoría.'),
     check('stock').isInt().withMessage('Debe seleccionar el stock del producto.')
 ]
 
@@ -42,9 +42,9 @@ router.get('/detail/:id', productsControllers.detail);
 
 // PRODUCTOS Y SUS HERRAMIENTAS (EDITAR, ELIMINAR, CREAR)
 router.get('/create', userOfSesion,productsControllers.adm);
-router.post('/create', uploads.any(), validatorCreate, productsControllers.createproduct);
+router.post('/create', uploads.any(), validator, productsControllers.createproduct);
 router.get('/vista/:id', userOfSesion,productsControllers.modificar);
-router.put('/:id', uploads.any(), productsControllers.edit);
+router.put('/:id', uploads.any(), validator, productsControllers.edit);
 router.delete('/delete/:id', productsControllers.delete);
 
 module.exports = router;

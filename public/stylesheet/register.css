@@ -348,6 +348,7 @@
     color: red;
     font-size: 0.8em;
     margin-top: 1px;
+    display: block;
 }
 @media (min-width:576px) {
     .section-form-register {

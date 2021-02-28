@@ -76,13 +76,32 @@ let productsControllers = {
 
   adm: function (req, res, next) {
 
-    let userLogueado;
+
+    //busqueda para llevar luego a la vista 
+
+    let busquedaDeporte = db.Sports.findAll()
+
+    let busquedaTalle = db.Sizes.findAll()
+
+    let busquedaMarca = db.Brands.findAll()
+
+
+    Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca])
+    .then(function([resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca]) {
+      res.render('products/admproduct', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle});
+    })
+    .catch(function(err) {
+      console.log(err)
+    })  
+
+
+/*     let userLogueado;
 
     if (req.session != undefined) {
 
       userLogueado = req.session.user;
 
-      res.render('products/admproduct', {userLogueado});
+   
 
     } else {
 
@@ -90,7 +109,10 @@ let productsControllers = {
 
       res.redirect("/")
 
-    }
+    } */
+
+
+
 
   },
 
@@ -122,14 +144,34 @@ let productsControllers = {
     }
     //si hay errores
     else {
-      console.log(error.mapped)
+      console.log(error.mapped())
       res.render('products/admproduct', {errors: error.mapped()})
     }
   },
    
   modificar: function (req, res, next) {   
 
-    let userLogueado;
+
+      //busqueda para llevar luego a la vista 
+
+      let busquedaDeporte = db.Sports.findAll()
+
+      let busquedaTalle = db.Sizes.findAll()
+  
+      let busquedaMarca = db.Brands.findAll()
+
+      let busquedaDelProducto = db.Products.findByPk(req.params.id)
+  
+  
+      Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca, busquedaDelProducto])
+      .then(function([resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca, product]) {
+        res.render('products/producto-modificar', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, product});
+      })
+      .catch(function(err) {
+        console.log(err)
+      })  
+
+   /*  let userLogueado;
 
     if (req.session != undefined) {
 
@@ -143,45 +185,54 @@ let productsControllers = {
   
       }).catch(function(errno){console.log(errno)})
 
-    } else {
+    } */ /* else {
 
       userLogueado = {}
 
       res.redirect("/")
 
-    }
+    } */
    
   },
 
   edit: function (req, res) {
 
-    db.Products.update({
-      name: req.body.name,
-      description: req.body.coments,
-      image: req.files[0].filename,
-      stock: req.body.stock,
-      category: req.body.categoria,
-      price: req.body.precio,
-      promPrice: req.body.promocional,
-      size_id: req.body.talle,
-      brand_id: req.body.marca,   
-      sport_id: req.body.deporte, 
-      public: req.body.publico,
-      shipping: req.body.envio,
+    let errors = validationResult(req)
 
-  },{
-      where : {
+    //si no hay errores
+    if(errors.isEmpty()) {
+      db.Products.update({
+        name: req.body.name,
+        description: req.body.coments,
+        image: req.files[0].filename,
+        stock: req.body.stock,
+        category: req.body.categoria,
+        price: req.body.precio,
+        promPrice: req.body.promocional,
+        size_id: req.body.talle,
+        brand_id: req.body.marca,   
+        sport_id: req.body.deporte, 
+        public: req.body.publico,
+        shipping: req.body.envio,
+  
+    },{
+        where : {
+  
+          id : req.params.id 
+  
+        }
+      }) 
+      .then(data=>res.redirect("/"))
 
-        id : req.params.id 
+      .catch(error=>console.log(error))
+    }
 
-      }
-    })
-    
-    .then(data=>res.redirect("/"))
-
-    .catch(error=>console.log(error))
-
-  },
+    // si hay errores
+    else {
+      console.log(errors.mapped())
+    }
+   
+},
 
   delete: function (req, res, next) {
    
