@@ -157,6 +157,8 @@ let productsControllers = {
     let body = req.body
     console.log(req.body)
 
+    
+
     Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca])
     .then(function([resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca]) {
       res.render('products/admproduct', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, errors:error.mapped(), body});
@@ -184,7 +186,7 @@ let productsControllers = {
   
       Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca, busquedaDelProducto])
       .then(function([resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca, product]) {
-        res.render('products/producto-modificar', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, product, errors:{}});
+        res.render('products/producto-modificar', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, product, errors:{}, body:{}});
       })
       .catch(function(err) {
         console.log(err)
@@ -248,7 +250,26 @@ let productsControllers = {
 
     // si hay errores
     else {
-      res.render('products/producto-modificar', {errors: errors.mapped()})
+
+      let busquedaDeporte = db.Sports.findAll()
+
+      let busquedaTalle = db.Sizes.findAll()
+  
+      let busquedaMarca = db.Brands.findAll()
+
+      let busquedaDelProducto = db.Products.findByPk(req.params.id)
+  
+      
+      let body = req.body
+    
+      Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca, busquedaDelProducto])
+      .then(function([resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca, product]) {
+        console.log(product)
+        res.render('products/producto-modificar', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, product, errors:errors.mapped(), body});
+      })
+      .catch(function(err) {
+        console.log(err)
+      })  
     }
    
 },

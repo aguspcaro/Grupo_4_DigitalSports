@@ -162,7 +162,17 @@ let usersControllers = {
 
     })
 
-    .then(data=>res.redirect("/users/login"))
+   
+
+    .then(function(data) {
+       
+    req.session.destroy();
+
+    res.clearCookie("recordame")
+    
+    res.redirect("/")
+    })
+
 
     .catch(error=>console.log(error))
 
