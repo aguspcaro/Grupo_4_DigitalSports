@@ -178,7 +178,7 @@ let usersControllers = {
 
     if (req.session != undefined) {
 
-     userLogueado = req.session.user
+      userLogueado = req.session.user
 
     } else {
 
@@ -198,14 +198,12 @@ let usersControllers = {
 
     let errors = validationResult(req);
 
-    console.log(errors)
-
     if(errors.isEmpty()){ 
 
       db.User.create({
 
         email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 10)
+        password: req.body.password // saque el encriptado por el momento. habria que ponerlo en login tambien.
 
       }).then(function(user){
 

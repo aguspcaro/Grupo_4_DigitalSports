@@ -17,8 +17,6 @@ const userInSesion = require('../middlewares/userInSesionMiddleware');
 const userOfSesion = require('../middlewares/userOFSesionMiddleware');
 const validationEditMiddleware = require('../middlewares/validationEditMiddleware');
 const cookiesRemember = require('../middlewares/rememberMiddleware');
-const userInSesionMiddleware = require('../middlewares/userInSesionMiddleware');
-
 
 // VISTA DEL CENTRO DE COMANDOS DEL USUARIO
 router.get('/login/perfil', userOfSesion, cookiesRemember, usersControllers.root);
