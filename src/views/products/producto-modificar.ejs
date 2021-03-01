@@ -97,6 +97,12 @@
                     </select>
                     <label class="labelPrecio" for="">Precio</label>
                     <input class="inputPrecio" value="<%=product.price%>"type="number" name="precio" >
+                    <span class="errores">
+                        <% if (errors.precio) { %>
+                            <%= errors.precio.msg  %> 
+                        <% } %>
+                       </span>
+                        
                  
                     <label class=" labelSku" for="">Categoría</label>
                     <select name="categoria">
@@ -114,10 +120,24 @@
                     <label class=" labelPromocional" for="">Precio Promocional</label>
 
                     <input class="inputPromocional" value="<%=product.promPrice%>" type="number" name="promocional" >
-                    
-                        <label class="labelstock" for="">Stock</label>
+                
+                    <span class="errores">
+                        <% if (errors.promocional) { %>
+                            <%= errors.promocional.msg  %> 
+                        <% } %>
+                       </span>
+                        
+
+                    <label class="labelstock" for="">Stock</label>
 
                     <input class="inputstock" value="<%=product.stock%>"type="number" name="stock">
+
+                    <span class="errores">
+                        <% if (errors.stock) { %>
+                            <%= errors.stock.msg  %> 
+                        <% } %>
+                       </span>
+                        
                         
                     <label for="">Editar Producto</label>
                     <button >Editar</button>
