@@ -1,79 +1,91 @@
-<%- include("../partials/head")  %>
-<link rel="stylesheet" href="/stylesheet/login.css">
+<%- include("../partials/head") %>
+    <link rel="stylesheet" href="/stylesheet/login.css">
+    <link rel="stylesheet" href="/stylesheet/styles.css">
+
+    </head>
+
+    <body>
 
 
-</head>
 
-<body>
-    
-  
+        <main class="main">
+            <%- include("../partials/header") %>
 
-    <main class="main">
-        <%- include("../partials/header")  %>
-
-        <section class="section-loginContainer">
-            <div class="section-loginContainerTitle">
-                <h4 class="section-loginTitle">Clientes</h4>
-            </div>
-
-            <form method="POST" action="/users/login" class="section-form-login">
-
-                <div class="section-loginContainerEmail">
-                    <label for="email" class="section-login__labelEmail">Correo Electrónico<span
-                            class="section-login__spanLabelEmail">*</span></label>
-                    <input type="email" name="emailLogin" id="email" class="section-login__inputEmail" value= "<%= users.email %>">
-                   <% if (errors.emailLogin != undefined) { %>
-                    <small class="error-input"><%=errors.emailLogin.msg%></small>
-                   <% } %>
-                </div>
-
-                <div class="section-loginContainerPassword">
-                    <label for="password" class="section-loginLabelPassword">Contraseña <span
-                            class="section-login__spanLabelPassword">*</span></label>
-                    <input type="password" name="passwordLogin" id="password" class="section-login__inputPassword" value= "<%= users.password %>">
-                    <% if (errors.passwordLogin != undefined) { %>
-                        <small class="error-input"><%=errors.passwordLogin.msg%></small>
-                       <% } %>
-                       <% if ( errors.msg !=undefined) { %>
-                        <small class="error-input"><%=errors.msg%></small>
-                       <% } %>
-                    <div class="section-loginRecordame">
-                        <input name="recordame" type="checkbox"><small >Recordar mis datos</small>   
+                <section class="section-loginContainer">
+                    <div class="section-loginContainerTitle">
+                        <h4 class="section-loginTitle">Clientes</h4>
                     </div>
-                    <div class="section-loginContainerRequired">
-                        <small class="section-loginRequired">*Campos Requeridos</small>
-                    </div>
-                </div>
-                <div class="section-loginContainerButton">
-                    <a class="section-loginButtonCheckIn" href="/users/register">Registrarse</a>
-                    <button class="section-loginButtonEnterOk" href="/users/login/perfil">Ingresar</button> 
-                </div>
-         </form>
-         
-                
+
+                    <form method="POST" action="/users/login" class="section-form-login">
+
+                        <div class="section-loginContainerEmail">
+                            <label for="email" class="section-login__labelEmail">Correo Electrónico<span
+                                    class="section-login__spanLabelEmail">*</span></label>
+                            <input type="email" name="emailLogin" id="email" class="section-login__inputEmail"
+                                value="<%= users.email %>">
+                            <span class="errores-front-correo"></span>
+                            <% if (errors.emailLogin !=undefined) { %>
+                                <small class="error-input">
+                                    <%=errors.emailLogin.msg%>
+                                </small>
+                                <% } %>
+                        </div>
+
+                        <div class="section-loginContainerPassword">
+                            <label for="password" class="section-loginLabelPassword">Contraseña <span
+                                    class="section-login__spanLabelPassword">*</span></label>
+                            <input type="password" name="passwordLogin" id="password"
+                                class="section-login__inputPassword" value="<%= users.password %>">
+                            <span class="errores-front-password"></span>
+                            <% if (errors.passwordLogin !=undefined) { %>
+                                <small class="error-input">
+                                    <%=errors.passwordLogin.msg%>
+                                </small>
+                                <% } %>
+                                    <% if ( errors.msg !=undefined) { %>
+                                        <small class="error-input">
+                                            <%=errors.msg%>
+                                        </small>
+                                        <% } %>
+                                            <div class="section-loginRecordame">
+                                                <input name="recordame" type="checkbox"><small>Recordar mis
+                                                    datos</small>
+                                            </div>
+                                            <div class="section-loginContainerRequired">
+                                                <small class="section-loginRequired">*Campos Requeridos</small>
+                                            </div>
+                        </div>
+                        <div class="section-loginContainerButton">
+                            <a class="section-loginButtonCheckIn" href="/users/register">Registrarse</a>
+                            <button class="section-loginButtonEnterOk" href="/users/login/perfil">Ingresar</button>
+                        </div>
+                    </form>
 
 
 
-        </section>
+
+
+                </section>
 
 
 
 
 
 
-        <%- include("../partials/form-suscribe")  %>
+                <%- include("../partials/form-suscribe") %>
 
-        <%- include("../partials/footer")  %>
-
-
+                    <%- include("../partials/footer") %>
 
 
 
 
-    </main>
 
 
+        </main>
 
-</body>
 
-</html>
+        <script src="../../../js/validatorLogin.js"></script>
+
+    </body>
+
+    </html>
