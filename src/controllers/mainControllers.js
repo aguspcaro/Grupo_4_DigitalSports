@@ -63,6 +63,52 @@ let mainControllers = {
     let palabraBuscada = req.query.homeSearch;
 
     res.send(palabraBuscada);
+  },
+
+  mujer: function (req, res) {
+    db.Products.findAll(
+      {
+        where: {
+          public: "mujeres"
+        }
+      }
+    )
+    .then(function(resultadoBusqueda) {
+      res.render('products/mujer', {userLogueado: {}, resultadoBusqueda})
+    })
+    .catch(function(err) {
+      console.log(err)
+    })
+  },
+  hombre: function (req, res) {
+    db.Products.findAll(
+      {
+        where: {
+          public: "hombres"
+        }
+      }
+    )
+    .then(function(resultadoBusqueda) {
+      res.render('products/hombre', {userLogueado: {}, resultadoBusqueda})
+    })
+    .catch(function(err) {
+      console.log(err)
+    })
+  },
+  chicos:  function (req, res) {
+    db.Products.findAll(
+      {
+        where: {
+          public: "niños"
+        }
+      }
+    )
+    .then(function(resultadoBusqueda) {
+      res.render('products/chicos', {userLogueado: {}, resultadoBusqueda})
+    })
+    .catch(function(err) {
+      console.log(err)
+    })
   }
 }
 

@@ -502,6 +502,16 @@ body {
     color: #0985d9;
   }
 
+  .main-navListNavegation__products {
+    color: #606060;
+    margin: 0px 10px;
+    text-decoration: none;
+  }
+
+  .main-navListNavegation__products:hover {
+    color: #0985d9;
+  }
+
   .main-navContainerIcons {
     font-size: 18px;
     display: flex;
