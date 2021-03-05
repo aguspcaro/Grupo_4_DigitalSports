@@ -26,7 +26,7 @@
                     
                     
                         <label class=" labelDescri" for="">Descripción del producto</label>
-                <textarea class="coments" style="resize: none;" name="coments" rows="10" value="<%=product.description%>" cols="40" ></textarea>
+                <textarea class="coments" style="resize: none;" name="coments" rows="10" value="<%=product.description%>" cols="40" ><%=product.description%></textarea>
                 <label class="fotoProducto">Subir fotos del producto</label>
                 <input required class="inputarchivo" ide="file-input" multiple="multiple" type="file" name="adjunto"
                     accept=".pdf,.jpg,.png">
@@ -40,6 +40,7 @@
                 <div>
                     <label for="">Deporte</label>
                     <select name="deporte">
+                        <option value="<%= product.sport_id%>"><%= product.sport_id%> </option>
                         <% resultadoBusquedaDeporte.forEach(element => { %>
                             <option value="<%= element.id%>">
                                 <%= element.name  %>
@@ -50,6 +51,7 @@
                     <label for="">Marca</label>
 
                     <select name="marca">
+                        <option value="<%= product.brand_id%>"><%= product.brand_id%> </option>
                         <% resultadoBusquedaMarca.forEach(element => { %>
                             <option value="<%= element.id%>">
                                 <%= element.name  %>
@@ -64,6 +66,7 @@
                 <div>
                     <label for="">Talle</label>
                     <select name="talle">
+                        <option value="<%= product.size_id%>"><%= product.size_id%> </option>
                         <% resultadoBusquedaTalle.forEach(element => { %>
                             <option value="<%= element.id%>">
                                 <%= element.name  %>
