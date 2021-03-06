@@ -60,9 +60,26 @@ let mainControllers = {
 },
 
   search: function (req, res) {
-    let palabraBuscada = req.query.homeSearch;
 
-    res.send(palabraBuscada);
+    let seEncontro = req.query.homeSearch.trim().toUpperCase()
+
+
+
+    console.log(seEncontro)
+
+    db.Products.findAll(
+      {
+        where: {
+         name : seEncontro
+        }
+      }
+    )
+    .then(function(resultadoBusqueda) {
+      res.render('products/search', {resultadoBusqueda, userLogueado:{}})
+    })
+    .catch(function(err) {
+      console.log(err)
+    })
   },
 
   mujer: function (req, res) {
