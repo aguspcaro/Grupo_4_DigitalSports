@@ -1,9 +1,11 @@
 const fs = require('fs');
 const path = require('path');
+const { Sequelize } = require('../database/models/index');
 
 
 const toThousand = n => n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 const db = require("../database/models/index")
+const Op = Sequelize.Op
 
 let mainControllers = {
   index: function (req, res, next) {
@@ -61,16 +63,13 @@ let mainControllers = {
 
   search: function (req, res) {
 
-    let seEncontro = req.query.homeSearch.trim().toUpperCase()
-
-
-
-    console.log(seEncontro)
-
     db.Products.findAll(
       {
         where: {
-         name : seEncontro
+         name : {
+           [Op.like]: '%' + req.query.homeSearch.trim() + '%'
+         }
+
         }
       }
     )
