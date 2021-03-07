@@ -350,6 +350,14 @@
     margin-top: 1px;
     display: block;
 }
+.erroresFront {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 1px;
+    display: block;
+    list-style: none;
+    
+}
 @media (min-width:576px) {
     .section-form-register {
         width: 80%

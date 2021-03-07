@@ -4,7 +4,7 @@ let validationEditMiddleware = [
 
   check('email').isEmail().withMessage('* Debes completar este campo con una email válido'),
 
-  check('password').isLength({ min: 8 }).withMessage('* La contraseña deberá ser mayor a 8 caracteres')
+  check('password').isLength({ min: 8 }).withMessage('* La contraseña deberá ser mayor a 8 caracteres') 
 
   /*body('email').custom(function (value) {
 
