@@ -23,6 +23,9 @@
                                 class="section-register__spanLabelEmail">*</span></label>
                         <input type="email" name="email" id="email" class="section-register__inputEmail" value="<%= userLogueado.email %>">
                         <p class="errores"><%= typeof errors.email == "undefined" ? "" : errors.email.msg %></p>
+
+                        <span class="erroresFrontEmail"></span>
+
                     </div>
 
                     <div class="container-session">
@@ -38,6 +41,9 @@
                         <input type="password" name="password" id="password"
                             class="section-register__inputPassword" value="<%= userLogueado.password %>">
                         <p class="errores"><%= typeof errors.password == "undefined" ? "" : errors.password.msg %></p>
+                   
+                        <span class="erroresFrontPassword"></span>
+
                     </div>
 
 
@@ -63,6 +69,7 @@
     </main>
 
 
+    <script src = "/js/validatorUsuarioEdit.js" ></script>
 
 </body>
 
