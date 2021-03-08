@@ -1,36 +1,33 @@
-window.addEventListener("load", function(){
+const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
 
 
-    let form = document.querySelector("form.section-form-register")
+let email = document.querySelector("#email")
 
-  
 
-    form.addEventListener("submit", function(e){
-        let email = document.querySelector("#email")
-        let errores = []
-        let password = document.querySelector("#password")
+email.addEventListener("blur", function(){
 
-        if(email.value == "") {
-            errores.push("* El campo es obligatorio")
-        } 
-        
-        if(password.value.length < 8) {
-            errores.push("* La contraseña deberá tener como mínimo 8 caracteres")
+    if (regexEmail.test(email.value)) {
+        document.querySelector('.erroresFrontEmail').innerHTML = "" 
+    } else {
+        document.querySelector('.erroresFrontEmail').innerHTML = "* El campo es obligatorio"
+    }
+    
+})
 
-        }
-        
-        if(errores.length > 0) {
-            e.preventDefault();
 
-            let ulErrores = document.querySelector("[class=erroresFront]")
-            for (let i = 0; i < errores.length; i++) {
-                ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
-                
-            }
-        }
-        
-    })
+let password = document.querySelector("#password");
+
+
+password.addEventListener("blur", function(){
+
+    if (password.value.length < 8) {
+        document.querySelector('.erroresFrontPassword').innerHTML = "* La contraseña debera tener mínimo 8 caracteres"
+    } else {
+        document.querySelector('.erroresFrontPassword').innerHTML = ""
+    }
+    
+})
 
     
+    
 
-})

@@ -350,12 +350,22 @@
     margin-top: 1px;
     display: block;
 }
-.erroresFront {
+.erroresFrontEmail {
     color: red;
     font-size: 0.8em;
-    margin-top: 1px;
     display: block;
-    list-style: none;
+    
+}
+.erroresFrontPassword {
+    color: red;
+    font-size: 0.8em;
+    display: block;
+    
+}
+.erroresPerfil {
+    color: red;
+    font-size: 0.8em;
+    display: block;
     
 }
 @media (min-width:576px) {
