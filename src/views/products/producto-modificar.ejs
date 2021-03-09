@@ -40,7 +40,7 @@
                 <div>
                     <label for="">Deporte</label>
                     <select name="deporte">
-                        <option value="<%= product.sport_id%>"><%= product.sport_id%> </option>
+                        <option value="<%= product.sport_id%>"><%=product.sports.name%></option>
                         <% resultadoBusquedaDeporte.forEach(element => { %>
                             <option value="<%= element.id%>">
                                 <%= element.name  %>
@@ -51,7 +51,7 @@
                     <label for="">Marca</label>
 
                     <select name="marca">
-                        <option value="<%= product.brand_id%>"><%= product.brand_id%> </option>
+                        <option value="<%= product.brand_id%>"><%=product.brands.name%> </option>
                         <% resultadoBusquedaMarca.forEach(element => { %>
                             <option value="<%= element.id%>">
                                 <%= element.name  %>
@@ -66,7 +66,7 @@
                 <div>
                     <label for="">Talle</label>
                     <select name="talle">
-                        <option value="<%= product.size_id%>"><%= product.size_id%> </option>
+                        <option value="<%= product.size_id%>"><%= product.sizes.name%> </option>
                         <% resultadoBusquedaTalle.forEach(element => { %>
                             <option value="<%= element.id%>">
                                 <%= element.name  %>
