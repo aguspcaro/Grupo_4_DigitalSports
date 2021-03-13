@@ -19,6 +19,7 @@
                 <label class="labelName" for="">Nombre del producto</label>
                 <input class="inputName" type="text" name="name" value="<%= product.name%>" >
                 <span class="errores">
+                    <span class="erroresName"></span>
                     <% if (errors.name) { %>
                         <%= errors.name.msg  %> 
                     <% } %>
@@ -46,7 +47,7 @@
                             </option>
                         <% }) %>
                     </select>
-
+                    <span class="erroresDeporte"></span>
                     <label for="">Marca</label>
 
                     <select name="marca">
@@ -57,13 +58,13 @@
                         <% }) %>
 
                     </select>
+                    <span class="erroresMarca"></span>
                 </div>
 
 
 
                 <div>
                     <label for="">Talle</label>
-                    <select name="talle">
                         <% resultadoBusquedaTalle.forEach(element => { %>
                             <option value="<%= element.id%>">
                                 <%= element.name  %>
@@ -72,7 +73,7 @@
 
 
                     </select>
-
+                    <span class="erroresTalle"></span>
 
 
                     <label for="">Publico</label>
@@ -83,6 +84,7 @@
                         <option value="hombres">hombres</option>
                         <option value="niños">niños</option>
                     </select>
+                    <span class="erroresPublico"></span>
                 </div>
 
                 <div>
@@ -95,9 +97,11 @@
                         <option value="correo">Correo</option>
 
                     </select>
+                    <span class="erroresEnvio"></span>
+
                     <label class="labelPrecio" for="">Precio</label>
                     <input class="inputPrecio" value="<%=product.price%>"type="number" name="precio" >
-                 
+                    <span class="erroresPrecio"></span>
                     <label class=" labelSku" for="">Categoría</label>
                     <select name="categoria">
                         <option value="<%=product.category%>"><%=product.category%></option>
@@ -106,7 +110,7 @@
                         <option value="destacados">Destacados</option>
                         <option value="lanzamientos">Lanzamientos</option>
                     </select>
-
+                    <span class="erroresCategoria"></span>
                 </div>
 
 
@@ -114,7 +118,7 @@
                     <label class=" labelPromocional" for="">Precio Promocional</label>
 
                     <input class="inputPromocional" value="<%=product.promPrice%>" type="number" name="promocional" >
-                    
+                    <span class="erroresPromocional"></span>
                         <label class="labelstock" for="">Stock</label>
 
                     <input class="inputstock" value="<%=product.stock%>"type="number" name="stock">

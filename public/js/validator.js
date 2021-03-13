@@ -8,7 +8,7 @@ const publico = document.querySelector("[name = publico]")
 const envio = document.querySelector("[name = envio]")
 const categorias = document.querySelector("[name = categoria]")
 
-console.log(categorias)
+
 
 nombre.addEventListener("blur", () => {
     if (nombre.value.length < 3) {
@@ -22,7 +22,7 @@ nombre.addEventListener("blur", () => {
 })
 
 precio.addEventListener("blur", () => {
-    if (precio.value < 0) {
+    if (precio.value < 0 || precio.value =="") {
         classPrecio = document.querySelector("span.erroresPrecio")
         classPrecio.innerHTML = "El precio no puede ser negativo!!!"
     } else {
