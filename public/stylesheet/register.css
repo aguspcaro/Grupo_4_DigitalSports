@@ -350,6 +350,24 @@
     margin-top: 1px;
     display: block;
 }
+.erroresFrontEmail {
+    color: red;
+    font-size: 0.8em;
+    display: block;
+    
+}
+.erroresFrontPassword {
+    color: red;
+    font-size: 0.8em;
+    display: block;
+    
+}
+.erroresPerfil {
+    color: red;
+    font-size: 0.8em;
+    display: block;
+    
+}
 @media (min-width:576px) {
     .section-form-register {
         width: 80%

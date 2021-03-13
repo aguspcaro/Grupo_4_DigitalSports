@@ -24,6 +24,8 @@
                         <input type="email" name="email" id="email" class="section-register__inputEmail" value="<%= usuario.email %>">
                         
                         <p class="errores"><%= typeof errors.email == "undefined" ? "" : errors.email.msg %></p>
+                       
+                        <span class="erroresFrontEmail"></span>
 
                         
                     </div>
@@ -37,6 +39,8 @@
                                 class="section-register__spanLabelPassword">*</span></label>
                         <input type="password" name="password" id="password" class="section-register__inputPassword">
                         <p class="errores"><%= typeof errors.password == "undefined" ? "" : errors.password.msg %></p>
+
+                        <span class="erroresFrontPassword"></span>
                        
                     </div>
 
@@ -79,7 +83,7 @@
     </main>
 
 
-
+    <script src = "/js/validatorRegister.js" ></script>
 </body>
 
 </html>

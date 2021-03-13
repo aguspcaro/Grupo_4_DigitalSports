@@ -1,4 +1,4 @@
-<%- include("../partials/head")  %>
+<%- include("../partials/head") %>
 <link rel="stylesheet" href="/stylesheet/cart.css">
 
 
@@ -6,38 +6,55 @@
 
 <body>
     <main class="main">
-        <%- include("../partials/header")  %>
+        <%- include("../partials/header") %>
 
-        <div>
 
-            <div class="container">
-                <div class="caja">
-                    <p class="productName">Botines Predator adidas Sport</p>
-                    <div class="caja-imagen">
-                        <img src="/images/adidas_predator.jpg" alt="">
 
-                        <div class="producto">
-                            <p class="productTalle">Talle 45</p>
-                            <a class="productEdit" href="#">Editar Producto</a>
+        <div class="contenedor-principal">
+            <div class="contenedor-titulo">
+                <h2 class="titulo-encabezado">Mi Carrito</h2>
+            </div>
+
+            <section class="section">
+                <div class="container">
+                    <div class="caja-titulo">
+                        <p class="productName">Botines Predator Adidas Sport</p>
+                    </div>
+                    <div class="caja-datos">
+                        <div class="caja-imagen">
+                            <img src="/images/products/predator.jpg" alt="">
+                        </div>
+                        <div class="caja-descripcion">
+                            <div class="container-talle-edit">
+                                <span class="productTalle">Talle 45</span>
+                                <a class="productEdit" href="#">Editar Producto</a>
+                            </div>
                             <div class="containerTotal">
                                 <div class="input">
-                                    <label class="labelCant" for="">Cantidad</label>
-                                    <input class="inputCant " type="number" name="cantidad" value="1">
+                                    <label for="">Cantidad</label>
+                                    <select name="" id="">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
                                 </div>
 
                                 <div class="total">
-                                    <label class="labelTotal" for="">Total</label>
-                                    <label class="inputTotal"for="">$9999</label>
+                                    <span class="spanTituloTotal" for="">Total</span>
+                                    <span class="spanTotal" for="">$9.799</span>
                                 </div>
                             </div>
-
                         </div>
-
-
                     </div>
-
-
                 </div>
+
 
 
 
@@ -49,7 +66,7 @@
                         <button class="inputCalc" type="button">Calcular</button>
                     </div>
 
-                    <label class="labelDiscount"  for="">Cupón de descuento</label>
+                    <label class="labelDiscount" for="">Cupón de descuento</label>
                     <div>
                         <input class="inputDiscount" type="text" name="cupon" placeholder="Ingresá tu codigo" value="">
                         <button class="inputVal" type="button">Validar</button>
@@ -58,12 +75,7 @@
                         <button class="inputBuy" type="submit">Comprar</button>
                     </div>
                 </div>
-
-
-
-            </div>
-
-
+            </section>
         </div>
 
 
@@ -73,10 +85,12 @@
 
 
 
-        <%- include("../partials/form-suscribe")  %>
 
 
-        <%- include("../partials/footer")  %>
+        <%- include("../partials/form-suscribe") %>
+
+
+        <%- include("../partials/footer") %>
 
 
     </main>

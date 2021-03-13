@@ -21,8 +21,11 @@
                     <div class="section-registerContainerEmail">
                         <label for="email" class="section-register__labelEmail">Nuevo Correo Electrónico<span
                                 class="section-register__spanLabelEmail">*</span></label>
-                        <input type="email" name="email" id="email" class="section-register__inputEmail" value="<%= users.email %>">
+                        <input type="email" name="email" id="email" class="section-register__inputEmail" value="<%= userLogueado.email %>">
                         <p class="errores"><%= typeof errors.email == "undefined" ? "" : errors.email.msg %></p>
+
+                        <span class="erroresFrontEmail"></span>
+
                     </div>
 
                     <div class="container-session">
@@ -36,8 +39,11 @@
                         <label for="password" class="section-registerLabelPassword">Contraseña<span
                                 class="section-register__spanLabelPassword">*</span></label>
                         <input type="password" name="password" id="password"
-                            class="section-register__inputPassword" value="<%= users.password %>">
+                            class="section-register__inputPassword" value="<%= userLogueado.password %>">
                         <p class="errores"><%= typeof errors.password == "undefined" ? "" : errors.password.msg %></p>
+                   
+                        <span class="erroresFrontPassword"></span>
+
                     </div>
 
 
@@ -63,6 +69,7 @@
     </main>
 
 
+    <script src = "/js/validatorUsuarioEdit.js" ></script>
 
 </body>
 

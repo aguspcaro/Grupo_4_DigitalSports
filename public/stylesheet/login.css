@@ -165,8 +165,9 @@ a {
     margin-top: 10px;
 }
 
-.error-input {
+.error-input, .errores-front-correo, .errores-front-password {
     color: red;
+    font-size: 14px;
 }
 
 /*breackpoints*/

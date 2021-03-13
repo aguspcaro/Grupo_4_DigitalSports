@@ -181,7 +181,9 @@ let productsControllers = {
   
       let busquedaMarca = db.Brands.findAll()
 
-      let busquedaDelProducto = db.Products.findByPk(req.params.id)
+      let busquedaDelProducto = db.Products.findByPk(req.params.id, {
+        include: [{association: 'sizes'}, {association: 'brands'}, {association: 'sports'}]
+      })
   
   
       Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca, busquedaDelProducto])

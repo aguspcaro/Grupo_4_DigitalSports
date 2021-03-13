@@ -27,7 +27,7 @@
                     
                     
                         <label class=" labelDescri" for="">Descripción del producto</label>
-                <textarea class="coments" style="resize: none;" name="coments" rows="10" value="<%=product.description%>" cols="40" ></textarea>
+                <textarea class="coments" style="resize: none;" name="coments" rows="10" value="<%=product.description%>" cols="40" ><%=product.description%></textarea>
                 <label class="fotoProducto">Subir fotos del producto</label>
                 <input required class="inputarchivo" ide="file-input" multiple="multiple" type="file" name="adjunto"
                     accept=".pdf,.jpg,.png">
@@ -41,6 +41,7 @@
                 <div>
                     <label for="">Deporte</label>
                     <select name="deporte">
+                        <option value="<%= product.sport_id%>"><%=product.sports.name%></option>
                         <% resultadoBusquedaDeporte.forEach(element => { %>
                             <option value="<%= element.id%>">
                                 <%= element.name  %>
@@ -51,6 +52,7 @@
                     <label for="">Marca</label>
 
                     <select name="marca">
+                        <option value="<%= product.brand_id%>"><%=product.brands.name%> </option>
                         <% resultadoBusquedaMarca.forEach(element => { %>
                             <option value="<%= element.id%>">
                                 <%= element.name  %>
@@ -65,6 +67,11 @@
 
                 <div>
                     <label for="">Talle</label>
+<<<<<<< HEAD
+=======
+                    <select name="talle">
+                        <option value="<%= product.size_id%>"><%= product.sizes.name%> </option>
+>>>>>>> 0a5571165dbc2f14cb1a33002925f8b13f62bcf6
                         <% resultadoBusquedaTalle.forEach(element => { %>
                             <option value="<%= element.id%>">
                                 <%= element.name  %>
@@ -101,7 +108,17 @@
 
                     <label class="labelPrecio" for="">Precio</label>
                     <input class="inputPrecio" value="<%=product.price%>"type="number" name="precio" >
+<<<<<<< HEAD
                     <span class="erroresPrecio"></span>
+=======
+                    <span class="errores">
+                        <% if (errors.precio) { %>
+                            <%= errors.precio.msg  %> 
+                        <% } %>
+                       </span>
+                        
+                 
+>>>>>>> 0a5571165dbc2f14cb1a33002925f8b13f62bcf6
                     <label class=" labelSku" for="">Categoría</label>
                     <select name="categoria">
                         <option value="<%=product.category%>"><%=product.category%></option>
@@ -118,10 +135,24 @@
                     <label class=" labelPromocional" for="">Precio Promocional</label>
 
                     <input class="inputPromocional" value="<%=product.promPrice%>" type="number" name="promocional" >
-                    <span class="erroresPromocional"></span>
-                        <label class="labelstock" for="">Stock</label>
+                
+                    <span class="errores">
+                        <% if (errors.promocional) { %>
+                            <%= errors.promocional.msg  %> 
+                        <% } %>
+                       </span>
+                        
+
+                    <label class="labelstock" for="">Stock</label>
 
                     <input class="inputstock" value="<%=product.stock%>"type="number" name="stock">
+
+                    <span class="errores">
+                        <% if (errors.stock) { %>
+                            <%= errors.stock.msg  %> 
+                        <% } %>
+                       </span>
+                        
                         
                     <label for="">Editar Producto</label>
                     <button >Editar</button>
@@ -142,7 +173,12 @@
         </main>
 
 
+<<<<<<< HEAD
         <script src="/js/validator.js"></script>
+=======
+   
+
+>>>>>>> 0a5571165dbc2f14cb1a33002925f8b13f62bcf6
 </body>
 
 </html>

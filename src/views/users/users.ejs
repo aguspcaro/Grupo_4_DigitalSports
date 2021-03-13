@@ -7,12 +7,8 @@
 <body>
     <main class="main">
 
-        <%- include("../partials/header")  %>
-        
-        <% if( typeof errors != "undefined") { %> <!-- SIRVE PARA QUE CUANDO CARGUEMOS EL REGISTER NO SE NOS INICIE CON LOS ERRORES-->
-     
-        <% } %>
-        
+        <%- include("../partials/header")  %>        
+            
         
         <section class="section-registerContainer">
 
@@ -20,30 +16,24 @@
                 
                 <h4 class="section-registerTitle">Bienvenido a tu perfil%></h4>
             </div>
+
             
             <div class="container-session">
 
-                <a href="/users/login/perfil/crearPerfil/<%= userLogueado.id %>" class="buttonSesionClosed">Crear Perfil</a>
+                <a href="/users/login/perfil/crearPerfil/<%= userLogueado.id %>" class="buttonSesionClosed">Editar Perfil</a>
 
-            </div>          
+            </div>         
+            
+          
+
 
             <div class="container-session">
 
                 <a  href="/users/login/perfil/editar/<%= userLogueado.id %>" class="buttonSesionEdit">Editar Usuario</a>
 
             </div>
-            
-            <% if(perfilLogueado != undefined) { %>
 
-            <div class="container-session">
-
-                <a  href="/users/login/perfil/editarPerfil/<%= userLogueado.id %>" class="buttonSesionEdit">Editar Perfil</a>
-
-            </div>
-            
-            <% } %>
-
-                <form action="/users/login/perfil/<%=userLogueado.id%>?_method=DELETE" class="section-form-register container-session  " method="POST">
+            <form action="/users/login/perfil/<%=userLogueado.id%>?_method=DELETE" class="section-form-register container-session  " method="POST">
     
                 <button type="submit" class="buttonSesionDelete">Eliminar</button>
 

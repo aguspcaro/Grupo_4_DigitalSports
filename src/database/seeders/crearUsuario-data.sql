@@ -1,1 +1,0 @@
-INSERT INTO `mydb`.`users` (`email`, `password`) VALUES ('mati@gmail.com', '12345678');

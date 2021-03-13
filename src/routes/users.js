@@ -15,7 +15,7 @@ const validationLogin = require('../middlewares/validationLoginMiddleware');
 const uploads = multer({ storage: storage });
 const userInSesion = require('../middlewares/userInSesionMiddleware');
 const userOfSesion = require('../middlewares/userOFSesionMiddleware');
-const validationEditMiddleware = require('../middlewares/validationEditMiddleware');
+const validationEdit = require('../middlewares/validationEditMiddleware');
 const cookiesRemember = require('../middlewares/rememberMiddleware');
 
 // VISTA DEL CENTRO DE COMANDOS DEL USUARIO
@@ -23,16 +23,12 @@ router.get('/login/perfil', userOfSesion, cookiesRemember, userInSesion, usersCo
 router.delete('/login/perfil/:id', usersControllers.delete);
 
 // VISTA DE LA EDICION DEL USUARIO
-router.get('/login/perfil/editar/:id', userOfSesion, cookiesRemember, userInSesion, usersControllers.mostrarUsuario);
-router.put('/login/perfil/editar/:id', uploads.any(), usersControllers.editUsuario);
+router.get('/login/perfil/editar/:id',usersControllers.mostrarUsuario);
+router.put('/login/perfil/editar/:id', uploads.any(), validationEdit, usersControllers.editUsuario);
 
-// VISTA DE LA EDICION DEL PERFIL
-router.get('/login/perfil/editarPerfil/:id', userOfSesion, cookiesRemember, userInSesion, validationEditMiddleware, usersControllers.mostrarEdicionPerfil);
-router.put('/login/perfil/editarPerfil/:id', uploads.any(), usersControllers.editPerfil);
-
-// VISTA DE LA CREACION DEL PERFIL
-router.get("/login/perfil/crearPerfil/:id", userOfSesion, cookiesRemember, userInSesion, usersControllers.mostrarPerfil);
-router.post("/login/perfil", uploads.any(), usersControllers.createPerfil);
+// VISTA DE LA CREACION DEL PERFIL y EDICIÓN
+router.get("/login/perfil/crearPerfil/:id", usersControllers.mostrarPerfil);
+router.post("/login/perfil/:id", uploads.any(), usersControllers.createPerfil);
 
 // VISTA DEL REGISTRO DE USUARIO
 router.get('/register', userInSesion, cookiesRemember, userInSesion, usersControllers.mostrarRegister);
