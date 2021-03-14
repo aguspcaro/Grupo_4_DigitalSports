@@ -67,11 +67,8 @@
 
                 <div>
                     <label for="">Talle</label>
-<<<<<<< HEAD
-=======
                     <select name="talle">
                         <option value="<%= product.size_id%>"><%= product.sizes.name%> </option>
->>>>>>> 0a5571165dbc2f14cb1a33002925f8b13f62bcf6
                         <% resultadoBusquedaTalle.forEach(element => { %>
                             <option value="<%= element.id%>">
                                 <%= element.name  %>
@@ -108,9 +105,6 @@
 
                     <label class="labelPrecio" for="">Precio</label>
                     <input class="inputPrecio" value="<%=product.price%>"type="number" name="precio" >
-<<<<<<< HEAD
-                    <span class="erroresPrecio"></span>
-=======
                     <span class="errores">
                         <% if (errors.precio) { %>
                             <%= errors.precio.msg  %> 
@@ -118,7 +112,6 @@
                        </span>
                         
                  
->>>>>>> 0a5571165dbc2f14cb1a33002925f8b13f62bcf6
                     <label class=" labelSku" for="">Categoría</label>
                     <select name="categoria">
                         <option value="<%=product.category%>"><%=product.category%></option>
@@ -173,12 +166,7 @@
         </main>
 
 
-<<<<<<< HEAD
         <script src="/js/validator.js"></script>
-=======
-   
-
->>>>>>> 0a5571165dbc2f14cb1a33002925f8b13f62bcf6
 </body>
 
 </html>
