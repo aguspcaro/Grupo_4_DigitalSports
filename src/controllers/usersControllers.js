@@ -169,7 +169,7 @@ let usersControllers = {
       db.User.create({
 
         email: req.body.email,
-        password: req.body.password // saque el encriptado por el momento. habria que ponerlo en login tambien.
+        password: bcrypt.hashSync(req.body.password, 12) // saque el encriptado por el momento. habria que ponerlo en login tambien.
 
       }).then(function(user){
 
@@ -231,16 +231,14 @@ let usersControllers = {
 
         where: {
 
-          email: req.body.emailLogin,
-
-          password: req.body.passwordLogin
+          email: req.body.emailLogin
 
         }
 
       }) 
         
       .then(function(user) {
-
+        
         users = { // esto nos sirve para devolverle a la vista el mail erroneo que ingreso
           email: req.body.emailLogin,
           password: req.body.passwordLogin
@@ -252,9 +250,14 @@ let usersControllers = {
 
         userLogueado.forEach(function(user){ usuario = user.dataValues}) // esto sirve para recorrer al usuario. Desde la bd viene adentro de muchos objetos. Hay un solo usuario, no muchos. 
 
-        if (usuario == undefined) { //si puso mal el mail o mal la contraseña. esto va a ser undefined, por ende salta el error.
+        let checkPassword = bcrypt.compareSync(req.body.passwordLogin, usuario.password)
+        console.log(usuario.password);
+        console.log(checkPassword);
+
+        if (usuario == undefined || checkPassword == false) { //si puso mal el mail o mal la contraseña. esto va a ser undefined, por ende salta el error.
 
           return res.render('users/login', { users ,errors: { msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.' }, userLogueado });
+
 
         } else { // si existe guardamelo en usuario. 
          
