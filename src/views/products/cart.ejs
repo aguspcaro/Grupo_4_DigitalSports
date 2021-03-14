@@ -18,15 +18,15 @@
             <section class="section">
                 <div class="container">
                     <div class="caja-titulo">
-                        <p class="productName">Botines Predator Adidas Sport</p>
+                        <p class="productName"><%= product.name%></p>
                     </div>
                     <div class="caja-datos">
                         <div class="caja-imagen">
-                            <img src="/images/products/predator.jpg" alt="">
+                            <img src="/images/products/<%=product.image%>" alt="">
                         </div>
                         <div class="caja-descripcion">
                             <div class="container-talle-edit">
-                                <span class="productTalle">Talle 45</span>
+                                <span class="productTalle"><%= product.sizes.name%></span>
                                 <a class="productEdit" href="#">Editar Producto</a>
                             </div>
                             <div class="containerTotal">
