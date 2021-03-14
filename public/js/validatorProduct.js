@@ -8,7 +8,15 @@ const publico = document.querySelector("[name = publico]")
 const envio = document.querySelector("[name = envio]")
 const categorias = document.querySelector("[name = categoria]")
 
-
+let classNombre = "",
+    classPrecio = "",
+    classPromocional = "",
+    classDeporte = "",
+    classTalle = "",
+    classMarca = "",
+    classPublico = "",
+    classEnvio = "",
+    classCategorias = ""
 
 nombre.addEventListener("blur", () => {
     if (nombre.value.length < 3) {
