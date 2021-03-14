@@ -23,6 +23,7 @@
                     <div class="caja-datos">
                         <div class="caja-imagen">
                             <img src="/images/products/<%=product.image%>" alt="">
+                            <span class="productPrecio">$<%=product.promPrice%></span>
                         </div>
                         <div class="caja-descripcion">
                             <div class="container-talle-edit">
@@ -47,8 +48,9 @@
                                 </div>
 
                                 <div class="total">
+                                  
                                     <span class="spanTituloTotal" for="">Total</span>
-                                    <span class="spanTotal" for="">$9.799</span>
+                                    <span class="spanTotal" for="">$</span>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +98,7 @@
     </main>
 
     
-
+    <script src="/js/cartCalcularSuma.js"></script>
 </body>
 
 </html>
