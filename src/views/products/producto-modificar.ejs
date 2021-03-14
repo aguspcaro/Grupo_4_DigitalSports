@@ -105,6 +105,7 @@
 
                     <label class="labelPrecio" for="">Precio</label>
                     <input class="inputPrecio" value="<%=product.price%>"type="number" name="precio" >
+                    <span class="erroresPrecio"></span>
                     <span class="errores">
                         <% if (errors.precio) { %>
                             <%= errors.precio.msg  %> 
@@ -128,7 +129,7 @@
                     <label class=" labelPromocional" for="">Precio Promocional</label>
 
                     <input class="inputPromocional" value="<%=product.promPrice%>" type="number" name="promocional" >
-                
+                    <span class="erroresPromocional"></span>
                     <span class="errores">
                         <% if (errors.promocional) { %>
                             <%= errors.promocional.msg  %> 
