@@ -282,15 +282,18 @@ db.Products.findByPk(req.params.id, {
   
       let busquedaMarca = db.Brands.findAll()
 
-      let busquedaDelProducto = db.Products.findByPk(req.params.id)
+      let busquedaDelProducto = db.Products.findByPk(req.params.id, 
+        {
+          include: [{association:'sports'}, {association:'sizes'}, {association:'brands'}]
+        }
+       )
   
       
       let body = req.body
     
       Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca, busquedaDelProducto])
       .then(function([resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca, product]) {
-        console.log(product)
-        res.render('products/producto-modificar', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, product, errors:errors.mapped(), body});
+        res.render('products/producto-modificar', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca, product, errors:errors.mapped(), body});
       })
       .catch(function(err) {
         console.log(err)

@@ -169,15 +169,19 @@
                             <%= errors.promocional.msg  %> 
                         <% } %>
                        </span>
+                    
 
                     <label class=" labelstock" for="">Stock</label>
 
                     <input class="inputstock" type="number" name="stock"   value="<%= body.stock %>">
-                      <span class="errores">
+                    <span class="erroresStock"></span>
+                    <span class="errores">
                         <% if (errors.stock) { %>
                             <%= errors.stock.msg  %> 
                         <% } %>
                        </span>
+                        
+                    
                         
                     <label for="">Agregar Producto</label>
                     <button >Agregar</button>

@@ -180,6 +180,13 @@ text-align: center;
 
 }    
 
+.erroresStock{
+
+    color: red;
+    font-size: 12px;
+
+}   
+
 @media (min-width: 1024px) {
 
 .containerAdd, .containerDetalle{

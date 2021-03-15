@@ -80,7 +80,7 @@
                     <span class="erroresTalle"></span>
 
 
-                    <label for="">Publico</label>
+                    <label for="">Público</label>
 
                     <select name="publico">
                         <option value="<%=product.public%>"><%=product.public%></option>
@@ -122,6 +122,11 @@
                         <option value="lanzamientos">Lanzamientos</option>
                     </select>
                     <span class="erroresCategoria"></span>
+                    <span class="errores">
+                        <% if (errors.categoria) { %>
+                            <%= errors.categoria.msg  %> 
+                        <% } %>
+                       </span>
                 </div>
 
 
@@ -131,22 +136,21 @@
                     <input class="inputPromocional" value="<%=product.promPrice%>" type="number" name="promocional" >
                     <span class="erroresPromocional"></span>
                     <span class="errores">
-                        <% if (errors.promocional) { %>
+                    <% if (errors.promocional) { %>
                             <%= errors.promocional.msg  %> 
                         <% } %>
                        </span>
-                        
+
 
                     <label class="labelstock" for="">Stock</label>
 
                     <input class="inputstock" value="<%=product.stock%>"type="number" name="stock">
-
+                    <span class="erroresCategoria"></span>
                     <span class="errores">
                         <% if (errors.stock) { %>
                             <%= errors.stock.msg  %> 
                         <% } %>
                        </span>
-                        
                         
                     <label for="">Editar Producto</label>
                     <button >Editar</button>
