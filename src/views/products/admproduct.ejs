@@ -18,6 +18,7 @@
 
                 <label class="labelName" for="">Nombre del producto</label>
                 <input class="inputName" type="text" name="name" value="<%= body.name %>">
+                <span class="erroresName"></span>
                 <span class="errores">
                     <% if (errors.name) { %>
                         <%= errors.name.msg  %> 
@@ -52,6 +53,7 @@
                         </option>
                         <% }) %>
                     </select>
+                    <span class ="erroresDeporte"></span>
                     <span class="errores">
                         <% if (errors.deporte) { %>
                             <%= errors.deporte.msg  %> 
@@ -68,6 +70,7 @@
                         </option>
                         <% }) %>
                     </select>
+                    <span class="erroresMarca"></span>
                     <span class="errores">
                         <% if (errors.marca) { %>
                             <%= errors.marca.msg  %> 
@@ -87,6 +90,7 @@
                         </option>
                         <% }) %>
                     </select>
+                    <span class ="erroresTalle"></span>
                     <span class="errores">
                         <% if (errors.talle) { %>
                             <%= errors.talle.msg  %> 
@@ -95,7 +99,7 @@
 
 
 
-                    <label for="">Publico</label>
+                    <label for="">Público</label>
 
                     <select name="publico">
                         <option value="<%= body.publico %>"><%= body.publico %></option>
@@ -103,6 +107,7 @@
                         <option value="hombres">hombres</option>
                         <option value="niños">niños</option>
                     </select>
+                    <span class="erroresPublico"></span>
                     <span class="errores">
                         <% if (errors.publico) { %>
                             <%= errors.publico.msg  %> 
@@ -120,6 +125,7 @@
                         <option value="correo">Correo</option>
 
                     </select>
+                    <span class="erroresEnvio"></span>
                     <span class="errores">
                         <% if (errors.envio) { %>
                             <%= errors.envio.msg  %> 
@@ -128,6 +134,7 @@
 
                     <label class="labelPrecio" for="">Precio</label>
                     <input class="inputPrecio" type="number" name="precio"  value="<%= body.precio %>">
+                    <span class="erroresPrecio"></span>
                     <span class="errores">
                         <% if (errors.precio) { %>
                             <%= errors.precio.msg  %> 
@@ -142,6 +149,7 @@
                         <option value="destacados">Destacados</option>
                         <option value="lanzamientos">Lanzamientos</option>
                     </select>
+                    <span class="erroresCategorias"></span>
                     <span class="errores">
                         <% if (errors.categoria) { %>
                             <%= errors.categoria.msg  %> 
@@ -155,6 +163,7 @@
                     <label class=" labelPromocional" for="">Precio Promocional</label>
 
                     <input class="inputPromocional" type="number" name="promocional"  value="<%= body.promocional%>">
+                    <span class="erroresPromocional"></span>
                     <span class="errores">
                         <% if (errors.promocional) { %>
                             <%= errors.promocional.msg  %> 
@@ -189,7 +198,7 @@
         </main>
 
 
-
+        <script src="/js/validatorProduct.js"></script>
     </body>
 
     </html>

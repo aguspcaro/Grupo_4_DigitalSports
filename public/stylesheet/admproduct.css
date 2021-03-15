@@ -126,6 +126,59 @@ padding:4px;
 text-align: center;
 }
 
+.erroresName{
+
+    color: red;
+    font-size: 12px;
+}
+
+.erroresPrecio{
+
+    color: red;
+    font-size: 12px;
+}
+
+.erroresPromocional{
+
+    color: red;
+    font-size: 12px;
+}
+
+.erroresDeporte{
+
+    color: red;
+    font-size: 12px;
+}
+
+.erroresTalle{
+
+    color: red;
+    font-size: 12px;
+    }
+.erroresMarca{
+
+    color: red;
+    font-size: 12px;
+
+}    
+.erroresPublico{
+
+    color: red;
+    font-size: 12px;
+
+}    
+.erroresEnvio{
+
+    color: red;
+    font-size: 12px;
+
+}    
+.erroresCategorias{
+
+    color: red;
+    font-size: 12px;
+
+}    
 
 @media (min-width: 1024px) {
 

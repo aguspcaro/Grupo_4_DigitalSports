@@ -26,9 +26,24 @@ let productsControllers = {
 
       userLogueado = req.session.user;
 
-      res.render('products/cart', {userLogueado});
+// 
+db.Products.findByPk(req.params.id, {
 
-    }
+  include : ['sizes', 'brands', 'sports']
+
+})
+
+.then(function(product){
+  
+  return res.render('products/cart', { product:product, userLogueado });
+  
+
+})}
+//
+
+      
+
+    
     else {
 
       userLogueado = {}

@@ -18,21 +18,22 @@
             <section class="section">
                 <div class="container">
                     <div class="caja-titulo">
-                        <p class="productName">Botines Predator Adidas Sport</p>
+                        <p class="productName"><%= product.name%></p>
                     </div>
                     <div class="caja-datos">
                         <div class="caja-imagen">
-                            <img src="/images/products/predator.jpg" alt="">
+                            <img src="/images/products/<%=product.image%>" alt="">
+                            <span class="productPrecio">$<%=product.promPrice%></span>
                         </div>
                         <div class="caja-descripcion">
                             <div class="container-talle-edit">
-                                <span class="productTalle">Talle 45</span>
+                                <span class="productTalle"><%= product.sizes.name%></span>
                                 <a class="productEdit" href="#">Editar Producto</a>
                             </div>
                             <div class="containerTotal">
                                 <div class="input">
                                     <label for="">Cantidad</label>
-                                    <select name="" id="">
+                                    <select name="cantidad" id="">
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                         <option value="3">3</option>
@@ -47,8 +48,9 @@
                                 </div>
 
                                 <div class="total">
+                                  
                                     <span class="spanTituloTotal" for="">Total</span>
-                                    <span class="spanTotal" for="">$9.799</span>
+                                    <span class="spanTotal" for="">$</span>
                                 </div>
                             </div>
                         </div>
@@ -95,8 +97,8 @@
 
     </main>
 
-
-
+    
+    <script src="/js/cartCalcularSuma.js"></script>
 </body>
 
 </html>

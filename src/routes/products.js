@@ -36,7 +36,7 @@ let validator = [
 router.get('/', userOfSesion,productsControllers.root);
 
 // VISTA DEL CARRITO DE COMPRA
-router.get('/cart', userOfSesion,productsControllers.cart);
+router.get('/cart/:id', userOfSesion,productsControllers.cart);
 
 // DEL DETALLE DEL PRODUCTO
 router.get('/detail/:id', productsControllers.detail);
