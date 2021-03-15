@@ -23,11 +23,10 @@
                     <div class="caja-datos">
                         <div class="caja-imagen">
                             <img src="/images/products/<%=product.image%>" alt="">
-                            <span class="productPrecio">$<%=product.promPrice%></span>
                         </div>
                         <div class="caja-descripcion">
                             <div class="container-talle-edit">
-                                <span class="productTalle"><%= product.sizes.name%></span>
+                                <span class="productTalle">Talle <%= product.sizes.name%></span>
                                 <a class="productEdit" href="#">Editar Producto</a>
                             </div>
                             <div class="containerTotal">
@@ -50,7 +49,7 @@
                                 <div class="total">
                                   
                                     <span class="spanTituloTotal" for="">Total</span>
-                                    <span class="spanTotal" for="">$</span>
+                                    <span class="spanTotal" for="">$<%=product.promPrice%></span>
                                 </div>
                             </div>
                         </div>
