@@ -188,6 +188,13 @@ let productsControllers = {
   
       Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca, busquedaDelProducto])
       .then(function([resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca, product]) {
+
+    /*     let imagen;
+
+        if (product.image != "") {
+          imagen = product.image
+        }
+ */
         res.render('products/producto-modificar', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, product, errors:{}, body:{}});
       })
       .catch(function(err) {
@@ -221,6 +228,7 @@ let productsControllers = {
   edit: function (req, res) {
 
     let errors = validationResult(req)
+    
 
     //si no hay errores
     if(errors.isEmpty()) {
