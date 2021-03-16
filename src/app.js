@@ -28,10 +28,11 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
-app.use(rememberMiddleware);
+/* app.use(rememberMiddleware); */
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
+
 
 
 // catch 404 and forward to error handler

@@ -33,18 +33,18 @@ let validator = [
 
 
 // VISTA DE LOS PRODUCTOS
-router.get('/', userOfSesion,productsControllers.root);
+router.get('/admin',productsControllers.root);
 
 // VISTA DEL CARRITO DE COMPRA
-router.get('/cart/:id', userOfSesion,productsControllers.cart);
+router.get('/cart/:id', userOfSesion ,productsControllers.cart);
 
 // DEL DETALLE DEL PRODUCTO
 router.get('/detail/:id', productsControllers.detail);
 
 // PRODUCTOS Y SUS HERRAMIENTAS (EDITAR, ELIMINAR, CREAR)
-router.get('/create', userOfSesion, productsControllers.adm);
+router.get('/create', productsControllers.create);
 router.post('/create', uploads.any(), validator, productsControllers.createproduct);
-router.get('/vista/:id', userOfSesion, productsControllers.modificar);
+router.get('/vista/:id' , productsControllers.modificar);
 router.put('/:id', uploads.any(), validator, productsControllers.edit);
 router.delete('/delete/:id', productsControllers.delete);
 

@@ -19,7 +19,7 @@ const validationEdit = require('../middlewares/validationEditMiddleware');
 const cookiesRemember = require('../middlewares/rememberMiddleware');
 
 // VISTA DEL CENTRO DE COMANDOS DEL USUARIO
-router.get('/login/perfil', userOfSesion, cookiesRemember, userInSesion, usersControllers.root);
+router.get('/login/perfil' , userOfSesion, cookiesRemember, userInSesion , usersControllers.root);
 router.delete('/login/perfil/:id', usersControllers.delete);
 
 // VISTA DE LA EDICION DEL USUARIO
@@ -31,15 +31,13 @@ router.get("/login/perfil/crearPerfil/:id", usersControllers.mostrarPerfil);
 router.post("/login/perfil/:id", uploads.any(), usersControllers.createPerfil);
 
 // VISTA DEL REGISTRO DE USUARIO
-router.get('/register', userInSesion, cookiesRemember, userInSesion, usersControllers.mostrarRegister);
-router.post('/register', uploads.any(), validationRegisterMiddleware, usersControllers.createRegister);
+router.get('/register',  userInSesion, cookiesRemember, userInSesion,  usersControllers.mostrarRegister);
+router.post('/register', uploads.any(), validationRegisterMiddleware , usersControllers.createRegister);
 
 // VISTA DEL LOGIN
-router.get('/login', cookiesRemember, userInSesion, usersControllers.login);
-router.post('/login', validationLogin, usersControllers.checkLogin);
+router.get('/login' , cookiesRemember, userInSesion , usersControllers.login);
+router.post('/login' , validationLogin , usersControllers.checkLogin);
 
- //VISTA DEL USUARIO LOGUEADO
-router.get('/login/check', usersControllers.check);
 router.get('/login/closed', usersControllers.closed);
 
 // DATOS QUE VIENEN POR EL FORM DE SUSCRIBIRSE

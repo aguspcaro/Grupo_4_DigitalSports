@@ -16,6 +16,7 @@ let usersControllers = {
     if (req.session != undefined) {
 
       userLogueado = req.session.user;
+      
 
       return res.render('users/users', {userLogueado, perfilLogueado});  
       
@@ -238,7 +239,7 @@ let usersControllers = {
       }) 
         
       .then(function(user) {
-        
+       
         users = { // esto nos sirve para devolverle a la vista el mail erroneo que ingreso
           email: req.body.emailLogin,
           password: req.body.passwordLogin
@@ -261,15 +262,9 @@ let usersControllers = {
 
         } else { // si existe guardamelo en usuario. 
          
-          if (req.session != undefined) { 
-            
-            req.session.user = usuario;
+          
+          req.session.user = usuario;
 
-          } else {
-
-            req.session.user = {};
-
-          }
 
           if (req.body.recordame != undefined) {
 
@@ -282,13 +277,13 @@ let usersControllers = {
 
       })
        
-      .catch(function(errno) {
+      .catch(function(error) {
 
-        res.send(errno)
+        console.log(error)
 
       });
       
-    } else { // si existen errores en el middleware de la ruta, van a saltar estos errores.
+    } else { // si existen errores 
 
       userLogueado = {}
 
@@ -303,19 +298,7 @@ let usersControllers = {
 
   },
 
-  check: function (req, res, next) {
-    
-    if (req.session.user == undefined) {
-
-      return res.send('no hay ningun usuario logueado');
-
-    } else {
-
-      return res.redirect('/');
-
-    }
-
-  },
+  
 
   // FORMULARIO DE SUSCRIPCION
 

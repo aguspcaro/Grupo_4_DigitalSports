@@ -12,7 +12,7 @@ let productsControllers = {
 
   .then(function(products){
 
-    return res.render('products/products', { products:products, userLogueado });
+    return res.render('products/products', { products:products});
   
   })
     
@@ -89,7 +89,7 @@ db.Products.findByPk(req.params.id, {
     
   },
 
-  adm: function (req, res, next) {
+  create: function (req, res, next) {
 
 
     //busqueda para llevar luego a la vista 
@@ -103,7 +103,7 @@ db.Products.findByPk(req.params.id, {
 
     Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca])
     .then(function([resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca]) {
-      res.render('products/admproduct', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, errors:{}, body: {}});
+      res.render('products/create', { resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, errors:{}, body: {}});
     })
     .catch(function(err) {
       console.log(err)
@@ -153,7 +153,7 @@ db.Products.findByPk(req.params.id, {
         
       }).then(data=> {
         
-        res.redirect("/")
+        res.redirect("/products/admin")
   
       }).catch(error=>console.log(error));
     }
@@ -176,7 +176,7 @@ db.Products.findByPk(req.params.id, {
 
     Promise.all([busquedaDeporte, busquedaTalle, busquedaMarca])
     .then(function([resultadoBusquedaDeporte, resultadoBusquedaTalle, resultadoBusquedaMarca]) {
-      res.render('products/admproduct', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, errors:error.mapped(), body});
+      res.render('products/create', {/* userLogueado, */ resultadoBusquedaDeporte, resultadoBusquedaMarca,resultadoBusquedaTalle, errors:error.mapped(), body});
     })
     .catch(function(err) {
       console.log(err)
@@ -268,7 +268,7 @@ db.Products.findByPk(req.params.id, {
   
         }
       }) 
-      .then(data=>res.redirect("/"))
+      .then(data=>res.redirect("/products/admin"))
 
       .catch(error=>console.log(error))
     }
@@ -313,7 +313,7 @@ db.Products.findByPk(req.params.id, {
       }
       
     })
-    .then(data=>res.redirect("/"))
+    .then(data=>res.redirect("/products/admin"))
 
     .catch(error=>console.log(error))
 

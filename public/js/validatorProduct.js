@@ -34,7 +34,7 @@ nombre.addEventListener("blur", () => {
 precio.addEventListener("blur", () => {
     if (precio.value < 0 || precio.value =="") {
         classPrecio = document.querySelector("span.erroresPrecio")
-        classPrecio.innerHTML = "El precio no puede estar vacío y debe ser positivo."
+        classPrecio.innerHTML = "El precio debe ser positivo."
     } else {
         classPrecio.innerHTML = "";
 
@@ -44,7 +44,7 @@ precio.addEventListener("blur", () => {
 
 
 promPrecio.addEventListener("blur", () => {
-    if (promPrecio.value < 0 || stock.value == "") {
+    if (promPrecio.value < 0 || promPrecio.value == "") {
         classPromocional = document.querySelector("span.erroresPromocional")
         classPromocional.innerHTML = "El precio debe ser positivo."
     } else {

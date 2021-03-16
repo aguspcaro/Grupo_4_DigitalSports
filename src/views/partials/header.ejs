@@ -13,22 +13,10 @@
         
         <div class="main-navContainerIcons">
           
-            <% if (userLogueado != undefined) { %>
-            <a href="/products/create"><i class="fas fa-folder-plus main-navIcons__add"></i></a>
-            <% } %>
 
-            <% if (userLogueado != undefined) { %>
-                <a href="/users/login/perfil"><i class="fas fa-user-check check"></i></a>
-            <% } %>
-            
-            <% if (userLogueado != undefined) { %>
-
-            <a href="/products/cart"><i class="fas fa-shopping-cart main-navIcons__cart"></i></a>
-            <% } %>
-
-            <% if (userLogueado == undefined) { %>
+         
                 <a href="/users/login"><i class="fas fa-user main-navIcons__user enter"></i></a>
-            <% } %>
+        
             
           
        
@@ -44,7 +32,6 @@
 
   
     <div class="main-navContainerListNavegation">
-        <a href="/products" class="main-navListNavegation__products">Productos</a>
         <a href="/mujer" class="main-navListNavegation__woman">Mujer</a>
         <a href="/hombre" class="main-navListNavegation__man">Hombre</a>
         <a href="/chicos" class="main-navListNavegation__childs">Niños</a>
