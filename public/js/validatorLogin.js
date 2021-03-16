@@ -11,8 +11,6 @@ inputEmail.addEventListener('blur', function() {
     } else {
         document.querySelector('.errores-front-correo').innerHTML = "El campo debe ser un email." 
     }
-
-
 })
 
 
