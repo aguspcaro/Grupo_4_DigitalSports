@@ -35,7 +35,7 @@ router.get('/register',  userInSesion, cookiesRemember, userInSesion,  usersCont
 router.post('/register', uploads.any(), validationRegisterMiddleware , usersControllers.createRegister);
 
 // VISTA DEL LOGIN
-router.get('/login' , cookiesRemember, userInSesion , usersControllers.login);
+router.get('/login' , cookiesRemember, userInSesion, usersControllers.login);
 router.post('/login' , validationLogin , usersControllers.checkLogin);
 
 router.get('/login/closed', usersControllers.closed);

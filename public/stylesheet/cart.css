@@ -102,6 +102,9 @@ select {
     outline: none;
 }
 
+.productPrecio {
+    display: none;
+}
 
 
 

@@ -12,7 +12,6 @@ cantidad.addEventListener("click", () => {
 
         
         let total = cantidad.value * precioNumerico
-        console.log(total)
         let classTotal = document.querySelector(".spanTotal")
         classTotal.innerHTML = "$"+  total
    
