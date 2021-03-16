@@ -64,3 +64,8 @@ Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodc
 | Tablero de Trabajo | Link |
 | ------------------ | ---- |
 | *Trello* | [Digital Sports](https://trello.com/b/ltePxjNR/tareas) |
+
+
+| ADMIN | PARA PROBAR EL CRUD, ENTRAR AL ADMIN POR ESTA URL+ |
+| ------------------ | ---- |
+| [Digital Sports](http://localhost:3000/products/admin) |
