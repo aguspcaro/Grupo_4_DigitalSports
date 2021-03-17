@@ -2,9 +2,9 @@
 # *Digital Sports*  
 ---
 
-| ADMIN | PARA PROBAR EL CRUD, ENTRAR AL ADMIN POR ESTA URL |
+| AMBIENTE | PARA PROBAR EL CRUD, ENTRAR AL ADMIN POR ESTA URL |
 | ------------------ | ---- |
-| [Digital Sports](http://localhost:3000/products/admin) |
+| *ADMIN* | [ADMIN](http://localhost:3000/products/admin) |
 
 
 ### Temática del sitio
