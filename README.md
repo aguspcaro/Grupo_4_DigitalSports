@@ -1,6 +1,12 @@
 ---
 # *Digital Sports*  
 ---
+
+| AMBIENTE | PARA PROBAR EL CRUD, ENTRAR AL ADMIN POR ESTA URL |
+| ------------------ | ---- |
+| *ADMIN* | [ADMIN](http://localhost:3000/products/admin) |
+
+
 ### Temática del sitio
 
   - Servicio de venta online de indumentaria y productos deportivos para:
@@ -64,3 +70,5 @@ Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodc
 | Tablero de Trabajo | Link |
 | ------------------ | ---- |
 | *Trello* | [Digital Sports](https://trello.com/b/ltePxjNR/tareas) |
+
+
