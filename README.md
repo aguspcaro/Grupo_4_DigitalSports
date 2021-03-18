@@ -2,12 +2,16 @@
 # *Digital Sports*  
 ---
 
+<<<<<<< HEAD
 
 
 
 | ADMIN | PARA PROBAR EL CRUD, ENTRAR AL ADMIN POR ESTA URL |
+=======
+| AMBIENTE | PARA PROBAR EL CRUD, ENTRAR AL ADMIN POR ESTA URL |
+>>>>>>> bb70add4317493553a868788cf1df95abb188fea
 | ------------------ | ---- |
-| [Digital Sports](http://localhost:3000/products/admin) |
+| *ADMIN* | [ADMIN](http://localhost:3000/products/admin) |
 
 
 

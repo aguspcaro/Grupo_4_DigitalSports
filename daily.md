@@ -115,3 +115,23 @@
 *Agustín*
 - En proceso: Modificacion del session y adaptacion de la base de datos para user.
 - Problemas: Millones de errores con sequelize y con las rutas.
+
+---
+
+#### Reunión 12/03/2021
+
+*Alejandro*
+- En proceso: Revisar el session.
+- Problemas: No me funcionan las validaciones del edit en front.
+
+*David*
+- En proceso: Validando las vistas de create.
+- Problemas: Me chocan todas las validaciones.
+
+*Jorge*
+- En proceso: Mejorando las vistas.
+- Problemas: No me funciona flex-box.
+
+*Agustín*
+- En proceso: Revisando cookies.
+- Problemas: Moviendo database a la carpeta src.

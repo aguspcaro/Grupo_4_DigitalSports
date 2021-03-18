@@ -166,3 +166,31 @@
 **Stop Doing:** En este punto exponemos aquellas practicas que a pesar de ser [Less of] podemos eliminarlas.
 
 - No hubo en esta ocasion.
+
+
+---
+
+
+### Sprint-7
+
+**Start Doing:** Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
+
+- Hacer automatizaciones de nuestras cosas.
+- Mejorar las vistas.
+
+**More of:** Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero).Es decir que los [Start Doing] se convertirán en [More of]. 
+
+- Ayudarnos aun mas entre nosotros. Se sienten las ganas de ayudar a nuestro compañero de trabajo.
+
+**Keep Doing:** Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
+
+- Seguir diviendo el trabajo como venimos haciendo.
+- Explicandonos temas que no entendimos en clase.
+
+**Less of:** En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. 
+
+- Pelearnos entre nosotros.
+
+**Stop Doing:** En este punto exponemos aquellas practicas que a pesar de ser [Less of] podemos eliminarlas.
+
+- No dividirnos el trabajo.
