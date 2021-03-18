@@ -251,11 +251,15 @@ let usersControllers = {
 
         userLogueado.forEach(function(user){ usuario = user.dataValues}) // esto sirve para recorrer al usuario. Desde la bd viene adentro de muchos objetos. Hay un solo usuario, no muchos. 
 
-        let checkPassword = bcrypt.compareSync(req.body.passwordLogin, usuario.password)
-        console.log(usuario.password);
-        console.log(checkPassword);
+        let checkPassword;
 
-        if (usuario == undefined || checkPassword == false) { //si puso mal el mail o mal la contraseña. esto va a ser undefined, por ende salta el error.
+        if(usuario != undefined){
+
+          checkPassword = bcrypt.compareSync(req.body.passwordLogin, usuario.password)
+
+        }
+
+        if (usuario == undefined || checkPassword == false ) { //si puso mal el mail o mal la contraseña. esto va a ser undefined, por ende salta el error.
 
           return res.render('users/login', { users ,errors: { msg: 'Los datos son incorrectos. Verificalos y volvé a intentarlo.' }, userLogueado });
 
