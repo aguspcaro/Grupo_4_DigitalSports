@@ -6,10 +6,6 @@
 | ------------------ | ---- |
 | *ADMIN* | [ADMIN](http://localhost:3000/products/admin) |
 
-
-
-
-
 ### Temática del sitio
 
   - Servicio de venta online de indumentaria y productos deportivos para:
