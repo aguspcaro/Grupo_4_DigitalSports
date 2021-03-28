@@ -6,90 +6,84 @@
     <main class="main">
         <%- include("../partials/header")  %>
         
-            <section class="container-section-producto">
+           <div class="container">
+                <section class="container-section-producto">
 
-
-                <div class="container-img">
-                    <img class="article-imagen-left" src="/images/products/<%=product.image%>">
-                </div>
-
-                <div class="container-detalle">
-
-                    <div class="container-detalle-titulo">
-                        <div class="container-texto-nombre">
-                            <h3><%= product.name %></h3>
-                        </div>
-                        <div class="container-texto-precio">
-                            <h2><strong>$<%= product.promPrice %></strong></h2>
-                        </div>
-                        <span></span>
+                   
+                    <div class="container-img">
+                        <img class="article-imagen-left" src="/images/products/<%=product.image%>">
                     </div>
-
-                    <div class="container-detalle-caracteristicas">
-
-
-                        <div>
-                            <p><label>Talle</label></p>
+    
+                    <div class="container-datos">
+                        <div class="container-detalle">
+    
+                            <div class="container-detalle-titulo">
+                                <div class="container-texto-nombre">
+                                    <h3><%= product.name %></h3>
+                                </div>
+                                <div class="container-texto-precio">
+                                    <h2><strong>$<%= product.promPrice %></strong></h2>
+                                </div>
+                                <span></span>
+                            </div>
                         </div>
-                        
-                        <div class="container-detalle-talles-numero">
+        
+                        <div class="container-detalle-caracteristicas">
+        
+        
+                            <div class="container-detalle-talles-numero">
+                                <p>Talle</p>
+                                <span><%= product.sizes.name%></span>
+                            </div>
                             
-                            <label ><%= product.sizes.name%></label>
-                        
-                        </div>
-
-
-                        <div>
-                            <p><label>Marca</label></p>
-                        </div>
-                        
-                        <div class="container-detalle-talles-numero">
-                            
-                            <label ><%= product.brands.name%></label>
-                        
-                        </div>
-
-
-                        <div>
-                            <p><label>Unidades</label></p>
-                        </div>
-                        
-                        <div class="container-detalle-talles-numero">
-                            
-                            <label ><%= product.stock%></label>
-                        
-                        </div>
-
-
-                        
-                        <div>
-                            <p><label>Deporte</label></p>
-                        </div>
-                        
-                        <div class="container-detalle-talles-numero">
-                            
-                            <label ><%= product.sports.name%></label>
-                        
-                        </div>
-
-                     
-                        
-                    </div>
-                </div>
-
-            </section>
-
-            <div class="container-detalle-comprar">
-                <div class="section-loginButtonEnterOk">
-
-                    <a class="carrito "href="/products/cart/<%= product.id%>"><i class="fas fa-shopping-cart carrito"></i></a>
-
-                </div>
-
+                    
             
-                
-            </div>
+                            <div class="container-detalle-talles-numero"> 
+                                <p>Marca</p>
+                                <span><%= product.brands.name%></span>
+                            </div>
+                            
+                        
+            
+            
+                            <div class="container-detalle-talles-numero">
+                                <p>Unidades</p>
+                                <span ><%= product.stock%></span>
+                            </div>
+                            
+                        
+                            
+            
+            
+                            
+                            <div class="container-detalle-talles-numero">
+                                <p>Deporte</p>   
+                                <span ><%= product.sports.name%></span>
+                            </div>
 
+                            <div class="container-detalle-comprar">
+                                <div class="section-loginButtonEnterOk">
+                
+                                    <a class="carrito "href="/products/cart/<%= product.id%>">Agregar al carrito</a>
+                
+                                </div>
+                
+                            
+                                
+                            </div>
+            
+                            
+                        </div>
+        
+        
+                    </section>
+
+                   
+        
+                </div>
+ 
+
+        
             <div class="container-descripcion">
                 <hr>
                 <h3>Descripción</h3>
@@ -97,11 +91,12 @@
                 <p><%= product.description%></p>
                 <hr>
             </div>
-   
+        
         <%- include("../partials/form-suscribe")  %>
 
 
         <%- include("../partials/footer")  %>
     </main>
+    
 </body>
 </html>
