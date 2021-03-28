@@ -246,6 +246,19 @@ h3 {
      .section-loginButtonEnterOk {
         width: 100%;   
     }
+
+    .container-general-descripcion {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .container-descripcion {
+        width: 80%;
+    }
+
+    
      
 }
 
@@ -255,16 +268,27 @@ h3 {
 @media (min-width: 1800px) {
 
     .container-section-producto{
-        width: 80%;
+        width: 75%;
         align-items: center;
-        justify-content: center;
+        justify-content: space-between;
      }
 
      .container-img {
         width: 38%;
     }
 
-    
+
+    .container-general-descripcion {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .container-descripcion {
+        width: 75%;
+    }
+
 
  
 }
