@@ -8,6 +8,11 @@ img {
     width: 100%;
 }
 
+h3 {
+    margin: 0px;
+}
+
+
 /* Container Padre */
 
 .container-section-producto{
@@ -43,8 +48,9 @@ img {
 
 .container-texto-nombre h3 {
     margin-top: 0px;
-    font-weight: 700;
+    font-size: 20px;
     width: 100%;
+    font-weight: 400;
 }
 
 
@@ -52,6 +58,7 @@ img {
 
 .container-texto-precio {
     width: 100%;
+    font-weight: 600;
 }
 
 .container-texto-precio h2 {
@@ -188,13 +195,14 @@ img {
         font-size: 16px;
         width: 100%;
         margin-top: 20px;
-        align-items: center;
+        align-items: stretch;
+        justify-content: space-between;
     }
 
 
     .container-img {
         width: 48%;
-        border: solid 1px rgb(202, 202, 202);
+        border: solid 1px rgb(209, 209, 209);
     }
 
     .container-datos {
@@ -220,7 +228,8 @@ img {
 
     .container-section-producto{
         width: 100%;
-
+        align-items: center;
+        justify-content: space-between;
      }
 
 }
@@ -231,6 +240,7 @@ img {
 
     .container-section-producto{
         width: 80%;
+        align-items: center;
      }
 
      .section-loginButtonEnterOk {
@@ -245,8 +255,16 @@ img {
 @media (min-width: 1800px) {
 
     .container-section-producto{
-        width: 70%;
- 
+        width: 80%;
+        align-items: center;
+        justify-content: center;
      }
+
+     .container-img {
+        width: 38%;
+    }
+
+    
+
  
 }
