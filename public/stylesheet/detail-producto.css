@@ -270,11 +270,13 @@ h3 {
     .container-section-producto{
         width: 75%;
         align-items: center;
-        justify-content: space-between;
+        justify-content: center;
+        border: solid 1px rgb(209, 209, 209);
      }
 
      .container-img {
         width: 38%;
+        border: none;
     }
 
 
