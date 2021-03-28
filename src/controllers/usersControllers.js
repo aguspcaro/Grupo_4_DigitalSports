@@ -308,7 +308,7 @@ let usersControllers = {
 
   suscribe: function (req, res, next) {
 
-    res.render('thankYou');
+    console.log(req.body.mailSuscribe)
 
   },
 
