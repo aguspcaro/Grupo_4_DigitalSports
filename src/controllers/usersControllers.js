@@ -304,13 +304,7 @@ let usersControllers = {
 
   
 
-  // FORMULARIO DE SUSCRIPCION
-
-  suscribe: function (req, res, next) {
-
-    console.log(req.body.mailSuscribe)
-
-  },
+  
 
   // CERRAR SESION
 

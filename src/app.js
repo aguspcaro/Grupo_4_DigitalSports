@@ -7,6 +7,7 @@ const methodOverride = require("method-override");
 var mainRouter = require('./routes/main');
 var productsRouter = require('./routes/products');
 var usersRouter = require('./routes/users');
+var apiRouter = require('./routes/api/users');
 var session = require("express-session");
 var app = express();
 var bcrypt = require("bcryptjs");
@@ -32,6 +33,7 @@ app.use(rememberMiddleware);
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
+app.use('/api', apiRouter);
 
 
 

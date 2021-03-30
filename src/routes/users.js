@@ -40,8 +40,7 @@ router.post('/login' , validationLogin , usersControllers.checkLogin);
 
 router.get('/login/closed', usersControllers.closed);
 
-// DATOS QUE VIENEN POR EL FORM DE SUSCRIBIRSE
-router.post('/suscribe', usersControllers.suscribe);
+
 
 
 
