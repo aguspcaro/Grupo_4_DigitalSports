@@ -36,10 +36,10 @@
 
                 <div class="section-registerContainerRight">
                     <div class="section-registerContainerPassword">
-                        <label for="password" class="section-registerLabelPassword">Contraseña<span
+                        <label for="password" class="section-registerLabelPassword">Nueva Contraseña<span
                                 class="section-register__spanLabelPassword">*</span></label>
                         <input type="password" name="password" id="password"
-                            class="section-register__inputPassword" value="<%= userLogueado.password %>">
+                            class="section-register__inputPassword" >
                         <p class="errores"><%= typeof errors.password == "undefined" ? "" : errors.password.msg %></p>
                    
                         <span class="erroresFrontPassword"></span>
