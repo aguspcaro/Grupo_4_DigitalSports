@@ -30,7 +30,7 @@ let usersControllers =  {
                 meta: {
                     status: 200,
                     count: dato.length,
-                    url: "/api/users"
+                    url: "api/users"
 
                 },
                 body: datoNuevo
@@ -42,6 +42,93 @@ let usersControllers =  {
         })
 
         .catch(errno => {console.log(errno);})
+
+    },
+    detail: function(req, res){
+
+        db.User.findByPk(req.params.id, 
+            {
+                include: [{association: "profile"}],
+                attributes: { exclude: ['password'] }
+            }
+        )
+
+        .then(dato => {
+
+            let config;
+
+            if(dato.profile == null){ 
+
+                config = {
+                    meta: {
+                        name: null,
+                        lastName: null,
+                        age: null,
+                        birthday: null,
+                        email: dato.email,
+                        urlImage: "api/users/image/" + req.params.id
+    
+                    }                        
+                
+                }
+
+            } else {
+
+                config = {
+                    meta: {
+                        name: dato.profile.first_name,
+                        lastName: dato.profile.last_name,
+                        age: dato.profile.age,
+                        birthday: dato.profile.birthday,
+                        email: dato.email,
+                        urlImage: "api/users/image/" + req.params.id
+    
+                    }
+                        
+                }
+            }            
+
+            res.json(config)
+        })
+
+        .catch(errno =>{console.log(errno);})
+
+    },
+    image: function(req, res){
+        
+        db.User.findByPk(req.params.id, 
+            {
+                include: [{association: "profile"}],
+                attributes: { exclude: ['password'] }
+            }
+        )
+
+        .then(dato => {
+
+            let config;
+
+            if(dato.profile == null){ 
+
+                config = {
+                    meta: {
+                        urlImage: null,
+                        urlUser: 'api/users/' + req.params.id
+                    }
+                }
+
+            } else {
+
+                config = {
+                    meta: {
+                        urlImage: dato.profile.image,
+                        urlUser: 'api/users/' + req.params.id
+                    }
+                }
+            }  
+            
+
+            res.json(config)
+        })
 
     }
 }

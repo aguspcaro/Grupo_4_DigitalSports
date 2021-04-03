@@ -1,7 +1,6 @@
 let fs = require('fs')
 let path = require('path')
 let db = require('../../database/models')
-const { get } = require('../../routes/main')
 
 
 let productsControllers =  {
