@@ -28,12 +28,18 @@
                     
                         <label class=" labelDescri" for="">Descripción del producto</label>
                 <textarea class="coments" style="resize: none;" name="coments" rows="10" value="<%=product.description%>" cols="40" ><%=product.description%></textarea>
-                <label class="fotoProducto">Subir fotos del producto</label>
-                <input class="inputarchivo" ide="file-input" multiple="multiple" type="file" name="adjunto"
+                
+              <!--   <span>Imagen actual del producto:</span>
+                <img src="/images/products/" alt="" class="product-edit">
+                -->
+                <label class="fotoProducto">Cambiar foto del producto</label>
+                <input class="inputarchivo" ide="file-input" type="file" name="adjunto" 
                     accept=".pdf,.jpg,.png" value="<%=product.image%>">
+                 <img src="" alt="">   
+          
             </div>
 
-
+         
 
             <div class="containerDetalle">
 

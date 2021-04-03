@@ -45,7 +45,7 @@ let productsControllers =  {
                         sports: element.sports.name,
                         brands: element.brands.name,
                     },
-                    url: `api/products/${element.id}`
+                    endpoint: `api/products/${element.id}`
                 })
             })
 
