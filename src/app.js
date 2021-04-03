@@ -4,10 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require("method-override");
+
+// routes
 var mainRouter = require('./routes/main');
 var productsRouter = require('./routes/products');
 var usersRouter = require('./routes/users');
 var apiRouter = require('./routes/api/users');
+
+
 var session = require("express-session");
 var app = express();
 var bcrypt = require("bcryptjs");
@@ -30,6 +34,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public')));
 app.use(rememberMiddleware); 
+
+// routes
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);

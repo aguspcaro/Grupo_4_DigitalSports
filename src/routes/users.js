@@ -18,6 +18,7 @@ const userOfSesion = require('../middlewares/userOFSesionMiddleware');
 const validationEdit = require('../middlewares/validationEditMiddleware');
 const cookiesRemember = require('../middlewares/rememberMiddleware');
 
+
 // VISTA DEL CENTRO DE COMANDOS DEL USUARIO
 router.get('/login/perfil' , userOfSesion, cookiesRemember, userInSesion , usersControllers.root);
 router.delete('/login/perfil/:id', usersControllers.delete);
@@ -39,6 +40,7 @@ router.get('/login' , cookiesRemember, userInSesion, usersControllers.login);
 router.post('/login' , validationLogin , usersControllers.checkLogin);
 
 router.get('/login/closed', usersControllers.closed);
+
 
 
 

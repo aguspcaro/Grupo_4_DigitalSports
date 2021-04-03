@@ -547,7 +547,6 @@ body {
 
   .section-suscribeForm {
     display: flex;
-    flex-direction: row;
     align-items: center;
   }
 
@@ -582,6 +581,11 @@ body {
     border: solid 1px #6ad872;
     background-color: #6ad872;
     cursor: pointer;
+  }
+
+  .errores-front-suscribe {
+    color: red;
+    font-size: 16px;
   }
 
   /*FOOTER*/
