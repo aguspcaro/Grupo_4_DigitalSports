@@ -9,8 +9,8 @@ const methodOverride = require("method-override");
 var mainRouter = require('./routes/main');
 var productsRouter = require('./routes/products');
 var usersRouter = require('./routes/users');
-var apiRouter = require('./routes/api/users');
-
+var apiUsersRouter = require('./routes/api/users');
+var apiProductsRouter = require('./routes/api/products');
 
 var session = require("express-session");
 var app = express();
@@ -39,7 +39,8 @@ app.use(rememberMiddleware);
 app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
-app.use('/api', apiRouter);
+app.use('/api/users', apiUsersRouter);
+app.use('/api/products', apiProductsRouter);
 
 
 

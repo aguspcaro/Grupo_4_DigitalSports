@@ -11,7 +11,6 @@ let usersControllers =  {
         db.User.findAll({
             include: [{association: "profile"}],
             attributes: { exclude: ['password'] }
-
         })
             
         .then(dato => {
