@@ -9,7 +9,8 @@ let usersControllers =  {
     list: function(req, res) {
 
         db.User.findAll({
-            include: [{association: "profile"}]
+            include: [{association: "profile"}],
+            attributes: { exclude: ['password'] }
         })
             
         .then(dato => {
