@@ -9,6 +9,8 @@ let productsControllers =  {
     list: function(req, res) {
 
         db.Products.findAll({
+            include: [{association: 'sizes'}, {association: 'brands'}, {association: 'sports'}],
+           /*  attributes: { exclude: ['image','stock', 'public', 'shipping','price', 'promPrice', 'size_id','brand_id', 'sport_id','created_at','updated_at', 'delet                                ed_at'] } */
         })   
         .then(resultado => {
 
@@ -16,6 +18,8 @@ let productsControllers =  {
             let recomendados=0;
             let ofertas=0;
             let lanzamientos=0;
+
+            let resultadoDatosSolicitados = [];
 
 
         resultado.forEach(element => {
@@ -29,9 +33,22 @@ let productsControllers =  {
             } else if (element.category == "recomendados") {
                 recomendados++
             }
-
-            
             });
+
+            resultado.forEach(element=> {
+                resultadoDatosSolicitados.push({
+                    id: element.id,
+                    name: element.name,
+                    description: element.description,
+                    belongsToOne: {
+                        sizes: element.sizes.name,
+                        sports: element.sports.name,
+                        brands: element.brands.name,
+                    },
+                    url: `api/products/${element.id}`
+                })
+            })
+
 
             let respuesta = {
                 meta: {
@@ -43,9 +60,9 @@ let productsControllers =  {
                         countRecomendados: recomendados,
                         countLanzamientos: lanzamientos
                     },
-                    url: 'api/products'
+                    url: 'api/products',
                 },
-                products: resultado
+                products: resultadoDatosSolicitados
                     
             }
 
