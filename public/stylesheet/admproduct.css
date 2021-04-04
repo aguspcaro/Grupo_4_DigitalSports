@@ -8,6 +8,10 @@ h1{
     text-align: center; 
 }
 
+form {
+    margin-bottom: 40px;  
+}
+
 
 .containerAdd{
 
@@ -41,25 +45,36 @@ padding:4px;
     padding:4px;      
 }
 
-
 /*containerDetalle*/
 
 
 
-.containerDetalle div{
+/*  .containerDetalle div{
     width: 100%;
     display:flex;
     flex-direction: column;
+
     
     
-} 
-.containerDetalle{
+}  */
+/* .containerDetalle{
     width: 100%;
     display:flex;
     flex-wrap: wrap;
-    justify-content:space-around;;
+    justify-content:space-around;
+   
     
+} 
+ */
+
+ .deporte, .marca, .talle, .publico, .envio, .precio, .categoria, .promocional, .stock, .agregar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
+
+ 
+
 .containerDetalle label  {
  
     font-weight: 400;
@@ -87,7 +102,6 @@ padding:4px;
 padding:4px;    
 border: 1px #0985d9 solid;
 color: #ffffff;
-margin-top: 2px;
 }
 
 .containerDetalle button:hover{
@@ -103,11 +117,6 @@ cursor: pointer;
     font-size: 12px;
 }
 
-
-
-.containerDetalle div{
-    width: 48%;
-}
 
 .labelSku{
     font-weight: 400;
@@ -187,6 +196,27 @@ text-align: center;
 
 }   
 
+
+
+@media (min-width: 768px) {
+
+    .deporte-marca, .talle-publico, .envio-precio, .categoria-promocional, .stock-agregar {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .deporte, .marca, .talle, .publico, .envio, .precio, .categoria, .promocional, .stock, .agregar {
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    }
+
+
+
 @media (min-width: 1024px) {
 
 .containerAdd, .containerDetalle{
@@ -194,12 +224,25 @@ text-align: center;
     
  
 }
+
+
 .containerPrincipal{
  
 display:flex;
 justify-content: space-between;
 }    
-.containerDetalle div{
-    width: 49%;
+
+
+.deporte-marca, .talle-publico, .envio-precio, .categoria-promocional, .stock-agregar {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
 }
+
+.deporte, .marca, .talle, .publico, .envio, .precio, .categoria, .promocional, .stock, .agregar {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
 }
+
+} 
