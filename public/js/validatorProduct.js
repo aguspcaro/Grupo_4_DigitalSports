@@ -8,6 +8,8 @@ const marca = document.querySelector("[name = marca]")
 const publico = document.querySelector("[name = publico]")
 const envio = document.querySelector("[name = envio]")
 const categorias = document.querySelector("[name = categoria]")
+let inputArchivo = document.querySelector('.inputarchivo')
+let imagenProducto = document.querySelector('.product-edit')
 
 let classNombre = "",
     classPrecio = "",
@@ -138,4 +140,11 @@ categorias.addEventListener("blur", ()=>{
                  classCategorias.innerHTML = "";
              }
 
+})
+
+
+
+
+inputArchivo.addEventListener('click', function() {
+    imagenProducto.style.display = "none"
 })

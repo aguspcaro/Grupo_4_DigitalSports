@@ -1,0 +1,32 @@
+.section-registerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.container-session {
+    margin-bottom: 5px;
+}
+
+.button {
+    padding: 5px;
+    color: #606060;
+    text-decoration: none;
+    border: none;
+    font-size: 16px;
+}
+
+.button:hover {
+    color: #0985d9;
+}
+.buttonDelete {
+    color: #606060;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.buttonDelete:hover {
+    color: #d90909;
+}

@@ -1,5 +1,5 @@
 <%- include("../partials/head")  %>
-<link rel="stylesheet" href="/stylesheet/register.css">
+<link rel="stylesheet" href="/stylesheet/perfil.css">
 
 
 </head>
@@ -14,13 +14,13 @@
 
             <div class="section-registerContainerTitle">
                 
-                <h4 class="section-registerTitle">Bienvenido a tu perfil%></h4>
+                <h4 class="section-registerTitle">Bienvenido a tu perfil: <%= userLogueado.email%></h4>
             </div>
 
             
             <div class="container-session">
 
-                <a href="/users/login/perfil/crearPerfil/<%= userLogueado.id %>" class="buttonSesionClosed">Editar Perfil</a>
+                <a href="/users/login/perfil/crearPerfil/<%= userLogueado.id %>" class="button">Editar Perfil</a>
 
             </div>         
             
@@ -29,23 +29,25 @@
 
             <div class="container-session">
 
-                <a  href="/users/login/perfil/editar/<%= userLogueado.id %>" class="buttonSesionEdit">Editar Usuario</a>
+                <a  href="/users/login/perfil/editar/<%= userLogueado.id %>" class="button">Editar Usuario</a>
 
             </div>
 
-            <form action="/users/login/perfil/<%=userLogueado.id%>?_method=DELETE" class="section-form-register container-session  " method="POST">
+            <div class="container-session">
+                <a href="/users/login/closed" class="button">Cerrar sesión</a>
+            </div>
+
+              
+
+            <form action="/users/login/perfil/<%=userLogueado.id%>?_method=DELETE"  method="POST">
     
-                <button type="submit" class="buttonSesionDelete">Eliminar</button>
+                <button type="submit" class="buttonDelete">Eliminar Usuario</button>
 
             </form>
 
 
 
-            <div class="container-session">
-                <a href="/users/login/closed" class="buttonSesionClosed">Cerrar sesión</a>
-            </div>
-
-              
+         
 
          
     

@@ -244,13 +244,19 @@ db.Products.findByPk(req.params.id, {
 
     let errors = validationResult(req)
     
+    let imagen;
+
+    if(req.files[0]) {
+      console.log(req.files[0])
+      imagen =  req.files[0].filename
+    }
 
     //si no hay errores
     if(errors.isEmpty()) {
       db.Products.update({
         name: req.body.name,
         description: req.body.coments,
-        image: req.files[0].filename,
+        image: imagen,
         stock: req.body.stock,
         category: req.body.categoria,
         price: req.body.precio,
