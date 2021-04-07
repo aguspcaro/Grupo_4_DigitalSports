@@ -31,13 +31,19 @@
                 <textarea class="coments" style="resize: none;" name="coments" rows="10"
                     value="<%=product.description%>" cols="40"><%=product.description%></textarea>
 
-                 <span>Imagen actual del producto:</span>
-                <img src="/images/products/<%=product.image%>" alt="" class="product-edit">
-                
-                <label class="fotoProducto">Cambiar foto del producto</label>
+               <div class="container-foto">
+                <div class="contenedor-foto-actual">
+                    <span class="fotoProducto">Imagen actual del producto:</span>
+                    <img src="/images/products/<%=product.image%>" alt="" class="product-edit">
+                </div>
+               
+                <div>
+                    <label class="fotoProducto">Cambiar foto del producto:</label>
                 <input class="inputarchivo" ide="file-input" type="file" name="adjunto" accept=".pdf,.jpg,.png"
                     value="<%=product.image%>">
-                <img src="" alt="">
+                </div>
+               
+               </div>
 
             </div>
 

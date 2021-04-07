@@ -18,6 +18,7 @@ form {
       
 display:flex;
 flex-direction: column;
+margin-top: 10px;
 
 }
 
@@ -57,15 +58,10 @@ padding:4px;
     
     
 }  */
-/* .containerDetalle{
-    width: 100%;
-    display:flex;
-    flex-wrap: wrap;
-    justify-content:space-around;
-   
-    
+ .containerDetalle{
+    margin-top: 10px; 
 } 
- */
+ 
 
  .deporte, .marca, .talle, .publico, .envio, .precio, .categoria, .promocional, .stock, .agregar {
     width: 100%;
@@ -99,7 +95,7 @@ padding:4px;
     font-size: 14px;
  background-color: #0985d9;
     outline: 0px;   
-padding:4px;    
+padding:5px;    
 border: 1px #0985d9 solid;
 color: #ffffff;
 }
@@ -196,11 +192,21 @@ text-align: center;
 
 }   
 
-.product-edit {
-    width: 20%;
+.container-foto {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
 }
 
+.contenedor-foto-actual {
+    display: flex;
+    align-items: center;
+}
 
+.product-edit {
+    width: 30%;
+    margin-left: 5px;
+}
 
 @media (min-width: 768px) {
 
@@ -216,6 +222,8 @@ text-align: center;
         display: flex;
         flex-direction: column;
     }
+
+    
     
     }
 
@@ -248,5 +256,23 @@ justify-content: space-between;
     display: flex;
     flex-direction: column;
 }
+
+.container-foto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.contenedor-foto-actual {
+    display: flex;
+    align-items: center;
+}
+
+.product-edit {
+    width: 30%;
+    margin-left: 5px;
+}
+
 
 } 
