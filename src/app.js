@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require("method-override");
 
+const cors = require('cors')
+
 // routes
 var mainRouter = require('./routes/main');
 var productsRouter = require('./routes/products');
@@ -17,6 +19,7 @@ var app = express();
 var bcrypt = require("bcryptjs");
 var rememberMiddleware = require("./middlewares/rememberMiddleware")
 
+app.use(cors()) // para que no hayan problemas con con cors cuando consumimos la api
 
 // view engine setup
 app.use(session(

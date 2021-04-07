@@ -92,7 +92,7 @@ let productsControllers = {
 
             .then(function (product) {
                 
-                
+                console.log(product);
                 let envio = {
                     meta: {
                         status: 200,
