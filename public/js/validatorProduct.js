@@ -10,6 +10,8 @@ const envio = document.querySelector("[name = envio]")
 const categorias = document.querySelector("[name = categoria]")
 let inputArchivo = document.querySelector('.inputarchivo')
 let imagenProducto = document.querySelector('.product-edit')
+const form = document.querySelector(".containerPrincipal")
+
 
 let classNombre = "",
     classPrecio = "",
@@ -148,3 +150,17 @@ categorias.addEventListener("blur", ()=>{
 inputArchivo.addEventListener('click', function() {
     imagenProducto.style.display = "none"
 })
+
+
+
+
+
+
+form.addEventListener('submit', (e) => {
+
+  if(nombre.value.length < 3 ||precio.value < 0 || precio.value ==""||promPrecio.value < 0 || promPrecio.value == ""||stock.value < 0 || stock.value == ""||deporte.value<=0 ||
+  deporte.value == ""||marca.value<=0 ||  marca.value == ""||publico.value<=0 ||  publico.value == ""||envio.value<=0 ||  envio.value == ""||categorias.value<=0 ||
+  categorias.value == "")
+        e.preventDefault()
+        swal("HAY CAMPOS SIN COMPLETAR CORRECTAMENTE !!!!!", "", "error")   
+    })
