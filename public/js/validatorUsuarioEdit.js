@@ -30,27 +30,24 @@ window.addEventListener("load", function() {
     
         // VALIDACION PASSWORD
         let errorPassword = [];
-
-        let erroresFrontPassword = document.querySelector("#erroresFrontPassword ul");
     
         let password = document.querySelector("#password");
     
         if(password.value == ""){
     
-            erroresFrontPassword.innerHTML += "<li>" + "* La contraseña debera tener mínimo 8 caracteres" + "</li>";
+            errorPassword.push("* La contraseña debera tener mínimo 8 caracteres")
     
-        } {
-            erroresFrontPassword.innerHTML
-        }
+        }   
 
         //console.log(errorPassword);
-        /*
+    
+        let erroresFrontPassword = document.querySelector("#erroresFrontPassword ul");
+    
         for(let i = 0; i < errorPassword.length; i++){
     
             erroresFrontPassword.innerHTML += "<li>" + errorPassword[i] + "</li>";
     
         }
-        */
         
         if(errorEmail.length > 0 || errorPassword.length > 0){
     
