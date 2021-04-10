@@ -14,7 +14,7 @@
                 <h4 class="section-registerTitle">Editar Usuario</h4>
             </div>
 
-            <form method="POST" action="/users/login/perfil/editar/<%=userLogueado.id%>?_method=PUT" class="section-form-register" enctype="multipart/form-data">
+            <form id="formUserEditar" method="POST" action="/users/login/perfil/editar/<%=userLogueado.id%>?_method=PUT" class="section-form-register" enctype="multipart/form-data">
 
                 <div class="section-registerContainerLeft">
 
@@ -24,7 +24,13 @@
                         <input type="email" name="email" id="email" class="section-register__inputEmail" value="<%= userLogueado.email %>">
                         <p class="errores"><%= typeof errors.email == "undefined" ? "" : errors.email.msg %></p>
 
-                        <span class="erroresFrontEmail"></span>
+                        <div id = "erroresFrontEmail" class="erroresFrontEmail">
+
+                            <ul>
+
+                            </ul>
+                            
+                        </div>
 
                     </div>
 
@@ -42,7 +48,13 @@
                             class="section-register__inputPassword" >
                         <p class="errores"><%= typeof errors.password == "undefined" ? "" : errors.password.msg %></p>
                    
-                        <span class="erroresFrontPassword"></span>
+                        <div id = "erroresFrontPassword" class="erroresFrontPassword">
+
+                            <ul>
+                                
+                            </ul>
+
+                        </div>
 
                     </div>
 
