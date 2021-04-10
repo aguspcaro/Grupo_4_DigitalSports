@@ -43,6 +43,9 @@ let productsControllers = {
                     }
                 });
 
+  
+
+
                 resultado.forEach(element => {
                     resultadoDatosSolicitados.push({
                         id: element.id,
@@ -62,16 +65,15 @@ let productsControllers = {
                     meta: {
                         status: 200,
                         count: resultado.length,
-                        countByCategory: {
-                            countOfertas: ofertas,
-                            contDestacados: destacados,
-                            countRecomendados: recomendados,
-                            countLanzamientos: lanzamientos
-                        },
+                        countByCategory: [
+                            {countOfertas: ofertas},
+                            {contDestacados: destacados},
+                            {countRecomendados: recomendados},
+                            {countLanzamientos: lanzamientos}
+                        ],
                         url: 'api/products',
                     },
-                    products: resultadoDatosSolicitados
-
+                    products: resultadoDatosSolicitados,
                 }
 
                 res.json(respuesta)
@@ -82,6 +84,20 @@ let productsControllers = {
                 console.log(error);
             })
 
+    },
+       secondary : async (req,res) => {
+
+        try {
+            let promesas = db.Brands.findAll()
+
+            let resultado =  await promesas
+    
+            res.send(resultado)
+    
+        } catch (err) {
+            console.log(err)
+        }
+      
     },
     detail: function (req, res) {
         db.Products.findByPk(req.params.id, {
