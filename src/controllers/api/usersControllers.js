@@ -66,7 +66,7 @@ let usersControllers =  {
                         age: null,
                         birthday: null,
                         email: dato.email,
-                        urlImage: "api/users/image/" + req.params.id
+                        urlImage: null
     
                     }                        
                 
@@ -81,7 +81,7 @@ let usersControllers =  {
                         age: dato.profile.age,
                         birthday: dato.profile.birthday,
                         email: dato.email,
-                        urlImage: "api/users/image/" + req.params.id
+                        urlImage: "images/products/" + dato.profile.image
     
                     }
                         
