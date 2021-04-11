@@ -7,63 +7,18 @@ window.addEventListener("load", function() {
 
     form.addEventListener("submit", function(e){
 
-        // VALIDACION EMAIL
-        let errorEmail = [];
-    
-        let email = document.querySelector("#email");
-    
-        if(email.value == ""){
+        if(email.value == "" || password.value == ""){
             
-            //alert("* Deberá ser un email válido")
-            errorEmail.push("* Deberá ser un email válido")
-        }
-
-        //console.log(errorEmail);
-    
-        let erroresFrontEmail = document.querySelector("#erroresFrontEmail ul");
-    
-        for(let i = 0; i < errorEmail.length; i++){
-    
-            erroresFrontEmail.innerHTML += "<li>" + errorEmail[i] + "</li>";
-    
-        }
-    
-        // VALIDACION PASSWORD
-        let errorPassword = [];
-    
-        let password = document.querySelector("#password");
-    
-        if(password.value == ""){
-    
-            errorPassword.push("* La contraseña debera tener mínimo 8 caracteres")
-    
-        }   
-
-        //console.log(errorPassword);
-    
-        let erroresFrontPassword = document.querySelector("#erroresFrontPassword ul");
-    
-        for(let i = 0; i < errorPassword.length; i++){
-    
-            erroresFrontPassword.innerHTML += "<li>" + errorPassword[i] + "</li>";
-    
-        }
-        
-        if(errorEmail.length > 0 || errorPassword.length > 0){
-    
             e.preventDefault();
+
+            swal("Campos sin completar", "", "error")   
         }
-    
+
     })
     
 
 })
 
-
-
-
-
-/*
 email.addEventListener("blur", function(){
 
     if (regexEmail.test(email.value)) {
@@ -73,7 +28,6 @@ email.addEventListener("blur", function(){
     }
     
 })
-
 
 let password = document.querySelector("#password");
 
@@ -87,4 +41,3 @@ password.addEventListener("blur", function(){
     }
     
 })
-*/

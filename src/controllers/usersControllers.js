@@ -376,7 +376,7 @@ let usersControllers = {
 
           req.session.perfil = user;
 
-          res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
+          res.redirect("/users/login/perfil")}).catch(function(errno){console.log();(errno)})
 
       } else {
 
@@ -400,7 +400,7 @@ let usersControllers = {
         }).then(function(user){ res.redirect("/users/login/perfil")}).catch(function(errno){console.log(errno)})
       }
 
-    })
+    }).catch(function(errno){console.log(errno)})
   },
 };
 

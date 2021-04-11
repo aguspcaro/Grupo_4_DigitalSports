@@ -1,5 +1,21 @@
-let firstName = document.querySelector("#first_name")
+window.addEventListener("load", function() {
 
+    let form = document.querySelector("#formUserEditar")
+
+    form.addEventListener("submit", function(e){
+
+        if(firstName.value == "" || lastName.value == "" || edad.value < 18 || birthdayEdad > mayor){
+            
+            e.preventDefault();
+
+            swal("Campos sin completar", "", "error")   
+        }
+
+    })
+
+})
+
+let firstName = document.querySelector("#first_name")
 
 firstName.addEventListener("blur", function(){
 
