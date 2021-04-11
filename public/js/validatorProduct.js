@@ -24,6 +24,29 @@ let classNombre = "",
     classCategorias = ""
     classStock = ""
 
+
+
+    
+
+form.addEventListener('submit', (e) => {
+   
+    
+    if(nombre.value.length < 3 ||precio.value < 0 || precio.value ==""||promPrecio.value < 0 || promPrecio.value == ""||stock.value < 0 || stock.value == ""||deporte.value<=0 ||
+    deporte.value == ""||marca.value<=0 ||  marca.value == ""||publico.value<=0 ||  publico.value == ""||envio.value<=0 ||  envio.value == ""||categorias.value<=0 ||
+    categorias.value == ""){
+        e.preventDefault()
+       
+          swal("Campos sin completar", "", "error")   
+    
+    }
+      
+
+      })
+
+      
+
+
+
 nombre.addEventListener("blur", () => {
     if (nombre.value.length < 3) {
         classNombre = document.querySelector("span.erroresName")
@@ -154,13 +177,3 @@ inputArchivo.addEventListener('click', function() {
 
 
 
-
-
-form.addEventListener('submit', (e) => {
-
-  if(nombre.value.length < 3 ||precio.value < 0 || precio.value ==""||promPrecio.value < 0 || promPrecio.value == ""||stock.value < 0 || stock.value == ""||deporte.value<=0 ||
-  deporte.value == ""||marca.value<=0 ||  marca.value == ""||publico.value<=0 ||  publico.value == ""||envio.value<=0 ||  envio.value == ""||categorias.value<=0 ||
-  categorias.value == "")
-        e.preventDefault()
-        swal("HAY CAMPOS SIN COMPLETAR CORRECTAMENTE !!!!!", "", "error")   
-    })
