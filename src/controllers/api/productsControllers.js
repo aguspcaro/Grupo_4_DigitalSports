@@ -18,6 +18,9 @@ let productsControllers = {
                 }, {
                     association: 'sports'
                 }],
+                order: [
+                    ['created_at', 'Desc']
+                ]
                 /*  attributes: { exclude: ['image','stock', 'public', 'shipping','price', 'promPrice', 'size_id','brand_id', 'sport_id','created_at','updated_at', 'delet                                ed_at'] } */
             })
             .then(resultado => {
@@ -60,12 +63,13 @@ let productsControllers = {
                         id: element.id,
                         name: element.name,
                         description: element.description,
+                        img: `/images/products/${element.image}`,
                         belongsToOne: {
                             sizes: element.sizes.name,
                             sports: element.sports.name,
                             brands: element.brands.name,
                         },
-                        endpoint: `api/products/${element.id}`
+                        endpoint: `api/products/${element.id}`,
                     })
                 })
 
@@ -75,15 +79,16 @@ let productsControllers = {
                         status: 200,
                         count: resultado.length,
                         countByCategory: [
-                            {countOfertas: ofertas},
-                            {contDestacados: destacados},
-                            {countRecomendados: recomendados},
-                            {countLanzamientos: lanzamientos}
+                            {name : "Ofertas" , cantidad: ofertas},
+                            {name : "Destacados", cantidad: destacados},
+                            {name :"Recomendados", cantidad: recomendados},
+                            {name : "Lanzamientos", cantidad: lanzamientos}
                         ],
                         categories: listado,
                         url: 'api/products',
                     },
                     products: resultadoDatosSolicitados,
+                    lastProductCreated: resultadoDatosSolicitados[0]
                 }
 
                 res.json(respuesta)
@@ -95,20 +100,6 @@ let productsControllers = {
             })
 
     },
-       secondary : async (req,res) => {
-
-        try {
-            let promesas = db.Brands.findAll()
-
-            let resultado =  await promesas
-    
-            res.send(resultado)
-    
-        } catch (err) {
-            console.log(err)
-        }
-      
-    },
     detail: function (req, res) {
         db.Products.findByPk(req.params.id, {
 
@@ -118,6 +109,8 @@ let productsControllers = {
 
             .then(function (product) {
                 
+                product.image= `/images/products/${product.image}`
+
                 console.log(product);
                 let envio = {
                     meta: {
