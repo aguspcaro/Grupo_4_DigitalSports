@@ -18,6 +18,9 @@ let productsControllers = {
                 }, {
                     association: 'sports'
                 }],
+                order: [
+                    ['created_at', 'Desc']
+                ]
                 /*  attributes: { exclude: ['image','stock', 'public', 'shipping','price', 'promPrice', 'size_id','brand_id', 'sport_id','created_at','updated_at', 'delet                                ed_at'] } */
             })
             .then(resultado => {
@@ -57,7 +60,7 @@ let productsControllers = {
                             sports: element.sports.name,
                             brands: element.brands.name,
                         },
-                        endpoint: `api/products/${element.id}`
+                        endpoint: `api/products/${element.id}`,
                     })
                 })
 
@@ -75,6 +78,7 @@ let productsControllers = {
                         url: 'api/products',
                     },
                     products: resultadoDatosSolicitados,
+                    lastProductCreated: resultadoDatosSolicitados[0]
                 }
 
                 res.json(respuesta)
