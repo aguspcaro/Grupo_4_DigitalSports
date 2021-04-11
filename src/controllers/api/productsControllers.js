@@ -51,6 +51,7 @@ let productsControllers = {
                         id: element.id,
                         name: element.name,
                         description: element.description,
+                        img: `/images/products/${element.image}`,
                         belongsToOne: {
                             sizes: element.sizes.name,
                             sports: element.sports.name,
@@ -85,20 +86,6 @@ let productsControllers = {
             })
 
     },
-       secondary : async (req,res) => {
-
-        try {
-            let promesas = db.Brands.findAll()
-
-            let resultado =  await promesas
-    
-            res.send(resultado)
-    
-        } catch (err) {
-            console.log(err)
-        }
-      
-    },
     detail: function (req, res) {
         db.Products.findByPk(req.params.id, {
 
@@ -108,6 +95,8 @@ let productsControllers = {
 
             .then(function (product) {
                 
+                product.image= `/images/products/${product.image}`
+
                 console.log(product);
                 let envio = {
                     meta: {
