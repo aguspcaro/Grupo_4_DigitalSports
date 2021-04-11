@@ -66,10 +66,10 @@ let productsControllers = {
                         status: 200,
                         count: resultado.length,
                         countByCategory: [
-                            {countOfertas: ofertas},
-                            {contDestacados: destacados},
-                            {countRecomendados: recomendados},
-                            {countLanzamientos: lanzamientos}
+                            {name : "Ofertas" , cantidad: ofertas},
+                            {name : "Destacados", cantidad: destacados},
+                            {name :"Recomendados", cantidad: recomendados},
+                            {name : "Lanzamientos", cantidad: lanzamientos}
                         ],
                         url: 'api/products',
                     },
