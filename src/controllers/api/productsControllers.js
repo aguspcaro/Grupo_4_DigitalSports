@@ -43,7 +43,16 @@ let productsControllers = {
                     }
                 });
 
-  
+
+                let listado = []
+
+                resultado.forEach(element => {
+                    console.log(element.category);
+                    listado.push(element.category)
+
+
+                })
+
 
 
                 resultado.forEach(element => {
@@ -71,6 +80,7 @@ let productsControllers = {
                             {countRecomendados: recomendados},
                             {countLanzamientos: lanzamientos}
                         ],
+                        categories: listado,
                         url: 'api/products',
                     },
                     products: resultadoDatosSolicitados,
