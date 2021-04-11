@@ -5,6 +5,7 @@
 </head>
 
 <body>
+
     <main class="main">
 
         <%- include("../partials/header")  %>        
@@ -15,17 +16,14 @@
             <div class="section-registerContainerTitle">
                 
                 <h4 class="section-registerTitle">Bienvenido a tu perfil: <%= userLogueado.email%></h4>
+
             </div>
 
-            
             <div class="container-session">
 
                 <a href="/users/login/perfil/crearPerfil/<%= userLogueado.id %>" class="button">Editar Perfil</a>
 
-            </div>         
-            
-          
-
+            </div>
 
             <div class="container-session">
 
@@ -34,10 +32,10 @@
             </div>
 
             <div class="container-session">
-                <a href="/users/login/closed" class="button">Cerrar sesión</a>
-            </div>
 
-              
+                <a href="/users/login/closed" class="button">Cerrar sesión</a>
+
+            </div>
 
             <form action="/users/login/perfil/<%=userLogueado.id%>?_method=DELETE"  method="POST">
     
@@ -45,28 +43,15 @@
 
             </form>
 
-
-
-         
-
-         
-    
-            
-    
-            </div>
-
         </section>
 
         <%- include("../partials/form-suscribe")  %>
 
-
         <%- include("../partials/footer")  %>
 
-
-
     </main>
-    <script src="/js/validationSuscribe.js"></script>
 
+    <script src="/js/validationSuscribe.js"></script>
 
 </body>
 
