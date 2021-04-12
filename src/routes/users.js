@@ -25,7 +25,7 @@ router.delete('/login/perfil/:id', usersControllers.delete);
 
 // VISTA DE LA EDICION DEL USUARIO
 router.get('/login/perfil/editar/:id',usersControllers.mostrarUsuario);
-router.put('/login/perfil/editar/:id', uploads.any(), validationEdit, usersControllers.editUsuario);
+router.put('/login/perfil/:id', uploads.any(), validationEdit, usersControllers.editUsuario);
 
 // VISTA DE LA CREACION DEL PERFIL y EDICIÓN
 router.get("/login/perfil/crearPerfil/:id", usersControllers.mostrarPerfil);

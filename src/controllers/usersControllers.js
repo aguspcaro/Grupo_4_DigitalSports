@@ -17,7 +17,6 @@ let usersControllers = {
 
       userLogueado = req.session.user;
       
-
       return res.render('users/users', {userLogueado, perfilLogueado});  
       
     } else {
@@ -33,7 +32,7 @@ let usersControllers = {
 
 // MUESTRA LA VISTA PARA EDITAR EL USUARIO
 
-  mostrarUsuario: function (req, res) { // no andan los errores
+  mostrarUsuario: function (req, res) { 
 
     let errors = validationResult(req);
 
@@ -57,8 +56,6 @@ let usersControllers = {
         return res.send(errno)
     })
 
-      
-    
   },
 
   editUsuario: function (req, res, next) {
@@ -70,7 +67,7 @@ let usersControllers = {
       db.User.update({
 
         email: req.body.email,
-        password: req.body.password
+        password: bcrypt.hashSync(req.body.password, 12)
 
       }, {
 
@@ -80,7 +77,7 @@ let usersControllers = {
 
         }
     
-      }).then(function(user){ res.redirect("/users/login/perfil/editar/" + req.params.id)}).catch(function(errno){res.send(errno)})
+      }).then(function(user){ res.redirect("/users/login/perfil")}).catch(function(errno){res.send(errno)})
 
     } else {
 
@@ -91,6 +88,7 @@ let usersControllers = {
           users = {
             email: req.body.email,
             password: req.body.password
+
           }
         
           userLogueado = user;
@@ -99,7 +97,7 @@ let usersControllers = {
         
         }).catch(function(errno) {
 
-            return res.send(errno)
+            return console.log(errno)
         })
 
 
@@ -137,7 +135,7 @@ let usersControllers = {
 
  // MUESTRA LA VISTA PARA REGISTRARSE
 
-  mostrarRegister: function (req, res, next) { // el error del email existente te lo tira siempre. pareciera que si encuentra algo un poco parecido lo tira.
+  mostrarRegister: function (req, res, next) { 
 
     let usuario = {}
 
@@ -170,7 +168,7 @@ let usersControllers = {
       db.User.create({
 
         email: req.body.email,
-        password: bcrypt.hashSync(req.body.password, 12) // saque el encriptado por el momento. habria que ponerlo en login tambien.
+        password: bcrypt.hashSync(req.body.password, 12)
 
       }).then(function(user){
 
