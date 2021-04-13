@@ -135,3 +135,23 @@
 *Agustín*
 - En proceso: Revisando cookies.
 - Problemas: Moviendo database a la carpeta src.
+
+---
+
+#### Reunión 04/04/2021
+
+*Alejandro*
+- En proceso: Revisar el JS Front.
+- Problemas: props.children.
+
+*David*
+- En proceso: Atomizando codigo en react.
+- Problemas: Fetch.
+
+*Jorge*
+- En proceso: Consumiendo api.
+- Problemas: async await.
+
+*Agustín*
+- En proceso: Hooks.
+- Problemas: Seteando estados.

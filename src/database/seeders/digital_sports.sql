@@ -28,8 +28,8 @@ DROP TABLE IF EXISTS `brands`;
 CREATE TABLE `brands` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
@@ -58,8 +58,8 @@ CREATE TABLE `cart_product` (
   `amount` bigint(20) unsigned NOT NULL,
   `product_id` bigint(20) unsigned NOT NULL,
   `cart_id` bigint(20) unsigned NOT NULL,
-  `created_ad` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_ad` timestamp NOT NULL DEFAULT current_timestamp() ,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fkProducts_idx` (`product_id`),
@@ -90,8 +90,8 @@ CREATE TABLE `carts` (
   `user_id` bigint(20) unsigned NOT NULL,
   `buy_total` decimal(7,2) unsigned NOT NULL,
   `payment_id` bigint(20) unsigned NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fkpayment_idx` (`payment_id`),
@@ -120,8 +120,8 @@ DROP TABLE IF EXISTS `payments`;
 CREATE TABLE `payments` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `method` varchar(100) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -157,8 +157,8 @@ CREATE TABLE `products` (
   `size_id` bigint(20) NOT NULL,
   `brand_id` bigint(20) NOT NULL,
   `sport_id` bigint(20) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `adfasdf_idx` (`sport_id`),
@@ -195,8 +195,8 @@ CREATE TABLE `profiles` (
   `age` int(11) NOT NULL,
   `birthday` date DEFAULT NULL,
   `user_id` bigint(20) unsigned NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `user-profile_idx` (`user_id`),
@@ -223,8 +223,8 @@ DROP TABLE IF EXISTS `sizes`;
 CREATE TABLE `sizes` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
@@ -250,8 +250,8 @@ DROP TABLE IF EXISTS `sports`;
 CREATE TABLE `sports` (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
@@ -278,8 +278,8 @@ CREATE TABLE `users` (
   `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `updated_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ,
+  `updated_at` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
@@ -291,7 +291,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'alejandro@digitalsports.com','$2a$10$Vk/iUe/rEjZhLK7Oi3mFRuik1UL6LcVjzTn71X5FCJ2/6GSSgCY3K','2021-03-04 14:35:39','2021-03-04 14:35:39',NULL),(2,'agustin@digitalsports.com','$2a$10$d6vKRn.C1Op3UTX0n.OQDOqpz6sGF7paqRNTGlYs4FLiRFjFcg2oC','2021-03-04 14:36:35','2021-03-04 14:36:35',NULL),(3,'david@digitalsports.com','$2a$10$jMelraryFr7nc80uiNxNhu0rnae9i7Bsg9KS7eDj/d3MwxL15/kaS','2021-03-04 14:36:54','2021-03-04 14:36:54',NULL),(4,'jorge@digitalsports.com','$2a$10$qZqJz2owNjlxhxPSZ8cGvuKUpgAIWjofl5ypayWREwBuS8RXRjmdy','2021-03-04 14:37:19','2021-03-04 14:37:19',NULL),(5,'widomlanski@hotmail.com','12345678','2021-03-04 23:34:33','2021-03-04 23:34:33',NULL),(6,'papr@hotmail.com','$2a$12$8ZWjO4fG6VDxatuD8MK.FOWPiJvayHBln3WevLjJGg6Is1w2/QHHS','2021-03-16 23:32:02','2021-03-16 23:31:24','2021-03-16 23:32:02');
+INSERT INTO `users` VALUES (1,'alejandro@digitalsports.com','$2a$10$Vk/iUe/rEjZhLK7Oi3mFRuik1UL6LcVjzTn71X5FCJ2/6GSSgCY3K','2021-03-04 14:35:39','2021-03-04 14:35:39',NULL),(2,'agustin@digitalsports.com','$2a$10$d6vKRn.C1Op3UTX0n.OQDOqpz6sGF7paqRNTGlYs4FLiRFjFcg2oC','2021-03-04 14:36:35','2021-03-04 14:36:35',NULL),(3,'david@digitalsports.com','$2a$10$jMelraryFr7nc80uiNxNhu0rnae9i7Bsg9KS7eDj/d3MwxL15/kaS','2021-03-04 14:36:54','2021-03-04 14:36:54',NULL),(4,'jorge@digitalsports.com','$2a$10$qZqJz2owNjlxhxPSZ8cGvuKUpgAIWjofl5ypayWREwBuS8RXRjmdy','2021-03-04 14:37:19','2021-03-04 14:37:19',NULL),(5,'widomlanski@hotmail.com','$2a$10$qZqJz2owNjlxhxPSZ8cGvuKUpgAIWjofl5ypayWREwBuS8RXRjmdy','2021-03-04 23:34:33','2021-03-04 23:34:33',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

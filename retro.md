@@ -189,7 +189,36 @@
 
 **Less of:** En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. 
 
-- Pelearnos entre nosotros.
+- Trabajar solos.
+
+**Stop Doing:** En este punto exponemos aquellas practicas que a pesar de ser [Less of] podemos eliminarlas.
+
+- No dividirnos el trabajo.
+
+
+---
+
+
+### Sprint-8
+
+**Start Doing:** Aquí van todas aquellas cosas innovadoras o que por cierta curiosidad queremos probar.
+
+- Borrar codigo chatarra.
+- Atomizar el codigo.
+- Mejorar el css.
+
+**More of:** Este paso personalmente considero que será alimentado por el anterior en las siguiente retrospectiva (espero).Es decir que los [Start Doing] se convertirán en [More of]. 
+
+- Tener mas reuniones en vivo.
+
+**Keep Doing:** Como secuencia lógica aquello que fue un [More of] llegaría a un nivel de maduración y se convertirá en [Keep Doing]. Es aquello que venimos haciendo y que nos brinda valor.
+
+- Resolver puntos del sprint entre todos.
+- Explicandonos temas que no entendimos en clase.
+
+**Less of:** En este punto ponemos aquello que tal vez en una retrospectiva fue [Start Doing] pero no nos genero el valor que queriamos. 
+
+- 
 
 **Stop Doing:** En este punto exponemos aquellas practicas que a pesar de ser [Less of] podemos eliminarlas.
 
