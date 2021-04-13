@@ -8,10 +8,12 @@
 | *DASHBOARD* | [REACT](http://localhost:3000/) |
 
 | API | PRODUCTS |
+| ------------------ | ---- |
 | *USERS* | [USERS](http://localhost:3001/api/users) |
 | *USERS DETAIL* | [USERS DETAIL](http://localhost:3001/api/users/1) |
 
 | API | PRODUCTS |
+| ------------------ | ---- |
 | *PRODUCTS* | [PRODUCTS](http://localhost:3001/api/products) |
 | *PRODUCTS DETAIL* | [PRODUCTS DETAIL](http://localhost:3001/api/products/1) |
 
