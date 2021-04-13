@@ -1,6 +1,5 @@
-let { check, validationResult, body } = require('express-validator');
-const path = require('path');
-const fs = require('fs');
+let { check } = require('express-validator');
+
 let validationPerfilMiddleware = [
   check('first_name')
     .isLength({ min: 2 })
@@ -15,9 +14,8 @@ let validationPerfilMiddleware = [
     .withMessage('* Debes completar este campo'),
 
   check('birthday')
-    .isDate()
     .isLength({ min: 6 })
-    .withMessage('* Debes completar este campo'),
+    .withMessage('* Debes completar este campo')
 
 ];
 

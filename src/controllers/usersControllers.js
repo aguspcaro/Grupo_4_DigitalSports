@@ -326,6 +326,8 @@ let usersControllers = {
 
   mostrarPerfil: function(req, res, next) {
 
+    let errors = validationResult(req);
+
     let userLogueado = req.session.user;
     console.log(userLogueado);
 
@@ -349,56 +351,81 @@ let usersControllers = {
   
   createPerfil : function(req, res, next) {
 
+    let usuario;
+
     let userLogueado = req.session.user;
 
-    db.Profile.findOne({where: {user_id: req.params.id}}).then(function(perfil){
+    let errors = validationResult(req);
 
-      userLogueado;
+    if(errors.isEmpty()){ 
+      console.log("estoy en if no errores");
 
-      if(perfil == undefined) { 
 
-        db.Profile.create({
+      db.Profile.findOne({where: {user_id: req.params.id}}).then(function(perfil){
 
-          image: req.files[0].filename,
-          first_name: req.body.first_name,
-          last_name: req.body.last_name,
-          age: req.body.age,
-          birthday: req.body.birthday,
-          user_id: userLogueado.id
+        userLogueado;
 
-        },{
+        if(perfil == undefined) { 
 
-          association: "user"
+          db.Profile.create({
 
-        }).then(function(user){
+            image: req.files[0].filename,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            age: req.body.age,
+            birthday: req.body.birthday,
+            user_id: userLogueado.id
 
-          req.session.perfil = user;
+          },{
 
-          res.redirect("/users/login/perfil")}).catch(function(errno){console.log();(errno)})
+            association: "user"
 
-      } else {
+          }).then(function(user){
 
-        db.Profile.update({
+            req.session.perfil = user;
 
-          image: req.files[0].filename,
-          first_name: req.body.first_name,
-          last_name: req.body.last_name,
-          age: req.body.edad,
-          birthday: req.body.birthday,
-          
-    
-        }, {
-    
-          where:{
-    
-            user_id: req.params.id
-    
-          }
+            res.redirect("/users/login/perfil")}).catch(function(errno){console.log();(errno)})
+
+        } else {
+
+          db.Profile.update({
+
+            image: req.files[0].filename,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            age: req.body.edad,
+            birthday: req.body.birthday,
+            
       
-        }).then(function(user){ res.redirect("/users/login/perfil")}).catch(function(errno){console.log(errno)})
+          }, {
+      
+            where:{
+      
+              user_id: req.params.id
+      
+            }
+        
+          }).then(function(user){ res.redirect("/users/login/perfil")}).catch(function(errno){console.log(errno)})
+        }
+
+      }).catch(function(errno){console.log(errno)})
+
+    } else {
+      console.log("estoy en errores");
+
+      
+      usuario = { // esto sirve para devolver al usuario lo que habia escrito mal en el input
+
+        first_name : req.body.first_name,
+        last_name: req.body.last_name,
+        age: req.body.age,
+        birthday: req.body.birthday,
+
       }
 
-    }).catch(function(errno){console.log(errno)})
+      return res.render('users/crearPerfil', { errors: errors.mapped(), userLogueado, usuario})
+
+    }
   },
 };
 

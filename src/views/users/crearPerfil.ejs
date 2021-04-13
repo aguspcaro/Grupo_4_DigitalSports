@@ -7,12 +7,7 @@
 <body>
     <main class="main">
 
-        <%- include("../partials/header")  %>
-        
-        <% if( typeof errors != "undefined") { %> <!-- SIRVE PARA QUE CUANDO CARGUEMOS EL REGISTER NO SE NOS INICIE CON LOS ERRORES-->
-     
-        <% } %>
-        
+        <%- include("../partials/header")  %>       
         
         <section class="section-registerContainer">
             <div class="section-registerContainerTitle">
@@ -25,7 +20,7 @@
                     <div class="section-registerContainerName">
                         <label for="first_name" class="section-register__labelName">Nombre<span class="section-register__spanLabelName">*</span></label>
                         <input type="text" name="first_name" id="first_name" class="section-register__inputName" value="<%= usuario.first_name %>" >
-                        <p class="errores"><%= typeof errors.name == "undefined" ? "" : errors.name.msg %></p>
+                        <p class="errores"><%= typeof errors.first_name == "undefined" ? "" : errors.first_name.msg %></p>
 
                         <span class="erroresFrontName erroresPerfil"></span>
 
@@ -35,9 +30,9 @@
                     <div class="section-registerContainerLastName">
                         <label for="last_name" class="section-register__labelLastName">Apellido<span class="section-register__spanLabelLastName">*</span></label>
                         <input type="text" name="last_name" id="last_name" class="section-register__inputLastName" value="<%= usuario.last_name %>"> 
-                        <p class="errores">
-                            <p class="errores"><%= typeof errors.lastName == "undefined" ? "" : errors.lastName.msg %></p>
-                        </p>
+                        
+                        <p class="errores"><%= typeof errors.last_name == "undefined" ? "" : errors.last_name.msg %></p>
+                        
                         <span class="erroresFrontLastName erroresPerfil"></span>
 
                     </div>
@@ -58,7 +53,7 @@
                         <label for="age" class="section-registerLabelAge">Edad
                             <span class="section-register__spanLabelAge">*</span></label>
                         <input type="number" name="age" id="age" class="section-register__inputAge" value="<%= usuario.age %>" >
-                        <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
+                        <p class="errores"><%= typeof errors.age == "undefined" ? "" : errors.age.msg %></p>
 
                         <span class="erroresFrontEdad erroresPerfil"></span>
 
@@ -69,7 +64,7 @@
                         <label for="birthday" class="section-registerLabelAge">Fecha de Nacimiento
                             <span class="section-register__spanLabelAge">*</span></label>
                         <input type="date" name="birthday" id="birthday" class="section-register__inputAge" value="<%= usuario.birthday %>">
-                        <p class="errores"><%= typeof errors.edad == "undefined" ? "" : errors.edad.msg %></p>
+                        <p class="errores"><%= typeof errors.birthday == "undefined" ? "" : errors.birthday.msg %></p>
 
                         <span class="erroresFrontBirthday erroresPerfil"></span>
 
@@ -102,7 +97,7 @@
     </main>
 
 
-    <script src = "/js/validatorPerfil.js" ></script>
+   <!-- <script src = "/js/validatorPerfil.js" ></script>--> 
     <script src="/js/validationSuscribe.js"></script>
 
 </body>

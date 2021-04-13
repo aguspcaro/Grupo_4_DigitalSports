@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
-const fs = require('fs');
 const multer = require('multer');
-const { check, body } = require('express-validator');
 
 // CONTROLADOR
 const usersControllers = require('../controllers/usersControllers');
@@ -17,6 +15,7 @@ const userInSesion = require('../middlewares/userInSesionMiddleware');
 const userOfSesion = require('../middlewares/userOFSesionMiddleware');
 const validationEdit = require('../middlewares/validationEditMiddleware');
 const cookiesRemember = require('../middlewares/rememberMiddleware');
+const validationPerfil = require('../middlewares/validationPerfilMiddleware');
 
 
 // VISTA DEL CENTRO DE COMANDOS DEL USUARIO
@@ -29,7 +28,7 @@ router.put('/login/perfil/:id', uploads.any(), validationEdit, usersControllers.
 
 // VISTA DE LA CREACION DEL PERFIL y EDICIÓN
 router.get("/login/perfil/crearPerfil/:id", usersControllers.mostrarPerfil);
-router.post("/login/perfil/:id", uploads.any(), usersControllers.createPerfil);
+router.post("/login/perfil/:id", uploads.any(), validationPerfil, usersControllers.createPerfil);
 
 // VISTA DEL REGISTRO DE USUARIO
 router.get('/register',  userInSesion, cookiesRemember, userInSesion,  usersControllers.mostrarRegister);
