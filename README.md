@@ -4,7 +4,17 @@
 
 | AMBIENTE | PARA PROBAR EL CRUD, ENTRAR AL ADMIN POR ESTA URL |
 | ------------------ | ---- |
-| *ADMIN* | [ADMIN](http://localhost:3000/products/admin) |
+| *ADMIN* | [ADMIN](http://localhost:3001/products/admin) |
+| *DASHBOARD* | [REACT](http://localhost:3000/) |
+
+| API | PRODUCTS |
+| *USERS* | [USERS](http://localhost:3001/api/users) |
+| *USERS DETAIL* | [USERS DETAIL](http://localhost:3001/api/users/1) |
+
+| API | PRODUCTS |
+| *PRODUCTS* | [PRODUCTS](http://localhost:3001/api/products) |
+| *PRODUCTS DETAIL* | [PRODUCTS DETAIL](http://localhost:3001/api/products/1) |
+
 
 ### Temática del sitio
 
@@ -63,7 +73,8 @@ Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodc
 
 | Repositorio | Link |
 | ----------- | ---- |
-| *Git hub* | [Digital Sports](https://github.com/aguspcaro/Proyecto---Digital-House.git) |
+| *Git hub* | [Digital Sports BACK-END](https://github.com/aguspcaro/Proyecto---Digital-House.git) |
+| *Git hub* | [Digital Sports REACT](https://github.com/aguspcaro/grupo4_DigitalSports_React/tree/main/grupo_digitalsports) |
 
 
 | Tablero de Trabajo | Link |
