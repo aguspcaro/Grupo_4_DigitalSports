@@ -9,5 +9,7 @@ router.get('/:id', usersControllers.detail)
 
 router.get('/image/:id', usersControllers.image)
 
+router.post('/edit/:id', usersControllers.edit)
+
 
 module.exports = router;

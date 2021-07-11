@@ -2,6 +2,8 @@ let fs = require('fs')
 let path = require('path')
 let db = require('../../database/models')
 const { get } = require('../../routes/main')
+const bcrypt = require('bcryptjs');
+
 
 
 let usersControllers =  {
@@ -130,6 +132,60 @@ let usersControllers =  {
             res.json(config)
         })
 
+    },
+
+    edit: function(req, res){
+
+        db.User.findOne({where: {id: req.params.id}})   
+
+        
+        .then((user) => {
+
+            if(user != undefined){
+
+                db.User.update({
+                    
+                    email: req.body.email,
+                    password: req.body.password
+
+                },{where: 
+                    {
+                        id: req.params.id
+                    }
+                }
+                
+                )
+                .then(dato => {
+
+                    
+                    let config = {
+                        meta: {
+                            status: 200,
+                            url: "api/edit/" + req.params.id,
+
+                                          
+                            
+                        },
+                        body:{
+                            email: "",
+                            password: ""
+                        }                      
+                    }
+        
+                                                   
+        
+                    res.json(config)
+                })
+
+                .catch((error) => {
+
+                    console.log(error)
+                })
+
+
+            }
+
+        }).catch((error) => { console.log(error)})
     }
 }
 module.exports= usersControllers
