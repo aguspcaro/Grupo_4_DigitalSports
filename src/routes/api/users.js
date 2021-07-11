@@ -11,5 +11,7 @@ router.get('/image/:id', usersControllers.image)
 
 router.post('/edit/:id', usersControllers.edit)
 
+router.post('/create/', usersControllers.create)
+
 
 module.exports = router;

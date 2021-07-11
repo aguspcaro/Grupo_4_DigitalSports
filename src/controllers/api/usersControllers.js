@@ -136,6 +136,7 @@ let usersControllers =  {
 
     edit: function(req, res){
 
+
         db.User.findOne({where: {id: req.params.id}})   
 
         
@@ -186,6 +187,39 @@ let usersControllers =  {
             }
 
         }).catch((error) => { console.log(error)})
+    },
+
+    create: function(req, res){
+
+        db.User.create({
+
+            email: req.body.email,
+            password: req.body.password
+        })
+
+        .then((user) => {
+
+
+            if(user != undefined) {
+
+                let config = {
+                    meta: {
+                        status: 200,
+                        url: "api/create/",                                     
+                        
+                    },
+                    body:{
+                        email: "",
+                        password: ""
+                    }                      
+                }  
+                                               
+    
+                res.json(config)
+
+
+            }
+        })
     }
 }
 module.exports= usersControllers
