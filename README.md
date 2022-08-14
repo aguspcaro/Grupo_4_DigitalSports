@@ -1,55 +1,61 @@
 ---
-# *Digital Sports*  
+# *Digital Sports*
 ---
 
-| AMBIENTE | PARA PROBAR EL CRUD, ENTRAR AL ADMIN POR ESTA URL |
-| ------------------ | ---- |
-| *ADMIN* | [ADMIN](http://localhost:3001/products/admin) |
-| *DASHBOARD* | [REACT](http://localhost:3000/) |
+| AMBIENTE    | PARA PROBAR EL CRUD, ENTRAR AL ADMIN POR ESTA URL |
+| ----------- | ------------------------------------------------- |
+| _ADMIN_     | [ADMIN](http://localhost:3001/products/admin)     |
+| _DASHBOARD_ | [REACT](http://localhost:3000/)                   |
 
-| API | PRODUCTS |
-| ------------------ | ---- |
-| *USERS* | [USERS](http://localhost:3001/api/users) |
-| *USERS DETAIL* | [USERS DETAIL](http://localhost:3001/api/users/1) |
+| API            | PRODUCTS                                          |
+| -------------- | ------------------------------------------------- |
+| _USERS_        | [USERS](http://localhost:3001/api/users)          |
+| _USERS DETAIL_ | [USERS DETAIL](http://localhost:3001/api/users/1) |
 
-| API | PRODUCTS |
-| ------------------ | ---- |
-| *PRODUCTS* | [PRODUCTS](http://localhost:3001/api/products) |
-| *PRODUCTS DETAIL* | [PRODUCTS DETAIL](http://localhost:3001/api/products/1) |
+| API               | PRODUCTS                                                |
+| ----------------- | ------------------------------------------------------- |
+| _PRODUCTS_        | [PRODUCTS](http://localhost:3001/api/products)          |
+| _PRODUCTS DETAIL_ | [PRODUCTS DETAIL](http://localhost:3001/api/products/1) |
 
+## Como arrancar el proyecto
+
+1. npm install y luego npm audit fix (si llegan a haber errores de dependencias viejas)
+2. completar las variables de entorno
+3. levantar el servidor de mysql (las nuevas versiones vienen con el servidor incluido. No es necesario XAMPP)
+4. npm start
 
 ### Temática del sitio
 
-  - Servicio de venta online de indumentaria y productos deportivos para:
+-   Servicio de venta online de indumentaria y productos deportivos para:
 
-	- Mujeres
-	- Hombres
-	- Niños
+    -   Mujeres
+    -   Hombres
+    -   Niños
 
-  - Productos que se van a comercializar: Medias, pantalones, shorts, remeras, zapatillas, y artúculos deportivos y equipamientos en general.
+-   Productos que se van a comercializar: Medias, pantalones, shorts, remeras, zapatillas, y artúculos deportivos y equipamientos en general.
 
 ### Público Objetivo
 
-- Mujeres de 18 a 60 años. Nivel socieconómico a,b,c 1.
+-   Mujeres de 18 a 60 años. Nivel socieconómico a,b,c 1.
 
-- Hombres de 18 a 60 años. Nivel socieconómico a,b,c 1.
+-   Hombres de 18 a 60 años. Nivel socieconómico a,b,c 1.
 
 ### Páginas Referentes
 
 > [Beko](https://www.beko.com/es-es)
-Muy facil de interpretar, muy dinámica, colores y diseño agradable.
+> Muy facil de interpretar, muy dinámica, colores y diseño agradable.
 
 > [Mercado Libre](https://www.mercadolibre.com.ar)
-Variedad de productos. Mezcla óptima entre diseño, funcionalidad. Nos gusta la forma de distribuir los productos y como va directamente al grano según las necesidades de cada comprador, según el historial de busqueda.
+> Variedad de productos. Mezcla óptima entre diseño, funcionalidad. Nos gusta la forma de distribuir los productos y como va directamente al grano según las necesidades de cada comprador, según el historial de busqueda.
 
 > [Adidas](https://www.adidas.com.ar/)
-Interfaz muy cómoda para navegar. Variedad de contenido (videos, fotos, etc). Fácil de utilizar y de realizar la compra. Diseño agradable.
+> Interfaz muy cómoda para navegar. Variedad de contenido (videos, fotos, etc). Fácil de utilizar y de realizar la compra. Diseño agradable.
 
 > [deautos](https://www.deautos.com/)
-Productos bien detallados. Dinámica. Variedad de servicios y productos. Fácil de usar.
+> Productos bien detallados. Dinámica. Variedad de servicios y productos. Fácil de usar.
 
 > [Rip Curl Argentina](https://www.ripcurlargentina.com/)
-Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodcutos. Te va llevando por los diferentes productos que tiene y está bien categorizado para facilitar la busqueda.
+> Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodcutos. Te va llevando por los diferentes productos que tiene y está bien categorizado para facilitar la busqueda.
 
 ### Equipo
 
@@ -63,24 +69,21 @@ Visualmente llamativa - Prodcutos bien detallados. Variedad de servicios y prodc
 
 ### Estrategias de Marketing
 
-- Posicionar al sitio como un referente en el mercado deportivo en términos de indumentaria, productos, equipamientos y servicios.
+-   Posicionar al sitio como un referente en el mercado deportivo en términos de indumentaria, productos, equipamientos y servicios.
 
-- Nuestro objetivo es que se piense en nuestro sitio como referencia en este mercado.
+-   Nuestro objetivo es que se piense en nuestro sitio como referencia en este mercado.
 
-- Buscaremos vender una filosofía de vida, asociando la actividad deportiva a una vida plena y saludable.
+-   Buscaremos vender una filosofía de vida, asociando la actividad deportiva a una vida plena y saludable.
 
-- Esto lo llevaremos adelante a través de las redes sociales tradicionales, patrocinando y organizando eventos. A través de influencers, publicidad en medios gráficos y onlines deportivos, y programas de magazine.
+-   Esto lo llevaremos adelante a través de las redes sociales tradicionales, patrocinando y organizando eventos. A través de influencers, publicidad en medios gráficos y onlines deportivos, y programas de magazine.
 
---- 
+---
 
-| Repositorio | Link |
-| ----------- | ---- |
-| *Git hub* | [Digital Sports BACK-END](https://github.com/aguspcaro/Proyecto---Digital-House.git) |
-| *Git hub* | [Digital Sports REACT](https://github.com/aguspcaro/grupo4_DigitalSports_React/tree/main/grupo_digitalsports) |
+| Repositorio | Link                                                                                                          |
+| ----------- | ------------------------------------------------------------------------------------------------------------- |
+| _Git hub_   | [Digital Sports BACK-END](https://github.com/aguspcaro/Proyecto---Digital-House.git)                          |
+| _Git hub_   | [Digital Sports REACT](https://github.com/aguspcaro/grupo4_DigitalSports_React/tree/main/grupo_digitalsports) |
 
-
-| Tablero de Trabajo | Link |
-| ------------------ | ---- |
-| *Trello* | [Digital Sports](https://trello.com/b/ltePxjNR/tareas) |
-
-
+| Tablero de Trabajo | Link                                                   |
+| ------------------ | ------------------------------------------------------ |
+| _Trello_           | [Digital Sports](https://trello.com/b/ltePxjNR/tareas) |
