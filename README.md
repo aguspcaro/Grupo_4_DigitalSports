@@ -19,10 +19,15 @@
 
 ## Como arrancar el proyecto
 
-1. npm install y luego npm audit fix (si llegan a haber errores de dependencias viejas)
-2. completar las variables de entorno
-3. levantar el servidor de mysql (las nuevas versiones vienen con el servidor incluido. No es necesario XAMPP)
-4. npm start
+1. Npm install y luego npm audit fix (si llegan a haber errores de dependencias viejas)
+2. Completar las variables de entorno
+   a. El nombre seguramente sea "root"
+   b. La contraseña, en mi caso, puse una propia que me pidio mysql. Va a depender de cada uno
+   c. Name es "digitalSports"
+   d. En mi caso, el puerto de la db es 3306
+   e. Y el puerto del cliente, podes poner cualquiera. Yo puse 3000
+3. Levantar el servidor de mysql (las nuevas versiones de mySql vienen con el servidor incluido. No es necesario XAMPP)
+4. Npm start
 
 ### Temática del sitio
 
