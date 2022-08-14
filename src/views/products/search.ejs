@@ -1,0 +1,46 @@
+<%- include("../partials/head")  %>
+<link rel="stylesheet" href="/stylesheet/style-home.css">
+
+
+<body>
+    <main class="main">
+        <%- include("../partials/header")  %>
+
+        
+            <div class="carousel-container">
+                <img src="/images/home-image.jpg" class="carrousel-img">
+            </div>
+                
+            <section class="offer">
+                <div class="offer-section-title">Resultado de la busqueda</div>
+            </section>
+
+            <section class="offer-article">
+
+                <% resultadoBusqueda.forEach(function (product){ %>
+    
+                <article class="offer-article1">
+                    <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                        class="offer-article1-image"></a>
+                    <div class="offer-article-info">
+                        <p class="offer-article-title"><%= product.name%></p>
+                        <div class="offer-article-container-description">
+                            <p class="offer-article-description">$<%=product.promPrice%></p>
+                            <span class="offer-article-description-span">$<%=product.price%></span>
+                    </div>
+                </article>
+                <%})%>
+            </section>
+
+
+        
+        
+        <%- include("../partials/form-suscribe")  %>
+
+
+        <%- include("../partials/footer")  %>
+
+    </main>
+    <script src="/js/validationSuscribe.js"></script>
+</body>
+

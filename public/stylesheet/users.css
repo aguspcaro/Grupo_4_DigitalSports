@@ -1,0 +1,17 @@
+body {
+    font-size: 16px;
+}
+
+.offer-article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.containerDetalle {
+    display: flex;
+    flex-direction: column;
+}
+
+

@@ -1,4 +1,5 @@
 *node_modules/*
+.env
 # Logs
 logs
 *.log
@@ -103,3 +104,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Para no pisarno con los datos de la BD
+.env

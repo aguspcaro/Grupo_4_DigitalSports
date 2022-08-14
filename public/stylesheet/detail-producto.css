@@ -1,0 +1,296 @@
+body {
+    background-color: white;
+    font-size: 16px;
+}
+
+
+img {
+    width: 100%;
+}
+
+h3 {
+    margin: 0px;
+}
+
+
+/* Container Padre */
+
+.container-section-producto{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 25px;
+
+}
+
+/* Container imagen izquirda */
+
+.container-img {
+    width: 100%;
+}
+
+/* Container detalle del producto*/
+
+.container-detalle {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* titulo detalle */
+
+.container-detalle-titulo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.container-texto-nombre h3 {
+    margin-top: 0px;
+    font-size: 20px;
+    width: 100%;
+    font-weight: 400;
+}
+
+
+/* precio detalle */
+
+.container-texto-precio {
+    width: 100%;
+    font-weight: 600;
+}
+
+.container-texto-precio h2 {
+    margin-top: 0px;
+}
+
+/* Container talle */
+
+.container-detalle-caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.container-detalle-caracteristicas p {
+    font-size: 16px
+}
+
+.container-detalle-talles-numero {
+    width: 50%;
+}
+
+
+.container-detalle-talles-numero p {
+    font-weight: 700;
+    border-top: solid 1px grey;
+    width: 100%;
+
+}
+
+
+
+/* Container boton */
+
+.container-detalle-comprar {
+    display: flex;
+    margin-top: 20px;
+    width: 100%;
+
+}
+
+.section-loginButtonEnterOk {
+    border-radius: 3px;
+    width: 100%;
+    background-color: #0985d9;
+    border: solid 1px #0985d9;
+    color: #fff;
+    padding: 12px;
+    display: flex;
+    justify-content: center;
+}
+
+.section-loginButtonEnterOk:hover {
+    border: solid 1px #6ad872;
+    background-color: #6ad872;
+    cursor: pointer;
+}
+
+.carrito {
+    color: white;
+    text-decoration: none;
+}
+
+.like {
+    font-size: 2em;
+    color: grey;
+    margin-left: 100%;
+}
+
+.like:hover {
+    cursor: pointer;
+    color: pink;
+}
+
+/* Envío */
+
+.container-detalle-envio {
+    display: flex;
+    align-content: center;
+    margin-top: 5%;
+}
+    .container-detalle-envio p {
+        font-size: 1.5em;
+        font-weight: 600;
+        align-self: center;
+    }
+    .container-detalle-envio p  {
+        align-self: center;
+        margin-left: 10%;
+        font-size: 1.2em;
+        font-style: italic;
+    }
+
+/* Container descripcion producto */
+
+.container-descripcion {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+
+@media (min-width: 540px) {
+
+    .container-section-producto{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 20px;
+        justify-content: center;
+    }
+
+    .container-img {
+        width: 75%;
+    }
+
+    .container-datos {
+        width: 100%;
+    }
+
+}
+
+
+
+@media (min-width: 768px) {
+
+    .container-section-producto{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        font-size: 16px;
+        width: 100%;
+        margin-top: 20px;
+        align-items: stretch;
+        justify-content: space-between;
+    }
+
+
+    .container-img {
+        width: 48%;
+        border: solid 1px rgb(209, 209, 209);
+    }
+
+    .container-datos {
+        width: 48%;
+        margin-left: 10px;
+    }
+ 
+     .section-loginButtonEnterOk {
+      margin-top: 10px;
+    }
+
+}
+
+
+
+@media (min-width: 920px) {
+
+    .container{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container-section-producto{
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+     }
+
+}
+
+
+
+@media (min-width: 1024px) {
+
+    .container-section-producto{
+        width: 80%;
+        align-items: center;
+     }
+
+     .section-loginButtonEnterOk {
+        width: 100%;   
+    }
+
+    .container-general-descripcion {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .container-descripcion {
+        width: 80%;
+    }
+
+    
+     
+}
+
+
+
+
+@media (min-width: 1800px) {
+
+    .container-section-producto{
+        width: 75%;
+        align-items: center;
+        justify-content: center;
+        border: solid 1px rgb(209, 209, 209);
+     }
+
+     .container-img {
+        width: 38%;
+        border: none;
+    }
+
+
+    .container-general-descripcion {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .container-descripcion {
+        width: 75%;
+    }
+
+
+ 
+}

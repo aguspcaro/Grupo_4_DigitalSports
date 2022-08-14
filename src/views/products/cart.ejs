@@ -1,0 +1,106 @@
+<%- include("../partials/head") %>
+<link rel="stylesheet" href="/stylesheet/cart.css">
+
+
+</head>
+
+<body>
+    <main class="main">
+        <%- include("../partials/header") %>
+
+
+
+        <div class="contenedor-principal">
+            <div class="contenedor-titulo">
+                <h2 class="titulo-encabezado">Mi Carrito</h2>
+            </div>
+
+            <section class="section">
+                <div class="container">
+                    <div class="caja-titulo">
+                        <p class="productName"><%= product.name%></p>
+                    </div>
+                    <div class="caja-datos">
+                        <div class="caja-imagen">
+                            <img src="/images/products/<%=product.image%>" alt="">
+                        </div>
+                        <div class="caja-descripcion">
+                            <div class="container-talle-edit">
+                                <span class="productTalle">Talle <%= product.sizes.name%></span>
+                                <a class="productEdit" href="#">Editar Producto</a>
+                            </div>
+                            <div class="containerTotal">
+                                <div class="input">
+                                    <label for="">Cantidad</label>
+                                    <select name="cantidad" id="">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                    </select>
+                                </div>
+
+                                <div class="total">
+                                  
+                                    
+                                    <span class="productPrecio" for="">$<%=product.promPrice%></span>
+                                    <span class="spanTituloTotal" for="">Total</span>
+                                    <span class="spanTotal"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="container-envio">
+
+                    <label class="labelSend" for="">Envío</label>
+                    <div>
+                        <input class="inputSend" type="number" name="envio" placeholder="Codigo postal" value="">
+                        <button class="inputCalc" type="button">Calcular</button>
+                    </div>
+
+                    <label class="labelDiscount" for="">Cupón de descuento</label>
+                    <div>
+                        <input class="inputDiscount" type="text" name="cupon" placeholder="Ingresá tu codigo" value="">
+                        <button class="inputVal" type="button">Validar</button>
+                    </div>
+                    <div class="bottons">
+                        <button class="inputBuy" type="submit">Comprar</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <%- include("../partials/form-suscribe") %>
+
+
+        <%- include("../partials/footer") %>
+
+
+    </main>
+
+    
+    <script src="/js/cartCalcularSuma.js"></script>
+    <script src="/js/validationSuscribe.js"></script>
+</body>
+
+</html>

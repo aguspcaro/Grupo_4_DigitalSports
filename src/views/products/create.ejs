@@ -1,0 +1,219 @@
+<%- include("../partials/head") %>
+<link rel="stylesheet" href="/stylesheet/admproduct.css">
+
+
+</head>
+
+<body>
+    <main class="main">
+
+        <%- include("../partials/headerAdm") %>
+
+
+        <h1>Agregar Producto</h1>
+
+        <form class="containerPrincipal" action="/products/create" method="POST" enctype="multipart/form-data">
+
+            <div class="containerAdd">
+
+                <label class="labelName" for="">Nombre del producto</label>
+                <input class="inputName" type="text" name="name" value="<%= body.name %>">
+                <span class="erroresName"></span>
+                <span class="errores">
+                    <% if (errors.name) { %>
+                    <%= errors.name.msg  %>
+                    <% } %>
+                </span>
+
+
+                <label class=" labelDescri" for="">Descripción del producto</label>
+                <textarea class="coments" style="resize: none;" name="coments" rows="10" placeholder=""
+                    cols="40"><%= body.coments %></textarea>
+                <label class="fotoProducto">Subir fotos del producto</label>
+                <input required class="inputarchivo" ide="file-input" multiple="multiple" type="file" name="adjunto"
+                    accept=".pdf,.jpg,.png">
+
+            </div>
+
+
+
+
+
+
+            <div class="containerDetalle">
+                <div class="deporte-marca">
+                    <div class="deporte">
+                        <label for="">Deporte</label>
+                        <select name="deporte">
+                            <option value="<%= body.deporte %>"><%= body.deporte %></option>
+                            <% resultadoBusquedaDeporte.forEach(element => { %>
+                            <option value="<%= element.id%>">
+                                <%= element.name  %>
+                            </option>
+                            <% }) %>
+                        </select>
+                        <span class="erroresDeporte"></span>
+                        <span class="errores">
+                            <% if (errors.deporte) { %>
+                            <%= errors.deporte.msg  %>
+                            <% } %>
+                        </span>
+                    </div>
+
+
+
+                    <div class="marca">
+                        <label for="">Marca</label>
+                        <select name="marca">
+                            <option value="<%= body.marca %>"><%= body.marca %></option>
+                            <% resultadoBusquedaMarca.forEach(element => { %>
+                            <option value="<%=element.id%>">
+                                <%= element.name  %>
+                            </option>
+                            <% }) %>
+                        </select>
+                        <span class="erroresMarca"></span>
+                        <span class="errores">
+                            <% if (errors.marca) { %>
+                            <%= errors.marca.msg  %>
+                            <% } %>
+                        </span>
+                    </div>
+                </div>
+
+
+
+
+                <div class="talle-publico">
+                    <div class="talle">
+                        <label for="">Talle</label>
+                        <select name="talle">
+                            <option value="<%= body.talle %>"><%= body.talle %></option>
+                            <% resultadoBusquedaTalle.forEach(element => { %>
+                            <option value="<%=element.id%>">
+                                <%= element.name  %>
+                            </option>
+                            <% }) %>
+                        </select>
+                        <span class="erroresTalle"></span>
+                        <span class="errores">
+                            <% if (errors.talle) { %>
+                            <%= errors.talle.msg  %>
+                            <% } %>
+                        </span>
+
+                    </div>
+
+                    <div class="publico">
+                        <label for="">Público</label>
+
+                        <select name="publico">
+                            <option value="<%= body.publico %>"><%= body.publico %></option>
+                            <option value="mujeres">mujeres</option>
+                            <option value="hombres">hombres</option>
+                            <option value="niños">niños</option>
+                        </select>
+                        <span class="erroresPublico"></span>
+                        <span class="errores">
+                            <% if (errors.publico) { %>
+                            <%= errors.publico.msg  %>
+                            <% } %>
+                        </span>
+                    </div>
+
+
+                </div>
+
+                <div class="envio-precio">
+                    <div class="envio">
+
+                        <label for="">Envío gratis</label>
+
+                        <select name="envio">
+                            <option value="<%= body.envio %>"><%= body.envio %></option>
+                            <option value="gratis">Gratis</option>
+                            <option value="correo">Correo</option>
+
+                        </select>
+                        <span class="erroresEnvio"></span>
+                        <span class="errores">
+                            <% if (errors.envio) { %>
+                            <%= errors.envio.msg  %>
+                            <% } %>
+                        </span>
+                    </div>
+
+                    <div class="precio">
+                        <label class="labelPrecio" for="">Precio</label>
+                        <input class="inputPrecio" type="number" name="precio" value="<%= body.precio %>">
+                        <span class="erroresPrecio"></span>
+                        <span class="errores">
+                            <% if (errors.precio) { %>
+                            <%= errors.precio.msg  %>
+                            <% } %>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="categoria-promocional">
+                    <div class="categoria">
+                        <label class=" labelSku" for="">Categoría</label>
+                        <select name="categoria">
+                            <option value="<%= body.categoria %>"><%= body.categoria %></option>
+                            <option value="ofertas">Ofertas</option>
+                            <option value="recomendados">Recomendados</option>
+                            <option value="destacados">Destacados</option>
+                            <option value="lanzamientos">Lanzamientos</option>
+                        </select>
+                        <span class="erroresCategorias"></span>
+                        <span class="errores">
+                            <% if (errors.categoria) { %>
+                            <%= errors.categoria.msg  %>
+                            <% } %>
+                        </span>
+                    </div>
+                    <div class="promocional">
+                        <label class=" labelPromocional" for="">Precio Promocional</label>
+                        <input class="inputPromocional" type="number" name="promocional" value="<%= body.promocional%>">
+                        <span class="erroresPromocional"></span>
+                        <span class="errores">
+                            <% if (errors.promocional) { %>
+                            <%= errors.promocional.msg  %>
+                            <% } %>
+                        </span>
+                    </div>
+                </div>
+
+                    <div class="stock-agregar">
+                        <div class="stock">
+                            <label class=" labelstock" for="">Stock</label>
+                            <input class="inputstock" type="number" name="stock" value="<%= body.stock %>">
+                            <span class="erroresStock"></span>
+                            <span class="errores">
+                                <% if (errors.stock) { %>
+                                <%= errors.stock.msg  %>
+                                <% } %>
+                            </span>
+                        </div>
+                        <div class="agregar">
+                            <label for="">Agregar Producto</label>
+                            <button>Agregar</button>
+                        </div>
+                    </div>
+                </div>
+        </form>
+
+
+
+        <%- include("../partials/footer") %>
+
+
+
+    </main>
+
+
+    <script src="/js/validatorProduct.js"></script>
+</body>
+
+</html>

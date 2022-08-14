@@ -1,0 +1,58 @@
+<%- include("../partials/head")  %>
+<link rel="stylesheet" href="/stylesheet/perfil.css">
+
+
+</head>
+
+<body>
+
+    <main class="main">
+
+        <%- include("../partials/header")  %>        
+            
+        
+        <section class="section-registerContainer">
+
+            <div class="section-registerContainerTitle">
+                
+                <h4 class="section-registerTitle">Bienvenido a tu perfil: <%= userLogueado.email%></h4>
+
+            </div>
+
+            <div class="container-session">
+
+                <a href="/users/login/perfil/crearPerfil/<%= userLogueado.id %>" class="button">Editar Perfil</a>
+
+            </div>
+
+            <div class="container-session">
+
+                <a  href="/users/login/perfil/editar/<%= userLogueado.id %>" class="button">Editar Usuario</a>
+
+            </div>
+
+            <div class="container-session">
+
+                <a href="/users/login/closed" class="button">Cerrar sesión</a>
+
+            </div>
+
+            <form action="/users/login/perfil/<%=userLogueado.id%>?_method=DELETE"  method="POST">
+    
+                <button type="submit" class="buttonDelete">Eliminar Usuario</button>
+
+            </form>
+
+        </section>
+
+        <%- include("../partials/form-suscribe")  %>
+
+        <%- include("../partials/footer")  %>
+
+    </main>
+
+    <script src="/js/validationSuscribe.js"></script>
+
+</body>
+
+</html>

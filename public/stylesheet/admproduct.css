@@ -1,0 +1,278 @@
+
+
+
+h1{
+    font-weight: 600;
+    color: #606060;
+    font-size: 24px;
+    text-align: center; 
+}
+
+form {
+    margin-bottom: 40px;  
+}
+
+
+.containerAdd{
+
+      
+display:flex;
+flex-direction: column;
+margin-top: 10px;
+
+}
+
+.labelName, .labelDescri  {
+    font-weight: 400;
+    color: #606060;
+    font-size: 12px;
+  
+}
+
+.inputName{
+    font-weight: 400;
+    border-radius: 3px;
+    font-size: 14px;
+    border: solid 2px #0985d9;
+    outline: 0px;   
+padding:4px;    
+}
+.coments{
+    font-weight: 400;
+    border-radius: 3px;
+    font-size: 14px;
+    border: solid 2px #0985d9;
+    outline: 0px;   
+    padding:4px;      
+}
+
+/*containerDetalle*/
+
+
+
+/*  .containerDetalle div{
+    width: 100%;
+    display:flex;
+    flex-direction: column;
+
+    
+    
+}  */
+ .containerDetalle{
+    margin-top: 10px; 
+} 
+ 
+
+ .deporte, .marca, .talle, .publico, .envio, .precio, .categoria, .promocional, .stock, .agregar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+ 
+
+.containerDetalle label  {
+ 
+    font-weight: 400;
+    color: #606060;
+    font-size: 12px;
+}
+
+.containerDetalle input, select{
+    
+    font-weight: 400;
+    border-radius: 3px;
+    font-size: 14px;
+    border: solid 2px #0985d9;
+    outline: 0px;   
+    padding:4px;    
+}
+
+.containerDetalle button{
+    
+    font-weight: 400;
+    border-radius: 3px;
+    font-size: 14px;
+ background-color: #0985d9;
+    outline: 0px;   
+padding:5px;    
+border: 1px #0985d9 solid;
+color: #ffffff;
+}
+
+.containerDetalle button:hover{
+    background-color: #606060;
+    border: 1px #606060 solid;
+color: #ffffff;
+cursor: pointer;
+
+}
+.fotoProducto{
+    font-weight: 400;
+    color: #606060;
+    font-size: 12px;
+}
+
+
+.labelSku{
+    font-weight: 400;
+    color: #606060;
+    font-size: 12px; 
+}
+
+
+.inputSku {
+    font-weight: 400;
+    border-radius: 3px;
+    font-size: 14px;
+    border: solid 2px #0985d9;
+    outline: 0px;   
+padding:4px;    
+text-align: center;
+}
+
+.erroresName{
+
+    color: red;
+    font-size: 12px;
+}
+
+.erroresPrecio{
+
+    color: red;
+    font-size: 12px;
+}
+
+.erroresPromocional{
+
+    color: red;
+    font-size: 12px;
+}
+
+.erroresDeporte{
+
+    color: red;
+    font-size: 12px;
+}
+
+.erroresTalle{
+
+    color: red;
+    font-size: 12px;
+    }
+.erroresMarca{
+
+    color: red;
+    font-size: 12px;
+
+}    
+.erroresPublico{
+
+    color: red;
+    font-size: 12px;
+
+}    
+.erroresEnvio{
+
+    color: red;
+    font-size: 12px;
+
+}    
+.erroresCategorias{
+
+    color: red;
+    font-size: 12px;
+
+}    
+
+.erroresStock{
+
+    color: red;
+    font-size: 12px;
+
+}   
+
+.container-foto {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.contenedor-foto-actual {
+    display: flex;
+    align-items: center;
+}
+
+.product-edit {
+    width: 30%;
+    margin-left: 5px;
+}
+
+@media (min-width: 768px) {
+
+    .deporte-marca, .talle-publico, .envio-precio, .categoria-promocional, .stock-agregar {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .deporte, .marca, .talle, .publico, .envio, .precio, .categoria, .promocional, .stock, .agregar {
+        width: 48%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    
+    
+    }
+
+
+
+@media (min-width: 1024px) {
+
+.containerAdd, .containerDetalle{
+    width: 48%;
+    
+ 
+}
+
+
+.containerPrincipal{
+ 
+display:flex;
+justify-content: space-between;
+}    
+
+
+.deporte-marca, .talle-publico, .envio-precio, .categoria-promocional, .stock-agregar {
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.deporte, .marca, .talle, .publico, .envio, .precio, .categoria, .promocional, .stock, .agregar {
+    width: 48%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-foto {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.contenedor-foto-actual {
+    display: flex;
+    align-items: center;
+}
+
+.product-edit {
+    width: 30%;
+    margin-left: 5px;
+}
+
+
+} 

@@ -1,0 +1,208 @@
+<%- include("../partials/head")  %>
+<link rel="stylesheet" href="/stylesheet/style-home.css">
+
+
+<body>
+    <main class="main">
+        <%- include("../partials/header")  %>
+
+
+        <section class="offer">
+            <div class="offer-section-title">Sección Deportes</div>
+        </section>
+
+        <% if (resultadoBusqueda[0].length != 0) { %>
+        <h2>Running</h2>
+
+        <section class="offer-article">
+            <% resultadoBusqueda[0].forEach(product => { %>
+            <article class="offer-article1">
+                <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                        class="offer-article1-image"></a>
+                <div class="offer-article-info">
+                    <p class="offer-article-title"><%= product.name%></p>
+                    <div class="offer-article-container-description">
+                        <p class="offer-article-description">$<%=product.promPrice%></p>
+                        <span class="offer-article-description-span">$<%=product.price%></span>
+                    </div>
+            </article>
+            <% }) %>
+        </section>
+        <% } %>
+
+
+        <% if (resultadoBusqueda[1].length != 0 ) { %>
+        <h2>Fútbol</h2>
+
+        <section class="offer-article">
+            <% resultadoBusqueda[1].forEach(product => { %>
+            <article class="offer-article1">
+                <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                        class="offer-article1-image"></a>
+                <div class="offer-article-info">
+                    <p class="offer-article-title"><%= product.name%></p>
+                    <div class="offer-article-container-description">
+                        <p class="offer-article-description">$<%=product.promPrice%></p>
+                        <span class="offer-article-description-span">$<%=product.price%></span>
+                    </div>
+            </article>
+            <% }) %>
+        </section>
+
+        <% } %>
+
+
+        <% if (resultadoBusqueda[2].length != 0)  { %>
+        <h2>Tenis</h2>
+
+        <section class="offer-article">
+            <% resultadoBusqueda[2].forEach(product => { %>
+            <article class="offer-article1">
+                <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                        class="offer-article1-image"></a>
+                <div class="offer-article-info">
+                    <p class="offer-article-title"><%= product.name%></p>
+                    <div class="offer-article-container-description">
+                        <p class="offer-article-description">$<%=product.promPrice%></p>
+                        <span class="offer-article-description-span">$<%=product.price%></span>
+                    </div>
+            </article>
+            <% }) %>
+        </section>
+        <% } %>
+
+
+        <% if (resultadoBusqueda[3].length != 0)  { %>
+            <h2>Basquet</h2>
+    
+            <section class="offer-article">
+                <% resultadoBusqueda[3].forEach(product => { %>
+                <article class="offer-article1">
+                    <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                            class="offer-article1-image"></a>
+                    <div class="offer-article-info">
+                        <p class="offer-article-title"><%= product.name%></p>
+                        <div class="offer-article-container-description">
+                            <p class="offer-article-description">$<%=product.promPrice%></p>
+                            <span class="offer-article-description-span">$<%=product.price%></span>
+                        </div>
+                </article>
+                <% }) %>
+            </section>
+            <% } %>
+
+
+            
+        <% if (resultadoBusqueda[4].length != 0)  { %>
+            <h2>Rugby</h2>
+    
+            <section class="offer-article">
+                <% resultadoBusqueda[4].forEach(product => { %>
+                <article class="offer-article1">
+                    <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                            class="offer-article1-image"></a>
+                    <div class="offer-article-info">
+                        <p class="offer-article-title"><%= product.name%></p>
+                        <div class="offer-article-container-description">
+                            <p class="offer-article-description">$<%=product.promPrice%></p>
+                            <span class="offer-article-description-span">$<%=product.price%></span>
+                        </div>
+                </article>
+                <% }) %>
+            </section>
+            <% } %>
+
+
+            <% if (resultadoBusqueda[5].length != 0)  { %>
+                <h2>Natación</h2>
+        
+                <section class="offer-article">
+                    <% resultadoBusqueda[5].forEach(product => { %>
+                    <article class="offer-article1">
+                        <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                                class="offer-article1-image"></a>
+                        <div class="offer-article-info">
+                            <p class="offer-article-title"><%= product.name%></p>
+                            <div class="offer-article-container-description">
+                                <p class="offer-article-description">$<%=product.promPrice%></p>
+                                <span class="offer-article-description-span">$<%=product.price%></span>
+                            </div>
+                    </article>
+                    <% }) %>
+                </section>
+                <% } %>
+
+
+                <% if (resultadoBusqueda[6].length != 0)  { %>
+                    <h2>Voley</h2>
+            
+                    <section class="offer-article">
+                        <% resultadoBusqueda[6].forEach(product => { %>
+                        <article class="offer-article1">
+                            <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                                    class="offer-article1-image"></a>
+                            <div class="offer-article-info">
+                                <p class="offer-article-title"><%= product.name%></p>
+                                <div class="offer-article-container-description">
+                                    <p class="offer-article-description">$<%=product.promPrice%></p>
+                                    <span class="offer-article-description-span">$<%=product.price%></span>
+                                </div>
+                        </article>
+                        <% }) %>
+                    </section>
+                    <% } %>
+        
+
+                    <% if (resultadoBusqueda[7].length != 0)  { %>
+                        <h2>Boxeo</h2>
+                
+                        <section class="offer-article">
+                            <% resultadoBusqueda[7].forEach(product => { %>
+                            <article class="offer-article1">
+                                <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                                        class="offer-article1-image"></a>
+                                <div class="offer-article-info">
+                                    <p class="offer-article-title"><%= product.name%></p>
+                                    <div class="offer-article-container-description">
+                                        <p class="offer-article-description">$<%=product.promPrice%></p>
+                                        <span class="offer-article-description-span">$<%=product.price%></span>
+                                    </div>
+                            </article>
+                            <% }) %>
+                        </section>
+                        <% } %>
+
+
+                        
+                    <% if (resultadoBusqueda[8].length != 0)  { %>
+                        <h2>Urbano</h2>
+                
+                        <section class="offer-article">
+                            <% resultadoBusqueda[8].forEach(product => { %>
+                            <article class="offer-article1">
+                                <a href="/products/detail/<%=product.id%>"><img src="/images/products/<%=product.image%>"
+                                        class="offer-article1-image"></a>
+                                <div class="offer-article-info">
+                                    <p class="offer-article-title"><%= product.name%></p>
+                                    <div class="offer-article-container-description">
+                                        <p class="offer-article-description">$<%=product.promPrice%></p>
+                                        <span class="offer-article-description-span">$<%=product.price%></span>
+                                    </div>
+                            </article>
+                            <% }) %>
+                        </section>
+                        <% } %>
+            
+            
+    
+
+
+
+        <%- include("../partials/form-suscribe")  %>
+
+
+        <%- include("../partials/footer")  %>
+
+    </main>
+    <script src="/js/validationSuscribe.js"></script>
+</body>

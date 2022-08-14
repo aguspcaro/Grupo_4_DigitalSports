@@ -1,0 +1,105 @@
+<%- include("../partials/head")  %>
+    <link rel="stylesheet" href= "/stylesheet/detail-producto.css">
+</head>
+
+<body>
+    <main class="main">
+        <%- include("../partials/header")  %>
+        
+           <div class="container">
+                <section class="container-section-producto">
+
+                   
+                    <div class="container-img">
+                        <img class="article-imagen-left" src="/images/products/<%=product.image%>">
+                    </div>
+    
+                    <div class="container-datos">
+                        <div class="container-detalle">
+    
+                            <div class="container-detalle-titulo">
+                                <div class="container-texto-nombre">
+                                    <h3><%= product.name %></h3>
+                                </div>
+                                <div class="container-texto-precio">
+                                    <h2><strong>$<%= product.promPrice %></strong></h2>
+                                </div>
+                                <span></span>
+                            </div>
+                        </div>
+        
+                        <div class="container-detalle-caracteristicas">
+        
+        
+                            <div class="container-detalle-talles-numero">
+                                <p>Talle</p>
+                                <span><%= product.sizes.name%></span>
+                            </div>
+                            
+                    
+            
+                            <div class="container-detalle-talles-numero"> 
+                                <p>Marca</p>
+                                <span><%= product.brands.name%></span>
+                            </div>
+                            
+                        
+            
+            
+                            <div class="container-detalle-talles-numero">
+                                <p>Unidades</p>
+                                <span ><%= product.stock%></span>
+                            </div>
+                            
+                        
+                            
+            
+            
+                            
+                            <div class="container-detalle-talles-numero">
+                                <p>Deporte</p>   
+                                <span ><%= product.sports.name%></span>
+                            </div>
+
+                            <div class="container-detalle-comprar">
+                                <div class="section-loginButtonEnterOk">
+                
+                                    <a class="carrito "href="/products/cart/<%= product.id%>">Agregar al carrito</a>
+                
+                                </div>
+                
+                            
+                                
+                            </div>
+            
+                            
+                        </div>
+        
+        
+                    </section>
+
+                   
+        
+                </div>
+ 
+
+        
+         <div class="container-general-descripcion">
+            <div class="container-descripcion">
+                <hr>
+                <h3>Descripción</h3>
+                
+                <p><%= product.description%></p>
+                <hr>
+            </div>
+         </div>
+        
+        <%- include("../partials/form-suscribe")  %>
+
+
+        <%- include("../partials/footer")  %>
+    </main>
+    
+</body>
+<script src="/js/validationSuscribe.js"></script>
+</html>

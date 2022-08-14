@@ -1,0 +1,105 @@
+<%- include("../partials/head")  %>
+<link rel="stylesheet" href="/stylesheet/register.css">
+
+
+</head>
+
+<body>
+    <main class="main">
+
+        <%- include("../partials/header")  %>       
+        
+        <section class="section-registerContainer">
+            <div class="section-registerContainerTitle">
+                <h4 class="section-registerTitle">Crear Perfil</h4> <!-- hacerlo dinamico-->
+            </div>
+
+            <form id="formUserEditar" method="POST" action="/users/login/perfil/<%=userLogueado.id%>" class="section-form-register" enctype="multipart/form-data">
+
+                <div class="section-registerContainerLeft">
+                    <div class="section-registerContainerName">
+                        <label for="first_name" class="section-register__labelName">Nombre<span class="section-register__spanLabelName">*</span></label>
+                        <input type="text" name="first_name" id="first_name" class="section-register__inputName" value="<%= usuario.first_name %>" >
+                        <p class="errores"><%= typeof errors.first_name == "undefined" ? "" : errors.first_name.msg %></p>
+
+                        <span class="erroresFrontName erroresPerfil"></span>
+
+                        
+                    </div>
+
+                    <div class="section-registerContainerLastName">
+                        <label for="last_name" class="section-register__labelLastName">Apellido<span class="section-register__spanLabelLastName">*</span></label>
+                        <input type="text" name="last_name" id="last_name" class="section-register__inputLastName" value="<%= usuario.last_name %>"> 
+                        
+                        <p class="errores"><%= typeof errors.last_name == "undefined" ? "" : errors.last_name.msg %></p>
+                        
+                        <span class="erroresFrontLastName erroresPerfil"></span>
+
+                    </div>
+
+                    <div class="section-registerContainerImage">
+
+                        <label for="image">Subir foto de perfil</label>
+                        <input required class="botonImagen" id="file-input" multiple="multiple" type="file" name="image" accept=".pdf,.jpg,.png">
+                    </div>
+
+                    
+                </div>
+
+                <div class="section-registerContainerRight">
+                    
+
+                    <div class="section-registerContainerAge">
+                        <label for="age" class="section-registerLabelAge">Edad
+                            <span class="section-register__spanLabelAge">*</span></label>
+                        <input type="number" name="age" id="age" class="section-register__inputAge" value="<%= usuario.age %>" >
+                        <p class="errores"><%= typeof errors.age == "undefined" ? "" : errors.age.msg %></p>
+
+                        <span class="erroresFrontEdad erroresPerfil"></span>
+
+                    </div>
+
+                    
+                    <div class="section-registerContainerAge">
+                        <label for="birthday" class="section-registerLabelAge">Fecha de Nacimiento
+                            <span class="section-register__spanLabelAge">*</span></label>
+                        <input type="date" name="birthday" id="birthday" class="section-register__inputAge" value="<%= usuario.birthday %>">
+                        <p class="errores"><%= typeof errors.birthday == "undefined" ? "" : errors.birthday.msg %></p>
+
+                        <span class="erroresFrontBirthday erroresPerfil"></span>
+
+                    </div>
+
+
+                    <div class="section-registerContainerRequired">
+                        <small class="section-registerRequired">*Campos Requeridos</small>
+                    </div>
+
+
+                    <div class="section-registerContainerButton">
+                        <button type="submit" class="section-registerCreateAccount">Guardar Cambios</button>
+                    </div>
+
+                    <div class="container-session">
+                        <a href="/users/login/perfil" class="buttonSesionEdit">Volver</a>
+                    </div>
+                </div>
+
+            </form>
+
+        </section>
+
+        <%- include("../partials/form-suscribe")  %>
+
+
+        <%- include("../partials/footer")  %>
+
+    </main>
+
+    <script src = "/js/validatorPerfil.js" ></script>
+
+    <script src="/js/validationSuscribe.js"></script>
+
+</body>
+
+</html>

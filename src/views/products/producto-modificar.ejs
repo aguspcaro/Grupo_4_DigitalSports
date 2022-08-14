@@ -1,0 +1,211 @@
+<%- include("../partials/head")  %>
+<link rel="stylesheet" href="/stylesheet/admproduct.css">
+
+
+</head>
+
+<body>
+    <main class="main">
+
+        <%- include("../partials/headerAdm")  %>
+
+
+        <h1>Detalle del producto a Modificar</h1>
+
+        <form class="containerPrincipal" action="/products/<%=product.id%>?_method=PUT" method="POST"
+            enctype="multipart/form-data">
+
+            <div class="containerAdd">
+
+                <label class="labelName" for="">Nombre del producto</label>
+                <input class="inputName" type="text" name="name" value="<%= product.name%>">
+                <span class="errores">
+                    <span class="erroresName"></span>
+                    <% if (errors.name) { %>
+                    <%= errors.name.msg  %>
+                    <% } %>
+                </span>
+
+
+                <label class=" labelDescri" for="">Descripción del producto</label>
+                <textarea class="coments" style="resize: none;" name="coments" rows="10"
+                    value="<%=product.description%>" cols="40"><%=product.description%></textarea>
+
+               <div class="container-foto">
+                <div class="contenedor-foto-actual">
+                    <span class="fotoProducto">Imagen actual del producto:</span>
+                    <img src="/images/products/<%=product.image%>" alt="" class="product-edit">
+                </div>
+               
+                <div>
+                    <label class="fotoProducto">Cambiar foto del producto:</label>
+                <input class="inputarchivo" ide="file-input" type="file" name="adjunto" accept=".pdf,.jpg,.png"
+                    value="<%=product.image%>">
+                </div>
+               
+               </div>
+
+            </div>
+
+
+
+            <div class="containerDetalle">
+
+
+                <div class="deporte-marca">
+                    <div class="deporte">
+                        <label for="">Deporte</label>
+                        <select name="deporte">
+                            <option value="<%= product.sport_id%>"><%=product.sports.name%></option>
+                            <% resultadoBusquedaDeporte.forEach(element => { %>
+                            <option value="<%= element.id%>">
+                                <%= element.name  %>
+                            </option>
+                            <% }) %>
+                        </select>
+                        <span class="erroresDeporte"></span>
+                    </div>
+
+
+                    <div class="marca">
+                        <label for="">Marca</label>
+                        <select name="marca">
+                            <option value="<%= product.brand_id%>"><%=product.brands.name%> </option>
+                            <% resultadoBusquedaMarca.forEach(element => { %>
+                            <option value="<%= element.id%>">
+                                <%= element.name  %>
+                            </option>
+                            <% }) %>
+
+                        </select>
+                        <span class="erroresMarca"></span>
+                    </div>
+                </div>
+
+
+
+                <div class="talle-publico">
+                    <div class="talle">
+                        <label for="">Talle</label>
+                        <select name="talle">
+                            <option value="<%= product.size_id%>"><%= product.sizes.name%> </option>
+                            <% resultadoBusquedaTalle.forEach(element => { %>
+                            <option value="<%= element.id%>">
+                                <%= element.name  %>
+                            </option>
+                            <% }) %>
+
+
+                        </select>
+                        <span class="erroresTalle"></span>
+
+                    </div>
+
+                    <div class="publico">
+                        <label for="">Público</label>
+
+                        <select name="publico">
+                            <option value="<%=product.public%>"><%=product.public%></option>
+                            <option value="mujeres">mujeres</option>
+                            <option value="hombres">hombres</option>
+                            <option value="niños">niños</option>
+                        </select>
+                        <span class="erroresPublico"></span>
+                    </div>
+                </div>
+
+                <div class="envio-precio">
+
+                    <div class="envio">
+                        <label for="">Envío gratis</label>
+
+                        <select name="envio">
+                            <option value="<%=product.shipping%>"><%=product.shipping%></option>
+                            <option value="gratis">Gratis</option>
+                            <option value="correo">Correo</option>
+
+                        </select>
+                        <span class="erroresEnvio"></span>
+
+                    </div>
+
+                    <div class="precio">
+                        <label class="labelPrecio" for="">Precio</label>
+                        <input class="inputPrecio" value="<%=product.price%>" type="number" name="precio">
+                        <span class="erroresPrecio"></span>
+                        <span class="errores">
+                            <% if (errors.precio) { %>
+                            <%= errors.precio.msg  %>
+                            <% } %>
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="categoria-promocional">
+
+                    <div class="categoria">
+                        <label class=" labelSku" for="">Categoría</label>
+                        <select name="categoria">
+                            <option value="<%=product.category%>"><%=product.category%></option>
+                            <option value="ofertas">Ofertas</option>
+                            <option value="recomendados">Recomendados</option>
+                            <option value="destacados">Destacados</option>
+                            <option value="lanzamientos">Lanzamientos</option>
+                        </select>
+                        <span class="erroresCategoria"></span>
+                        <span class="errores">
+                            <% if (errors.categoria) { %>
+                            <%= errors.categoria.msg  %>
+                            <% } %>
+                        </span>
+                    </div>
+
+                    <div class="promocional">
+                        <label class=" labelPromocional" for="">Precio Promocional</label>
+
+                        <input class="inputPromocional" value="<%=product.promPrice%>" type="number" name="promocional">
+                        <span class="erroresPromocional"></span>
+                        <span class="errores">
+                            <% if (errors.promocional) { %>
+                            <%= errors.promocional.msg  %>
+                            <% } %>
+                        </span>
+
+                    </div>
+                </div>
+
+                <div class="stock-agregar">
+                    <div class="stock">
+                        <label class="labelstock" for="">Stock</label>
+
+                        <input class="inputstock" value="<%=product.stock%>" type="number" name="stock">
+                        <span class="erroresCategoria"></span>
+                        <span class="errores">
+                            <% if (errors.stock) { %>
+                            <%= errors.stock.msg  %>
+                            <% } %>
+                        </span>
+                    </div>
+                    <div class="agregar">
+                        <label for="">Editar Producto</label>
+                        <button>Editar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+
+        <%- include("../partials/footer")  %>
+
+
+
+    </main>
+
+
+
+    <script src="/js/validatorProduct.js"></script>
+</body>
+
+</html>

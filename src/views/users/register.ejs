@@ -1,0 +1,90 @@
+<%- include("../partials/head")  %>
+<link rel="stylesheet" href="/stylesheet/register.css">
+
+
+</head>
+
+<body>
+    <main class="main">
+
+        <%- include("../partials/header")  %>
+        
+        <section class="section-registerContainer">
+            <div class="section-registerContainerTitle">
+                <h4 class="section-registerTitle">Registro</h4>
+            </div>
+
+            <form method="POST" action="/users/register" class="section-form-register" enctype="multipart/form-data">
+
+                <div class="section-registerContainerLeft">
+
+                    <div class="section-registerContainerEmail">
+                        <label for="email" class="section-register__labelEmail">Correo Electrónico<span
+                                class="section-register__spanLabelEmail">*</span></label>
+                        <input type="email" name="email" id="email" class="section-register__inputEmail" value="<%= usuario.email %>">
+                        
+                        <p class="errores"><%= typeof errors.email == "undefined" ? "" : errors.email.msg %></p>
+                       
+                        <span class="erroresFrontEmail"></span>
+
+                        
+                    </div>
+
+              
+                </div>
+
+                <div class="section-registerContainerRight">
+                    <div class="section-registerContainerPassword">
+                        <label for="password" class="section-registerLabelPassword">Contraseña<span
+                                class="section-register__spanLabelPassword">*</span></label>
+                        <input type="password" name="password" id="password" class="section-register__inputPassword">
+                        <p class="errores"><%= typeof errors.password == "undefined" ? "" : errors.password.msg %></p>
+
+                        <span class="erroresFrontPassword"></span>
+                       
+                    </div>
+
+                    <div class="section-registerContainerRequired">
+                        <small class="section-registerRequired">*Campos Requeridos</small>
+                    </div>
+
+                    <div class="section-registerContainerChecks">
+                        <div class="section-registerContainerChecksMails">
+                            <input type="checkbox" name="Quiere recibir mails" value="RE"
+                                class="section-registerChecksReceiveEmails">
+                            <span>Quiero recibir Mails con noticias y promociones</span>
+                        </div>
+                        <div class="section-registerContainerChecksConditions">
+                            <input type="checkbox" name="Acepta Términos" value="AC"
+                                class="section-registerChecksAceptConditions"required="required"> <!-- SIRVE PARA HACER OBLIGATORIO AL CHECKBOX-->
+                            <span>Acepto Términos y Condiciones</span>
+                        </div>
+                    </div>
+
+                    <div class="section-registerContainerButton">
+                        <button type="submit" class="section-registerCreateAccount">Crear Cuenta</button>
+                    </div>
+                </div>
+
+
+
+            </form>
+
+
+        </section>
+
+        <%- include("../partials/form-suscribe")  %>
+
+
+        <%- include("../partials/footer")  %>
+
+
+
+    </main>
+
+
+    <script src = "/js/validatorRegister.js" ></script>
+    <script src="/js/validationSuscribe.js"></script>
+</body>
+
+</html>
